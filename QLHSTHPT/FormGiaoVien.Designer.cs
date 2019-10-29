@@ -64,7 +64,6 @@
             this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTOMON = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textBoxMGV = new System.Windows.Forms.TextBox();
             this.textBoxTenGV = new System.Windows.Forms.TextBox();
             this.comboBoxGT = new System.Windows.Forms.ComboBox();
             this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
@@ -77,7 +76,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxTim = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTim = new System.Windows.Forms.Label();
+            this.comboBoxMGV = new System.Windows.Forms.ComboBox();
+            this.labelEHT = new System.Windows.Forms.Label();
+            this.labelEDT = new System.Windows.Forms.Label();
+            this.labelETM = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
             tENGVLabel = new System.Windows.Forms.Label();
             gIOITINHLabel = new System.Windows.Forms.Label();
@@ -108,7 +111,7 @@
             // tENGVLabel
             // 
             tENGVLabel.AutoSize = true;
-            tENGVLabel.Location = new System.Drawing.Point(38, 73);
+            tENGVLabel.Location = new System.Drawing.Point(38, 79);
             tENGVLabel.Name = "tENGVLabel";
             tENGVLabel.Size = new System.Drawing.Size(39, 13);
             tENGVLabel.TabIndex = 2;
@@ -117,7 +120,7 @@
             // gIOITINHLabel
             // 
             gIOITINHLabel.AutoSize = true;
-            gIOITINHLabel.Location = new System.Drawing.Point(341, 73);
+            gIOITINHLabel.Location = new System.Drawing.Point(341, 79);
             gIOITINHLabel.Name = "gIOITINHLabel";
             gIOITINHLabel.Size = new System.Drawing.Size(47, 13);
             gIOITINHLabel.TabIndex = 4;
@@ -135,7 +138,7 @@
             // dIACHILabel
             // 
             dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(38, 111);
+            dIACHILabel.Location = new System.Drawing.Point(38, 121);
             dIACHILabel.Name = "dIACHILabel";
             dIACHILabel.Size = new System.Drawing.Size(40, 13);
             dIACHILabel.TabIndex = 8;
@@ -144,7 +147,7 @@
             // dIENTHOAILabel
             // 
             dIENTHOAILabel.AutoSize = true;
-            dIENTHOAILabel.Location = new System.Drawing.Point(341, 111);
+            dIENTHOAILabel.Location = new System.Drawing.Point(341, 121);
             dIENTHOAILabel.Name = "dIENTHOAILabel";
             dIENTHOAILabel.Size = new System.Drawing.Size(55, 13);
             dIENTHOAILabel.TabIndex = 10;
@@ -162,7 +165,7 @@
             // nGHILabel
             // 
             nGHILabel.AutoSize = true;
-            nGHILabel.Location = new System.Drawing.Point(556, 73);
+            nGHILabel.Location = new System.Drawing.Point(556, 79);
             nGHILabel.Name = "nGHILabel";
             nGHILabel.Size = new System.Drawing.Size(29, 13);
             nGHILabel.TabIndex = 14;
@@ -396,21 +399,14 @@
             this.colNGHI.Visible = true;
             this.colNGHI.VisibleIndex = 7;
             // 
-            // textBoxMGV
-            // 
-            this.textBoxMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MAGV", true));
-            this.textBoxMGV.Location = new System.Drawing.Point(112, 34);
-            this.textBoxMGV.Name = "textBoxMGV";
-            this.textBoxMGV.Size = new System.Drawing.Size(106, 20);
-            this.textBoxMGV.TabIndex = 1;
-            // 
             // textBoxTenGV
             // 
             this.textBoxTenGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "TENGV", true));
-            this.textBoxTenGV.Location = new System.Drawing.Point(112, 70);
+            this.textBoxTenGV.Location = new System.Drawing.Point(112, 76);
             this.textBoxTenGV.Name = "textBoxTenGV";
             this.textBoxTenGV.Size = new System.Drawing.Size(189, 20);
             this.textBoxTenGV.TabIndex = 3;
+            this.textBoxTenGV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenGV_KeyPress);
             // 
             // comboBoxGT
             // 
@@ -420,7 +416,7 @@
             this.comboBoxGT.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBoxGT.Location = new System.Drawing.Point(401, 70);
+            this.comboBoxGT.Location = new System.Drawing.Point(401, 76);
             this.comboBoxGT.Name = "comboBoxGT";
             this.comboBoxGT.Size = new System.Drawing.Size(121, 21);
             this.comboBoxGT.TabIndex = 5;
@@ -442,7 +438,7 @@
             // textBoxDC
             // 
             this.textBoxDC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "DIACHI", true));
-            this.textBoxDC.Location = new System.Drawing.Point(112, 108);
+            this.textBoxDC.Location = new System.Drawing.Point(112, 118);
             this.textBoxDC.Name = "textBoxDC";
             this.textBoxDC.Size = new System.Drawing.Size(189, 20);
             this.textBoxDC.TabIndex = 9;
@@ -450,10 +446,12 @@
             // textBoxDT
             // 
             this.textBoxDT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "DIENTHOAI", true));
-            this.textBoxDT.Location = new System.Drawing.Point(402, 108);
+            this.textBoxDT.Location = new System.Drawing.Point(402, 118);
+            this.textBoxDT.MaxLength = 10;
             this.textBoxDT.Name = "textBoxDT";
             this.textBoxDT.Size = new System.Drawing.Size(120, 20);
             this.textBoxDT.TabIndex = 11;
+            this.textBoxDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDT_KeyPress);
             // 
             // textBoxTM
             // 
@@ -462,11 +460,12 @@
             this.textBoxTM.Name = "textBoxTM";
             this.textBoxTM.Size = new System.Drawing.Size(112, 20);
             this.textBoxTM.TabIndex = 13;
+            this.textBoxTM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTM_KeyPress);
             // 
             // checkBoxNghi
             // 
             this.checkBoxNghi.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.gIAOVIENBindingSource, "NGHI", true));
-            this.checkBoxNghi.Location = new System.Drawing.Point(605, 68);
+            this.checkBoxNghi.Location = new System.Drawing.Point(605, 74);
             this.checkBoxNghi.Name = "checkBoxNghi";
             this.checkBoxNghi.Size = new System.Drawing.Size(104, 24);
             this.checkBoxNghi.TabIndex = 15;
@@ -474,7 +473,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(559, 106);
+            this.button1.Location = new System.Drawing.Point(559, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 16;
@@ -484,6 +483,10 @@
             // 
             // groupBoxCT
             // 
+            this.groupBoxCT.Controls.Add(this.labelETM);
+            this.groupBoxCT.Controls.Add(this.labelEDT);
+            this.groupBoxCT.Controls.Add(this.labelEHT);
+            this.groupBoxCT.Controls.Add(this.comboBoxMGV);
             this.groupBoxCT.Controls.Add(this.button2);
             this.groupBoxCT.Controls.Add(this.button1);
             this.groupBoxCT.Controls.Add(nGHILabel);
@@ -501,7 +504,6 @@
             this.groupBoxCT.Controls.Add(tENGVLabel);
             this.groupBoxCT.Controls.Add(this.textBoxTenGV);
             this.groupBoxCT.Controls.Add(mAGVLabel);
-            this.groupBoxCT.Controls.Add(this.textBoxMGV);
             this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxCT.Location = new System.Drawing.Point(0, 260);
             this.groupBoxCT.Name = "groupBoxCT";
@@ -512,7 +514,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(642, 105);
+            this.button2.Location = new System.Drawing.Point(642, 115);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 17;
@@ -536,15 +538,51 @@
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
-            // label1
+            // labelTim
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(550, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Tìm kiếm";
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(550, 49);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 12;
+            this.labelTim.Text = "Tìm kiếm";
+            // 
+            // comboBoxMGV
+            // 
+            this.comboBoxMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MAGV", true));
+            this.comboBoxMGV.FormattingEnabled = true;
+            this.comboBoxMGV.Location = new System.Drawing.Point(112, 34);
+            this.comboBoxMGV.Name = "comboBoxMGV";
+            this.comboBoxMGV.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxMGV.TabIndex = 21;
+            // 
+            // labelEHT
+            // 
+            this.labelEHT.AutoSize = true;
+            this.labelEHT.ForeColor = System.Drawing.Color.Red;
+            this.labelEHT.Location = new System.Drawing.Point(109, 99);
+            this.labelEHT.Name = "labelEHT";
+            this.labelEHT.Size = new System.Drawing.Size(0, 13);
+            this.labelEHT.TabIndex = 22;
+            // 
+            // labelEDT
+            // 
+            this.labelEDT.AutoSize = true;
+            this.labelEDT.ForeColor = System.Drawing.Color.Red;
+            this.labelEDT.Location = new System.Drawing.Point(399, 141);
+            this.labelEDT.Name = "labelEDT";
+            this.labelEDT.Size = new System.Drawing.Size(0, 13);
+            this.labelEDT.TabIndex = 23;
+            // 
+            // labelETM
+            // 
+            this.labelETM.AutoSize = true;
+            this.labelETM.ForeColor = System.Drawing.Color.Red;
+            this.labelETM.Location = new System.Drawing.Point(602, 58);
+            this.labelETM.Name = "labelETM";
+            this.labelETM.Size = new System.Drawing.Size(0, 13);
+            this.labelETM.TabIndex = 24;
             // 
             // FormGiaoVien
             // 
@@ -552,7 +590,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(808, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelTim);
             this.Controls.Add(this.textBoxTim);
             this.Controls.Add(this.groupBoxCT);
             this.Controls.Add(this.gIAOVIENGridControl);
@@ -615,10 +653,13 @@
         private DevExpress.XtraEditors.DateEdit dateEditNS;
         private System.Windows.Forms.ComboBox comboBoxGT;
         private System.Windows.Forms.TextBox textBoxTenGV;
-        private System.Windows.Forms.TextBox textBoxMGV;
         private System.Windows.Forms.TextBox textBoxTim;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.ComboBox comboBoxMGV;
+        private System.Windows.Forms.Label labelETM;
+        private System.Windows.Forms.Label labelEDT;
+        private System.Windows.Forms.Label labelEHT;
     }
 }

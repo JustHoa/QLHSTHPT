@@ -47,24 +47,32 @@ namespace QLHSTHPT
 
         private void textBoxTim_TextChanged(object sender, EventArgs e)
         {
+            gIAOVIENBindingSource.Filter = "TENGV LIKE '%" + textBoxTim.Text + "%' OR MAGV LIKE '%" + textBoxTim.Text + "%' OR TOMON LIKE '%" + textBoxTim.Text + "%'";
+            //gIAOVIENBindingSource.Filter = String.Format("TENGV LIKE '%{0}%' OR MAGV LIKE '%{1}%' OR TOMON LIKE '%%'{2}", textBoxTim.Text, textBoxTim.Text, textBoxTim.Text);
             //MessageBox.Show(textBoxTim.Text);
-            try
-            {
-                this.gIAOVIENTableAdapter.FillByFilter(this.qLHSTHPTDataSet.GIAOVIEN, textBoxTim.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    this.gIAOVIENTableAdapter.FillByFilter(this.qLHSTHPTDataSet.GIAOVIEN, textBoxTim.Text);
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    System.Windows.Forms.MessageBox.Show(ex.Message);
+            //}
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.gIAOVIENGridControl.Enabled = false;
+            this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
             this.groupBoxCT.Enabled = true;
+            this.comboBoxMGV.DropDownStyle = ComboBoxStyle.DropDownList;
+
             this.gIAOVIENBindingSource.AddNew();
-            this.textBoxMGV.Focus();
+            this.comboBoxMGV.DataSource = Helper.createMaGV(gIAOVIENBindingSource);
+            this.comboBoxMGV.SelectedIndex = 0;
+            this.comboBoxMGV.SelectedIndex = 0;
+            this.textBoxTenGV.Focus();
             this.comboBoxGT.SelectedIndex = 0;
             this.checkBoxNghi.Checked = false;
         }
@@ -73,7 +81,10 @@ namespace QLHSTHPT
         {
             Program.vitri = gIAOVIENBindingSource.Position;
             this.gIAOVIENGridControl.Enabled = false;
+            this.labelTim.Enabled = false;
+            this.textBoxTim.Enabled = false;
             this.groupBoxCT.Enabled = true;
+            this.comboBoxMGV.Enabled = false;
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -114,6 +125,7 @@ namespace QLHSTHPT
         private void button2_Click(object sender, EventArgs e)
         {
             this.gIAOVIENBindingSource.CancelEdit();
+            this.comboBoxMGV.DropDownStyle = ComboBoxStyle.DropDown;
             //this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
             this.gIAOVIENGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
@@ -123,6 +135,8 @@ namespace QLHSTHPT
         {
             this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
             this.gIAOVIENGridControl.Enabled = true;
+            this.labelTim.Enabled = true;
+            this.textBoxTim.Enabled = true;
             this.groupBoxCT.Enabled = false;
         }
 
@@ -137,14 +151,6 @@ namespace QLHSTHPT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.clkOK = 1;
-            if (this.textBoxMGV.Text == "")
-            {
-                MessageBox.Show("Chưa nhập Mã giáo viên. Chú ý!");
-                textBoxMGV.Focus();
-                return;
-            }
-
             if (this.textBoxTenGV.Text == "")
             {
                 MessageBox.Show("Chưa nhập Tên giáo viên. Chú ý!");
@@ -192,11 +198,12 @@ namespace QLHSTHPT
                 return;
             }
             //this.gIAOVIENBindingSource.EndEdit();
-            string sql = "EXEC SP_KTMA '" + textBoxMGV.Text + "', 'GIAOVIEN'";
+
+            string sql = "EXEC SP_KTMA '" + comboBoxMGV.Text + "', 'GIAOVIEN'";
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
             int nowPosition = gIAOVIENBindingSource.Position;
-            int position = gIAOVIENBindingSource.Find("MAGV", textBoxMGV.Text);
+            int position = gIAOVIENBindingSource.Find("MAGV", comboBoxMGV.Text);
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
                 MessageBox.Show("Mã giáo viên đã tồn tại. Chú ý!");
@@ -208,8 +215,12 @@ namespace QLHSTHPT
                 this.gIAOVIENBindingSource.EndEdit();
                 MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
                 this.gIAOVIENGridControl.Enabled = true;
+                this.labelTim.Enabled = true;
+                this.textBoxTim.Enabled = true;
                 this.groupBoxCT.Enabled = false;
+                this.comboBoxMGV.DropDownStyle = ComboBoxStyle.DropDown;
                 dataReader.Close();
+                Program.clkOK = 1;
             }
         }
 
@@ -224,6 +235,68 @@ namespace QLHSTHPT
         private void textBoxTim_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Tìm kiếm theo tên giáo viên, mã giáo viên hoặc môn học", textBoxTim);
+        }
+
+        private void textBoxTenGV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar > (char)32 && e.KeyChar < (char)65) //ki tu dac biet
+            {
+                this.labelEHT.Text = "Họ tên chỉ bao gồm chữ cái và dấu cách!";
+                e.Handled = true;
+            }
+            else if ((((e.KeyChar > (char)90) && (e.KeyChar < (char)97)) || ((e.KeyChar > (char)122) && (e.KeyChar < (char)127)))) // ki tu dac biet
+            {
+                this.labelEHT.Text = "Họ tên chỉ bao gồm chữ cái và dấu cách!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelEHT.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)48 && textBoxDT.Text.Length == 0)
+            {
+                this.labelEDT.Text = "Điện thoại phải bắt đầu bắt đầu bằng 0";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
+            {
+                this.labelEDT.Text = "";
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == (char)13) || (e.KeyChar == (char)8)) //enter, backspace
+            {
+                this.labelEDT.Text = "";
+                e.Handled = false;
+            }
+            else
+            {
+                this.labelEDT.Text = "Điện thoại chỉ bao gồm số!";
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxTM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((((e.KeyChar > (char)31) && (e.KeyChar < (char)45)) || ((e.KeyChar > (char)45) && (e.KeyChar < (char)65))))
+            {
+                this.labelETM.Text = "Tổ môn chỉ bao gồm chữ cái và kí tự '-' để chia môn! Ví dụ: Toán-Lý-Hóa";
+                e.Handled = true;
+            }
+            else if ((((e.KeyChar > (char)90) && (e.KeyChar < (char)97)) || ((e.KeyChar > (char)122) && (e.KeyChar < (char)127))))
+            {
+                this.labelETM.Text = "Tổ môn chỉ bao gồm chữ cái và kí tự '-' để chia môn! Ví dụ: Toán-Lý-Hóa";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelETM.Text = "";
+                e.Handled = false;
+            }
         }
     }
 }
