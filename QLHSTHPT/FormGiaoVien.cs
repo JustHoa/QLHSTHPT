@@ -67,10 +67,9 @@ namespace QLHSTHPT
             this.textBoxTim.Enabled = false;
             this.groupBoxCT.Enabled = true;
             this.comboBoxMGV.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            this.comboBoxMGV.Enabled = true;
             this.gIAOVIENBindingSource.AddNew();
             this.comboBoxMGV.DataSource = Helper.createMaGV(gIAOVIENBindingSource);
-            this.comboBoxMGV.SelectedIndex = 0;
             this.comboBoxMGV.SelectedIndex = 0;
             this.textBoxTenGV.Focus();
             this.comboBoxGT.SelectedIndex = 0;
@@ -85,6 +84,7 @@ namespace QLHSTHPT
             this.textBoxTim.Enabled = false;
             this.groupBoxCT.Enabled = true;
             this.comboBoxMGV.Enabled = false;
+            this.textBoxTenGV.Focus();
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -73,14 +73,14 @@
             this.checkBoxNghi = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.labelETM = new System.Windows.Forms.Label();
+            this.labelEDT = new System.Windows.Forms.Label();
+            this.labelEHT = new System.Windows.Forms.Label();
+            this.comboBoxMGV = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBoxTim = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.labelTim = new System.Windows.Forms.Label();
-            this.comboBoxMGV = new System.Windows.Forms.ComboBox();
-            this.labelEHT = new System.Windows.Forms.Label();
-            this.labelEDT = new System.Windows.Forms.Label();
-            this.labelETM = new System.Windows.Forms.Label();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
             mAGVLabel = new System.Windows.Forms.Label();
             tENGVLabel = new System.Windows.Forms.Label();
             gIOITINHLabel = new System.Windows.Forms.Label();
@@ -504,13 +504,49 @@
             this.groupBoxCT.Controls.Add(tENGVLabel);
             this.groupBoxCT.Controls.Add(this.textBoxTenGV);
             this.groupBoxCT.Controls.Add(mAGVLabel);
-            this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxCT.Location = new System.Drawing.Point(0, 260);
             this.groupBoxCT.Name = "groupBoxCT";
             this.groupBoxCT.Size = new System.Drawing.Size(808, 190);
             this.groupBoxCT.TabIndex = 6;
             this.groupBoxCT.TabStop = false;
             this.groupBoxCT.Text = "Chi tiết giáo viên";
+            // 
+            // labelETM
+            // 
+            this.labelETM.AutoSize = true;
+            this.labelETM.ForeColor = System.Drawing.Color.Red;
+            this.labelETM.Location = new System.Drawing.Point(602, 58);
+            this.labelETM.Name = "labelETM";
+            this.labelETM.Size = new System.Drawing.Size(0, 13);
+            this.labelETM.TabIndex = 24;
+            // 
+            // labelEDT
+            // 
+            this.labelEDT.AutoSize = true;
+            this.labelEDT.ForeColor = System.Drawing.Color.Red;
+            this.labelEDT.Location = new System.Drawing.Point(399, 141);
+            this.labelEDT.Name = "labelEDT";
+            this.labelEDT.Size = new System.Drawing.Size(0, 13);
+            this.labelEDT.TabIndex = 23;
+            // 
+            // labelEHT
+            // 
+            this.labelEHT.AutoSize = true;
+            this.labelEHT.ForeColor = System.Drawing.Color.Red;
+            this.labelEHT.Location = new System.Drawing.Point(109, 99);
+            this.labelEHT.Name = "labelEHT";
+            this.labelEHT.Size = new System.Drawing.Size(0, 13);
+            this.labelEHT.TabIndex = 22;
+            // 
+            // comboBoxMGV
+            // 
+            this.comboBoxMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MAGV", true));
+            this.comboBoxMGV.FormattingEnabled = true;
+            this.comboBoxMGV.Location = new System.Drawing.Point(112, 34);
+            this.comboBoxMGV.Name = "comboBoxMGV";
+            this.comboBoxMGV.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxMGV.TabIndex = 21;
             // 
             // button2
             // 
@@ -521,17 +557,6 @@
             this.button2.Text = "Hủy";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBoxTim
-            // 
-            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim.ForeColor = System.Drawing.Color.Gray;
-            this.textBoxTim.Location = new System.Drawing.Point(605, 46);
-            this.textBoxTim.Name = "textBoxTim";
-            this.textBoxTim.Size = new System.Drawing.Size(191, 20);
-            this.textBoxTim.TabIndex = 7;
-            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
-            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
             // 
             // toolTip1
             // 
@@ -548,41 +573,16 @@
             this.labelTim.TabIndex = 12;
             this.labelTim.Text = "Tìm kiếm";
             // 
-            // comboBoxMGV
+            // textBoxTim
             // 
-            this.comboBoxMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MAGV", true));
-            this.comboBoxMGV.FormattingEnabled = true;
-            this.comboBoxMGV.Location = new System.Drawing.Point(112, 34);
-            this.comboBoxMGV.Name = "comboBoxMGV";
-            this.comboBoxMGV.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxMGV.TabIndex = 21;
-            // 
-            // labelEHT
-            // 
-            this.labelEHT.AutoSize = true;
-            this.labelEHT.ForeColor = System.Drawing.Color.Red;
-            this.labelEHT.Location = new System.Drawing.Point(109, 99);
-            this.labelEHT.Name = "labelEHT";
-            this.labelEHT.Size = new System.Drawing.Size(0, 13);
-            this.labelEHT.TabIndex = 22;
-            // 
-            // labelEDT
-            // 
-            this.labelEDT.AutoSize = true;
-            this.labelEDT.ForeColor = System.Drawing.Color.Red;
-            this.labelEDT.Location = new System.Drawing.Point(399, 141);
-            this.labelEDT.Name = "labelEDT";
-            this.labelEDT.Size = new System.Drawing.Size(0, 13);
-            this.labelEDT.TabIndex = 23;
-            // 
-            // labelETM
-            // 
-            this.labelETM.AutoSize = true;
-            this.labelETM.ForeColor = System.Drawing.Color.Red;
-            this.labelETM.Location = new System.Drawing.Point(602, 58);
-            this.labelETM.Name = "labelETM";
-            this.labelETM.Size = new System.Drawing.Size(0, 13);
-            this.labelETM.TabIndex = 24;
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxTim.Location = new System.Drawing.Point(605, 46);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(191, 20);
+            this.textBoxTim.TabIndex = 7;
+            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
+            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
             // 
             // FormGiaoVien
             // 
@@ -598,6 +598,8 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormGiaoVien";
             this.Text = "FormGiaoVien";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -653,7 +655,6 @@
         private DevExpress.XtraEditors.DateEdit dateEditNS;
         private System.Windows.Forms.ComboBox comboBoxGT;
         private System.Windows.Forms.TextBox textBoxTenGV;
-        private System.Windows.Forms.TextBox textBoxTim;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label labelTim;
@@ -661,5 +662,6 @@
         private System.Windows.Forms.Label labelETM;
         private System.Windows.Forms.Label labelEDT;
         private System.Windows.Forms.Label labelEHT;
+        private System.Windows.Forms.TextBox textBoxTim;
     }
 }
