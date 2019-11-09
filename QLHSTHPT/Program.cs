@@ -15,10 +15,22 @@ namespace QLHSTHPT
         public static string loginName = "";
         public static string password = "";
         public static string group = "";
+        public static string maGV = "";
         public static int vitri = 0;
         public static int clkSave = 0;
         public static int clkMan = 0;
         public static int clkOK = 0;
+
+        public static bool flagMieng = false;
+        public static bool flag15p = false;
+        public static bool flag1T = false;
+        public static int addMieng = 4;
+        public static int add15p = 6;
+        public static int add1T = 8;
+        public static List<string> arrMieng = new List<string>();
+        public static List<string> arr15p = new List<string>();
+        public static List<string> arr1T = new List<string>();
+
         public static string connectionString = "";
         public static SqlConnection sqlConnection;
 

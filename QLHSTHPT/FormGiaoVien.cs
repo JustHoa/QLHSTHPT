@@ -20,6 +20,7 @@ namespace QLHSTHPT
 
         private void FormGiaoVien_Load(object sender, EventArgs e)
         {
+            
             this.comboBoxGT.SelectedIndex = 0;
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
             this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);

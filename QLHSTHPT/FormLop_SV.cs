@@ -34,5 +34,10 @@ namespace QLHSTHPT
             this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet.LOP);
 
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+  
+        }
     }
 }

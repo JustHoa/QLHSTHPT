@@ -38,12 +38,12 @@
             System.Windows.Forms.Label nGAYSINHLabel;
             System.Windows.Forms.Label tENHSLabel;
             System.Windows.Forms.Label mAHSLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLop_SV));
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label mAHKLabel;
             System.Windows.Forms.Label mANHLabel;
             System.Windows.Forms.Label bANLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLop_SV));
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -54,6 +54,7 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -101,23 +102,22 @@
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.hOCSINHTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.HOCSINHTableAdapter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
-            this.mALOPTextBox = new System.Windows.Forms.TextBox();
-            this.tENLOPTextBox = new System.Windows.Forms.TextBox();
-            this.mAHKTextBox = new System.Windows.Forms.TextBox();
-            this.mANHTextBox = new System.Windows.Forms.TextBox();
-            this.bANComboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bANComboBox = new System.Windows.Forms.ComboBox();
+            this.mANHTextBox = new System.Windows.Forms.TextBox();
+            this.mAHKTextBox = new System.Windows.Forms.TextBox();
+            this.tENLOPTextBox = new System.Windows.Forms.TextBox();
+            this.mALOPTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAHK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBAN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             nGHIHOCLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             dIENTHOAILabel = new System.Windows.Forms.Label();
@@ -146,8 +146,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // nGHIHOCLabel
@@ -231,6 +231,51 @@
             mAHSLabel.TabIndex = 0;
             mAHSLabel.Text = "Mã học sinh";
             // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Location = new System.Drawing.Point(31, 99);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(39, 13);
+            mALOPLabel.TabIndex = 1;
+            mALOPLabel.Text = "Mã lớp";
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Location = new System.Drawing.Point(31, 133);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(43, 13);
+            tENLOPLabel.TabIndex = 3;
+            tENLOPLabel.Text = "Tên lớp";
+            // 
+            // mAHKLabel
+            // 
+            mAHKLabel.AutoSize = true;
+            mAHKLabel.Location = new System.Drawing.Point(227, 167);
+            mAHKLabel.Name = "mAHKLabel";
+            mAHKLabel.Size = new System.Drawing.Size(57, 13);
+            mAHKLabel.TabIndex = 5;
+            mAHKLabel.Text = "Mã học kỳ";
+            // 
+            // mANHLabel
+            // 
+            mANHLabel.AutoSize = true;
+            mANHLabel.Location = new System.Drawing.Point(31, 167);
+            mANHLabel.Name = "mANHLabel";
+            mANHLabel.Size = new System.Drawing.Size(66, 13);
+            mANHLabel.TabIndex = 7;
+            mANHLabel.Text = "Mã năm học";
+            // 
+            // bANLabel
+            // 
+            bANLabel.AutoSize = true;
+            bANLabel.Location = new System.Drawing.Point(237, 98);
+            bANLabel.Name = "bANLabel";
+            bANLabel.Size = new System.Drawing.Size(47, 13);
+            bANLabel.TabIndex = 9;
+            bANLabel.Text = "Ban học";
+            // 
             // lOPBindingSource
             // 
             this.lOPBindingSource.DataMember = "LOP";
@@ -239,6 +284,7 @@
             // qLHSTHPTDataSet
             // 
             this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
+            this.qLHSTHPTDataSet.EnforceConstraints = false;
             this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // barManager1
@@ -287,6 +333,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -322,6 +369,17 @@
             this.barButtonItem6.Id = 5;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // standaloneBarDockControl1
+            // 
+            this.standaloneBarDockControl1.AutoSize = true;
+            this.standaloneBarDockControl1.CausesValidation = false;
+            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.standaloneBarDockControl1.Manager = this.barManager1;
+            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(477, 80);
+            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // barDockControlTop
             // 
@@ -766,112 +824,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(868, 236);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // standaloneBarDockControl1
-            // 
-            this.standaloneBarDockControl1.AutoSize = true;
-            this.standaloneBarDockControl1.CausesValidation = false;
-            this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.standaloneBarDockControl1.Manager = this.barManager1;
-            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(477, 80);
-            this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
-            // 
-            // mALOPTextBox
-            // 
-            this.mALOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MALOP", true));
-            this.mALOPTextBox.Location = new System.Drawing.Point(103, 96);
-            this.mALOPTextBox.Name = "mALOPTextBox";
-            this.mALOPTextBox.Size = new System.Drawing.Size(100, 20);
-            this.mALOPTextBox.TabIndex = 2;
-            // 
-            // mALOPLabel
-            // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(31, 99);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(39, 13);
-            mALOPLabel.TabIndex = 1;
-            mALOPLabel.Text = "Mã lớp";
-            // 
-            // tENLOPTextBox
-            // 
-            this.tENLOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "TENLOP", true));
-            this.tENLOPTextBox.Location = new System.Drawing.Point(103, 130);
-            this.tENLOPTextBox.Name = "tENLOPTextBox";
-            this.tENLOPTextBox.Size = new System.Drawing.Size(281, 20);
-            this.tENLOPTextBox.TabIndex = 4;
-            // 
-            // tENLOPLabel
-            // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(31, 133);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(43, 13);
-            tENLOPLabel.TabIndex = 3;
-            tENLOPLabel.Text = "Tên lớp";
-            // 
-            // mAHKTextBox
-            // 
-            this.mAHKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MAHK", true));
-            this.mAHKTextBox.Location = new System.Drawing.Point(290, 164);
-            this.mAHKTextBox.Name = "mAHKTextBox";
-            this.mAHKTextBox.Size = new System.Drawing.Size(94, 20);
-            this.mAHKTextBox.TabIndex = 6;
-            // 
-            // mAHKLabel
-            // 
-            mAHKLabel.AutoSize = true;
-            mAHKLabel.Location = new System.Drawing.Point(227, 167);
-            mAHKLabel.Name = "mAHKLabel";
-            mAHKLabel.Size = new System.Drawing.Size(57, 13);
-            mAHKLabel.TabIndex = 5;
-            mAHKLabel.Text = "Mã học kỳ";
-            // 
-            // mANHTextBox
-            // 
-            this.mANHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MANH", true));
-            this.mANHTextBox.Location = new System.Drawing.Point(103, 164);
-            this.mANHTextBox.Name = "mANHTextBox";
-            this.mANHTextBox.Size = new System.Drawing.Size(100, 20);
-            this.mANHTextBox.TabIndex = 8;
-            // 
-            // mANHLabel
-            // 
-            mANHLabel.AutoSize = true;
-            mANHLabel.Location = new System.Drawing.Point(31, 167);
-            mANHLabel.Name = "mANHLabel";
-            mANHLabel.Size = new System.Drawing.Size(66, 13);
-            mANHLabel.TabIndex = 7;
-            mANHLabel.Text = "Mã năm học";
-            // 
-            // bANComboBox
-            // 
-            this.bANComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "BAN", true));
-            this.bANComboBox.FormattingEnabled = true;
-            this.bANComboBox.Location = new System.Drawing.Point(290, 95);
-            this.bANComboBox.Name = "bANComboBox";
-            this.bANComboBox.Size = new System.Drawing.Size(94, 21);
-            this.bANComboBox.TabIndex = 10;
-            // 
-            // bANLabel
-            // 
-            bANLabel.AutoSize = true;
-            bANLabel.Location = new System.Drawing.Point(237, 98);
-            bANLabel.Name = "bANLabel";
-            bANLabel.Size = new System.Drawing.Size(47, 13);
-            bANLabel.TabIndex = 9;
-            bANLabel.Text = "Ban học";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(402, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -893,13 +845,55 @@
             this.panel1.Size = new System.Drawing.Size(427, 228);
             this.panel1.TabIndex = 1;
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(260, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 20);
-            this.textBox1.TabIndex = 2;
+            this.button1.Location = new System.Drawing.Point(402, 162);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // bANComboBox
+            // 
+            this.bANComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "BAN", true));
+            this.bANComboBox.FormattingEnabled = true;
+            this.bANComboBox.Location = new System.Drawing.Point(290, 95);
+            this.bANComboBox.Name = "bANComboBox";
+            this.bANComboBox.Size = new System.Drawing.Size(94, 21);
+            this.bANComboBox.TabIndex = 10;
+            // 
+            // mANHTextBox
+            // 
+            this.mANHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MANH", true));
+            this.mANHTextBox.Location = new System.Drawing.Point(103, 164);
+            this.mANHTextBox.Name = "mANHTextBox";
+            this.mANHTextBox.Size = new System.Drawing.Size(100, 20);
+            this.mANHTextBox.TabIndex = 8;
+            // 
+            // mAHKTextBox
+            // 
+            this.mAHKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MAHK", true));
+            this.mAHKTextBox.Location = new System.Drawing.Point(290, 164);
+            this.mAHKTextBox.Name = "mAHKTextBox";
+            this.mAHKTextBox.Size = new System.Drawing.Size(94, 20);
+            this.mAHKTextBox.TabIndex = 6;
+            // 
+            // tENLOPTextBox
+            // 
+            this.tENLOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "TENLOP", true));
+            this.tENLOPTextBox.Location = new System.Drawing.Point(103, 130);
+            this.tENLOPTextBox.Name = "tENLOPTextBox";
+            this.tENLOPTextBox.Size = new System.Drawing.Size(281, 20);
+            this.tENLOPTextBox.TabIndex = 4;
+            // 
+            // mALOPTextBox
+            // 
+            this.mALOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MALOP", true));
+            this.mALOPTextBox.Location = new System.Drawing.Point(103, 96);
+            this.mALOPTextBox.Name = "mALOPTextBox";
+            this.mALOPTextBox.Size = new System.Drawing.Size(100, 20);
+            this.mALOPTextBox.TabIndex = 2;
             // 
             // panel2
             // 
@@ -911,24 +905,36 @@
             this.panel2.Size = new System.Drawing.Size(426, 228);
             this.panel2.TabIndex = 2;
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(260, 9);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // lOPGridControl
+            // 
+            this.lOPGridControl.DataSource = this.lOPBindingSource;
+            this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lOPGridControl.Location = new System.Drawing.Point(0, 0);
+            this.lOPGridControl.MainView = this.gridView1;
+            this.lOPGridControl.Name = "lOPGridControl";
+            this.lOPGridControl.Size = new System.Drawing.Size(426, 228);
+            this.lOPGridControl.TabIndex = 1;
+            this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMALOP,
             this.colTENLOP,
+            this.colMALOP,
             this.colMAHK,
             this.colMANH,
             this.colBAN});
             this.gridView1.GridControl = this.lOPGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // colMALOP
-            // 
-            this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.Name = "colMALOP";
-            this.colMALOP.OptionsColumn.AllowEdit = false;
-            this.colMALOP.Visible = true;
-            this.colMALOP.VisibleIndex = 0;
             // 
             // colTENLOP
             // 
@@ -937,6 +943,14 @@
             this.colTENLOP.OptionsColumn.AllowEdit = false;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.AllowEdit = false;
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 0;
             // 
             // colMAHK
             // 
@@ -961,18 +975,6 @@
             this.colBAN.OptionsColumn.AllowEdit = false;
             this.colBAN.Visible = true;
             this.colBAN.VisibleIndex = 4;
-            // 
-            // lOPGridControl
-            // 
-            this.lOPGridControl.DataSource = this.lOPBindingSource;
-            this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lOPGridControl.Location = new System.Drawing.Point(0, 0);
-            this.lOPGridControl.MainView = this.gridView1;
-            this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(426, 228);
-            this.lOPGridControl.TabIndex = 1;
-            this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
             // 
             // FormLop_SV
             // 
@@ -1012,8 +1014,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

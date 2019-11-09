@@ -36,6 +36,7 @@ namespace QLHSTHPT
             toolStripStatusLabelMGV.Text = "MAGV = " + dataReader.GetValue(0).ToString().Trim();
             toolStripStatusLabelTen.Text = "| HOTEN = " + dataReader.GetValue(1).ToString().Trim();
             toolStripStatusLabelNhom.Text = "| NHOM = " + dataReader.GetValue(2).ToString().Trim();
+            Program.maGV = dataReader.GetValue(0).ToString().Trim();
             Program.group = dataReader.GetValue(2).ToString();
 
             //if (Program.group == "PKeToan")
@@ -127,6 +128,18 @@ namespace QLHSTHPT
             else
             {
                 FormLop_SV f = new FormLop_SV();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.checkExists(typeof(FormNhapDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormNhapDiem f = new FormNhapDiem();
                 f.MdiParent = this;
                 f.Show();
             }

@@ -638,14 +638,6 @@
         private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gIAOVIENGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENGV;
-        private DevExpress.XtraGrid.Columns.GridColumn colGIOITINH;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
-        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
-        private DevExpress.XtraGrid.Columns.GridColumn colDIENTHOAI;
-        private DevExpress.XtraGrid.Columns.GridColumn colTOMON;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGHI;
         private System.Windows.Forms.GroupBox groupBoxCT;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBoxNghi;
@@ -663,5 +655,13 @@
         private System.Windows.Forms.Label labelEDT;
         private System.Windows.Forms.Label labelEHT;
         private System.Windows.Forms.TextBox textBoxTim;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENGV;
+        private DevExpress.XtraGrid.Columns.GridColumn colGIOITINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIENTHOAI;
+        private DevExpress.XtraGrid.Columns.GridColumn colTOMON;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGHI;
     }
 }
