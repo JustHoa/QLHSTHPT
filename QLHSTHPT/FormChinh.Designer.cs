@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChinh));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -62,8 +63,11 @@
             this.toolStripStatusLabelMGV = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelNhom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.toolStripStatusLabelNote = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -309,7 +313,8 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelMGV,
             this.toolStripStatusLabelTen,
-            this.toolStripStatusLabelNhom});
+            this.toolStripStatusLabelNhom,
+            this.toolStripStatusLabelNote});
             this.statusStrip1.Location = new System.Drawing.Point(0, 423);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(750, 22);
@@ -334,6 +339,16 @@
             this.toolStripStatusLabelNhom.Size = new System.Drawing.Size(45, 17);
             this.toolStripStatusLabelNhom.Text = "NHOM";
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // toolStripStatusLabelNote
+            // 
+            this.toolStripStatusLabelNote.ForeColor = System.Drawing.Color.Blue;
+            this.toolStripStatusLabelNote.Name = "toolStripStatusLabelNote";
+            this.toolStripStatusLabelNote.Size = new System.Drawing.Size(0, 17);
+            // 
             // FormChinh
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -350,6 +365,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +406,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelNote;
     }
 }

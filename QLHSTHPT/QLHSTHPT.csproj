@@ -118,6 +118,12 @@
     <Compile Include="FormNhapDiem.Designer.cs">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLop_HS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLop_HS.Designer.cs">
+      <DependentUpon>FormLop_HS.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLop.resx">
       <DependentUpon>FormLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLop_HS.resx">
+      <DependentUpon>FormLop_HS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLop_SV.resx">
       <DependentUpon>FormLop_SV.cs</DependentUpon>

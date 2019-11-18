@@ -14,9 +14,16 @@ namespace QLHSTHPT
 {
     public partial class FormNhapDiem : Form
     {
-        public FormNhapDiem()
+        public int clkSave = 0;
+        public int clkMan = 0;
+        public int clkOK = 0;
+
+        FormChinh formChinh;
+
+        public FormNhapDiem(FormChinh formChinh)
         {
             InitializeComponent();
+            this.formChinh = formChinh;
         }
 
         private void nAMHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -36,15 +43,28 @@ namespace QLHSTHPT
 
             foreach (string loai in Program.arrMieng)
             {
-                gridView1.Columns[loai].Visible = false;
+                if(gridView1.Columns[loai] != null)
+
+                {
+                    gridView1.Columns[loai].Visible = false;
+                    gridView1.Columns.Remove(gridView1.Columns[loai]);
+                }  
             }
             foreach (string loai in Program.arr15p)
             {
-                gridView1.Columns[loai].Visible = false;
+                if (gridView1.Columns[loai] != null)
+                {
+                    gridView1.Columns[loai].Visible = false;
+                    gridView1.Columns.Remove(gridView1.Columns[loai]);
+                }
             }
             foreach (string loai in Program.arr1T)
             {
-                gridView1.Columns[loai].Visible = false;
+                if (gridView1.Columns[loai] != null)
+                {
+                    gridView1.Columns[loai].Visible = false;
+                    gridView1.Columns.Remove(gridView1.Columns[loai]);
+                }
             }
 
             Program.arrMieng.Clear();
@@ -55,13 +75,25 @@ namespace QLHSTHPT
 
         private void FormNhapDiem_Load(object sender, EventArgs e)
         {
+            this.panel2.Visible = false;
             this.bar2.Visible = false;
             this.sP_BANGDIEMLOPGridControl.Visible = false;
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.HOCKY' table. You can move, or remove it, as needed.
-            this.hOCKYTableAdapter.Fill(this.qLHSTHPTDataSet.HOCKY);
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.NAMHOC' table. You can move, or remove it, as needed.
-            this.nAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet.NAMHOC);
-
+            try
+            {
+                this.sP_NAMHOC_DESCTableAdapter.Fill(this.qLHSTHPTDataSet.SP_NAMHOC_DESC, Program.maGV);
+                this.hOCKYTableAdapter.Fill(this.qLHSTHPTDataSet.HOCKY);
+                this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
+                if(comboBoxLop.SelectedValue == null)
+                {
+                    this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, 2, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
+                    comboBoxLop.SelectedValue = 2;
+                }
+                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+            }
+            catch (System.Exception ex)
+            {
+                this.panel2.Visible = true;
+            }
         }
 
         private void nAMHOCComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,10 +102,12 @@ namespace QLHSTHPT
             {
                 this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
                 this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+                this.error.Text = "";
+                this.error2.Text = "";
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                this.error.Text = "Lỗi: Không có thông tin giảng dạy " + this.comboBoxHK.Text + " " + this.comboBoxNH.Text;
             }
         }
 
@@ -83,10 +117,12 @@ namespace QLHSTHPT
             {
                 this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
                 this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+                this.error.Text = "";
+                this.error2.Text = "";
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                this.error.Text = "Lỗi: Không có thông tin giảng dạy " + this.comboBoxHK.Text + " " + this.comboBoxNH.Text;
             }
         }
 
@@ -95,15 +131,22 @@ namespace QLHSTHPT
             try
             {
                 this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+                this.error.Text = "";
+                this.error2.Text = "";
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                this.error.Text = "Lỗi: Không có thông tin giảng dạy " + this.comboBoxHK.Text + " " + this.comboBoxNH.Text;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(this.comboBoxLop.SelectedValue == null || this.comboBoxMH.SelectedValue == null)
+            {
+                this.error2.Text = "Lỗi: Không lấy được dữ liệu. Xem lại thông tin Năm học hoặc Học kỳ!";
+                return;
+            }
             this.panel1.Visible = false;
             this.bar2.Visible = true;
             this.sP_BANGDIEMLOPGridControl.Visible = true;
@@ -150,24 +193,21 @@ namespace QLHSTHPT
                 foreach (string loai in Program.arrMieng) 
                 {
                     str1 += (", " + loai);
-                    GridColumn column = gridView1.Columns.AddVisible(loai, string.Empty);
-                    gridView1.Columns.Add(column);
+                    GridColumn column = gridView1.Columns.AddVisible(loai, loai);
                     gridView1.Columns[loai].VisibleIndex = posMieng;
                     posMieng += 1;
                 }
                 foreach (string loai in Program.arr15p)
                 {
                     str2 += (", " + loai);
-                    GridColumn column = gridView1.Columns.AddVisible(loai, string.Empty);
-                    gridView1.Columns.Add(column);
+                    GridColumn column = gridView1.Columns.AddVisible(loai, loai);
                     gridView1.Columns[loai].VisibleIndex = pos15p;
                     pos15p += 1;
                 }
                 foreach (string loai in Program.arr1T)
                 {
                     str3 += (", " + loai);
-                    GridColumn column = gridView1.Columns.AddVisible(loai, string.Empty);
-                    gridView1.Columns.Add(column);
+                    GridColumn column = gridView1.Columns.AddVisible(loai, loai);
                     gridView1.Columns[loai].VisibleIndex = pos1T;
                     pos1T += 1;
                 }
@@ -188,7 +228,6 @@ namespace QLHSTHPT
                 
                 try
                 {
-                    
                     this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
                 }
                 catch (System.Exception ex)
@@ -208,6 +247,47 @@ namespace QLHSTHPT
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            string maMH = this.comboBoxMH.SelectedValue.ToString();
+            int maHK = int.Parse(this.comboBoxHK.SelectedValue.ToString());
+            int maNH = int.Parse(this.comboBoxNH.SelectedValue.ToString());
+            int count = this.sP_BANGDIEMLOPBindingSource.Count;
+
+            if (count > 0)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    string maHS = ((DataRowView)sP_BANGDIEMLOPBindingSource[i])["MAHS"].ToString().Trim();
+                    foreach (GridColumn co in gridView1.Columns)
+                    {
+                        if(co.FieldName != "MAHS" && co.FieldName != "TENHS")
+                        {
+                            try
+                            {
+                                string diem1 = gridView1.GetRowCellValue(i, co).ToString();
+                                float diem = float.Parse(((DataRowView)sP_BANGDIEMLOPBindingSource[i])[co.FieldName].ToString());
+                                if (diem < 0 || diem > 10)
+                                {
+                                    MessageBox.Show("Điểm sinh viên nằm trong khoảng từ 0 đến 10. Chú ý!");
+                                    return;
+                                }
+                                else
+                                {
+                                    string sql = "EXEC SP_CAPNHATDIEM '" + maHS + "', '" + maMH + "', " +
+                                        maHK + "," + maNH + ", '" + co.ToString() + "', " + diem;
+                                    SqlCommand sqlcommand = new SqlCommand(sql, Program.sqlConnection);
+                                    sqlcommand.ExecuteNonQuery();
+                                }
+                            }
+
+                            catch (FormatException)
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                }
+            }
+
             this.bar2.Visible = false;
             this.sP_BANGDIEMLOPGridControl.Visible = false;
             this.panel1.Visible = true;
@@ -238,8 +318,18 @@ namespace QLHSTHPT
                 colName = "MIENG_" + (int.Parse(spl[1]) + 1);
                 Program.arrMieng.Add(colName);
             }
-            GridColumn column = gridView1.Columns.AddVisible(colName, string.Empty);
+
+            GridColumn column = gridView1.Columns.AddVisible(colName, colName);
             gridView1.Columns[colName].VisibleIndex = Program.addMieng + Program.arrMieng.Count() - 1;
+            //gridView1.Columns[colName].Name = "col" + colName;
+            //qLHSTHPTDataSet.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
+            //qLHSTHPTDataSet.SP_BANGDIEMLOP.Columns[colName].
+            //this.sP_BANGDIEMLOPGridControl.Update();
+            //gridView1.UpdateSummary();
+            //gridView1.UpdateColumnsCustomization();
+            //gridView1.RefreshData();
+            //this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
+
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -256,7 +346,7 @@ namespace QLHSTHPT
                 colName = "KT15P_" + (int.Parse(spl[1]) + 1);
                 Program.arr15p.Add(colName);
             }
-            GridColumn column = gridView1.Columns.AddVisible(colName, string.Empty);
+            GridColumn column = gridView1.Columns.AddVisible(colName, colName);
             gridView1.Columns[colName].VisibleIndex = Program.add15p + Program.arrMieng.Count() + Program.arr15p.Count() - 1;
         }
 
@@ -274,9 +364,32 @@ namespace QLHSTHPT
                 colName = "KTTIET_" + (int.Parse(spl[1]) + 1);
                 Program.arr1T.Add(colName);
             }
-            GridColumn column = gridView1.Columns.AddVisible(colName, string.Empty);
+            GridColumn column = gridView1.Columns.AddVisible(colName, colName);
             gridView1.Columns[colName].VisibleIndex = Program.add1T + Program.arrMieng.Count() + Program.arr15p.Count() + Program.arr1T.Count() - 1;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string str = "";
+            foreach (GridColumn co in gridView1.Columns)
+            {
+
+                str += (co.AbsoluteIndex + " " + co.FieldName + ", ");
+            }
+            MessageBox.Show(str);
+        }
+
+        private void FormNhapDiem_SizeChanged(object sender, EventArgs e)
+        {
+            CenterControlInParent(buttonThoat2);
+        }
+        private void CenterControlInParent(Control ctrlToCenter)
+        {
+            ctrlToCenter.Left = (ctrlToCenter.Parent.Width - ctrlToCenter.Width) / 2;
+            ctrlToCenter.Top = (ctrlToCenter.Parent.Height - ctrlToCenter.Height) / 2;
+        }
+
+        
     }
 }
 

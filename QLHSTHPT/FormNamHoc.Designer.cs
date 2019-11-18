@@ -56,13 +56,19 @@
             this.colTENNH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNAMBD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNAMKT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nAMKTTextBox = new System.Windows.Forms.TextBox();
-            this.nAMBDTextBox = new System.Windows.Forms.TextBox();
-            this.tENNHTextBox = new System.Windows.Forms.TextBox();
-            this.mANHTextBox = new System.Windows.Forms.TextBox();
+            this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.labelEBD = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBoxKT = new System.Windows.Forms.TextBox();
+            this.textBoxBD = new System.Windows.Forms.TextBox();
+            this.textBoxTen = new System.Windows.Forms.TextBox();
+            this.textBoxMNH = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.labelTim = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelEKT = new System.Windows.Forms.Label();
+            this.labelET = new System.Windows.Forms.Label();
             nAMKTLabel = new System.Windows.Forms.Label();
             nAMBDLabel = new System.Windows.Forms.Label();
             tENNHLabel = new System.Windows.Forms.Label();
@@ -72,13 +78,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nAMHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nAMHOCGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxCT.SuspendLayout();
             this.SuspendLayout();
             // 
             // nAMKTLabel
             // 
             nAMKTLabel.AutoSize = true;
-            nAMKTLabel.Location = new System.Drawing.Point(232, 70);
+            nAMKTLabel.Location = new System.Drawing.Point(232, 77);
             nAMKTLabel.Name = "nAMKTLabel";
             nAMKTLabel.Size = new System.Drawing.Size(71, 13);
             nAMKTLabel.TabIndex = 6;
@@ -87,7 +93,7 @@
             // nAMBDLabel
             // 
             nAMBDLabel.AutoSize = true;
-            nAMBDLabel.Location = new System.Drawing.Point(34, 70);
+            nAMBDLabel.Location = new System.Drawing.Point(34, 77);
             nAMBDLabel.Name = "nAMBDLabel";
             nAMBDLabel.Size = new System.Drawing.Size(69, 13);
             nAMBDLabel.TabIndex = 4;
@@ -155,6 +161,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -162,6 +169,7 @@
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -169,6 +177,7 @@
             this.barButtonItem3.Id = 2;
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -176,6 +185,7 @@
             this.barButtonItem4.Id = 3;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -183,6 +193,7 @@
             this.barButtonItem6.Id = 5;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -190,6 +201,7 @@
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -305,81 +317,149 @@
             this.colNAMKT.Visible = true;
             this.colNAMKT.VisibleIndex = 3;
             // 
-            // groupBox1
+            // groupBoxCT
             // 
-            this.groupBox1.Controls.Add(this.nAMKTTextBox);
-            this.groupBox1.Controls.Add(this.nAMBDTextBox);
-            this.groupBox1.Controls.Add(this.tENNHTextBox);
-            this.groupBox1.Controls.Add(this.mANHTextBox);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(nAMKTLabel);
-            this.groupBox1.Controls.Add(nAMBDLabel);
-            this.groupBox1.Controls.Add(tENNHLabel);
-            this.groupBox1.Controls.Add(mANHLabel);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 260);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 190);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CHI TIẾT NĂM HỌC";
+            this.groupBoxCT.Controls.Add(this.labelET);
+            this.groupBoxCT.Controls.Add(this.labelEKT);
+            this.groupBoxCT.Controls.Add(this.labelEBD);
+            this.groupBoxCT.Controls.Add(this.button2);
+            this.groupBoxCT.Controls.Add(this.textBoxKT);
+            this.groupBoxCT.Controls.Add(this.textBoxBD);
+            this.groupBoxCT.Controls.Add(this.textBoxTen);
+            this.groupBoxCT.Controls.Add(this.textBoxMNH);
+            this.groupBoxCT.Controls.Add(this.button1);
+            this.groupBoxCT.Controls.Add(nAMKTLabel);
+            this.groupBoxCT.Controls.Add(nAMBDLabel);
+            this.groupBoxCT.Controls.Add(tENNHLabel);
+            this.groupBoxCT.Controls.Add(mANHLabel);
+            this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxCT.Location = new System.Drawing.Point(0, 260);
+            this.groupBoxCT.Name = "groupBoxCT";
+            this.groupBoxCT.Size = new System.Drawing.Size(800, 190);
+            this.groupBoxCT.TabIndex = 12;
+            this.groupBoxCT.TabStop = false;
+            this.groupBoxCT.Text = "CHI TIẾT NĂM HỌC";
             // 
-            // nAMKTTextBox
+            // labelEBD
             // 
-            this.nAMKTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "NAMKT", true));
-            this.nAMKTTextBox.Location = new System.Drawing.Point(309, 67);
-            this.nAMKTTextBox.Name = "nAMKTTextBox";
-            this.nAMKTTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nAMKTTextBox.TabIndex = 12;
+            this.labelEBD.AutoSize = true;
+            this.labelEBD.ForeColor = System.Drawing.Color.Red;
+            this.labelEBD.Location = new System.Drawing.Point(106, 97);
+            this.labelEBD.Name = "labelEBD";
+            this.labelEBD.Size = new System.Drawing.Size(0, 13);
+            this.labelEBD.TabIndex = 14;
             // 
-            // nAMBDTextBox
+            // button2
             // 
-            this.nAMBDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "NAMBD", true));
-            this.nAMBDTextBox.Location = new System.Drawing.Point(109, 67);
-            this.nAMBDTextBox.Name = "nAMBDTextBox";
-            this.nAMBDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nAMBDTextBox.TabIndex = 11;
+            this.button2.Location = new System.Drawing.Point(545, 72);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tENNHTextBox
+            // textBoxKT
             // 
-            this.tENNHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "TENNH", true));
-            this.tENNHTextBox.Location = new System.Drawing.Point(309, 29);
-            this.tENNHTextBox.Name = "tENNHTextBox";
-            this.tENNHTextBox.Size = new System.Drawing.Size(212, 20);
-            this.tENNHTextBox.TabIndex = 10;
+            this.textBoxKT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "NAMKT", true));
+            this.textBoxKT.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxKT.Location = new System.Drawing.Point(309, 74);
+            this.textBoxKT.Name = "textBoxKT";
+            this.textBoxKT.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKT.TabIndex = 12;
+            this.textBoxKT.TextChanged += new System.EventHandler(this.textBoxKT_TextChanged);
+            this.textBoxKT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKT_KeyPress);
             // 
-            // mANHTextBox
+            // textBoxBD
             // 
-            this.mANHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "MANH", true));
-            this.mANHTextBox.Location = new System.Drawing.Point(109, 29);
-            this.mANHTextBox.Name = "mANHTextBox";
-            this.mANHTextBox.Size = new System.Drawing.Size(100, 20);
-            this.mANHTextBox.TabIndex = 9;
+            this.textBoxBD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "NAMBD", true));
+            this.textBoxBD.Location = new System.Drawing.Point(109, 74);
+            this.textBoxBD.Name = "textBoxBD";
+            this.textBoxBD.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBD.TabIndex = 11;
+            this.textBoxBD.TextChanged += new System.EventHandler(this.textBoxBD_TextChanged);
+            this.textBoxBD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBD_KeyPress);
+            // 
+            // textBoxTen
+            // 
+            this.textBoxTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "TENNH", true));
+            this.textBoxTen.Location = new System.Drawing.Point(309, 29);
+            this.textBoxTen.Name = "textBoxTen";
+            this.textBoxTen.Size = new System.Drawing.Size(212, 20);
+            this.textBoxTen.TabIndex = 10;
+            this.textBoxTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTen_KeyPress);
+            // 
+            // textBoxMNH
+            // 
+            this.textBoxMNH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "MANH", true));
+            this.textBoxMNH.Enabled = false;
+            this.textBoxMNH.Location = new System.Drawing.Point(109, 29);
+            this.textBoxMNH.Name = "textBoxMNH";
+            this.textBoxMNH.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMNH.TabIndex = 9;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(446, 65);
+            this.button1.Location = new System.Drawing.Point(446, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxTim
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(597, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 20);
-            this.textBox1.TabIndex = 17;
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(597, 46);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(191, 20);
+            this.textBoxTim.TabIndex = 17;
+            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
+            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
+            // 
+            // labelTim
+            // 
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(542, 49);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 22;
+            this.labelTim.Text = "Tìm kiếm";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // labelEKT
+            // 
+            this.labelEKT.AutoSize = true;
+            this.labelEKT.ForeColor = System.Drawing.Color.Red;
+            this.labelEKT.Location = new System.Drawing.Point(306, 97);
+            this.labelEKT.Name = "labelEKT";
+            this.labelEKT.Size = new System.Drawing.Size(0, 13);
+            this.labelEKT.TabIndex = 15;
+            // 
+            // labelET
+            // 
+            this.labelET.AutoSize = true;
+            this.labelET.ForeColor = System.Drawing.Color.Red;
+            this.labelET.Location = new System.Drawing.Point(306, 52);
+            this.labelET.Name = "labelET";
+            this.labelET.Size = new System.Drawing.Size(0, 13);
+            this.labelET.TabIndex = 16;
             // 
             // FormNamHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelTim);
+            this.Controls.Add(this.textBoxTim);
+            this.Controls.Add(this.groupBoxCT);
             this.Controls.Add(this.nAMHOCGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -394,8 +474,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nAMHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nAMHOCGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxCT.ResumeLayout(false);
+            this.groupBoxCT.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,11 +499,11 @@
         private QLHSTHPTDataSet qLHSTHPTDataSet;
         private QLHSTHPTDataSetTableAdapters.NAMHOCTableAdapter nAMHOCTableAdapter;
         private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox nAMKTTextBox;
-        private System.Windows.Forms.TextBox nAMBDTextBox;
-        private System.Windows.Forms.TextBox tENNHTextBox;
-        private System.Windows.Forms.TextBox mANHTextBox;
+        private System.Windows.Forms.GroupBox groupBoxCT;
+        private System.Windows.Forms.TextBox textBoxKT;
+        private System.Windows.Forms.TextBox textBoxBD;
+        private System.Windows.Forms.TextBox textBoxTen;
+        private System.Windows.Forms.TextBox textBoxMNH;
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraGrid.GridControl nAMHOCGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -431,6 +511,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTENNH;
         private DevExpress.XtraGrid.Columns.GridColumn colNAMBD;
         private DevExpress.XtraGrid.Columns.GridColumn colNAMKT;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTim;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label labelEBD;
+        private System.Windows.Forms.Label labelEKT;
+        private System.Windows.Forms.Label labelET;
     }
 }

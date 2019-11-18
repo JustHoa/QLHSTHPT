@@ -56,13 +56,17 @@
             this.colTENHK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTHANGBD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYBD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nGAYBDTextBox = new System.Windows.Forms.TextBox();
-            this.tENHKTextBox = new System.Windows.Forms.TextBox();
-            this.mAHKTextBox = new System.Windows.Forms.TextBox();
+            this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.labelENg = new System.Windows.Forms.Label();
+            this.labelET = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBoxTh = new System.Windows.Forms.ComboBox();
+            this.textBoxNg = new System.Windows.Forms.TextBox();
+            this.textBoxTen = new System.Windows.Forms.TextBox();
+            this.textBoxMHK = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tHANGBDComboBox = new System.Windows.Forms.ComboBox();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.labelTim = new System.Windows.Forms.Label();
             nGAYBDLabel = new System.Windows.Forms.Label();
             tHANGBDLabel = new System.Windows.Forms.Label();
             tENHKLabel = new System.Windows.Forms.Label();
@@ -72,13 +76,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxCT.SuspendLayout();
             this.SuspendLayout();
             // 
             // nGAYBDLabel
             // 
             nGAYBDLabel.AutoSize = true;
-            nGAYBDLabel.Location = new System.Drawing.Point(259, 81);
+            nGAYBDLabel.Location = new System.Drawing.Point(259, 83);
             nGAYBDLabel.Name = "nGAYBDLabel";
             nGAYBDLabel.Size = new System.Drawing.Size(72, 13);
             nGAYBDLabel.TabIndex = 6;
@@ -87,7 +91,7 @@
             // tHANGBDLabel
             // 
             tHANGBDLabel.AutoSize = true;
-            tHANGBDLabel.Location = new System.Drawing.Point(40, 81);
+            tHANGBDLabel.Location = new System.Drawing.Point(40, 83);
             tHANGBDLabel.Name = "tHANGBDLabel";
             tHANGBDLabel.Size = new System.Drawing.Size(78, 13);
             tHANGBDLabel.TabIndex = 4;
@@ -155,6 +159,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -162,6 +167,7 @@
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -169,6 +175,7 @@
             this.barButtonItem3.Id = 2;
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -176,6 +183,7 @@
             this.barButtonItem4.Id = 3;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -183,6 +191,7 @@
             this.barButtonItem6.Id = 5;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -190,6 +199,7 @@
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -305,73 +315,62 @@
             this.colNGAYBD.Visible = true;
             this.colNGAYBD.VisibleIndex = 3;
             // 
-            // groupBox1
+            // groupBoxCT
             // 
-            this.groupBox1.Controls.Add(this.tHANGBDComboBox);
-            this.groupBox1.Controls.Add(this.nGAYBDTextBox);
-            this.groupBox1.Controls.Add(this.tENHKTextBox);
-            this.groupBox1.Controls.Add(this.mAHKTextBox);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(nGAYBDLabel);
-            this.groupBox1.Controls.Add(tHANGBDLabel);
-            this.groupBox1.Controls.Add(tENHKLabel);
-            this.groupBox1.Controls.Add(mAHKLabel);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 260);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(820, 210);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CHI TIẾT HỌC KỲ";
+            this.groupBoxCT.Controls.Add(this.labelENg);
+            this.groupBoxCT.Controls.Add(this.labelET);
+            this.groupBoxCT.Controls.Add(this.button2);
+            this.groupBoxCT.Controls.Add(this.comboBoxTh);
+            this.groupBoxCT.Controls.Add(this.textBoxNg);
+            this.groupBoxCT.Controls.Add(this.textBoxTen);
+            this.groupBoxCT.Controls.Add(this.textBoxMHK);
+            this.groupBoxCT.Controls.Add(this.button1);
+            this.groupBoxCT.Controls.Add(nGAYBDLabel);
+            this.groupBoxCT.Controls.Add(tHANGBDLabel);
+            this.groupBoxCT.Controls.Add(tENHKLabel);
+            this.groupBoxCT.Controls.Add(mAHKLabel);
+            this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxCT.Location = new System.Drawing.Point(0, 260);
+            this.groupBoxCT.Name = "groupBoxCT";
+            this.groupBoxCT.Size = new System.Drawing.Size(820, 210);
+            this.groupBoxCT.TabIndex = 12;
+            this.groupBoxCT.TabStop = false;
+            this.groupBoxCT.Text = "CHI TIẾT HỌC KỲ";
             // 
-            // nGAYBDTextBox
+            // labelENg
             // 
-            this.nGAYBDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "NGAYBD", true));
-            this.nGAYBDTextBox.Location = new System.Drawing.Point(337, 78);
-            this.nGAYBDTextBox.Name = "nGAYBDTextBox";
-            this.nGAYBDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nGAYBDTextBox.TabIndex = 12;
+            this.labelENg.AutoSize = true;
+            this.labelENg.ForeColor = System.Drawing.Color.Red;
+            this.labelENg.Location = new System.Drawing.Point(334, 103);
+            this.labelENg.Name = "labelENg";
+            this.labelENg.Size = new System.Drawing.Size(0, 13);
+            this.labelENg.TabIndex = 16;
             // 
-            // tENHKTextBox
+            // labelET
             // 
-            this.tENHKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "TENHK", true));
-            this.tENHKTextBox.Location = new System.Drawing.Point(337, 36);
-            this.tENHKTextBox.Name = "tENHKTextBox";
-            this.tENHKTextBox.Size = new System.Drawing.Size(228, 20);
-            this.tENHKTextBox.TabIndex = 11;
+            this.labelET.AutoSize = true;
+            this.labelET.ForeColor = System.Drawing.Color.Red;
+            this.labelET.Location = new System.Drawing.Point(334, 59);
+            this.labelET.Name = "labelET";
+            this.labelET.Size = new System.Drawing.Size(0, 13);
+            this.labelET.TabIndex = 15;
             // 
-            // mAHKTextBox
+            // button2
             // 
-            this.mAHKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "MAHK", true));
-            this.mAHKTextBox.Location = new System.Drawing.Point(124, 36);
-            this.mAHKTextBox.Name = "mAHKTextBox";
-            this.mAHKTextBox.Size = new System.Drawing.Size(100, 20);
-            this.mAHKTextBox.TabIndex = 9;
-            this.mAHKTextBox.TextChanged += new System.EventHandler(this.mAHKTextBox_TextChanged);
+            this.button2.Location = new System.Drawing.Point(593, 78);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // comboBoxTh
             // 
-            this.button1.Location = new System.Drawing.Point(490, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(617, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 20);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // tHANGBDComboBox
-            // 
-            this.tHANGBDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "THANGBD", true));
-            this.tHANGBDComboBox.FormattingEnabled = true;
-            this.tHANGBDComboBox.Items.AddRange(new object[] {
+            this.comboBoxTh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "THANGBD", true));
+            this.comboBoxTh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTh.FormattingEnabled = true;
+            this.comboBoxTh.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -384,18 +383,75 @@
             "10",
             "11",
             "12"});
-            this.tHANGBDComboBox.Location = new System.Drawing.Point(124, 78);
-            this.tHANGBDComboBox.Name = "tHANGBDComboBox";
-            this.tHANGBDComboBox.Size = new System.Drawing.Size(100, 21);
-            this.tHANGBDComboBox.TabIndex = 13;
+            this.comboBoxTh.Location = new System.Drawing.Point(124, 80);
+            this.comboBoxTh.Name = "comboBoxTh";
+            this.comboBoxTh.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxTh.TabIndex = 13;
+            // 
+            // textBoxNg
+            // 
+            this.textBoxNg.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "NGAYBD", true));
+            this.textBoxNg.Location = new System.Drawing.Point(337, 80);
+            this.textBoxNg.Name = "textBoxNg";
+            this.textBoxNg.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNg.TabIndex = 12;
+            this.textBoxNg.TextChanged += new System.EventHandler(this.textBoxNg_TextChanged);
+            // 
+            // textBoxTen
+            // 
+            this.textBoxTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "TENHK", true));
+            this.textBoxTen.Location = new System.Drawing.Point(337, 36);
+            this.textBoxTen.Name = "textBoxTen";
+            this.textBoxTen.Size = new System.Drawing.Size(228, 20);
+            this.textBoxTen.TabIndex = 11;
+            this.textBoxTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTen_KeyPress);
+            // 
+            // textBoxMHK
+            // 
+            this.textBoxMHK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "MAHK", true));
+            this.textBoxMHK.Enabled = false;
+            this.textBoxMHK.Location = new System.Drawing.Point(124, 36);
+            this.textBoxMHK.Name = "textBoxMHK";
+            this.textBoxMHK.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMHK.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(490, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBoxTim
+            // 
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(617, 46);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(191, 20);
+            this.textBoxTim.TabIndex = 17;
+            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
+            // 
+            // labelTim
+            // 
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(562, 49);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 22;
+            this.labelTim.Text = "Tìm kiếm";
             // 
             // FormHocKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 470);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelTim);
+            this.Controls.Add(this.textBoxTim);
+            this.Controls.Add(this.groupBoxCT);
             this.Controls.Add(this.hOCKYGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -409,8 +465,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxCT.ResumeLayout(false);
+            this.groupBoxCT.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,8 +490,8 @@
         private QLHSTHPTDataSet qLHSTHPTDataSet;
         private QLHSTHPTDataSetTableAdapters.HOCKYTableAdapter hOCKYTableAdapter;
         private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox mAHKTextBox;
+        private System.Windows.Forms.GroupBox groupBoxCT;
+        private System.Windows.Forms.TextBox textBoxMHK;
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraGrid.GridControl hOCKYGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -443,9 +499,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTENHK;
         private DevExpress.XtraGrid.Columns.GridColumn colTHANGBD;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYBD;
-        private System.Windows.Forms.TextBox nGAYBDTextBox;
-        private System.Windows.Forms.TextBox tENHKTextBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox tHANGBDComboBox;
+        private System.Windows.Forms.TextBox textBoxNg;
+        private System.Windows.Forms.TextBox textBoxTen;
+        private System.Windows.Forms.TextBox textBoxTim;
+        private System.Windows.Forms.ComboBox comboBoxTh;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelET;
+        private System.Windows.Forms.Label labelENg;
     }
 }

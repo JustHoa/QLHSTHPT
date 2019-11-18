@@ -55,7 +55,7 @@ namespace QLHSTHPT
             if (frm != null) frm.Activate();
             else
             {
-                FormGiaoVien f = new FormGiaoVien();
+                FormGiaoVien f = new FormGiaoVien(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -67,7 +67,7 @@ namespace QLHSTHPT
             if (frm != null) frm.Activate();
             else
             {
-                FormLop f = new FormLop();
+                FormLop f = new FormLop(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -79,7 +79,7 @@ namespace QLHSTHPT
             if (frm != null) frm.Activate();
             else
             {
-                FormHocSinh f = new FormHocSinh();
+                FormHocSinh f = new FormHocSinh(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -91,7 +91,7 @@ namespace QLHSTHPT
             if (frm != null) frm.Activate();
             else
             {
-                FormMonHoc f = new FormMonHoc();
+                FormMonHoc f = new FormMonHoc(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -103,7 +103,7 @@ namespace QLHSTHPT
             if (frm != null) frm.Activate();
             else
             {
-                FormNamHoc f = new FormNamHoc();
+                FormNamHoc f = new FormNamHoc(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -115,7 +115,7 @@ namespace QLHSTHPT
             if (frm != null) frm.Activate();
             else
             {
-                FormHocKy f = new FormHocKy();
+                FormHocKy f = new FormHocKy(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -123,11 +123,11 @@ namespace QLHSTHPT
 
         private void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = this.checkExists(typeof(FormLop_SV));
+            Form frm = this.checkExists(typeof(FormLop_HS));
             if (frm != null) frm.Activate();
             else
             {
-                FormLop_SV f = new FormLop_SV();
+                FormLop_HS f = new FormLop_HS(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -139,7 +139,7 @@ namespace QLHSTHPT
             if (frm != null) frm.Activate();
             else
             {
-                FormNhapDiem f = new FormNhapDiem();
+                FormNhapDiem f = new FormNhapDiem(this);
                 f.MdiParent = this;
                 f.Show();
             }

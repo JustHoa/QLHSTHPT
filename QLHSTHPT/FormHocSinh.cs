@@ -12,17 +12,16 @@ namespace QLHSTHPT
 {
     public partial class FormHocSinh : Form
     {
-        public FormHocSinh()
+        public int clkSave = 0;
+        public int clkMan = 0;
+        public int clkOK = 0;
+
+        FormChinh formChinh;
+
+        public FormHocSinh(FormChinh formChinh)
         {
             InitializeComponent();
-        }
-
-        private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.lOPBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLHSTHPTDataSet);
-
+            this.formChinh = formChinh;
         }
 
         private void FormHocSinh_Load(object sender, EventArgs e)

@@ -12,9 +12,16 @@ namespace QLHSTHPT
 {
     public partial class FormLop : Form
     {
-        public FormLop()
+        public int clkSave = 0;
+        public int clkMan = 0;
+        public int clkOK = 0;
+
+        FormChinh formChinh;
+
+        public FormLop(FormChinh formChinh)
         {
             InitializeComponent();
+            this.formChinh = formChinh;
         }
 
         private void FormLop_Load(object sender, EventArgs e)

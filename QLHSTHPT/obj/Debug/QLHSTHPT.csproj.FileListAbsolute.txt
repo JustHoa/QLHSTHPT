@@ -198,3 +198,4 @@ D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.pdb
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormQLTaiKhoan.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTTDangNhap.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormNhapDiem.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormLop_HS.resources

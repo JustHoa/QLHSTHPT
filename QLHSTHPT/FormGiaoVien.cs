@@ -13,14 +13,21 @@ namespace QLHSTHPT
 {
     public partial class FormGiaoVien : Form
     {
-        public FormGiaoVien()
+        public int clkSave = 0;
+        public int clkMan = 0;
+        public int clkOK = 0;
+
+        FormChinh formChinh;
+
+        public FormGiaoVien(FormChinh formChinh)
         {
             InitializeComponent();
+            this.formChinh = formChinh;
         }
 
         private void FormGiaoVien_Load(object sender, EventArgs e)
         {
-            
+            this.ControlBox = false;
             this.comboBoxGT.SelectedIndex = 0;
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
             this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
@@ -48,17 +55,8 @@ namespace QLHSTHPT
 
         private void textBoxTim_TextChanged(object sender, EventArgs e)
         {
-            gIAOVIENBindingSource.Filter = "TENGV LIKE '%" + textBoxTim.Text + "%' OR MAGV LIKE '%" + textBoxTim.Text + "%' OR TOMON LIKE '%" + textBoxTim.Text + "%'";
-            //gIAOVIENBindingSource.Filter = String.Format("TENGV LIKE '%{0}%' OR MAGV LIKE '%{1}%' OR TOMON LIKE '%%'{2}", textBoxTim.Text, textBoxTim.Text, textBoxTim.Text);
-            //MessageBox.Show(textBoxTim.Text);
-            //try
-            //{
-            //    this.gIAOVIENTableAdapter.FillByFilter(this.qLHSTHPTDataSet.GIAOVIEN, textBoxTim.Text);
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    System.Windows.Forms.MessageBox.Show(ex.Message);
-            //}
+            gIAOVIENBindingSource.Filter = "TENGV LIKE '%" + textBoxTim.Text + 
+                "%' OR MAGV LIKE '%" + textBoxTim.Text + "%' OR TOMON LIKE '%" + textBoxTim.Text + "%'";
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -107,7 +105,7 @@ namespace QLHSTHPT
 
                     if (MessageBox.Show("Bạn có thực sự muốn xóa?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        Program.clkMan = 1;
+                        clkMan = 1;
                         this.gIAOVIENBindingSource.RemoveCurrent();
                         MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
                         //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connectionString;
@@ -129,6 +127,8 @@ namespace QLHSTHPT
             this.comboBoxMGV.DropDownStyle = ComboBoxStyle.DropDown;
             //this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
             this.gIAOVIENGridControl.Enabled = true;
+            this.textBoxTim.Enabled = true;
+            this.labelTim.Enabled = true;
             this.groupBoxCT.Enabled = false;
         }
 
@@ -146,8 +146,9 @@ namespace QLHSTHPT
             this.gIAOVIENTableAdapter.Update(this.qLHSTHPTDataSet.GIAOVIEN);
             this.gIAOVIENGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
-            Program.clkSave = 1;
-            MessageBox.Show("Lưu thay đổi thành công!");
+            clkSave = 1;
+            formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
+            //MessageBox.Show("Lưu thay đổi thành công!");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -198,7 +199,6 @@ namespace QLHSTHPT
                 textBoxTM.Focus();
                 return;
             }
-            //this.gIAOVIENBindingSource.EndEdit();
 
             string sql = "EXEC SP_KTMA '" + comboBoxMGV.Text + "', 'GIAOVIEN'";
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
@@ -221,13 +221,13 @@ namespace QLHSTHPT
                 this.groupBoxCT.Enabled = false;
                 this.comboBoxMGV.DropDownStyle = ComboBoxStyle.DropDown;
                 dataReader.Close();
-                Program.clkOK = 1;
+                clkOK = 1;
             }
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ((Program.clkMan == 0 && Program.clkOK == 0) || ((Program.clkMan == 1 || Program.clkOK == 1) && Program.clkSave == 1))
+            if ((clkMan == 0 && clkOK == 0) || ((clkMan == 1 || clkOK == 1) && clkSave == 1))
                 this.Close();
             else
                 if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();

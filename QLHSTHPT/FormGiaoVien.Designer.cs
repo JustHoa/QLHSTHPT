@@ -598,11 +598,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormGiaoVien";
             this.Text = "FormGiaoVien";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+//            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGiaoVien_FormClosing);
             this.Load += new System.EventHandler(this.FormGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).EndInit();

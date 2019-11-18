@@ -17,9 +17,6 @@ namespace QLHSTHPT
         public static string group = "";
         public static string maGV = "";
         public static int vitri = 0;
-        public static int clkSave = 0;
-        public static int clkMan = 0;
-        public static int clkOK = 0;
 
         public static bool flagMieng = false;
         public static bool flag15p = false;

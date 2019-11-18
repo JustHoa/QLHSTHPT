@@ -12,39 +12,23 @@ namespace QLHSTHPT
 {
     public partial class FormMonHoc : Form
     {
-        public FormMonHoc()
+        public int clkSave = 0;
+        public int clkMan = 0;
+        public int clkOK = 0;
+
+        FormChinh formChinh;
+
+        public FormMonHoc(FormChinh formChinh)
         {
             InitializeComponent();
+            this.formChinh = formChinh;
         }
 
-        private void mONHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-      
-
-        }
 
         private void FormMonHoc_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet.MONHOC);
-        }
-
-        private void tENMHLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tENMHTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mONHOCBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.mONHOCBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLHSTHPTDataSet);
-
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -75,6 +59,11 @@ namespace QLHSTHPT
             this.mONHOCBindingSource.CancelEdit();
             this.mONHOCGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
