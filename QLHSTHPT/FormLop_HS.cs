@@ -17,7 +17,7 @@ namespace QLHSTHPT
         public int clkSave = 0;
         public int clkMan = 0;
         public int clkOK = 0;
-        public bool first = true;
+        public string maHS = "";
 
         FormChinh formChinh;
 
@@ -30,8 +30,14 @@ namespace QLHSTHPT
 
         private void FormLop_HS_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.HOCSINH' table. You can move, or remove it, as needed.
-            this.hOCSINHTableAdapter.Fill(this.qLHSTHPTDataSet.HOCSINH);
+            if (Program.group == "PGV")
+            {
+                this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem5.Enabled = true;
+            }
+            else
+            {
+                this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem5.Enabled = false;
+            }
             this.ControlBox = false;
             this.groupBoxCTLop.Enabled = false;
             this.groupBoxCTHS.Enabled = false;
@@ -39,6 +45,18 @@ namespace QLHSTHPT
             this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet.LOP);
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.HOCSINH' table. You can move, or remove it, as needed.
             this.hOCSINHTableAdapter.Fill(this.qLHSTHPTDataSet.HOCSINH);
+
+            string sql = "SELECT TOP(1) * FROM HOCSINH ORDER BY MAHS DESC";
+            SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+            if (dataReader.Read())
+            {
+                maHS = dataReader.GetValue(0).ToString().Trim();
+            }
+            else
+            {
+                maHS = "HS" + DateTime.Today.Year.ToString().Substring(2, 2) + "0000000";
+            }
         }
 
 
@@ -227,12 +245,18 @@ namespace QLHSTHPT
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.tableLayoutPanel1.Enabled = false;
+            this.barButtonItem7.Enabled = false;
+            this.barButtonItem8.Enabled = false;
+            this.barButtonItem9.Enabled = false;
+            this.barButtonItem10.Enabled = false;
+            this.barButtonItem11.Enabled = false;
             this.hOCSINHGridControl.Enabled = false;
             this.labelTim2.Enabled = false;
             this.textBoxTim2.Enabled = false;
             this.groupBoxCTHS.Enabled = true;
             this.hOCSINHBindingSource.AddNew();
-            this.textBoxMHS.Text = Helper.createMaHS(hOCSINHBindingSource, ref first);
+            this.textBoxMHS.Text = Helper.createMaHS(maHS);
             int vitri = lOPBindingSource.Position;
             string maLop = ((DataRowView)lOPBindingSource[vitri])["MALOP"].ToString().Trim();
             this.textBoxMLHS.Text = maLop;
@@ -243,6 +267,12 @@ namespace QLHSTHPT
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.tableLayoutPanel1.Enabled = false;
+            this.barButtonItem7.Enabled = false;
+            this.barButtonItem8.Enabled = false;
+            this.barButtonItem9.Enabled = false;
+            this.barButtonItem10.Enabled = false;
+            this.barButtonItem11.Enabled = false;
             this.hOCSINHGridControl.Enabled = false;
             this.labelTim2.Enabled = false;
             this.textBoxTim2.Enabled = false;
@@ -292,6 +322,12 @@ namespace QLHSTHPT
             this.hOCSINHTableAdapter.Update(this.qLHSTHPTDataSet.HOCSINH);
             this.hOCSINHGridControl.Enabled = true;
             this.groupBoxCTHS.Enabled = false;
+            this.tableLayoutPanel1.Enabled = true;
+            this.barButtonItem7.Enabled = true;
+            this.barButtonItem8.Enabled = true;
+            this.barButtonItem9.Enabled = true;
+            this.barButtonItem10.Enabled = true;
+            this.barButtonItem11.Enabled = true;
             clkSave = 1;
             formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
         }
@@ -303,6 +339,12 @@ namespace QLHSTHPT
             this.labelTim2.Enabled = true;
             this.textBoxTim2.Enabled = true;
             this.groupBoxCTHS.Enabled = false;
+            this.tableLayoutPanel1.Enabled = true;
+            this.barButtonItem7.Enabled = true;
+            this.barButtonItem8.Enabled = true;
+            this.barButtonItem9.Enabled = true;
+            this.barButtonItem10.Enabled = true;
+            this.barButtonItem11.Enabled = true;
         }
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -366,7 +408,16 @@ namespace QLHSTHPT
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
             int nowPosition = hOCSINHBindingSource.Position;
-            int position = hOCSINHBindingSource.Find("MAHS", textBoxMHS.Text); // sai cho nao
+            //int position = hOCSINHBindingSource.Find("MAHS", textBoxMHS.Text);
+            int position = -1;
+            for (int i = 0; i < hOCSINHBindingSource.Count; i++)
+            {
+                if (((DataRowView)hOCSINHBindingSource[i])["MAHS"].ToString() == textBoxMHS.Text)
+                {
+                    position = i;
+                    break;
+                }
+            }
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
                 MessageBox.Show("Mã học sinh đã tồn tại. Chú ý!");
@@ -376,12 +427,19 @@ namespace QLHSTHPT
             else
             {
                 this.hOCSINHBindingSource.EndEdit();
+                maHS = Helper.createMaHS(maHS);
                 formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
                 //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
                 this.hOCSINHGridControl.Enabled = true;
                 this.labelTim2.Enabled = true;
                 this.textBoxTim2.Enabled = true;
                 this.groupBoxCTHS.Enabled = false;
+                this.tableLayoutPanel1.Enabled = true;
+                this.barButtonItem7.Enabled = true;
+                this.barButtonItem8.Enabled = true;
+                this.barButtonItem9.Enabled = true;
+                this.barButtonItem10.Enabled = true;
+                this.barButtonItem11.Enabled = true;
                 dataReader.Close();
                 clkOK = 1;
             }
@@ -389,21 +447,51 @@ namespace QLHSTHPT
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //this.textBoxMHS.Text = "";
+            //this.textBoxMLHS.Text = "";
             this.hOCSINHBindingSource.CancelEdit();
             this.hOCSINHGridControl.Enabled = true;
             this.textBoxTim2.Enabled = true;
             this.labelTim2.Enabled = true;
             this.groupBoxCTHS.Enabled = false;
+            this.tableLayoutPanel1.Enabled = true;
+            this.barButtonItem7.Enabled = true;
+            this.barButtonItem8.Enabled = true;
+            this.barButtonItem9.Enabled = true;
+            this.barButtonItem10.Enabled = true;
+            this.barButtonItem11.Enabled = true;
         }
 
         private void textBoxTim2_TextChanged(object sender, EventArgs e)
         {
-
+            hOCSINHBindingSource.Filter = "TENHS LIKE '%" + textBoxTim2.Text +
+                "%' OR MAHS LIKE '%" + textBoxTim2.Text + "%' OR MALOP LIKE '%" + textBoxTim2.Text + "%'";
         }
 
-        private void labelTim2_Click(object sender, EventArgs e)
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+            this.labelTitHS.Text = gridView1.GetFocusedRowCellValue("MALOP").ToString();
+        }
 
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            this.labelTitHS.Text = gridView1.GetFocusedRowCellValue("MALOP").ToString();
+        }
+
+        private void textBoxTim2_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Tìm kiếm theo Tên học sinh, Mã học sinh hoặc Mã lớp", textBoxTim2);
+        }
+
+        private void textBoxTim1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Tìm kiếm theo Tên lớp hoặc Mã lớp", textBoxTim1);
+        }
+
+        private void textBoxTim1_TextChanged(object sender, EventArgs e)
+        {
+            lOPBindingSource.Filter = "TENLOP LIKE '%" + textBoxTim1.Text +
+                "%' OR MALOP LIKE '%" + textBoxTim1.Text + "%'";
         }
     }
 }

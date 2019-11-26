@@ -45,12 +45,24 @@ namespace QLHSTHPT
             //    this.ribbonPageBC.Visible = false;
             //}
             //else this.ribbonPageKT.Visible = false;
+            if (Program.group == "PGV")
+            {
+                this.ribbonQLTK.Visible = true;
+                this.ribbonPCCV.Visible = true;
+            }
+            else
+            {
+                this.ribbonQLTK.Visible = false;
+                this.ribbonPCCV.Visible = false;
+            }
 
             dataReader.Close();
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormGiaoVien));
             if (frm != null) frm.Activate();
             else
@@ -63,6 +75,8 @@ namespace QLHSTHPT
 
         private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormLop));
             if (frm != null) frm.Activate();
             else
@@ -75,6 +89,8 @@ namespace QLHSTHPT
 
         private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormHocSinh));
             if (frm != null) frm.Activate();
             else
@@ -87,6 +103,8 @@ namespace QLHSTHPT
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormMonHoc));
             if (frm != null) frm.Activate();
             else
@@ -99,6 +117,8 @@ namespace QLHSTHPT
 
         private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormNamHoc));
             if (frm != null) frm.Activate();
             else
@@ -111,6 +131,8 @@ namespace QLHSTHPT
 
         private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormHocKy));
             if (frm != null) frm.Activate();
             else
@@ -123,6 +145,8 @@ namespace QLHSTHPT
 
         private void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormLop_HS));
             if (frm != null) frm.Activate();
             else
@@ -135,6 +159,8 @@ namespace QLHSTHPT
 
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
+            this.toolStripStatusLabelNote.Text = "";
+
             Form frm = this.checkExists(typeof(FormNhapDiem));
             if (frm != null) frm.Activate();
             else
@@ -143,6 +169,58 @@ namespace QLHSTHPT
                 f.MdiParent = this;
                 f.Show();
             }
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormQLTaiKhoan));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormQLTaiKhoan f = new FormQLTaiKhoan(this);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormTTDangNhap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormTTDangNhap f = new FormTTDangNhap(this);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void FormChinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.formDangNhap.Visible = true;
+        }
+
+        private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormPhanCongGV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormPhanCongGV f = new FormPhanCongGV(this);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

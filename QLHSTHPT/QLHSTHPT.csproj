@@ -34,18 +34,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v17.1" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -124,11 +137,41 @@
     <Compile Include="FormLop_HS.Designer.cs">
       <DependentUpon>FormLop_HS.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPhanCongGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPhanCongGV.Designer.cs">
+      <DependentUpon>FormPhanCongGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormQLTaiKhoan.Designer.cs">
       <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimGV.Designer.cs">
+      <DependentUpon>FormTimGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimHK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimHK.Designer.cs">
+      <DependentUpon>FormTimHK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimLop.Designer.cs">
+      <DependentUpon>FormTimLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimNH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimNH.Designer.cs">
+      <DependentUpon>FormTimNH.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTTDangNhap.cs">
       <SubType>Form</SubType>
@@ -137,6 +180,7 @@
       <DependentUpon>FormTTDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="Key.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLHSTHPTDataSet.cs">
@@ -146,14 +190,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLHSTHPTDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLSVTHPTDataSet.cs">
-      <DependentUpon>QLSVTHPTDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLSVTHPTDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSVTHPTDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormChinh.resx">
       <DependentUpon>FormChinh.cs</DependentUpon>
@@ -188,8 +224,23 @@
     <EmbeddedResource Include="FormNhapDiem.resx">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPhanCongGV.resx">
+      <DependentUpon>FormPhanCongGV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQLTaiKhoan.resx">
       <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimGV.resx">
+      <DependentUpon>FormTimGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimHK.resx">
+      <DependentUpon>FormTimHK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimLop.resx">
+      <DependentUpon>FormTimLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimNH.resx">
+      <DependentUpon>FormTimNH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTTDangNhap.resx">
       <DependentUpon>FormTTDangNhap.cs</DependentUpon>
@@ -225,17 +276,9 @@
     <None Include="QLHSTHPTDataSet.xss">
       <DependentUpon>QLHSTHPTDataSet.xsd</DependentUpon>
     </None>
-    <None Include="QLSVTHPTDataSet.xsc">
-      <DependentUpon>QLSVTHPTDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLSVTHPTDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLSVTHPTDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLSVTHPTDataSet.xss">
-      <DependentUpon>QLSVTHPTDataSet.xsd</DependentUpon>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

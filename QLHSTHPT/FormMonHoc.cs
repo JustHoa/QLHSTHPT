@@ -27,6 +27,14 @@ namespace QLHSTHPT
 
         private void FormMonHoc_Load(object sender, EventArgs e)
         {
+            if (Program.group == "PGV")
+            {
+                this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem6.Enabled = true;
+            }
+            else
+            {
+                this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem6.Enabled = false;
+            }
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet.MONHOC);
         }
@@ -64,6 +72,17 @@ namespace QLHSTHPT
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void textBoxTim_TextChanged(object sender, EventArgs e)
+        {
+            mONHOCBindingSource.Filter = "TENMH LIKE '%" + textBoxTim.Text +
+                "%' OR MAMH LIKE '%" + textBoxTim.Text + "%'";
+        }
+
+        private void textBoxTim_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Tìm kiếm theo Tên môn học hoặc Mã môn học", textBoxTim);
         }
     }
 }

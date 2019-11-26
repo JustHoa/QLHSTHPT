@@ -57,6 +57,8 @@
             this.colNAMBD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNAMKT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.labelET = new System.Windows.Forms.Label();
+            this.labelEKT = new System.Windows.Forms.Label();
             this.labelEBD = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxKT = new System.Windows.Forms.TextBox();
@@ -67,8 +69,6 @@
             this.textBoxTim = new System.Windows.Forms.TextBox();
             this.labelTim = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelEKT = new System.Windows.Forms.Label();
-            this.labelET = new System.Windows.Forms.Label();
             nAMKTLabel = new System.Windows.Forms.Label();
             nAMBDLabel = new System.Windows.Forms.Label();
             tENNHLabel = new System.Windows.Forms.Label();
@@ -148,8 +148,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem6, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem5, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -340,6 +340,24 @@
             this.groupBoxCT.TabStop = false;
             this.groupBoxCT.Text = "CHI TIẾT NĂM HỌC";
             // 
+            // labelET
+            // 
+            this.labelET.AutoSize = true;
+            this.labelET.ForeColor = System.Drawing.Color.Red;
+            this.labelET.Location = new System.Drawing.Point(306, 52);
+            this.labelET.Name = "labelET";
+            this.labelET.Size = new System.Drawing.Size(0, 13);
+            this.labelET.TabIndex = 16;
+            // 
+            // labelEKT
+            // 
+            this.labelEKT.AutoSize = true;
+            this.labelEKT.ForeColor = System.Drawing.Color.Red;
+            this.labelEKT.Location = new System.Drawing.Point(306, 97);
+            this.labelEKT.Name = "labelEKT";
+            this.labelEKT.Size = new System.Drawing.Size(0, 13);
+            this.labelEKT.TabIndex = 15;
+            // 
             // labelEBD
             // 
             this.labelEBD.AutoSize = true;
@@ -433,24 +451,6 @@
             this.toolTip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            // 
-            // labelEKT
-            // 
-            this.labelEKT.AutoSize = true;
-            this.labelEKT.ForeColor = System.Drawing.Color.Red;
-            this.labelEKT.Location = new System.Drawing.Point(306, 97);
-            this.labelEKT.Name = "labelEKT";
-            this.labelEKT.Size = new System.Drawing.Size(0, 13);
-            this.labelEKT.TabIndex = 15;
-            // 
-            // labelET
-            // 
-            this.labelET.AutoSize = true;
-            this.labelET.ForeColor = System.Drawing.Color.Red;
-            this.labelET.Location = new System.Drawing.Point(306, 52);
-            this.labelET.Name = "labelET";
-            this.labelET.Size = new System.Drawing.Size(0, 13);
-            this.labelET.TabIndex = 16;
             // 
             // FormNamHoc
             // 

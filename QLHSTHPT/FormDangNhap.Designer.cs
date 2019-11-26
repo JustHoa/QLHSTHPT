@@ -51,7 +51,7 @@
             this.textBoxLoginName.Name = "textBoxLoginName";
             this.textBoxLoginName.Size = new System.Drawing.Size(195, 20);
             this.textBoxLoginName.TabIndex = 1;
-            this.textBoxLoginName.Text = "ttcuc";
+            this.textBoxLoginName.Text = "nxson";
             // 
             // textBoxPassword
             // 

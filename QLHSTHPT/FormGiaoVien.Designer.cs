@@ -43,8 +43,8 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -73,14 +73,16 @@
             this.checkBoxNghi = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
-            this.labelETM = new System.Windows.Forms.Label();
-            this.labelEDT = new System.Windows.Forms.Label();
-            this.labelEHT = new System.Windows.Forms.Label();
             this.comboBoxMGV = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.labelTim = new System.Windows.Forms.Label();
             this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.labelETen = new System.Windows.Forms.Label();
+            this.labelEDC = new System.Windows.Forms.Label();
+            this.labelENS = new System.Windows.Forms.Label();
+            this.labelEDT = new System.Windows.Forms.Label();
+            this.labelETo = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
             tENGVLabel = new System.Windows.Forms.Label();
             gIOITINHLabel = new System.Windows.Forms.Label();
@@ -200,8 +202,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem5, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem6, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -231,14 +233,6 @@
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Lưu";
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
             // barButtonItem5
             // 
             this.barButtonItem5.Caption = "Làm mới";
@@ -246,6 +240,14 @@
             this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Lưu";
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -483,9 +485,11 @@
             // 
             // groupBoxCT
             // 
-            this.groupBoxCT.Controls.Add(this.labelETM);
+            this.groupBoxCT.Controls.Add(this.labelETo);
             this.groupBoxCT.Controls.Add(this.labelEDT);
-            this.groupBoxCT.Controls.Add(this.labelEHT);
+            this.groupBoxCT.Controls.Add(this.labelENS);
+            this.groupBoxCT.Controls.Add(this.labelEDC);
+            this.groupBoxCT.Controls.Add(this.labelETen);
             this.groupBoxCT.Controls.Add(this.comboBoxMGV);
             this.groupBoxCT.Controls.Add(this.button2);
             this.groupBoxCT.Controls.Add(this.button1);
@@ -511,33 +515,6 @@
             this.groupBoxCT.TabIndex = 6;
             this.groupBoxCT.TabStop = false;
             this.groupBoxCT.Text = "Chi tiết giáo viên";
-            // 
-            // labelETM
-            // 
-            this.labelETM.AutoSize = true;
-            this.labelETM.ForeColor = System.Drawing.Color.Red;
-            this.labelETM.Location = new System.Drawing.Point(602, 58);
-            this.labelETM.Name = "labelETM";
-            this.labelETM.Size = new System.Drawing.Size(0, 13);
-            this.labelETM.TabIndex = 24;
-            // 
-            // labelEDT
-            // 
-            this.labelEDT.AutoSize = true;
-            this.labelEDT.ForeColor = System.Drawing.Color.Red;
-            this.labelEDT.Location = new System.Drawing.Point(399, 141);
-            this.labelEDT.Name = "labelEDT";
-            this.labelEDT.Size = new System.Drawing.Size(0, 13);
-            this.labelEDT.TabIndex = 23;
-            // 
-            // labelEHT
-            // 
-            this.labelEHT.AutoSize = true;
-            this.labelEHT.ForeColor = System.Drawing.Color.Red;
-            this.labelEHT.Location = new System.Drawing.Point(109, 99);
-            this.labelEHT.Name = "labelEHT";
-            this.labelEHT.Size = new System.Drawing.Size(0, 13);
-            this.labelEHT.TabIndex = 22;
             // 
             // comboBoxMGV
             // 
@@ -584,6 +561,51 @@
             this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
             this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
             // 
+            // labelETen
+            // 
+            this.labelETen.AutoSize = true;
+            this.labelETen.ForeColor = System.Drawing.Color.Red;
+            this.labelETen.Location = new System.Drawing.Point(109, 99);
+            this.labelETen.Name = "labelETen";
+            this.labelETen.Size = new System.Drawing.Size(0, 13);
+            this.labelETen.TabIndex = 22;
+            // 
+            // labelEDC
+            // 
+            this.labelEDC.AutoSize = true;
+            this.labelEDC.ForeColor = System.Drawing.Color.Red;
+            this.labelEDC.Location = new System.Drawing.Point(109, 141);
+            this.labelEDC.Name = "labelEDC";
+            this.labelEDC.Size = new System.Drawing.Size(0, 13);
+            this.labelEDC.TabIndex = 23;
+            // 
+            // labelENS
+            // 
+            this.labelENS.AutoSize = true;
+            this.labelENS.ForeColor = System.Drawing.Color.Red;
+            this.labelENS.Location = new System.Drawing.Point(399, 57);
+            this.labelENS.Name = "labelENS";
+            this.labelENS.Size = new System.Drawing.Size(0, 13);
+            this.labelENS.TabIndex = 24;
+            // 
+            // labelEDT
+            // 
+            this.labelEDT.AutoSize = true;
+            this.labelEDT.ForeColor = System.Drawing.Color.Red;
+            this.labelEDT.Location = new System.Drawing.Point(399, 141);
+            this.labelEDT.Name = "labelEDT";
+            this.labelEDT.Size = new System.Drawing.Size(0, 13);
+            this.labelEDT.TabIndex = 25;
+            // 
+            // labelETo
+            // 
+            this.labelETo.AutoSize = true;
+            this.labelETo.ForeColor = System.Drawing.Color.Red;
+            this.labelETo.Location = new System.Drawing.Point(602, 57);
+            this.labelETo.Name = "labelETo";
+            this.labelETo.Size = new System.Drawing.Size(0, 13);
+            this.labelETo.TabIndex = 26;
+            // 
             // FormGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,7 +623,6 @@
             this.Name = "FormGiaoVien";
             this.Text = "FormGiaoVien";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-//            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGiaoVien_FormClosing);
             this.Load += new System.EventHandler(this.FormGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).EndInit();
@@ -650,9 +671,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label labelTim;
         private System.Windows.Forms.ComboBox comboBoxMGV;
-        private System.Windows.Forms.Label labelETM;
-        private System.Windows.Forms.Label labelEDT;
-        private System.Windows.Forms.Label labelEHT;
         private System.Windows.Forms.TextBox textBoxTim;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private DevExpress.XtraGrid.Columns.GridColumn colTENGV;
@@ -662,5 +680,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDIENTHOAI;
         private DevExpress.XtraGrid.Columns.GridColumn colTOMON;
         private DevExpress.XtraGrid.Columns.GridColumn colNGHI;
+        private System.Windows.Forms.Label labelETo;
+        private System.Windows.Forms.Label labelEDT;
+        private System.Windows.Forms.Label labelENS;
+        private System.Windows.Forms.Label labelEDC;
+        private System.Windows.Forms.Label labelETen;
     }
 }

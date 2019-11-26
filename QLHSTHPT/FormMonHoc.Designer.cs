@@ -37,8 +37,8 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -58,6 +58,9 @@
             this.tENMHTextBox = new System.Windows.Forms.TextBox();
             this.mAMHTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.labelTim = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             tENMHLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -118,8 +121,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem6, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem4, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem5, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -148,6 +151,13 @@
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Làm mới";
+            this.barButtonItem6.Id = 5;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
             // barButtonItem4
             // 
             this.barButtonItem4.Caption = "Lưu";
@@ -155,13 +165,6 @@
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Làm mới";
-            this.barButtonItem6.Id = 5;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.Name = "barButtonItem6";
             // 
             // barButtonItem5
             // 
@@ -330,11 +333,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBoxTim
+            // 
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(622, 47);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(166, 20);
+            this.textBoxTim.TabIndex = 17;
+            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
+            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
+            // 
+            // labelTim
+            // 
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(567, 50);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 18;
+            this.labelTim.Text = "Tìm kiếm";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // FormMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 470);
+            this.Controls.Add(this.labelTim);
+            this.Controls.Add(this.textBoxTim);
             this.Controls.Add(this.groupBoxCT);
             this.Controls.Add(this.mONHOCGridControl);
             this.Controls.Add(this.barDockControlLeft);
@@ -385,5 +415,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.TextBox textBoxTim;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

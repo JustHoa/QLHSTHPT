@@ -18,6 +18,9 @@ namespace QLHSTHPT
         public static string maGV = "";
         public static int vitri = 0;
 
+        public static int MIN = 35;
+        public static int MAX = 45;
+
         public static bool flagMieng = false;
         public static bool flag15p = false;
         public static bool flag1T = false;
@@ -31,6 +34,8 @@ namespace QLHSTHPT
         public static string connectionString = "";
         public static SqlConnection sqlConnection;
 
+        public static FormDangNhap formDangNhap;
+
         [STAThread]
         static void Main()
         {
@@ -40,7 +45,9 @@ namespace QLHSTHPT
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new FormDangNhap());
+            formDangNhap = new FormDangNhap();
+            Application.Run(formDangNhap);
+            //Application.Run(new FormHocSinh());
         }
     }
 }

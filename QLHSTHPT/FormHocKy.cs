@@ -27,6 +27,14 @@ namespace QLHSTHPT
 
         private void FormHocKy_Load(object sender, EventArgs e)
         {
+            if (Program.group == "PGV")
+            {
+                this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem6.Enabled = true;
+            }
+            else
+            {
+                this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem6.Enabled = false;
+            }
             this.ControlBox = false;
             this.groupBoxCT.Enabled = false;
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.HOCKY' table. You can move, or remove it, as needed.

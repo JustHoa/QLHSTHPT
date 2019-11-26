@@ -12,9 +12,27 @@ namespace QLHSTHPT
 {
     public partial class FormTTDangNhap : Form
     {
-        public FormTTDangNhap()
+        FormChinh formChinh;
+
+        public FormTTDangNhap(FormChinh formChinh)
         {
             InitializeComponent();
+            this.formChinh = formChinh;
         }
+
+        private void FormTTDangNhap_Load(object sender, EventArgs e)
+        {
+            this.panelInfo.Enabled = false;
+            this.panelPass.Visible = false;
+            try
+            {
+                this.sP_TAIKHOANINFOTableAdapter.Fill(this.qLHSTHPTDataSet.SP_TAIKHOANINFO, Program.maGV);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

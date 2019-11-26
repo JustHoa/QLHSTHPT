@@ -75,6 +75,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonThoat2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.labelTim = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_NAMHOC_DESCBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
@@ -455,7 +458,7 @@
             this.sP_BANGDIEMLOPGridControl.MainView = this.gridView1;
             this.sP_BANGDIEMLOPGridControl.MenuManager = this.barManager1;
             this.sP_BANGDIEMLOPGridControl.Name = "sP_BANGDIEMLOPGridControl";
-            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 200);
+            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 230);
             this.sP_BANGDIEMLOPGridControl.TabIndex = 31;
             this.sP_BANGDIEMLOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -470,9 +473,9 @@
             this.panel2.Controls.Add(this.buttonThoat2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 362);
+            this.panel2.Location = new System.Drawing.Point(0, 392);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 147);
+            this.panel2.Size = new System.Drawing.Size(800, 117);
             this.panel2.TabIndex = 32;
             // 
             // buttonThoat2
@@ -494,12 +497,39 @@
             this.label5.Text = "GIÁO VIÊN CHƯA CÓ THÔNG TIN PHÂN CÔNG NHIỆM VỤ GIẢNG DẠY";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBoxTim
+            // 
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(616, 169);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(172, 20);
+            this.textBoxTim.TabIndex = 38;
+            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
+            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
+            // 
+            // labelTim
+            // 
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(561, 172);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 39;
+            this.labelTim.Text = "Tìm kiếm";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // FormNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 509);
+            this.Controls.Add(this.labelTim);
+            this.Controls.Add(this.textBoxTim);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.sP_BANGDIEMLOPGridControl);
             this.Controls.Add(this.standaloneBarDockControl1);
@@ -576,5 +606,8 @@
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraGrid.GridControl sP_BANGDIEMLOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.TextBox textBoxTim;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

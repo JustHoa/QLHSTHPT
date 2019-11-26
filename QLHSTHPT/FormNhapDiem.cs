@@ -389,7 +389,16 @@ namespace QLHSTHPT
             ctrlToCenter.Top = (ctrlToCenter.Parent.Height - ctrlToCenter.Height) / 2;
         }
 
-        
+        private void textBoxTim_TextChanged(object sender, EventArgs e)
+        {
+            sP_BANGDIEMLOPBindingSource.Filter = "TENHS LIKE '%" + textBoxTim.Text +
+                "%' OR MAHS LIKE '%" + textBoxTim.Text + "%'";
+        }
+
+        private void textBoxTim_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Tìm kiếm theo Tên học sinh hoặc Mã học sinh", textBoxTim);
+        }
     }
 }
 
