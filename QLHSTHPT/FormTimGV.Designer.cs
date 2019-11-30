@@ -53,6 +53,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxTen = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             mAGVLabel = new System.Windows.Forms.Label();
             tENGVLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
@@ -65,7 +66,7 @@
             // mAGVLabel
             // 
             mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(112, 29);
+            mAGVLabel.Location = new System.Drawing.Point(109, 20);
             mAGVLabel.Name = "mAGVLabel";
             mAGVLabel.Size = new System.Drawing.Size(68, 13);
             mAGVLabel.TabIndex = 0;
@@ -74,7 +75,7 @@
             // tENGVLabel
             // 
             tENGVLabel.AutoSize = true;
-            tENGVLabel.Location = new System.Drawing.Point(324, 29);
+            tENGVLabel.Location = new System.Drawing.Point(109, 54);
             tENGVLabel.Name = "tENGVLabel";
             tENGVLabel.Size = new System.Drawing.Size(39, 13);
             tENGVLabel.TabIndex = 2;
@@ -129,7 +130,7 @@
             this.gIAOVIENGridControl.Location = new System.Drawing.Point(0, 58);
             this.gIAOVIENGridControl.MainView = this.gridView1;
             this.gIAOVIENGridControl.Name = "gIAOVIENGridControl";
-            this.gIAOVIENGridControl.Size = new System.Drawing.Size(738, 314);
+            this.gIAOVIENGridControl.Size = new System.Drawing.Size(738, 293);
             this.gIAOVIENGridControl.TabIndex = 2;
             this.gIAOVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -235,29 +236,30 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.textBoxMaGV);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(tENGVLabel);
             this.panel1.Controls.Add(this.textBoxTen);
             this.panel1.Controls.Add(mAGVLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 372);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 351);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 73);
+            this.panel1.Size = new System.Drawing.Size(738, 94);
             this.panel1.TabIndex = 5;
             // 
             // textBoxMaGV
             // 
             this.textBoxMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MAGV", true));
-            this.textBoxMaGV.Location = new System.Drawing.Point(186, 26);
+            this.textBoxMaGV.Location = new System.Drawing.Point(183, 17);
             this.textBoxMaGV.Name = "textBoxMaGV";
             this.textBoxMaGV.ReadOnly = true;
-            this.textBoxMaGV.Size = new System.Drawing.Size(110, 20);
+            this.textBoxMaGV.Size = new System.Drawing.Size(152, 20);
             this.textBoxMaGV.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(505, 24);
+            this.button1.Location = new System.Drawing.Point(371, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -268,16 +270,26 @@
             // textBoxTen
             // 
             this.textBoxTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "TENGV", true));
-            this.textBoxTen.Location = new System.Drawing.Point(369, 26);
+            this.textBoxTen.Location = new System.Drawing.Point(181, 51);
             this.textBoxTen.Name = "textBoxTen";
             this.textBoxTen.ReadOnly = true;
-            this.textBoxTen.Size = new System.Drawing.Size(112, 20);
+            this.textBoxTen.Size = new System.Drawing.Size(154, 20);
             this.textBoxTen.TabIndex = 3;
             // 
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(371, 49);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormTimGV
             // 
@@ -332,5 +344,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxTen;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button2;
     }
 }

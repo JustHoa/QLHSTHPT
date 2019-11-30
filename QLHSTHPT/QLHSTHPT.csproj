@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.1" />
     <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -42,7 +43,10 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Spreadsheet.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
@@ -52,10 +56,13 @@
     <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v17.1" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraSpreadsheet.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -71,6 +78,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao\BangDiemHS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCao\BangDiemHS.Designer.cs">
+      <DependentUpon>BangDiemHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBangDiemHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBangDiemHS.Designer.cs">
+      <DependentUpon>FormBangDiemHS.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +120,11 @@
     <Compile Include="FormHocKy.Designer.cs">
       <DependentUpon>FormHocKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHocSinh.cs">
+    <Compile Include="FormHocSinh_Excel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHocSinh.Designer.cs">
-      <DependentUpon>FormHocSinh.cs</DependentUpon>
+    <Compile Include="FormHocSinh_Excel.Designer.cs">
+      <DependentUpon>FormHocSinh_Excel.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLop.cs">
       <SubType>Form</SubType>
@@ -161,6 +186,12 @@
     <Compile Include="FormTimHK.Designer.cs">
       <DependentUpon>FormTimHK.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTimHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimHS.Designer.cs">
+      <DependentUpon>FormTimHS.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTimLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,8 +210,15 @@
     <Compile Include="FormTTDangNhap.Designer.cs">
       <DependentUpon>FormTTDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXepLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXepLop.Designer.cs">
+      <DependentUpon>FormXepLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Key.cs" />
+    <Compile Include="Model\HocSinh.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLHSTHPTDataSet.cs">
@@ -191,6 +229,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLHSTHPTDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCao\BangDiemHS.resx">
+      <DependentUpon>BangDiemHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBangDiemHS.resx">
+      <DependentUpon>FormBangDiemHS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChinh.resx">
       <DependentUpon>FormChinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,8 +250,8 @@
     <EmbeddedResource Include="FormHocKy.resx">
       <DependentUpon>FormHocKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHocSinh.resx">
-      <DependentUpon>FormHocSinh.cs</DependentUpon>
+    <EmbeddedResource Include="FormHocSinh_Excel.resx">
+      <DependentUpon>FormHocSinh_Excel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLop.resx">
       <DependentUpon>FormLop.cs</DependentUpon>
@@ -236,6 +283,9 @@
     <EmbeddedResource Include="FormTimHK.resx">
       <DependentUpon>FormTimHK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTimHS.resx">
+      <DependentUpon>FormTimHS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTimLop.resx">
       <DependentUpon>FormTimLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTTDangNhap.resx">
       <DependentUpon>FormTTDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXepLop.resx">
+      <DependentUpon>FormXepLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

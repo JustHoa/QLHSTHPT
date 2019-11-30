@@ -91,11 +91,11 @@ namespace QLHSTHPT
         {
             this.toolStripStatusLabelNote.Text = "";
 
-            Form frm = this.checkExists(typeof(FormHocSinh));
+            Form frm = this.checkExists(typeof(FormHocSinh_Excel));
             if (frm != null) frm.Activate();
             else
             {
-                FormHocSinh f = new FormHocSinh(this);
+                FormHocSinh_Excel f = new FormHocSinh_Excel(this);
                 f.MdiParent = this;
                 f.Show();
             }
@@ -221,6 +221,20 @@ namespace QLHSTHPT
         private void ribbon_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormBangDiemHS));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormBangDiemHS f = new FormBangDiemHS(this);
+                f.MdiParent = this;
+                f.Show();
+            }
         }
     }
 }

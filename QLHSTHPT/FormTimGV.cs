@@ -55,5 +55,12 @@ namespace QLHSTHPT
         {
             toolTip1.Show("Tìm kiếm theo tên giáo viên, mã giáo viên hoặc môn học", textBoxTim);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            formChinh.Activate();
+            formChinh.Enabled = true;
+        }
     }
 }

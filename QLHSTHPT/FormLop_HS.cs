@@ -52,10 +52,12 @@ namespace QLHSTHPT
             if (dataReader.Read())
             {
                 maHS = dataReader.GetValue(0).ToString().Trim();
+                dataReader.Close();
             }
             else
             {
                 maHS = "HS" + DateTime.Today.Year.ToString().Substring(2, 2) + "0000000";
+                dataReader.Close();
             }
         }
 

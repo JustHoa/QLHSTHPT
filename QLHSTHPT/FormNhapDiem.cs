@@ -75,9 +75,11 @@ namespace QLHSTHPT
 
         private void FormNhapDiem_Load(object sender, EventArgs e)
         {
+            this.ControlBox = false;
             this.panel2.Visible = false;
             this.bar2.Visible = false;
             this.sP_BANGDIEMLOPGridControl.Visible = false;
+            this.textBox1.Visible = this.labelTim.Visible = false;
             try
             {
                 this.sP_NAMHOC_DESCTableAdapter.Fill(this.qLHSTHPTDataSet.SP_NAMHOC_DESC, Program.maGV);
@@ -149,7 +151,9 @@ namespace QLHSTHPT
             }
             this.panel1.Visible = false;
             this.bar2.Visible = true;
+            this.sP_BANGDIEMLOPGridControl.Dock = DockStyle.Fill;
             this.sP_BANGDIEMLOPGridControl.Visible = true;
+            this.textBox1.Visible = this.labelTim.Visible = true;
 
             resetData();
 
@@ -298,6 +302,7 @@ namespace QLHSTHPT
         {
             this.bar2.Visible = false;
             this.sP_BANGDIEMLOPGridControl.Visible = false;
+            this.textBox1.Visible = this.labelTim.Visible = false;
             this.panel1.Visible = true;
         }
 
@@ -370,18 +375,19 @@ namespace QLHSTHPT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string str = "";
-            foreach (GridColumn co in gridView1.Columns)
-            {
+            //string str = "";
+            //foreach (GridColumn co in gridView1.Columns)
+            //{
 
-                str += (co.AbsoluteIndex + " " + co.FieldName + ", ");
-            }
-            MessageBox.Show(str);
+            //    str += (co.AbsoluteIndex + " " + co.FieldName + ", ");
+            //}
+            //MessageBox.Show(str);
+            Close();
         }
 
         private void FormNhapDiem_SizeChanged(object sender, EventArgs e)
         {
-            CenterControlInParent(buttonThoat2);
+            //CenterControlInParent(buttonThoat2);
         }
         private void CenterControlInParent(Control ctrlToCenter)
         {
@@ -391,13 +397,13 @@ namespace QLHSTHPT
 
         private void textBoxTim_TextChanged(object sender, EventArgs e)
         {
-            sP_BANGDIEMLOPBindingSource.Filter = "TENHS LIKE '%" + textBoxTim.Text +
-                "%' OR MAHS LIKE '%" + textBoxTim.Text + "%'";
+            sP_BANGDIEMLOPBindingSource.Filter = "TENHS LIKE '%" + textBox1.Text +
+                "%' OR MAHS LIKE '%" + textBox1.Text + "%'";
         }
 
         private void textBoxTim_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Tìm kiếm theo Tên học sinh hoặc Mã học sinh", textBoxTim);
+            toolTip1.Show("Tìm kiếm theo Tên học sinh hoặc Mã học sinh", textBox1);
         }
     }
 }

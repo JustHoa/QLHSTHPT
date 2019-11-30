@@ -20,6 +20,7 @@ namespace QLHSTHPT
 
         public static int MIN = 35;
         public static int MAX = 45;
+        public static int MAX_LOP = 8;
 
         public static bool flagMieng = false;
         public static bool flag15p = false;
@@ -47,7 +48,7 @@ namespace QLHSTHPT
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
             formDangNhap = new FormDangNhap();
             Application.Run(formDangNhap);
-            //Application.Run(new FormHocSinh());
+            //Application.Run(new Form1());
         }
     }
 }

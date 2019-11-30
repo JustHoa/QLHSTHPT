@@ -70,14 +70,14 @@
             this.sP_NAMHOC_DESCTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_NAMHOC_DESCTableAdapter();
             this.sP_BANGDIEMLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_BANGDIEMLOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_BANGDIEMLOPTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panelA = new System.Windows.Forms.Panel();
             this.sP_BANGDIEMLOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonThoat2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelTim = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_NAMHOC_DESCBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
@@ -86,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPBindingSource)).BeginInit();
+            this.panelA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -450,16 +451,33 @@
             // 
             this.sP_BANGDIEMLOPTableAdapter.ClearBeforeFill = true;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // panelA
+            // 
+            this.panelA.Controls.Add(this.labelTim);
+            this.panelA.Controls.Add(this.textBox1);
+            this.panelA.Controls.Add(this.panel2);
+            this.panelA.Controls.Add(this.sP_BANGDIEMLOPGridControl);
+            this.panelA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelA.Location = new System.Drawing.Point(0, 162);
+            this.panelA.Name = "panelA";
+            this.panelA.Size = new System.Drawing.Size(800, 347);
+            this.panelA.TabIndex = 45;
+            // 
             // sP_BANGDIEMLOPGridControl
             // 
             this.sP_BANGDIEMLOPGridControl.DataSource = this.sP_BANGDIEMLOPBindingSource;
             this.sP_BANGDIEMLOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sP_BANGDIEMLOPGridControl.Location = new System.Drawing.Point(0, 162);
+            this.sP_BANGDIEMLOPGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_BANGDIEMLOPGridControl.MainView = this.gridView1;
             this.sP_BANGDIEMLOPGridControl.MenuManager = this.barManager1;
             this.sP_BANGDIEMLOPGridControl.Name = "sP_BANGDIEMLOPGridControl";
-            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 230);
-            this.sP_BANGDIEMLOPGridControl.TabIndex = 31;
+            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 240);
+            this.sP_BANGDIEMLOPGridControl.TabIndex = 0;
             this.sP_BANGDIEMLOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -470,26 +488,18 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonThoat2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 392);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(0, 240);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 117);
-            this.panel2.TabIndex = 32;
-            // 
-            // buttonThoat2
-            // 
-            this.buttonThoat2.Location = new System.Drawing.Point(362, 66);
-            this.buttonThoat2.Name = "buttonThoat2";
-            this.buttonThoat2.Size = new System.Drawing.Size(75, 23);
-            this.buttonThoat2.TabIndex = 1;
-            this.buttonThoat2.Text = "Thoát";
-            this.buttonThoat2.UseVisualStyleBackColor = true;
+            this.panel2.Size = new System.Drawing.Size(800, 107);
+            this.panel2.TabIndex = 33;
             // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(800, 63);
@@ -497,30 +507,23 @@
             this.label5.Text = "GIÁO VIÊN CHƯA CÓ THÔNG TIN PHÂN CÔNG NHIỆM VỤ GIẢNG DẠY";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBoxTim
+            // textBox1
             // 
-            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim.Location = new System.Drawing.Point(616, 169);
-            this.textBoxTim.Name = "textBoxTim";
-            this.textBoxTim.Size = new System.Drawing.Size(172, 20);
-            this.textBoxTim.TabIndex = 38;
-            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
-            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(625, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 20);
+            this.textBox1.TabIndex = 34;
             // 
             // labelTim
             // 
             this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim.AutoSize = true;
-            this.labelTim.Location = new System.Drawing.Point(561, 172);
+            this.labelTim.Location = new System.Drawing.Point(570, 9);
             this.labelTim.Name = "labelTim";
             this.labelTim.Size = new System.Drawing.Size(49, 13);
-            this.labelTim.TabIndex = 39;
+            this.labelTim.TabIndex = 35;
             this.labelTim.Text = "Tìm kiếm";
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // FormNhapDiem
             // 
@@ -528,10 +531,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 509);
-            this.Controls.Add(this.labelTim);
-            this.Controls.Add(this.textBoxTim);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.sP_BANGDIEMLOPGridControl);
+            this.Controls.Add(this.panelA);
             this.Controls.Add(this.standaloneBarDockControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.barDockControlLeft);
@@ -551,6 +551,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPBindingSource)).EndInit();
+            this.panelA.ResumeLayout(false);
+            this.panelA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -601,13 +603,13 @@
         private System.Windows.Forms.Label error2;
         private System.Windows.Forms.BindingSource sP_BANGDIEMLOPBindingSource;
         private QLHSTHPTDataSetTableAdapters.SP_BANGDIEMLOPTableAdapter sP_BANGDIEMLOPTableAdapter;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panelA;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonThoat2;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraGrid.GridControl sP_BANGDIEMLOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label labelTim;
-        private System.Windows.Forms.TextBox textBoxTim;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

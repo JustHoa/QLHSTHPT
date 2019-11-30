@@ -103,6 +103,40 @@ namespace QLHSTHPT
             return maLop;
         }
 
+        static public string createMaLop()
+        {
+            string maLop = "", id = "";
+            string sql = "SELECT TOP(1) * FROM LOP ORDER BY MALOP DESC";
+            SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+            if (dataReader.Read())
+            {
+                id = dataReader.GetValue(0).ToString().Trim();
+                dataReader.Close();
+            }
+            else
+            {
+                id = "LO" + DateTime.Today.Year.ToString().Substring(2, 2) + "0000000";
+                dataReader.Close();
+            }
+    
+            string part2 = DateTime.Today.Year.ToString().Substring(2, 2);
+            string part3 = "";
+            if (part2 == id.Substring(2, 2))
+            {
+                int _part3 = int.Parse(id.Substring(4, 6)) + 1;
+                part3 = _part3.ToString().PadLeft(6, '0');
+            }
+            else if (int.Parse(part2) > int.Parse(id.Substring(2, 2)))
+            {
+                part3 = "1".PadLeft(6, '0');
+            }
+
+            maLop = "LO" + DateTime.Today.Year.ToString().Substring(2, 2) + part3;
+           
+            return maLop;
+        }
+
         static public string createMaNH(BindingSource bindingSource)
         {
             int last = bindingSource.Count - 2;
@@ -171,8 +205,8 @@ namespace QLHSTHPT
 
         public static int [] xepLop (int soLuongSV)
         {
-            int[] arrSV_Lop = new int[8];
-            for (int i = 1; i < 9; i++)
+            int[] arrSV_Lop = new int[Program.MAX_LOP];
+            for (int i = 1; i <= Program.MAX_LOP; i++)
             {
                 int svLop = soLuongSV / i;
                 if (svLop >= Program.MIN && svLop <= Program.MAX)
