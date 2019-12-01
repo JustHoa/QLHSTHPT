@@ -32,14 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormXepLop));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxSL = new System.Windows.Forms.TextBox();
             this.textBoxSLHS = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
@@ -74,20 +76,12 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Làm mới";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -95,6 +89,7 @@
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -136,21 +131,47 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 410);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Làm mới";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBoxSL);
             this.panel1.Controls.Add(this.textBoxSLHS);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBoxMaLop);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 83);
+            this.panel1.Size = new System.Drawing.Size(800, 92);
             this.panel1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(51, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Số lớp dự kiến";
+            // 
+            // textBoxSL
+            // 
+            this.textBoxSL.Location = new System.Drawing.Point(132, 13);
+            this.textBoxSL.Name = "textBoxSL";
+            this.textBoxSL.ReadOnly = true;
+            this.textBoxSL.Size = new System.Drawing.Size(121, 20);
+            this.textBoxSL.TabIndex = 3;
             // 
             // textBoxSLHS
             // 
-            this.textBoxSLHS.Location = new System.Drawing.Point(245, 30);
+            this.textBoxSLHS.Location = new System.Drawing.Point(259, 53);
             this.textBoxSLHS.Name = "textBoxSLHS";
             this.textBoxSLHS.ReadOnly = true;
             this.textBoxSLHS.Size = new System.Drawing.Size(128, 20);
@@ -159,7 +180,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 32);
+            this.label1.Location = new System.Drawing.Point(87, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 1;
@@ -169,7 +190,7 @@
             // 
             this.comboBoxMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaLop.FormattingEnabled = true;
-            this.comboBoxMaLop.Location = new System.Drawing.Point(118, 29);
+            this.comboBoxMaLop.Location = new System.Drawing.Point(132, 52);
             this.comboBoxMaLop.Name = "comboBoxMaLop";
             this.comboBoxMaLop.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMaLop.TabIndex = 0;
@@ -178,11 +199,11 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 123);
+            this.gridControl1.Location = new System.Drawing.Point(0, 132);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(800, 327);
+            this.gridControl1.Size = new System.Drawing.Size(800, 318);
             this.gridControl1.TabIndex = 10;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -234,5 +255,7 @@
         private System.Windows.Forms.ComboBox comboBoxMaLop;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxSL;
     }
 }

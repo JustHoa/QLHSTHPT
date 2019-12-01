@@ -13,7 +13,7 @@ namespace QLHSTHPT
 {
     public partial class FormGiaoVien : Form
     {
-        public int clkSave = 0;
+        //public int clkSave = 0;
         public int clkMan = 0;
         public int clkOK = 0;
 
@@ -161,7 +161,8 @@ namespace QLHSTHPT
             this.gIAOVIENTableAdapter.Update(this.qLHSTHPTDataSet.GIAOVIEN);
             this.gIAOVIENGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
-            clkSave = 1;
+            //clkSave = 1;
+            clkMan = clkOK = 0;
             formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
             //formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
             //MessageBox.Show("Lưu thay đổi thành công!");
@@ -252,15 +253,8 @@ namespace QLHSTHPT
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            int [] arr = Helper.xepLop(45);
-            string str = "";
-            foreach(int a in arr)
-            {
-                str += (a + " ");
-            }
-            MessageBox.Show(str);
             formChinh.toolStripStatusLabelNote.Text = "";
-            if ((clkMan == 0 && clkOK == 0) || ((clkMan == 1 || clkOK == 1) && clkSave == 1))
+            if (clkMan == 0 && clkOK == 0)
                 this.Close();
             else
                 if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
@@ -273,14 +267,29 @@ namespace QLHSTHPT
 
         private void textBoxTenGV_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar > (char)32 && e.KeyChar < (char)65) //ki tu dac biet
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
             {
-                this.labelETen.Text = "Họ tên chỉ bao gồm chữ cái và dấu cách!";
+                this.labelETen.Text = "Tên giáo viên không chứa kí tự đặc biệt!";
                 e.Handled = true;
             }
-            else if ((((e.KeyChar > (char)90) && (e.KeyChar < (char)97)) || ((e.KeyChar > (char)122) && (e.KeyChar < (char)127)))) // ki tu dac biet
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
             {
-                this.labelETen.Text = "Họ tên chỉ bao gồm chữ cái và dấu cách!";
+                this.labelETen.Text = "Tên giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelETen.Text = "Tên giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelETen.Text = "Tên giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelETen.Text = "Tên giáo viên không chứa kí tự đặc biệt!";
                 e.Handled = true;
             }
             else

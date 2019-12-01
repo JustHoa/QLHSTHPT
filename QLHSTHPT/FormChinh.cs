@@ -37,6 +37,7 @@ namespace QLHSTHPT
             toolStripStatusLabelTen.Text = "| HOTEN = " + dataReader.GetValue(1).ToString().Trim();
             toolStripStatusLabelNhom.Text = "| NHOM = " + dataReader.GetValue(2).ToString().Trim();
             Program.maGV = dataReader.GetValue(0).ToString().Trim();
+            Program.tenGV = dataReader.GetValue(1).ToString().Trim();
             Program.group = dataReader.GetValue(2).ToString();
 
             //if (Program.group == "PKeToan")
@@ -232,6 +233,48 @@ namespace QLHSTHPT
             else
             {
                 FormBangDiemHS f = new FormBangDiemHS(this);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem33_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormCV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormCV f = new FormCV(this);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem30_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormLop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormLop f = new FormLop(this);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem31_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormHocSinh));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormHocSinh f = new FormHocSinh(this);
                 f.MdiParent = this;
                 f.Show();
             }

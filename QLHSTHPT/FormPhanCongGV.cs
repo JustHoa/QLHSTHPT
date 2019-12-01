@@ -192,7 +192,7 @@ namespace QLHSTHPT
         private void buttonTimNH_Click(object sender, EventArgs e)
         {
             formChinh.Enabled = false;
-            FormTimNH f = new FormTimNH(formChinh, this);
+            FormTimNH_PhanCong f = new FormTimNH_PhanCong(formChinh, this);
             f.Activate();
             f.Show();
         }
@@ -200,7 +200,7 @@ namespace QLHSTHPT
         private void buttonTimHK_Click(object sender, EventArgs e)
         {
             formChinh.Enabled = false;
-            FormTimHK f = new FormTimHK(formChinh, this);
+            FormTimHK_PhanCong f = new FormTimHK_PhanCong(formChinh, this);
             f.Activate();
             f.Show();
         }
@@ -243,14 +243,15 @@ namespace QLHSTHPT
             this.pHANCONGGVTableAdapter.Update(this.qLHSTHPTDataSet.PHANCONGGV);
             this.pHANCONGGVGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
-            clkSave = 1;
+            //clkSave = 1;
+            clkMan = clkOK = 0;
             formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            if ((clkMan == 0 && clkOK == 0) || ((clkMan == 1 || clkOK == 1) && clkSave == 1))
+            if (clkMan == 0 && clkOK == 0)
                 this.Close();
             else
                 if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();

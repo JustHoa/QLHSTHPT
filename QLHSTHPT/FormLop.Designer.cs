@@ -40,8 +40,8 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -182,19 +182,19 @@
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Lưu";
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
             // barButtonItem5
             // 
             this.barButtonItem5.Caption = "Làm mới";
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Lưu";
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // barButtonItem6
             // 
@@ -238,6 +238,7 @@
             // qLHSTHPTDataSet
             // 
             this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
+            this.qLHSTHPTDataSet.EnforceConstraints = false;
             this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lOPBindingSource

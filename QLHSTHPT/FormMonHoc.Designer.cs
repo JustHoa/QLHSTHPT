@@ -55,12 +55,14 @@
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.tENMHTextBox = new System.Windows.Forms.TextBox();
-            this.mAMHTextBox = new System.Windows.Forms.TextBox();
+            this.textBoxTenMH = new System.Windows.Forms.TextBox();
+            this.textBoxMaMH = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxTim = new System.Windows.Forms.TextBox();
             this.labelTim = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelEMMH = new System.Windows.Forms.Label();
+            this.labelETMH = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -142,6 +144,7 @@
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -157,6 +160,7 @@
             this.barButtonItem6.Id = 5;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -172,6 +176,7 @@
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // bar3
             // 
@@ -283,9 +288,11 @@
             // 
             // groupBoxCT
             // 
+            this.groupBoxCT.Controls.Add(this.labelETMH);
+            this.groupBoxCT.Controls.Add(this.labelEMMH);
             this.groupBoxCT.Controls.Add(this.button2);
-            this.groupBoxCT.Controls.Add(this.tENMHTextBox);
-            this.groupBoxCT.Controls.Add(this.mAMHTextBox);
+            this.groupBoxCT.Controls.Add(this.textBoxTenMH);
+            this.groupBoxCT.Controls.Add(this.textBoxMaMH);
             this.groupBoxCT.Controls.Add(this.button1);
             this.groupBoxCT.Controls.Add(tENMHLabel);
             this.groupBoxCT.Controls.Add(mAMHLabel);
@@ -307,21 +314,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tENMHTextBox
+            // textBoxTenMH
             // 
-            this.tENMHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "TENMH", true));
-            this.tENMHTextBox.Location = new System.Drawing.Point(136, 83);
-            this.tENMHTextBox.Name = "tENMHTextBox";
-            this.tENMHTextBox.Size = new System.Drawing.Size(189, 20);
-            this.tENMHTextBox.TabIndex = 6;
+            this.textBoxTenMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "TENMH", true));
+            this.textBoxTenMH.Location = new System.Drawing.Point(136, 83);
+            this.textBoxTenMH.Name = "textBoxTenMH";
+            this.textBoxTenMH.Size = new System.Drawing.Size(189, 20);
+            this.textBoxTenMH.TabIndex = 6;
             // 
-            // mAMHTextBox
+            // textBoxMaMH
             // 
-            this.mAMHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "MAMH", true));
-            this.mAMHTextBox.Location = new System.Drawing.Point(136, 34);
-            this.mAMHTextBox.Name = "mAMHTextBox";
-            this.mAMHTextBox.Size = new System.Drawing.Size(189, 20);
-            this.mAMHTextBox.TabIndex = 5;
+            this.textBoxMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "MAMH", true));
+            this.textBoxMaMH.Location = new System.Drawing.Point(136, 34);
+            this.textBoxMaMH.Name = "textBoxMaMH";
+            this.textBoxMaMH.Size = new System.Drawing.Size(189, 20);
+            this.textBoxMaMH.TabIndex = 5;
             // 
             // button1
             // 
@@ -357,6 +364,24 @@
             // 
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // labelEMMH
+            // 
+            this.labelEMMH.AutoSize = true;
+            this.labelEMMH.ForeColor = System.Drawing.Color.Red;
+            this.labelEMMH.Location = new System.Drawing.Point(133, 57);
+            this.labelEMMH.Name = "labelEMMH";
+            this.labelEMMH.Size = new System.Drawing.Size(0, 13);
+            this.labelEMMH.TabIndex = 8;
+            // 
+            // labelETMH
+            // 
+            this.labelETMH.AutoSize = true;
+            this.labelETMH.ForeColor = System.Drawing.Color.Red;
+            this.labelETMH.Location = new System.Drawing.Point(133, 106);
+            this.labelETMH.Name = "labelETMH";
+            this.labelETMH.Size = new System.Drawing.Size(0, 13);
+            this.labelETMH.TabIndex = 9;
             // 
             // FormMonHoc
             // 
@@ -407,8 +432,8 @@
         private QLHSTHPTDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox groupBoxCT;
-        private System.Windows.Forms.TextBox tENMHTextBox;
-        private System.Windows.Forms.TextBox mAMHTextBox;
+        private System.Windows.Forms.TextBox textBoxTenMH;
+        private System.Windows.Forms.TextBox textBoxMaMH;
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraGrid.GridControl mONHOCGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -418,5 +443,7 @@
         private System.Windows.Forms.Label labelTim;
         private System.Windows.Forms.TextBox textBoxTim;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label labelETMH;
+        private System.Windows.Forms.Label labelEMMH;
     }
 }

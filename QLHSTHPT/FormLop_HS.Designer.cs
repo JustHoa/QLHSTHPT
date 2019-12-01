@@ -61,6 +61,11 @@
             this.colBAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBoxCTLop = new System.Windows.Forms.GroupBox();
+            this.labelEMaNH = new System.Windows.Forms.Label();
+            this.labelEMaHK = new System.Windows.Forms.Label();
+            this.labelEBM = new System.Windows.Forms.Label();
+            this.labelETenLop = new System.Windows.Forms.Label();
+            this.labelEMaLop = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxBan = new System.Windows.Forms.TextBox();
@@ -100,6 +105,7 @@
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxCTHS = new System.Windows.Forms.GroupBox();
+            this.labelEMaHS = new System.Windows.Forms.Label();
             this.labelEDTo = new System.Windows.Forms.Label();
             this.labelEML = new System.Windows.Forms.Label();
             this.labelEDT = new System.Windows.Forms.Label();
@@ -120,18 +126,29 @@
             this.textBoxTim2 = new System.Windows.Forms.TextBox();
             this.labelTim2 = new System.Windows.Forms.Label();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barHS = new DevExpress.XtraBars.Bar();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             bANLabel = new System.Windows.Forms.Label();
             mANHLabel = new System.Windows.Forms.Label();
             mAHKLabel = new System.Windows.Forms.Label();
@@ -164,16 +181,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
             this.SuspendLayout();
             // 
             // bANLabel
             // 
             bANLabel.AutoSize = true;
-            bANLabel.Location = new System.Drawing.Point(232, 37);
+            bANLabel.Location = new System.Drawing.Point(249, 37);
             bANLabel.Name = "bANLabel";
-            bANLabel.Size = new System.Drawing.Size(43, 13);
+            bANLabel.Size = new System.Drawing.Size(26, 13);
             bANLabel.TabIndex = 34;
-            bANLabel.Text = "Bộ môn";
+            bANLabel.Text = "Ban";
             // 
             // mANHLabel
             // 
@@ -402,6 +420,7 @@
             // 
             this.colMALOP1.FieldName = "MALOP";
             this.colMALOP1.Name = "colMALOP1";
+            this.colMALOP1.OptionsColumn.AllowEdit = false;
             this.colMALOP1.Visible = true;
             this.colMALOP1.VisibleIndex = 0;
             // 
@@ -409,6 +428,7 @@
             // 
             this.colTENLOP.FieldName = "TENLOP";
             this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.OptionsColumn.AllowEdit = false;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
             // 
@@ -416,6 +436,7 @@
             // 
             this.colMAHK.FieldName = "MAHK";
             this.colMAHK.Name = "colMAHK";
+            this.colMAHK.OptionsColumn.AllowEdit = false;
             this.colMAHK.Visible = true;
             this.colMAHK.VisibleIndex = 2;
             // 
@@ -423,6 +444,7 @@
             // 
             this.colMANH.FieldName = "MANH";
             this.colMANH.Name = "colMANH";
+            this.colMANH.OptionsColumn.AllowEdit = false;
             this.colMANH.Visible = true;
             this.colMANH.VisibleIndex = 3;
             // 
@@ -430,6 +452,7 @@
             // 
             this.colBAN.FieldName = "BAN";
             this.colBAN.Name = "colBAN";
+            this.colBAN.OptionsColumn.AllowEdit = false;
             this.colBAN.Visible = true;
             this.colBAN.VisibleIndex = 4;
             // 
@@ -446,6 +469,11 @@
             // 
             // groupBoxCTLop
             // 
+            this.groupBoxCTLop.Controls.Add(this.labelEMaNH);
+            this.groupBoxCTLop.Controls.Add(this.labelEMaHK);
+            this.groupBoxCTLop.Controls.Add(this.labelEBM);
+            this.groupBoxCTLop.Controls.Add(this.labelETenLop);
+            this.groupBoxCTLop.Controls.Add(this.labelEMaLop);
             this.groupBoxCTLop.Controls.Add(this.button2);
             this.groupBoxCTLop.Controls.Add(this.button1);
             this.groupBoxCTLop.Controls.Add(bANLabel);
@@ -465,6 +493,52 @@
             this.groupBoxCTLop.TabIndex = 14;
             this.groupBoxCTLop.TabStop = false;
             this.groupBoxCTLop.Text = "Thông tin lớp";
+            this.groupBoxCTLop.Enter += new System.EventHandler(this.groupBoxCTLop_Enter);
+            // 
+            // labelEMaNH
+            // 
+            this.labelEMaNH.AutoSize = true;
+            this.labelEMaNH.ForeColor = System.Drawing.Color.Red;
+            this.labelEMaNH.Location = new System.Drawing.Point(278, 144);
+            this.labelEMaNH.Name = "labelEMaNH";
+            this.labelEMaNH.Size = new System.Drawing.Size(0, 13);
+            this.labelEMaNH.TabIndex = 42;
+            // 
+            // labelEMaHK
+            // 
+            this.labelEMaHK.AutoSize = true;
+            this.labelEMaHK.ForeColor = System.Drawing.Color.Red;
+            this.labelEMaHK.Location = new System.Drawing.Point(90, 144);
+            this.labelEMaHK.Name = "labelEMaHK";
+            this.labelEMaHK.Size = new System.Drawing.Size(0, 13);
+            this.labelEMaHK.TabIndex = 41;
+            // 
+            // labelEBM
+            // 
+            this.labelEBM.AutoSize = true;
+            this.labelEBM.ForeColor = System.Drawing.Color.Red;
+            this.labelEBM.Location = new System.Drawing.Point(278, 57);
+            this.labelEBM.Name = "labelEBM";
+            this.labelEBM.Size = new System.Drawing.Size(0, 13);
+            this.labelEBM.TabIndex = 40;
+            // 
+            // labelETenLop
+            // 
+            this.labelETenLop.AutoSize = true;
+            this.labelETenLop.ForeColor = System.Drawing.Color.Red;
+            this.labelETenLop.Location = new System.Drawing.Point(90, 100);
+            this.labelETenLop.Name = "labelETenLop";
+            this.labelETenLop.Size = new System.Drawing.Size(0, 13);
+            this.labelETenLop.TabIndex = 39;
+            // 
+            // labelEMaLop
+            // 
+            this.labelEMaLop.AutoSize = true;
+            this.labelEMaLop.ForeColor = System.Drawing.Color.Red;
+            this.labelEMaLop.Location = new System.Drawing.Point(90, 57);
+            this.labelEMaLop.Name = "labelEMaLop";
+            this.labelEMaLop.Size = new System.Drawing.Size(0, 13);
+            this.labelEMaLop.TabIndex = 38;
             // 
             // button2
             // 
@@ -493,6 +567,7 @@
             this.textBoxBan.Name = "textBoxBan";
             this.textBoxBan.Size = new System.Drawing.Size(100, 20);
             this.textBoxBan.TabIndex = 35;
+            this.textBoxBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBan_KeyPress);
             // 
             // textBoxMNH
             // 
@@ -517,6 +592,7 @@
             this.textBoxTenLop.Name = "textBoxTenLop";
             this.textBoxTenLop.Size = new System.Drawing.Size(288, 20);
             this.textBoxTenLop.TabIndex = 29;
+            this.textBoxTenLop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenLop_KeyPress);
             // 
             // textBoxML
             // 
@@ -750,6 +826,7 @@
             // 
             this.colMAHS.FieldName = "MAHS";
             this.colMAHS.Name = "colMAHS";
+            this.colMAHS.OptionsColumn.AllowEdit = false;
             this.colMAHS.Visible = true;
             this.colMAHS.VisibleIndex = 0;
             // 
@@ -757,6 +834,7 @@
             // 
             this.colTENHS.FieldName = "TENHS";
             this.colTENHS.Name = "colTENHS";
+            this.colTENHS.OptionsColumn.AllowEdit = false;
             this.colTENHS.Visible = true;
             this.colTENHS.VisibleIndex = 1;
             // 
@@ -764,6 +842,7 @@
             // 
             this.colNGAYSINH.FieldName = "NGAYSINH";
             this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.OptionsColumn.AllowEdit = false;
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 2;
             // 
@@ -771,6 +850,7 @@
             // 
             this.colGIOITINH.FieldName = "GIOITINH";
             this.colGIOITINH.Name = "colGIOITINH";
+            this.colGIOITINH.OptionsColumn.AllowEdit = false;
             this.colGIOITINH.Visible = true;
             this.colGIOITINH.VisibleIndex = 3;
             // 
@@ -778,6 +858,7 @@
             // 
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 4;
             // 
@@ -785,6 +866,7 @@
             // 
             this.colDANTOC.FieldName = "DANTOC";
             this.colDANTOC.Name = "colDANTOC";
+            this.colDANTOC.OptionsColumn.AllowEdit = false;
             this.colDANTOC.Visible = true;
             this.colDANTOC.VisibleIndex = 5;
             // 
@@ -792,6 +874,7 @@
             // 
             this.colDIENTHOAI.FieldName = "DIENTHOAI";
             this.colDIENTHOAI.Name = "colDIENTHOAI";
+            this.colDIENTHOAI.OptionsColumn.AllowEdit = false;
             this.colDIENTHOAI.Visible = true;
             this.colDIENTHOAI.VisibleIndex = 6;
             // 
@@ -799,6 +882,7 @@
             // 
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.AllowEdit = false;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 7;
             // 
@@ -806,11 +890,13 @@
             // 
             this.colNGHIHOC.FieldName = "NGHIHOC";
             this.colNGHIHOC.Name = "colNGHIHOC";
+            this.colNGHIHOC.OptionsColumn.AllowEdit = false;
             this.colNGHIHOC.Visible = true;
             this.colNGHIHOC.VisibleIndex = 8;
             // 
             // groupBoxCTHS
             // 
+            this.groupBoxCTHS.Controls.Add(this.labelEMaHS);
             this.groupBoxCTHS.Controls.Add(this.labelEDTo);
             this.groupBoxCTHS.Controls.Add(this.labelEML);
             this.groupBoxCTHS.Controls.Add(this.labelEDT);
@@ -843,6 +929,15 @@
             this.groupBoxCTHS.Size = new System.Drawing.Size(814, 214);
             this.groupBoxCTHS.TabIndex = 33;
             this.groupBoxCTHS.TabStop = false;
+            // 
+            // labelEMaHS
+            // 
+            this.labelEMaHS.AutoSize = true;
+            this.labelEMaHS.ForeColor = System.Drawing.Color.Red;
+            this.labelEMaHS.Location = new System.Drawing.Point(103, 57);
+            this.labelEMaHS.Name = "labelEMaHS";
+            this.labelEMaHS.Size = new System.Drawing.Size(0, 13);
+            this.labelEMaHS.TabIndex = 27;
             // 
             // labelEDTo
             // 
@@ -930,11 +1025,11 @@
             // textBoxMLHS
             // 
             this.textBoxMLHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "MALOP", true));
-            this.textBoxMLHS.Enabled = false;
             this.textBoxMLHS.Location = new System.Drawing.Point(608, 30);
             this.textBoxMLHS.Name = "textBoxMLHS";
             this.textBoxMLHS.Size = new System.Drawing.Size(100, 20);
             this.textBoxMLHS.TabIndex = 15;
+            this.textBoxMLHS.TextChanged += new System.EventHandler(this.textBoxMLHS_TextChanged);
             // 
             // textBoxDT
             // 
@@ -943,6 +1038,7 @@
             this.textBoxDT.Name = "textBoxDT";
             this.textBoxDT.Size = new System.Drawing.Size(121, 20);
             this.textBoxDT.TabIndex = 13;
+            this.textBoxDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDT_KeyPress);
             // 
             // textBoxDToc
             // 
@@ -993,6 +1089,7 @@
             this.textBoxTenHS.Name = "textBoxTenHS";
             this.textBoxTenHS.Size = new System.Drawing.Size(203, 20);
             this.textBoxTenHS.TabIndex = 3;
+            this.textBoxTenHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenHS_KeyPress);
             // 
             // textBoxMHS
             // 
@@ -1000,13 +1097,14 @@
             this.textBoxMHS.Enabled = false;
             this.textBoxMHS.Location = new System.Drawing.Point(106, 34);
             this.textBoxMHS.Name = "textBoxMHS";
+            this.textBoxMHS.ReadOnly = true;
             this.textBoxMHS.Size = new System.Drawing.Size(100, 20);
             this.textBoxMHS.TabIndex = 1;
             // 
             // textBoxTim2
             // 
             this.textBoxTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim2.Location = new System.Drawing.Point(560, 439);
+            this.textBoxTim2.Location = new System.Drawing.Point(628, 440);
             this.textBoxTim2.Name = "textBoxTim2";
             this.textBoxTim2.Size = new System.Drawing.Size(157, 20);
             this.textBoxTim2.TabIndex = 34;
@@ -1017,7 +1115,7 @@
             // 
             this.labelTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim2.AutoSize = true;
-            this.labelTim2.Location = new System.Drawing.Point(505, 442);
+            this.labelTim2.Location = new System.Drawing.Point(573, 443);
             this.labelTim2.Name = "labelTim2";
             this.labelTim2.Size = new System.Drawing.Size(49, 13);
             this.labelTim2.TabIndex = 35;
@@ -1025,8 +1123,6 @@
             // 
             // barManager2
             // 
-            this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.barHS});
             this.barManager2.DockControls.Add(this.barDockControl1);
             this.barManager2.DockControls.Add(this.barDockControl2);
             this.barManager2.DockControls.Add(this.barDockControl3);
@@ -1039,26 +1135,39 @@
             this.barButtonItem10,
             this.barButtonItem11,
             this.barButtonItem12});
-            this.barManager2.MainMenu = this.barHS;
             this.barManager2.MaxItemId = 6;
             // 
-            // barHS
+            // barDockControl1
             // 
-            this.barHS.BarName = "Main menu";
-            this.barHS.DockCol = 0;
-            this.barHS.DockRow = 0;
-            this.barHS.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.barHS.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem7, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem8, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem9, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem10, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem11, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem12, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.barHS.OptionsBar.MultiLine = true;
-            this.barHS.OptionsBar.UseWholeRow = true;
-            this.barHS.StandaloneBarDockControl = this.standaloneBarDockControl2;
-            this.barHS.Text = "Main menu";
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(814, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 867);
+            this.barDockControl2.Manager = this.barManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(814, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.barManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 867);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(814, 0);
+            this.barDockControl4.Manager = this.barManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 867);
             // 
             // barButtonItem7
             // 
@@ -1106,44 +1215,127 @@
             this.barButtonItem12.Id = 5;
             this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
             this.barButtonItem12.Name = "barButtonItem12";
-            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
-            // 
-            // barDockControl1
-            // 
-            this.barDockControl1.CausesValidation = false;
-            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(814, 0);
-            // 
-            // barDockControl2
-            // 
-            this.barDockControl2.CausesValidation = false;
-            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 867);
-            this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(814, 0);
-            // 
-            // barDockControl3
-            // 
-            this.barDockControl3.CausesValidation = false;
-            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 867);
-            // 
-            // barDockControl4
-            // 
-            this.barDockControl4.CausesValidation = false;
-            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(814, 0);
-            this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 867);
             // 
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // barManager3
+            // 
+            this.barManager3.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2});
+            this.barManager3.DockControls.Add(this.barDockControl5);
+            this.barManager3.DockControls.Add(this.barDockControl6);
+            this.barManager3.DockControls.Add(this.barDockControl7);
+            this.barManager3.DockControls.Add(this.barDockControl8);
+            this.barManager3.Form = this;
+            this.barManager3.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem13,
+            this.barButtonItem14,
+            this.barButtonItem15,
+            this.barButtonItem16,
+            this.barButtonItem17,
+            this.barButtonItem18});
+            this.barManager3.MainMenu = this.bar2;
+            this.barManager3.MaxItemId = 6;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Standalone;
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem13, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem14, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem15, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem16, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem17, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.StandaloneBarDockControl = this.standaloneBarDockControl2;
+            this.bar2.Text = "Main menu";
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "Thêm";
+            this.barButtonItem13.Id = 0;
+            this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
+            this.barButtonItem13.Name = "barButtonItem13";
+            this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "Sửa";
+            this.barButtonItem14.Id = 1;
+            this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
+            this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "Xóa";
+            this.barButtonItem15.Id = 2;
+            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
+            this.barButtonItem15.Name = "barButtonItem15";
+            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "Làm mới";
+            this.barButtonItem16.Id = 3;
+            this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
+            this.barButtonItem16.Name = "barButtonItem16";
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "Lưu";
+            this.barButtonItem17.Id = 4;
+            this.barButtonItem17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
+            // 
+            // barDockControl5
+            // 
+            this.barDockControl5.CausesValidation = false;
+            this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl5.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl5.Manager = this.barManager3;
+            this.barDockControl5.Size = new System.Drawing.Size(814, 0);
+            // 
+            // barDockControl6
+            // 
+            this.barDockControl6.CausesValidation = false;
+            this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl6.Location = new System.Drawing.Point(0, 867);
+            this.barDockControl6.Manager = this.barManager3;
+            this.barDockControl6.Size = new System.Drawing.Size(814, 0);
+            // 
+            // barDockControl7
+            // 
+            this.barDockControl7.CausesValidation = false;
+            this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl7.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl7.Manager = this.barManager3;
+            this.barDockControl7.Size = new System.Drawing.Size(0, 867);
+            // 
+            // barDockControl8
+            // 
+            this.barDockControl8.CausesValidation = false;
+            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl8.Location = new System.Drawing.Point(814, 0);
+            this.barDockControl8.Manager = this.barManager3;
+            this.barDockControl8.Size = new System.Drawing.Size(0, 867);
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "Thoát";
+            this.barButtonItem18.Id = 5;
+            this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
+            this.barButtonItem18.Name = "barButtonItem18";
             // 
             // FormLop_HS
             // 
@@ -1167,6 +1359,10 @@
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.Controls.Add(this.barDockControl7);
+            this.Controls.Add(this.barDockControl8);
+            this.Controls.Add(this.barDockControl6);
+            this.Controls.Add(this.barDockControl5);
             this.Name = "FormLop_HS";
             this.Text = "FormLop-HS";
             this.Load += new System.EventHandler(this.FormLop_HS_Load);
@@ -1192,6 +1388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1276,7 +1473,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNGHIHOC;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarManager barManager2;
-        private DevExpress.XtraBars.Bar barHS;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
@@ -1287,5 +1483,23 @@
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label labelEMaNH;
+        private System.Windows.Forms.Label labelEMaHK;
+        private System.Windows.Forms.Label labelEBM;
+        private System.Windows.Forms.Label labelETenLop;
+        private System.Windows.Forms.Label labelEMaLop;
+        private System.Windows.Forms.Label labelEMaHS;
+        private DevExpress.XtraBars.BarDockControl barDockControl7;
+        private DevExpress.XtraBars.BarManager barManager3;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarDockControl barDockControl5;
+        private DevExpress.XtraBars.BarDockControl barDockControl6;
+        private DevExpress.XtraBars.BarDockControl barDockControl8;
     }
 }

@@ -14,9 +14,12 @@ namespace QLHSTHPT
     public partial class FormLop_HS : Form
     {
 
-        public int clkSave = 0;
-        public int clkMan = 0;
-        public int clkOK = 0;
+        //public int clkSaveLop = 0;
+        public int clkManLop = 0;
+        public int clkOKLop = 0;
+        //public int clkSaveHS = 0;
+        public int clkManHS = 0;
+        public int clkOKHS = 0;
         public string maHS = "";
 
         FormChinh formChinh;
@@ -33,17 +36,21 @@ namespace QLHSTHPT
             if (Program.group == "PGV")
             {
                 this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem5.Enabled = true;
+                standaloneBarDockControl2.Enabled = true;
             }
             else
             {
                 this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem5.Enabled = false;
+                standaloneBarDockControl2.Enabled = false;
             }
             this.ControlBox = false;
             this.groupBoxCTLop.Enabled = false;
             this.groupBoxCTHS.Enabled = false;
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.LOP' table. You can move, or remove it, as needed.
+            
             this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet.LOP);
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.HOCSINH' table. You can move, or remove it, as needed.
+
+            this.labelTitHS.Text = "HỌC SINH LỚP " + ((DataRowView)lOPBindingSource[0])["MALOP"].ToString().Trim();
+
             this.hOCSINHTableAdapter.Fill(this.qLHSTHPTDataSet.HOCSINH);
 
             string sql = "SELECT TOP(1) * FROM HOCSINH ORDER BY MAHS DESC";
@@ -64,6 +71,8 @@ namespace QLHSTHPT
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             this.barButtonItem1.Enabled = false;
             this.barButtonItem2.Enabled = false;
             this.barButtonItem3.Enabled = false;
@@ -84,6 +93,8 @@ namespace QLHSTHPT
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             this.barButtonItem1.Enabled = false;
             this.barButtonItem2.Enabled = false;
             this.barButtonItem3.Enabled = false;
@@ -102,6 +113,8 @@ namespace QLHSTHPT
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             int vitri = lOPBindingSource.Position;
             string maLop = ((DataRowView)lOPBindingSource[vitri])["MALOP"].ToString().Trim();
             try
@@ -119,7 +132,7 @@ namespace QLHSTHPT
 
                     if (MessageBox.Show("Bạn có thực sự muốn xóa?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        clkMan = 1;
+                        clkManLop = 1;
                         this.lOPBindingSource.RemoveCurrent();
                         formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
                         //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
@@ -141,13 +154,16 @@ namespace QLHSTHPT
             this.lOPTableAdapter.Update(this.qLHSTHPTDataSet.LOP);
             this.lOPGridControl.Enabled = true;
             this.groupBoxCTLop.Enabled = false;
-            clkSave = 1;
+            //clkSaveLop = 1;
+            clkManLop = clkOKLop = 0;
             formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
             //MessageBox.Show("Lưu thay đổi thành công!");
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet.LOP);
             this.lOPGridControl.Enabled = true;
             this.labelTim1.Enabled = true;
@@ -157,38 +173,58 @@ namespace QLHSTHPT
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ((clkMan == 0 && clkOK == 0) || ((clkMan == 1 || clkOK == 1) && clkSave == 1))
+            formChinh.toolStripStatusLabelNote.Text = "";
+
+            int savedLop = 0, savedHS = 0;
+            //if ((clkManLop == 0 && clkOKLop == 0) || ((clkManLop == 1 || clkOKLop == 1) && clkSaveLop == 1))
+            if (clkManLop == 0 && clkOKLop == 0)
+                savedLop = 1;
+            //if ((clkManHS == 0 && clkOKHS == 0) || ((clkManHS == 1 || clkOKHS == 1) && clkSaveHS == 1))
+            if (clkManHS == 0 && clkOKHS == 0)
+                savedHS = 1;
+            if (savedLop == 1 && savedHS == 1)
                 this.Close();
-            else
-                if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
+            if (savedLop == 0)
+            {
+                if (MessageBox.Show("Chưa lưu dữ liệu Lớp. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
+                goto End;
+            }
+            if (savedHS == 0)
+                if (MessageBox.Show("Chưa lưu dữ liệu Học sinh. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
+        End:    formChinh.toolStripStatusLabelNote.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.labelEMaLop.Text = this.labelEBM.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
             if (this.textBoxTenLop.Text == "")
             {
-                MessageBox.Show("Chưa nhập Tên lớp. Chú ý!");
+                this.labelEMaLop.Text = "Chưa nhập Tên lớp. Chú ý!";
+                //MessageBox.Show("Chưa nhập Tên lớp. Chú ý!");
                 textBoxTenLop.Focus();
                 return;
             }
 
             if (this.textBoxBan.Text == "")
             {
-                MessageBox.Show("Chưa nhập Bộ môn giảng dạy. Chú ý!");
+                this.labelEBM.Text = "Chưa nhập Bộ môn giảng dạy. Chú ý!";
+                //MessageBox.Show("Chưa nhập Bộ môn giảng dạy. Chú ý!");
                 textBoxBan.Focus();
                 return;
             }
 
             if (this.textBoxMHK.Text == "")
             {
-                MessageBox.Show("Chưa nhập Mã học kỳ. Chú ý!");
+                this.labelEMaHK.Text = "Chưa nhập Mã học kỳ. Chú ý!";
+                //MessageBox.Show("Chưa nhập Mã học kỳ. Chú ý!");
                 textBoxMHK.Focus();
                 return;
             }
 
             if (this.textBoxMNH.Text == "")
             {
-                MessageBox.Show("Chưa nhập Mã năm học. Chú ý!");
+                this.labelEMaNH.Text = "Chưa nhập Mã năm học. Chú ý!";
+                //MessageBox.Show("Chưa nhập Mã năm học. Chú ý!");
                 textBoxMNH.Focus();
                 return;
             }
@@ -200,7 +236,8 @@ namespace QLHSTHPT
             int position = lOPBindingSource.Find("MALOP", textBoxML.Text);
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
-                MessageBox.Show("Mã lớp đã tồn tại. Chú ý!");
+                this.labelEMaLop.Text = "Mã lớp đã tồn tại. Chú ý!";
+                //MessageBox.Show("Mã lớp đã tồn tại. Chú ý!");
                 dataReader.Close();
                 return;
             }
@@ -223,7 +260,7 @@ namespace QLHSTHPT
                 this.labelTim2.Enabled = true;
                 this.textBoxTim2.Enabled = true;
                 dataReader.Close();
-                clkOK = 1;
+                clkOKLop = 1;
             }
         }
 
@@ -247,6 +284,8 @@ namespace QLHSTHPT
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             this.tableLayoutPanel1.Enabled = false;
             this.barButtonItem7.Enabled = false;
             this.barButtonItem8.Enabled = false;
@@ -258,6 +297,7 @@ namespace QLHSTHPT
             this.textBoxTim2.Enabled = false;
             this.groupBoxCTHS.Enabled = true;
             this.hOCSINHBindingSource.AddNew();
+            this.textBoxMLHS.Enabled = false;
             this.textBoxMHS.Text = Helper.createMaHS(maHS);
             int vitri = lOPBindingSource.Position;
             string maLop = ((DataRowView)lOPBindingSource[vitri])["MALOP"].ToString().Trim();
@@ -269,6 +309,8 @@ namespace QLHSTHPT
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             this.tableLayoutPanel1.Enabled = false;
             this.barButtonItem7.Enabled = false;
             this.barButtonItem8.Enabled = false;
@@ -284,6 +326,8 @@ namespace QLHSTHPT
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             int vitri = hOCSINHBindingSource.Position;
             string maHS = ((DataRowView)hOCSINHBindingSource[vitri])["MAHS"].ToString().Trim();
             MessageBox.Show(maHS);
@@ -302,7 +346,7 @@ namespace QLHSTHPT
 
                     if (MessageBox.Show("Bạn có thực sự muốn xóa?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        clkMan = 1;
+                        clkManHS = 1;
                         this.hOCSINHBindingSource.RemoveCurrent();
                         formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
                         //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
@@ -330,7 +374,8 @@ namespace QLHSTHPT
             this.barButtonItem9.Enabled = true;
             this.barButtonItem10.Enabled = true;
             this.barButtonItem11.Enabled = true;
-            clkSave = 1;
+            //clkSaveHS = 1;
+            clkManHS = clkOKHS = 0;
             formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
         }
 
@@ -348,34 +393,29 @@ namespace QLHSTHPT
             this.barButtonItem10.Enabled = true;
             this.barButtonItem11.Enabled = true;
         }
-
-        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if ((clkMan == 0 && clkOK == 0) || ((clkMan == 1 || clkOK == 1) && clkSave == 1))
-                this.Close();
-            else
-                if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
-        }
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             if (this.textBoxTenHS.Text == "")
             {
-                MessageBox.Show("Chưa nhập Tên học sinh. Chú ý!");
+                this.labelEHT.Text = "Chưa nhập Tên học sinh. Chú ý!";
+                //MessageBox.Show("Chưa nhập Tên học sinh. Chú ý!");
                 textBoxTenHS.Focus();
                 return;
             }
 
             if (this.textBoxDC.Text == "")
             {
-                MessageBox.Show("Chưa nhập Địa chỉ. Chú ý!");
+                this.labelEDC.Text = "Chưa nhập Địa chỉ. Chú ý!";
+                //MessageBox.Show("Chưa nhập Địa chỉ. Chú ý!");
                 textBoxDC.Focus();
                 return;
             }
 
             if (this.dateEditNS.Text == "")
             {
-                MessageBox.Show("Chưa nhập Ngày sinh. Chú ý!");
+                this.labelENS.Text = "Chưa nhập Ngày sinh. Chú ý!";
+                //MessageBox.Show("Chưa nhập Ngày sinh. Chú ý!");
                 dateEditNS.Focus();
                 return;
             }
@@ -386,7 +426,8 @@ namespace QLHSTHPT
                 int d = DateTime.Today.Year;
                 if (int.Parse(date[2]) >= d)
                 {
-                    MessageBox.Show("Năm sinh không hợp lý. Chú ý!");
+                    this.labelENS.Text = "Năm sinh không hợp lý. Chú ý!";
+                    //MessageBox.Show("Năm sinh không hợp lý. Chú ý!");
                     dateEditNS.Focus();
                     return;
                 }
@@ -394,14 +435,16 @@ namespace QLHSTHPT
 
             if (this.textBoxDT.Text == "")
             {
-                MessageBox.Show("Chưa nhập Điện thoại. Chú ý!");
+                this.labelEDT.Text = "Chưa nhập Điện thoại. Chú ý!";
+                //MessageBox.Show("Chưa nhập Điện thoại. Chú ý!");
                 textBoxDT.Focus();
                 return;
             }
 
-            if (this.textBoxDToc.Text == "")
+            if (this.textBoxDToc.Text == "Chưa nhập Dân tộc. Chú ý!")
             {
-                MessageBox.Show("Chưa nhập Dân tộc. Chú ý!");
+                this.labelEDTo.Text = "Chưa nhập Dân tộc. Chú ý!";
+                //MessageBox.Show("Chưa nhập Dân tộc. Chú ý!");
                 textBoxDToc.Focus();
                 return;
             }
@@ -422,7 +465,8 @@ namespace QLHSTHPT
             }
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
-                MessageBox.Show("Mã học sinh đã tồn tại. Chú ý!");
+                this.labelEMaHS.Text = "Mã học sinh đã tồn tại. Chú ý!";
+                //MessageBox.Show("Mã học sinh đã tồn tại. Chú ý!");
                 dataReader.Close();
                 return;
             }
@@ -432,6 +476,7 @@ namespace QLHSTHPT
                 maHS = Helper.createMaHS(maHS);
                 formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
                 //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                this.textBoxMLHS.Enabled = true;
                 this.hOCSINHGridControl.Enabled = true;
                 this.labelTim2.Enabled = true;
                 this.textBoxTim2.Enabled = true;
@@ -443,7 +488,7 @@ namespace QLHSTHPT
                 this.barButtonItem10.Enabled = true;
                 this.barButtonItem11.Enabled = true;
                 dataReader.Close();
-                clkOK = 1;
+                clkOKHS = 1;
             }
         }
 
@@ -452,6 +497,7 @@ namespace QLHSTHPT
             //this.textBoxMHS.Text = "";
             //this.textBoxMLHS.Text = "";
             this.hOCSINHBindingSource.CancelEdit();
+            this.textBoxMLHS.Enabled = true;
             this.hOCSINHGridControl.Enabled = true;
             this.textBoxTim2.Enabled = true;
             this.labelTim2.Enabled = true;
@@ -472,12 +518,12 @@ namespace QLHSTHPT
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            this.labelTitHS.Text = gridView1.GetFocusedRowCellValue("MALOP").ToString();
+            this.labelTitHS.Text = "HỌC SINH LỚP " + gridView1.GetFocusedRowCellValue("MALOP").ToString();
         }
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            this.labelTitHS.Text = gridView1.GetFocusedRowCellValue("MALOP").ToString();
+            this.labelTitHS.Text = "HỌC SINH LỚP " + gridView1.GetFocusedRowCellValue("MALOP").ToString();
         }
 
         private void textBoxTim2_MouseHover(object sender, EventArgs e)
@@ -494,6 +540,142 @@ namespace QLHSTHPT
         {
             lOPBindingSource.Filter = "TENLOP LIKE '%" + textBoxTim1.Text +
                 "%' OR MALOP LIKE '%" + textBoxTim1.Text + "%'";
+        }
+
+        private void groupBoxCTLop_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTenLop_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelETenLop.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelETenLop.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelETenLop.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelETenLop.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelETenLop.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelETenLop.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelEBM.Text = "Ban không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelEBM.Text = "Ban không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelEBM.Text = "Ban không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelEBM.Text = "Ban không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelEBM.Text = "Ban không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelEBM.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxTenHS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelEHT.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxMLHS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)48 && textBoxDT.Text.Length == 0)
+            {
+                this.labelEDT.Text = "Điện thoại phải bắt đầu bắt đầu bằng 0";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
+            {
+                this.labelEDT.Text = "";
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == (char)13) || (e.KeyChar == (char)8)) //enter, backspace
+            {
+                this.labelEDT.Text = "";
+                e.Handled = false;
+            }
+            else
+            {
+                this.labelEDT.Text = "Điện thoại chỉ bao gồm số!";
+                e.Handled = true;
+            }
         }
     }
 }

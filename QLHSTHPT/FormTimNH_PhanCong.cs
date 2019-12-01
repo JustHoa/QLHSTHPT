@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace QLHSTHPT
 {
-    public partial class FormTimNH : Form
+    public partial class FormTimNH_PhanCong : Form
     {
         FormChinh formChinh;
         FormPhanCongGV formPhanCongGV;
 
-        public FormTimNH(FormChinh formChinh, FormPhanCongGV formPhanCongGV)
+        public FormTimNH_PhanCong(FormChinh formChinh, FormPhanCongGV formPhanCongGV)
         {
             InitializeComponent();
             this.formChinh = formChinh;
@@ -29,14 +29,6 @@ namespace QLHSTHPT
 
         }
 
-        private void nAMHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.nAMHOCBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLHSTHPTDataSet);
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             formPhanCongGV.labelEMaNH.Text = "";
@@ -47,6 +39,13 @@ namespace QLHSTHPT
         }
 
         private void FormTimNH_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+            formChinh.Activate();
+            formChinh.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             formChinh.Activate();

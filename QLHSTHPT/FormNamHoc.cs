@@ -13,7 +13,7 @@ namespace QLHSTHPT
 {
     public partial class FormNamHoc : Form
     {
-        public int clkSave = 0;
+        //public int clkSave = 0;
         public int clkMan = 0;
         public int clkOK = 0;
 
@@ -44,6 +44,8 @@ namespace QLHSTHPT
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             this.nAMHOCGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -55,6 +57,8 @@ namespace QLHSTHPT
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             this.nAMHOCGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -65,12 +69,16 @@ namespace QLHSTHPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.nAMHOCTableAdapter.Update(this.qLHSTHPTDataSet.NAMHOC);
-            clkSave = 1;
-            MessageBox.Show("Lưu thay đổi thành công!");
+            //clkSave = 1;
+            clkMan = clkOK = 0;
+            formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
+            //MessageBox.Show("Lưu thay đổi thành công!");
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
+
             int vitri = nAMHOCBindingSource.Position;
             string maNH = ((DataRowView)nAMHOCBindingSource[vitri])["MANH"].ToString().Trim();
             try
@@ -90,7 +98,8 @@ namespace QLHSTHPT
                     {
                         clkMan = 1;
                         this.nAMHOCBindingSource.RemoveCurrent();
-                        MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                        formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
+                        //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
                         //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connectionString;
                         //this.mONHOCTableAdapter.Update(this.aSD_DataSet.MONHOC);
                         //MessageBox.Show("Xóa môn học thành công!");
@@ -115,10 +124,17 @@ namespace QLHSTHPT
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ((clkMan == 0 && clkOK == 0) || ((clkMan == 1 || clkOK == 1) && clkSave == 1))
+            if (clkMan == 0 && clkOK == 0)
+            {
+                formChinh.toolStripStatusLabelNote.Text = "";
                 this.Close();
+            }
             else
-                if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
+                if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    formChinh.toolStripStatusLabelNote.Text = "";
+                    this.Close();
+                }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -132,23 +148,28 @@ namespace QLHSTHPT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.labelET.Text = this.labelEBD.Text = this.labelEKT.Text = "";
+
             if (this.textBoxTen.Text == "")
             {
-                MessageBox.Show("Chưa nhập Tên năm học. Chú ý!");
+                this.labelET.Text = "Chưa nhập Tên năm học. Chú ý!";
+                //MessageBox.Show("Chưa nhập Tên năm học. Chú ý!");
                 textBoxTen.Focus();
                 return;
             }
 
             if (this.textBoxBD.Text == "")
             {
-                MessageBox.Show("Chưa nhập Năm bắt đầu. Chú ý!");
+                this.labelEBD.Text = "Chưa nhập Năm bắt đầu. Chú ý!";
+                //MessageBox.Show("Chưa nhập Năm bắt đầu. Chú ý!");
                 textBoxBD.Focus();
                 return;
             }
 
             if (this.textBoxKT.Text == "")
             {
-                MessageBox.Show("Chưa nhập Năm kết thúc. Chú ý!");
+                this.labelEKT.Text = "Chưa nhập Năm kết thúc. Chú ý!";
+                //MessageBox.Show("Chưa nhập Năm kết thúc. Chú ý!");
                 textBoxKT.Focus();
                 return;
             }
@@ -161,14 +182,16 @@ namespace QLHSTHPT
             int position = nAMHOCBindingSource.Find("NAMBD", textBoxBD.Text);
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
-                MessageBox.Show("Năm học đã tồn tại. Chú ý!");
+                this.labelEBD.Text = "Năm học đã tồn tại. Chú ý!";
+                //MessageBox.Show("Năm học đã tồn tại. Chú ý!");
                 dataReader.Close();
                 return;
             }
             else
             {
                 this.nAMHOCBindingSource.EndEdit();
-                MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
+                //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
                 this.nAMHOCGridControl.Enabled = true;
                 this.labelTim.Enabled = true;
                 this.textBoxTim.Enabled = true;

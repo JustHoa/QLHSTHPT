@@ -13,7 +13,7 @@ namespace QLHSTHPT
 {
     public partial class FormHocKy : Form
     {
-        public int clkSave = 0;
+        //public int clkSave = 0;
         public int clkMan = 0;
         public int clkOK = 0;
 
@@ -43,6 +43,7 @@ namespace QLHSTHPT
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
             this.hOCKYGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -55,6 +56,7 @@ namespace QLHSTHPT
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
             this.hOCKYGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -64,6 +66,7 @@ namespace QLHSTHPT
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
             int vitri = hOCKYBindingSource.Position;
             string maHK = ((DataRowView)hOCKYBindingSource[vitri])["MAHK"].ToString().Trim();
             try
@@ -83,7 +86,8 @@ namespace QLHSTHPT
                     {
                         clkMan = 1;
                         this.hOCKYBindingSource.RemoveCurrent();
-                        MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                        formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
+                        //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
                         //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connectionString;
                         //this.mONHOCTableAdapter.Update(this.aSD_DataSet.MONHOC);
                         //MessageBox.Show("Xóa môn học thành công!");
@@ -100,12 +104,14 @@ namespace QLHSTHPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.hOCKYTableAdapter.Update(this.qLHSTHPTDataSet.HOCKY);
-            clkSave = 1;
-            MessageBox.Show("Lưu thay đổi thành công!");
+            clkMan = clkMan = 0;
+            formChinh.toolStripStatusLabelNote.Text = "Lưu thay đổi thành công!";
+            //MessageBox.Show("Lưu thay đổi thành công!");
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.toolStripStatusLabelNote.Text = "";
             this.hOCKYTableAdapter.Fill(this.qLHSTHPTDataSet.HOCKY);
             this.hOCKYGridControl.Enabled = true;
             this.labelTim.Enabled = true;
@@ -115,10 +121,17 @@ namespace QLHSTHPT
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ((clkMan == 0 && clkOK == 0) || ((clkMan == 1 || clkOK == 1) && clkSave == 1))
+            if (clkMan == 0 && clkOK == 0)
+            {
+                formChinh.toolStripStatusLabelNote.Text = "";
                 this.Close();
+            }
             else
-                if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
+                if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    formChinh.toolStripStatusLabelNote.Text = "";
+                    Close(); 
+                }
         }
 
         private void textBoxTim_MouseHover(object sender, EventArgs e)
@@ -128,16 +141,20 @@ namespace QLHSTHPT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.labelET.Text = this.labelENg.Text = "";
+
             if (this.textBoxTen.Text == "")
             {
-                MessageBox.Show("Chưa nhập Tên học kỳ. Chú ý!");
+                this.textBoxTen.Text = "Chưa nhập Tên học kỳ. Chú ý!";
+                //MessageBox.Show("Chưa nhập Tên học kỳ. Chú ý!");
                 textBoxTen.Focus();
                 return;
             }
 
             if (this.textBoxNg.Text == "")
             {
-                MessageBox.Show("Chưa nhập Ngày bắt đầu. Chú ý!");
+                this.labelENg.Text = "Chưa nhập Ngày bắt đầu.Chú ý!";
+                //MessageBox.Show("Chưa nhập Ngày bắt đầu. Chú ý!");
                 textBoxNg.Focus();
                 return;
             }
@@ -157,7 +174,8 @@ namespace QLHSTHPT
             //else
             {
                 this.hOCKYBindingSource.EndEdit();
-                MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
+                //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
                 this.hOCKYGridControl.Enabled = true;
                 this.labelTim.Enabled = true;
                 this.textBoxTim.Enabled = true;
@@ -174,6 +192,7 @@ namespace QLHSTHPT
             this.textBoxTim.Enabled = true;
             this.labelTim.Enabled = true;
             this.groupBoxCT.Enabled = false;
+
         }
 
         private void textBoxNg_TextChanged(object sender, EventArgs e)
@@ -227,27 +246,27 @@ namespace QLHSTHPT
         {
             if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
             {
-                this.labelET.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                this.labelET.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
                 e.Handled = true;
             }
             else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
             {
-                this.labelET.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                this.labelET.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
                 e.Handled = true;
             }
             else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
             {
-                this.labelET.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                this.labelET.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
                 e.Handled = true;
             }
             else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
             {
-                this.labelET.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                this.labelET.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
                 e.Handled = true;
             }
             else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
             {
-                this.labelET.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                this.labelET.Text = "Tên học kỳ không chứa kí tự đặc biệt!";
                 e.Handled = true;
             }
             else

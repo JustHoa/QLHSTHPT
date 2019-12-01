@@ -1,6 +1,6 @@
 ﻿namespace QLHSTHPT
 {
-    partial class FormTimHK
+    partial class FormTimHK_PhanCong
     {
         /// <summary>
         /// Required designer variable.
@@ -48,6 +48,7 @@
             this.nGAYBDTextBox = new System.Windows.Forms.TextBox();
             this.tHANGBDTextBox = new System.Windows.Forms.TextBox();
             this.textBoxMaHK = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             mAHKLabel = new System.Windows.Forms.Label();
             tHANGBDLabel = new System.Windows.Forms.Label();
             nGAYBDLabel = new System.Windows.Forms.Label();
@@ -183,6 +184,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(nGAYBDLabel);
             this.panel1.Controls.Add(this.nGAYBDTextBox);
@@ -198,7 +200,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(496, 45);
+            this.button1.Location = new System.Drawing.Point(496, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -233,7 +235,17 @@
             this.textBoxMaHK.Size = new System.Drawing.Size(100, 20);
             this.textBoxMaHK.TabIndex = 1;
             // 
-            // FormTimHK
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(496, 67);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // FormTimHK_PhanCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -241,7 +253,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.hOCKYGridControl);
             this.Controls.Add(this.label1);
-            this.Name = "FormTimHK";
+            this.Name = "FormTimHK_PhanCong";
             this.Text = "FormTimHK";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTimHK_FormClosing);
@@ -274,5 +286,6 @@
         private System.Windows.Forms.TextBox nGAYBDTextBox;
         private System.Windows.Forms.TextBox tHANGBDTextBox;
         private System.Windows.Forms.TextBox textBoxMaHK;
+        private System.Windows.Forms.Button button2;
     }
 }

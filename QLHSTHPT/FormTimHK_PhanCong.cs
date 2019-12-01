@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace QLHSTHPT
 {
-    public partial class FormTimHK : Form
+    public partial class FormTimHK_PhanCong : Form
     {
         FormChinh formChinh;
         FormPhanCongGV formPhanCongGV;
 
-        public FormTimHK(FormChinh formChinh, FormPhanCongGV formPhanCongGV)
+        public FormTimHK_PhanCong(FormChinh formChinh, FormPhanCongGV formPhanCongGV)
         {
             InitializeComponent();
             this.formChinh = formChinh;
@@ -45,6 +45,13 @@ namespace QLHSTHPT
         }
 
         private void FormTimHK_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+            formChinh.Activate();
+            formChinh.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             formChinh.Activate();

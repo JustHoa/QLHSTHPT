@@ -16,6 +16,7 @@ namespace QLHSTHPT
         public static string password = "";
         public static string group = "";
         public static string maGV = "";
+        public static string tenGV = "";
         public static int vitri = 0;
 
         public static int MIN = 35;

@@ -201,8 +201,6 @@ D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormLop_HS.r
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormPhanCongGV.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimGV.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimLop.resources
-D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimHK.resources
-D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimNH.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\bin\Debug\DevExpress.DataAccess.v17.1.dll
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\bin\Debug\DevExpress.Xpo.v17.1.dll
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\bin\Debug\DevExpress.CodeParser.v17.1.dll
@@ -316,4 +314,10 @@ D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormBangDiem
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimHS.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormHocSinh_Excel.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormXepLop.resources
-D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.Form1.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormCV.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimHK_CongViec.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimHK_PhanCong.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimNH_CongViec.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimNH_PhanCong.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormHocSinh.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormHocSinh_DB.resources

@@ -84,12 +84,6 @@
     <Compile Include="BaoCao\BangDiemHS.Designer.cs">
       <DependentUpon>BangDiemHS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormBangDiemHS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +95,12 @@
     </Compile>
     <Compile Include="FormChinh.Designer.cs">
       <DependentUpon>FormChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCV.Designer.cs">
+      <DependentUpon>FormCV.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -119,6 +119,18 @@
     </Compile>
     <Compile Include="FormHocKy.Designer.cs">
       <DependentUpon>FormHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHocSinh.Designer.cs">
+      <DependentUpon>FormHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHocSinh_DB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHocSinh_DB.Designer.cs">
+      <DependentUpon>FormHocSinh_DB.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHocSinh_Excel.cs">
       <SubType>Form</SubType>
@@ -180,11 +192,17 @@
     <Compile Include="FormTimGV.Designer.cs">
       <DependentUpon>FormTimGV.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTimHK.cs">
+    <Compile Include="FormTimHK_CongViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTimHK.Designer.cs">
-      <DependentUpon>FormTimHK.cs</DependentUpon>
+    <Compile Include="FormTimHK_CongViec.Designer.cs">
+      <DependentUpon>FormTimHK_CongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimHK_PhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimHK_PhanCong.Designer.cs">
+      <DependentUpon>FormTimHK_PhanCong.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTimHS.cs">
       <SubType>Form</SubType>
@@ -198,11 +216,17 @@
     <Compile Include="FormTimLop.Designer.cs">
       <DependentUpon>FormTimLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTimNH.cs">
+    <Compile Include="FormTimNH_CongViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTimNH.Designer.cs">
-      <DependentUpon>FormTimNH.cs</DependentUpon>
+    <Compile Include="FormTimNH_CongViec.Designer.cs">
+      <DependentUpon>FormTimNH_CongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimNH_PhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimNH_PhanCong.Designer.cs">
+      <DependentUpon>FormTimNH_PhanCong.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTTDangNhap.cs">
       <SubType>Form</SubType>
@@ -232,14 +256,14 @@
     <EmbeddedResource Include="BaoCao\BangDiemHS.resx">
       <DependentUpon>BangDiemHS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBangDiemHS.resx">
       <DependentUpon>FormBangDiemHS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChinh.resx">
       <DependentUpon>FormChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCV.resx">
+      <DependentUpon>FormCV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
@@ -249,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHocKy.resx">
       <DependentUpon>FormHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHocSinh.resx">
+      <DependentUpon>FormHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHocSinh_DB.resx">
+      <DependentUpon>FormHocSinh_DB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHocSinh_Excel.resx">
       <DependentUpon>FormHocSinh_Excel.cs</DependentUpon>
@@ -280,8 +310,11 @@
     <EmbeddedResource Include="FormTimGV.resx">
       <DependentUpon>FormTimGV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTimHK.resx">
-      <DependentUpon>FormTimHK.cs</DependentUpon>
+    <EmbeddedResource Include="FormTimHK_CongViec.resx">
+      <DependentUpon>FormTimHK_CongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimHK_PhanCong.resx">
+      <DependentUpon>FormTimHK_PhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimHS.resx">
       <DependentUpon>FormTimHS.cs</DependentUpon>
@@ -289,8 +322,11 @@
     <EmbeddedResource Include="FormTimLop.resx">
       <DependentUpon>FormTimLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTimNH.resx">
-      <DependentUpon>FormTimNH.cs</DependentUpon>
+    <EmbeddedResource Include="FormTimNH_CongViec.resx">
+      <DependentUpon>FormTimNH_CongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimNH_PhanCong.resx">
+      <DependentUpon>FormTimNH_PhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTTDangNhap.resx">
       <DependentUpon>FormTTDangNhap.cs</DependentUpon>
@@ -307,6 +343,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -332,6 +369,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diagram.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

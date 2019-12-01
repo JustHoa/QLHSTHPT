@@ -16,12 +16,13 @@ namespace QLHSTHPT.Model
         public string danToc { get; set; }
         public string dienThoai { get; set; }
         public string maLop { get; set; }
+        public int nghiHoc { get; set; }
 
         public HocSinh()
         {
         }
 
-        public HocSinh(string maHS, string tenHS, string ngaySinh, string gioiTinh, string diaChi, string danToc, string dienThoai, string maLop)
+        public HocSinh(string maHS, string tenHS, string ngaySinh, string gioiTinh, string diaChi, string danToc, string dienThoai, string maLop, int nghiHoc)
         {
             this.maHS = maHS;
             this.tenHS = tenHS;
@@ -31,6 +32,7 @@ namespace QLHSTHPT.Model
             this.danToc = danToc;
             this.dienThoai = dienThoai;
             this.maLop = maLop;
+            this.nghiHoc = nghiHoc;
         }
     }
 }

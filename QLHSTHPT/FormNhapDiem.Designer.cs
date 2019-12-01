@@ -36,7 +36,6 @@
             this.comboBoxNH = new System.Windows.Forms.ComboBox();
             this.sP_NAMHOC_DESCBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBoxLop = new System.Windows.Forms.ComboBox();
             this.sP_LOP_GV_TDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxMH = new System.Windows.Forms.ComboBox();
@@ -72,12 +71,14 @@
             this.sP_BANGDIEMLOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_BANGDIEMLOPTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelA = new System.Windows.Forms.Panel();
-            this.sP_BANGDIEMLOPGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelTim = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelTim = new System.Windows.Forms.Label();
+            this.sP_BANGDIEMLOPGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_NAMHOC_DESCBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
@@ -87,18 +88,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPBindingSource)).BeginInit();
             this.panelA.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.error2);
             this.panel1.Controls.Add(this.error);
             this.panel1.Controls.Add(this.comboBoxNH);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.comboBoxLop);
             this.panel1.Controls.Add(this.comboBoxMH);
             this.panel1.Controls.Add(this.button1);
@@ -154,16 +155,6 @@
             this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
             this.qLHSTHPTDataSet.EnforceConstraints = false;
             this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(515, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBoxLop
             // 
@@ -468,23 +459,23 @@
             this.panelA.Size = new System.Drawing.Size(800, 347);
             this.panelA.TabIndex = 45;
             // 
-            // sP_BANGDIEMLOPGridControl
+            // labelTim
             // 
-            this.sP_BANGDIEMLOPGridControl.DataSource = this.sP_BANGDIEMLOPBindingSource;
-            this.sP_BANGDIEMLOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sP_BANGDIEMLOPGridControl.Location = new System.Drawing.Point(0, 0);
-            this.sP_BANGDIEMLOPGridControl.MainView = this.gridView1;
-            this.sP_BANGDIEMLOPGridControl.MenuManager = this.barManager1;
-            this.sP_BANGDIEMLOPGridControl.Name = "sP_BANGDIEMLOPGridControl";
-            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 240);
-            this.sP_BANGDIEMLOPGridControl.TabIndex = 0;
-            this.sP_BANGDIEMLOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(570, 9);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 35;
+            this.labelTim.Text = "Tìm kiếm";
             // 
-            // gridView1
+            // textBox1
             // 
-            this.gridView1.GridControl = this.sP_BANGDIEMLOPGridControl;
-            this.gridView1.Name = "gridView1";
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(625, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(163, 20);
+            this.textBox1.TabIndex = 34;
             // 
             // panel2
             // 
@@ -507,23 +498,39 @@
             this.label5.Text = "GIÁO VIÊN CHƯA CÓ THÔNG TIN PHÂN CÔNG NHIỆM VỤ GIẢNG DẠY";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // sP_BANGDIEMLOPGridControl
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(625, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 20);
-            this.textBox1.TabIndex = 34;
+            this.sP_BANGDIEMLOPGridControl.DataSource = this.sP_BANGDIEMLOPBindingSource;
+            this.sP_BANGDIEMLOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sP_BANGDIEMLOPGridControl.Location = new System.Drawing.Point(0, 0);
+            this.sP_BANGDIEMLOPGridControl.MainView = this.gridView1;
+            this.sP_BANGDIEMLOPGridControl.MenuManager = this.barManager1;
+            this.sP_BANGDIEMLOPGridControl.Name = "sP_BANGDIEMLOPGridControl";
+            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 240);
+            this.sP_BANGDIEMLOPGridControl.TabIndex = 0;
+            this.sP_BANGDIEMLOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // labelTim
+            // gridView1
             // 
-            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTim.AutoSize = true;
-            this.labelTim.Location = new System.Drawing.Point(570, 9);
-            this.labelTim.Name = "labelTim";
-            this.labelTim.Size = new System.Drawing.Size(49, 13);
-            this.labelTim.TabIndex = 35;
-            this.labelTim.Text = "Tìm kiếm";
+            this.gridView1.GridControl = this.sP_BANGDIEMLOPGridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(515, 66);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // FormNhapDiem
             // 
@@ -553,9 +560,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPBindingSource)).EndInit();
             this.panelA.ResumeLayout(false);
             this.panelA.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -580,7 +587,6 @@
         private System.Windows.Forms.BindingSource sP_LOP_GV_TDBindingSource;
         private QLHSTHPTDataSetTableAdapters.SP_LOP_GV_TDTableAdapter sP_LOP_GV_TDTableAdapter;
         private System.Windows.Forms.ComboBox comboBoxLop;
-        private System.Windows.Forms.Button button2;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -611,5 +617,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label labelTim;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
