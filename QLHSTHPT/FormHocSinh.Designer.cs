@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHocSinh));
             System.Windows.Forms.Label nGHIHOCLabel;
             System.Windows.Forms.Label mALOPLabel1;
             System.Windows.Forms.Label dIENTHOAILabel;
@@ -39,25 +38,25 @@
             System.Windows.Forms.Label nGAYSINHLabel;
             System.Windows.Forms.Label tENHSLabel;
             System.Windows.Forms.Label mAHSLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHocSinh));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
             this.hOCSINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hOCSINHTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.HOCSINHTableAdapter();
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
             this.hOCSINHGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENHS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,6 +66,7 @@
             this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupBoxCT = new System.Windows.Forms.GroupBox();
             this.labelEMaHS = new System.Windows.Forms.Label();
             this.labelEDTo = new System.Windows.Forms.Label();
             this.labelEML = new System.Windows.Forms.Label();
@@ -77,14 +77,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.checkBoxNghi = new System.Windows.Forms.CheckBox();
-            this.textBoxMLHS = new System.Windows.Forms.TextBox();
+            this.textBoxMaLop = new System.Windows.Forms.TextBox();
             this.textBoxDT = new System.Windows.Forms.TextBox();
             this.textBoxDToc = new System.Windows.Forms.TextBox();
             this.textBoxDC = new System.Windows.Forms.TextBox();
             this.comboBoxGT = new System.Windows.Forms.ComboBox();
             this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
             this.textBoxTenHS = new System.Windows.Forms.TextBox();
-            this.textBoxMHS = new System.Windows.Forms.TextBox();
+            this.textBoxMaHS = new System.Windows.Forms.TextBox();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.labelTim = new System.Windows.Forms.Label();
             nGHIHOCLabel = new System.Windows.Forms.Label();
             mALOPLabel1 = new System.Windows.Forms.Label();
             dIENTHOAILabel = new System.Windows.Forms.Label();
@@ -99,10 +101,91 @@
             ((System.ComponentModel.ISupportInitialize)(this.hOCSINHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOCSINHGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxCT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nGHIHOCLabel
+            // 
+            nGHIHOCLabel.AutoSize = true;
+            nGHIHOCLabel.Location = new System.Drawing.Point(578, 132);
+            nGHIHOCLabel.Name = "nGHIHOCLabel";
+            nGHIHOCLabel.Size = new System.Drawing.Size(50, 13);
+            nGHIHOCLabel.TabIndex = 44;
+            nGHIHOCLabel.Text = "Nghỉ học";
+            // 
+            // mALOPLabel1
+            // 
+            mALOPLabel1.AutoSize = true;
+            mALOPLabel1.Location = new System.Drawing.Point(578, 40);
+            mALOPLabel1.Name = "mALOPLabel1";
+            mALOPLabel1.Size = new System.Drawing.Size(39, 13);
+            mALOPLabel1.TabIndex = 42;
+            mALOPLabel1.Text = "Mã lớp";
+            // 
+            // dIENTHOAILabel
+            // 
+            dIENTHOAILabel.AutoSize = true;
+            dIENTHOAILabel.Location = new System.Drawing.Point(364, 132);
+            dIENTHOAILabel.Name = "dIENTHOAILabel";
+            dIENTHOAILabel.Size = new System.Drawing.Size(55, 13);
+            dIENTHOAILabel.TabIndex = 40;
+            dIENTHOAILabel.Text = "Điện thoại";
+            // 
+            // dANTOCLabel
+            // 
+            dANTOCLabel.AutoSize = true;
+            dANTOCLabel.Location = new System.Drawing.Point(578, 86);
+            dANTOCLabel.Name = "dANTOCLabel";
+            dANTOCLabel.Size = new System.Drawing.Size(45, 13);
+            dANTOCLabel.TabIndex = 38;
+            dANTOCLabel.Text = "Dân tộc";
+            // 
+            // dIACHILabel
+            // 
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(60, 132);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(40, 13);
+            dIACHILabel.TabIndex = 36;
+            dIACHILabel.Text = "Địa chỉ";
+            // 
+            // gIOITINHLabel
+            // 
+            gIOITINHLabel.AutoSize = true;
+            gIOITINHLabel.Location = new System.Drawing.Point(364, 86);
+            gIOITINHLabel.Name = "gIOITINHLabel";
+            gIOITINHLabel.Size = new System.Drawing.Size(47, 13);
+            gIOITINHLabel.TabIndex = 34;
+            gIOITINHLabel.Text = "Giới tính";
+            // 
+            // nGAYSINHLabel
+            // 
+            nGAYSINHLabel.AutoSize = true;
+            nGAYSINHLabel.Location = new System.Drawing.Point(364, 41);
+            nGAYSINHLabel.Name = "nGAYSINHLabel";
+            nGAYSINHLabel.Size = new System.Drawing.Size(54, 13);
+            nGAYSINHLabel.TabIndex = 32;
+            nGAYSINHLabel.Text = "Ngày sinh";
+            // 
+            // tENHSLabel
+            // 
+            tENHSLabel.AutoSize = true;
+            tENHSLabel.Location = new System.Drawing.Point(61, 88);
+            tENHSLabel.Name = "tENHSLabel";
+            tENHSLabel.Size = new System.Drawing.Size(39, 13);
+            tENHSLabel.TabIndex = 30;
+            tENHSLabel.Text = "Họ tên";
+            // 
+            // mAHSLabel
+            // 
+            mAHSLabel.AutoSize = true;
+            mAHSLabel.Location = new System.Drawing.Point(61, 44);
+            mAHSLabel.Name = "mAHSLabel";
+            mAHSLabel.Size = new System.Drawing.Size(65, 13);
+            mAHSLabel.TabIndex = 28;
+            mAHSLabel.Text = "Mã học sinh";
             // 
             // barManager1
             // 
@@ -146,6 +229,47 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Sửa";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Xóa";
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Làm mới";
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Lưu";
+            this.barButtonItem5.Id = 4;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Thoát";
+            this.barButtonItem6.Id = 5;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -178,41 +302,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(800, 40);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 483);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Sửa";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Xóa";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Làm mới";
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "Lưu";
-            this.barButtonItem5.Id = 4;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Thoát";
-            this.barButtonItem6.Id = 5;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.Name = "barButtonItem6";
             // 
             // qLHSTHPTDataSet
             // 
@@ -269,43 +358,6 @@
             this.colNGHIHOC});
             this.gridView1.GridControl = this.hOCSINHGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.labelEMaHS);
-            this.groupBox1.Controls.Add(this.labelEDTo);
-            this.groupBox1.Controls.Add(this.labelEML);
-            this.groupBox1.Controls.Add(this.labelEDT);
-            this.groupBox1.Controls.Add(this.labelENS);
-            this.groupBox1.Controls.Add(this.labelEDC);
-            this.groupBox1.Controls.Add(this.labelEHT);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(nGHIHOCLabel);
-            this.groupBox1.Controls.Add(this.checkBoxNghi);
-            this.groupBox1.Controls.Add(mALOPLabel1);
-            this.groupBox1.Controls.Add(this.textBoxMLHS);
-            this.groupBox1.Controls.Add(dIENTHOAILabel);
-            this.groupBox1.Controls.Add(this.textBoxDT);
-            this.groupBox1.Controls.Add(dANTOCLabel);
-            this.groupBox1.Controls.Add(this.textBoxDToc);
-            this.groupBox1.Controls.Add(dIACHILabel);
-            this.groupBox1.Controls.Add(this.textBoxDC);
-            this.groupBox1.Controls.Add(gIOITINHLabel);
-            this.groupBox1.Controls.Add(this.comboBoxGT);
-            this.groupBox1.Controls.Add(nGAYSINHLabel);
-            this.groupBox1.Controls.Add(this.dateEditNS);
-            this.groupBox1.Controls.Add(tENHSLabel);
-            this.groupBox1.Controls.Add(this.textBoxTenHS);
-            this.groupBox1.Controls.Add(mAHSLabel);
-            this.groupBox1.Controls.Add(this.textBoxMHS);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 299);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 220);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "THÔNG TIN HỌC SINH";
             // 
             // colMAHS
             // 
@@ -379,6 +431,43 @@
             this.colNGHIHOC.Visible = true;
             this.colNGHIHOC.VisibleIndex = 8;
             // 
+            // groupBoxCT
+            // 
+            this.groupBoxCT.Controls.Add(this.labelEMaHS);
+            this.groupBoxCT.Controls.Add(this.labelEDTo);
+            this.groupBoxCT.Controls.Add(this.labelEML);
+            this.groupBoxCT.Controls.Add(this.labelEDT);
+            this.groupBoxCT.Controls.Add(this.labelENS);
+            this.groupBoxCT.Controls.Add(this.labelEDC);
+            this.groupBoxCT.Controls.Add(this.labelEHT);
+            this.groupBoxCT.Controls.Add(this.button4);
+            this.groupBoxCT.Controls.Add(this.button3);
+            this.groupBoxCT.Controls.Add(nGHIHOCLabel);
+            this.groupBoxCT.Controls.Add(this.checkBoxNghi);
+            this.groupBoxCT.Controls.Add(mALOPLabel1);
+            this.groupBoxCT.Controls.Add(this.textBoxMaLop);
+            this.groupBoxCT.Controls.Add(dIENTHOAILabel);
+            this.groupBoxCT.Controls.Add(this.textBoxDT);
+            this.groupBoxCT.Controls.Add(dANTOCLabel);
+            this.groupBoxCT.Controls.Add(this.textBoxDToc);
+            this.groupBoxCT.Controls.Add(dIACHILabel);
+            this.groupBoxCT.Controls.Add(this.textBoxDC);
+            this.groupBoxCT.Controls.Add(gIOITINHLabel);
+            this.groupBoxCT.Controls.Add(this.comboBoxGT);
+            this.groupBoxCT.Controls.Add(nGAYSINHLabel);
+            this.groupBoxCT.Controls.Add(this.dateEditNS);
+            this.groupBoxCT.Controls.Add(tENHSLabel);
+            this.groupBoxCT.Controls.Add(this.textBoxTenHS);
+            this.groupBoxCT.Controls.Add(mAHSLabel);
+            this.groupBoxCT.Controls.Add(this.textBoxMaHS);
+            this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxCT.Location = new System.Drawing.Point(0, 299);
+            this.groupBoxCT.Name = "groupBoxCT";
+            this.groupBoxCT.Size = new System.Drawing.Size(800, 220);
+            this.groupBoxCT.TabIndex = 6;
+            this.groupBoxCT.TabStop = false;
+            this.groupBoxCT.Text = "THÔNG TIN HỌC SINH";
+            // 
             // labelEMaHS
             // 
             this.labelEMaHS.AutoSize = true;
@@ -450,6 +539,7 @@
             this.button4.TabIndex = 47;
             this.button4.Text = "Hủy";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -459,15 +549,7 @@
             this.button3.TabIndex = 46;
             this.button3.Text = "OK";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // nGHIHOCLabel
-            // 
-            nGHIHOCLabel.AutoSize = true;
-            nGHIHOCLabel.Location = new System.Drawing.Point(578, 132);
-            nGHIHOCLabel.Name = "nGHIHOCLabel";
-            nGHIHOCLabel.Size = new System.Drawing.Size(50, 13);
-            nGHIHOCLabel.TabIndex = 44;
-            nGHIHOCLabel.Text = "Nghỉ học";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // checkBoxNghi
             // 
@@ -478,31 +560,13 @@
             this.checkBoxNghi.TabIndex = 45;
             this.checkBoxNghi.UseVisualStyleBackColor = true;
             // 
-            // mALOPLabel1
+            // textBoxMaLop
             // 
-            mALOPLabel1.AutoSize = true;
-            mALOPLabel1.Location = new System.Drawing.Point(578, 40);
-            mALOPLabel1.Name = "mALOPLabel1";
-            mALOPLabel1.Size = new System.Drawing.Size(39, 13);
-            mALOPLabel1.TabIndex = 42;
-            mALOPLabel1.Text = "Mã lớp";
-            // 
-            // textBoxMLHS
-            // 
-            this.textBoxMLHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "MALOP", true));
-            this.textBoxMLHS.Location = new System.Drawing.Point(634, 37);
-            this.textBoxMLHS.Name = "textBoxMLHS";
-            this.textBoxMLHS.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMLHS.TabIndex = 43;
-            // 
-            // dIENTHOAILabel
-            // 
-            dIENTHOAILabel.AutoSize = true;
-            dIENTHOAILabel.Location = new System.Drawing.Point(364, 132);
-            dIENTHOAILabel.Name = "dIENTHOAILabel";
-            dIENTHOAILabel.Size = new System.Drawing.Size(55, 13);
-            dIENTHOAILabel.TabIndex = 40;
-            dIENTHOAILabel.Text = "Điện thoại";
+            this.textBoxMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "MALOP", true));
+            this.textBoxMaLop.Location = new System.Drawing.Point(634, 37);
+            this.textBoxMaLop.Name = "textBoxMaLop";
+            this.textBoxMaLop.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMaLop.TabIndex = 43;
             // 
             // textBoxDT
             // 
@@ -512,15 +576,6 @@
             this.textBoxDT.Size = new System.Drawing.Size(121, 20);
             this.textBoxDT.TabIndex = 41;
             // 
-            // dANTOCLabel
-            // 
-            dANTOCLabel.AutoSize = true;
-            dANTOCLabel.Location = new System.Drawing.Point(578, 86);
-            dANTOCLabel.Name = "dANTOCLabel";
-            dANTOCLabel.Size = new System.Drawing.Size(45, 13);
-            dANTOCLabel.TabIndex = 38;
-            dANTOCLabel.Text = "Dân tộc";
-            // 
             // textBoxDToc
             // 
             this.textBoxDToc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "DANTOC", true));
@@ -528,15 +583,6 @@
             this.textBoxDToc.Name = "textBoxDToc";
             this.textBoxDToc.Size = new System.Drawing.Size(100, 20);
             this.textBoxDToc.TabIndex = 39;
-            // 
-            // dIACHILabel
-            // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(60, 132);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(40, 13);
-            dIACHILabel.TabIndex = 36;
-            dIACHILabel.Text = "Địa chỉ";
             // 
             // textBoxDC
             // 
@@ -546,18 +592,10 @@
             this.textBoxDC.Size = new System.Drawing.Size(203, 20);
             this.textBoxDC.TabIndex = 37;
             // 
-            // gIOITINHLabel
-            // 
-            gIOITINHLabel.AutoSize = true;
-            gIOITINHLabel.Location = new System.Drawing.Point(364, 86);
-            gIOITINHLabel.Name = "gIOITINHLabel";
-            gIOITINHLabel.Size = new System.Drawing.Size(47, 13);
-            gIOITINHLabel.TabIndex = 34;
-            gIOITINHLabel.Text = "Giới tính";
-            // 
             // comboBoxGT
             // 
             this.comboBoxGT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "GIOITINH", true));
+            this.comboBoxGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGT.FormattingEnabled = true;
             this.comboBoxGT.Items.AddRange(new object[] {
             "Nam",
@@ -566,15 +604,6 @@
             this.comboBoxGT.Name = "comboBoxGT";
             this.comboBoxGT.Size = new System.Drawing.Size(121, 21);
             this.comboBoxGT.TabIndex = 35;
-            // 
-            // nGAYSINHLabel
-            // 
-            nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(364, 41);
-            nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(54, 13);
-            nGAYSINHLabel.TabIndex = 32;
-            nGAYSINHLabel.Text = "Ngày sinh";
             // 
             // dateEditNS
             // 
@@ -590,15 +619,6 @@
             this.dateEditNS.Size = new System.Drawing.Size(121, 20);
             this.dateEditNS.TabIndex = 33;
             // 
-            // tENHSLabel
-            // 
-            tENHSLabel.AutoSize = true;
-            tENHSLabel.Location = new System.Drawing.Point(61, 88);
-            tENHSLabel.Name = "tENHSLabel";
-            tENHSLabel.Size = new System.Drawing.Size(39, 13);
-            tENHSLabel.TabIndex = 30;
-            tENHSLabel.Text = "Họ tên";
-            // 
             // textBoxTenHS
             // 
             this.textBoxTenHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "TENHS", true));
@@ -607,32 +627,44 @@
             this.textBoxTenHS.Size = new System.Drawing.Size(203, 20);
             this.textBoxTenHS.TabIndex = 31;
             // 
-            // mAHSLabel
+            // textBoxMaHS
             // 
-            mAHSLabel.AutoSize = true;
-            mAHSLabel.Location = new System.Drawing.Point(61, 44);
-            mAHSLabel.Name = "mAHSLabel";
-            mAHSLabel.Size = new System.Drawing.Size(65, 13);
-            mAHSLabel.TabIndex = 28;
-            mAHSLabel.Text = "Mã học sinh";
+            this.textBoxMaHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "MAHS", true));
+            this.textBoxMaHS.Enabled = false;
+            this.textBoxMaHS.Location = new System.Drawing.Point(132, 41);
+            this.textBoxMaHS.Name = "textBoxMaHS";
+            this.textBoxMaHS.ReadOnly = true;
+            this.textBoxMaHS.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMaHS.TabIndex = 29;
             // 
-            // textBoxMHS
+            // textBoxTim
             // 
-            this.textBoxMHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "MAHS", true));
-            this.textBoxMHS.Enabled = false;
-            this.textBoxMHS.Location = new System.Drawing.Point(132, 41);
-            this.textBoxMHS.Name = "textBoxMHS";
-            this.textBoxMHS.ReadOnly = true;
-            this.textBoxMHS.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMHS.TabIndex = 29;
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(617, 47);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(171, 20);
+            this.textBoxTim.TabIndex = 11;
+            // 
+            // labelTim
+            // 
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(562, 50);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 12;
+            this.labelTim.Text = "Tìm kiếm";
             // 
             // FormHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.CancelButton = this.button4;
             this.ClientSize = new System.Drawing.Size(800, 523);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelTim);
+            this.Controls.Add(this.textBoxTim);
+            this.Controls.Add(this.groupBoxCT);
             this.Controls.Add(this.hOCSINHGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -646,8 +678,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hOCSINHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOCSINHGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxCT.ResumeLayout(false);
+            this.groupBoxCT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -675,7 +707,7 @@
         private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl hOCSINHGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxCT;
         private DevExpress.XtraGrid.Columns.GridColumn colMAHS;
         private DevExpress.XtraGrid.Columns.GridColumn colTENHS;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
@@ -695,13 +727,15 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBoxNghi;
-        private System.Windows.Forms.TextBox textBoxMLHS;
+        private System.Windows.Forms.TextBox textBoxMaLop;
         private System.Windows.Forms.TextBox textBoxDT;
         private System.Windows.Forms.TextBox textBoxDToc;
         private System.Windows.Forms.TextBox textBoxDC;
         private System.Windows.Forms.ComboBox comboBoxGT;
         private DevExpress.XtraEditors.DateEdit dateEditNS;
         private System.Windows.Forms.TextBox textBoxTenHS;
-        private System.Windows.Forms.TextBox textBoxMHS;
+        private System.Windows.Forms.TextBox textBoxMaHS;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.TextBox textBoxTim;
     }
 }

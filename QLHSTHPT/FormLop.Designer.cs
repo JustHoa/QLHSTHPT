@@ -58,14 +58,21 @@
             this.colMAHK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBAN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.labelEMaNH = new System.Windows.Forms.Label();
+            this.labelEMaHK = new System.Windows.Forms.Label();
+            this.labelETenLop = new System.Windows.Forms.Label();
+            this.labelEBan = new System.Windows.Forms.Label();
+            this.labelEMaLop = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.bANComboBox = new System.Windows.Forms.ComboBox();
-            this.mANHTextBox = new System.Windows.Forms.TextBox();
-            this.mAHKTextBox = new System.Windows.Forms.TextBox();
-            this.tENLOPTextBox = new System.Windows.Forms.TextBox();
-            this.mALOPTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBoxBan = new System.Windows.Forms.ComboBox();
+            this.textBoxMaNH = new System.Windows.Forms.TextBox();
+            this.textBoxMaHK = new System.Windows.Forms.TextBox();
+            this.textBoxTenLop = new System.Windows.Forms.TextBox();
+            this.textBoxMaLop = new System.Windows.Forms.TextBox();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
+            this.labelTim = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mAHKLabel = new System.Windows.Forms.Label();
@@ -76,13 +83,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxCT.SuspendLayout();
             this.SuspendLayout();
             // 
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(43, 40);
+            mALOPLabel.Location = new System.Drawing.Point(43, 36);
             mALOPLabel.Name = "mALOPLabel";
             mALOPLabel.Size = new System.Drawing.Size(39, 13);
             mALOPLabel.TabIndex = 0;
@@ -91,7 +98,7 @@
             // tENLOPLabel
             // 
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(43, 78);
+            tENLOPLabel.Location = new System.Drawing.Point(43, 79);
             tENLOPLabel.Name = "tENLOPLabel";
             tENLOPLabel.Size = new System.Drawing.Size(43, 13);
             tENLOPLabel.TabIndex = 2;
@@ -100,7 +107,7 @@
             // mAHKLabel
             // 
             mAHKLabel.AutoSize = true;
-            mAHKLabel.Location = new System.Drawing.Point(391, 40);
+            mAHKLabel.Location = new System.Drawing.Point(391, 36);
             mAHKLabel.Name = "mAHKLabel";
             mAHKLabel.Size = new System.Drawing.Size(57, 13);
             mAHKLabel.TabIndex = 4;
@@ -109,7 +116,7 @@
             // mANHLabel
             // 
             mANHLabel.AutoSize = true;
-            mANHLabel.Location = new System.Drawing.Point(391, 78);
+            mANHLabel.Location = new System.Drawing.Point(391, 79);
             mANHLabel.Name = "mANHLabel";
             mANHLabel.Size = new System.Drawing.Size(66, 13);
             mANHLabel.TabIndex = 6;
@@ -118,7 +125,7 @@
             // bANLabel
             // 
             bANLabel.AutoSize = true;
-            bANLabel.Location = new System.Drawing.Point(222, 40);
+            bANLabel.Location = new System.Drawing.Point(222, 36);
             bANLabel.Name = "bANLabel";
             bANLabel.Size = new System.Drawing.Size(26, 13);
             bANLabel.TabIndex = 8;
@@ -167,6 +174,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -174,6 +182,7 @@
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -181,6 +190,7 @@
             this.barButtonItem3.Id = 2;
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -188,6 +198,7 @@
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -195,6 +206,7 @@
             this.barButtonItem4.Id = 3;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -202,6 +214,7 @@
             this.barButtonItem6.Id = 5;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -327,93 +340,173 @@
             this.colBAN.Visible = true;
             this.colBAN.VisibleIndex = 4;
             // 
-            // groupBox1
+            // groupBoxCT
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(bANLabel);
-            this.groupBox1.Controls.Add(this.bANComboBox);
-            this.groupBox1.Controls.Add(mANHLabel);
-            this.groupBox1.Controls.Add(this.mANHTextBox);
-            this.groupBox1.Controls.Add(mAHKLabel);
-            this.groupBox1.Controls.Add(this.mAHKTextBox);
-            this.groupBox1.Controls.Add(tENLOPLabel);
-            this.groupBox1.Controls.Add(this.tENLOPTextBox);
-            this.groupBox1.Controls.Add(mALOPLabel);
-            this.groupBox1.Controls.Add(this.mALOPTextBox);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 260);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 190);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CHI TIẾT LỚP";
+            this.groupBoxCT.Controls.Add(this.labelEMaNH);
+            this.groupBoxCT.Controls.Add(this.labelEMaHK);
+            this.groupBoxCT.Controls.Add(this.labelETenLop);
+            this.groupBoxCT.Controls.Add(this.labelEBan);
+            this.groupBoxCT.Controls.Add(this.labelEMaLop);
+            this.groupBoxCT.Controls.Add(this.button2);
+            this.groupBoxCT.Controls.Add(this.button1);
+            this.groupBoxCT.Controls.Add(bANLabel);
+            this.groupBoxCT.Controls.Add(this.comboBoxBan);
+            this.groupBoxCT.Controls.Add(mANHLabel);
+            this.groupBoxCT.Controls.Add(this.textBoxMaNH);
+            this.groupBoxCT.Controls.Add(mAHKLabel);
+            this.groupBoxCT.Controls.Add(this.textBoxMaHK);
+            this.groupBoxCT.Controls.Add(tENLOPLabel);
+            this.groupBoxCT.Controls.Add(this.textBoxTenLop);
+            this.groupBoxCT.Controls.Add(mALOPLabel);
+            this.groupBoxCT.Controls.Add(this.textBoxMaLop);
+            this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxCT.Location = new System.Drawing.Point(0, 260);
+            this.groupBoxCT.Name = "groupBoxCT";
+            this.groupBoxCT.Size = new System.Drawing.Size(800, 190);
+            this.groupBoxCT.TabIndex = 12;
+            this.groupBoxCT.TabStop = false;
+            this.groupBoxCT.Text = "CHI TIẾT LỚP";
+            // 
+            // labelEMaNH
+            // 
+            this.labelEMaNH.AutoSize = true;
+            this.labelEMaNH.ForeColor = System.Drawing.Color.Red;
+            this.labelEMaNH.Location = new System.Drawing.Point(460, 99);
+            this.labelEMaNH.Name = "labelEMaNH";
+            this.labelEMaNH.Size = new System.Drawing.Size(0, 13);
+            this.labelEMaNH.TabIndex = 16;
+            // 
+            // labelEMaHK
+            // 
+            this.labelEMaHK.AutoSize = true;
+            this.labelEMaHK.ForeColor = System.Drawing.Color.Red;
+            this.labelEMaHK.Location = new System.Drawing.Point(460, 55);
+            this.labelEMaHK.Name = "labelEMaHK";
+            this.labelEMaHK.Size = new System.Drawing.Size(0, 13);
+            this.labelEMaHK.TabIndex = 15;
+            // 
+            // labelETenLop
+            // 
+            this.labelETenLop.AutoSize = true;
+            this.labelETenLop.ForeColor = System.Drawing.Color.Red;
+            this.labelETenLop.Location = new System.Drawing.Point(89, 99);
+            this.labelETenLop.Name = "labelETenLop";
+            this.labelETenLop.Size = new System.Drawing.Size(0, 13);
+            this.labelETenLop.TabIndex = 14;
+            // 
+            // labelEBan
+            // 
+            this.labelEBan.AutoSize = true;
+            this.labelEBan.ForeColor = System.Drawing.Color.Red;
+            this.labelEBan.Location = new System.Drawing.Point(251, 55);
+            this.labelEBan.Name = "labelEBan";
+            this.labelEBan.Size = new System.Drawing.Size(0, 13);
+            this.labelEBan.TabIndex = 13;
+            // 
+            // labelEMaLop
+            // 
+            this.labelEMaLop.AutoSize = true;
+            this.labelEMaLop.ForeColor = System.Drawing.Color.Red;
+            this.labelEMaLop.Location = new System.Drawing.Point(89, 56);
+            this.labelEMaLop.Name = "labelEMaLop";
+            this.labelEMaLop.Size = new System.Drawing.Size(0, 13);
+            this.labelEMaLop.TabIndex = 12;
+            // 
+            // button2
+            // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(390, 119);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(279, 116);
+            this.button1.Location = new System.Drawing.Point(279, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // bANComboBox
+            // comboBoxBan
             // 
-            this.bANComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "BAN", true));
-            this.bANComboBox.FormattingEnabled = true;
-            this.bANComboBox.Location = new System.Drawing.Point(254, 37);
-            this.bANComboBox.Name = "bANComboBox";
-            this.bANComboBox.Size = new System.Drawing.Size(100, 21);
-            this.bANComboBox.TabIndex = 9;
+            this.comboBoxBan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "BAN", true));
+            this.comboBoxBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBan.FormattingEnabled = true;
+            this.comboBoxBan.Items.AddRange(new object[] {
+            "Ban cơ bản",
+            "Ban nâng cao"});
+            this.comboBoxBan.Location = new System.Drawing.Point(254, 33);
+            this.comboBoxBan.Name = "comboBoxBan";
+            this.comboBoxBan.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxBan.TabIndex = 9;
             // 
-            // mANHTextBox
+            // textBoxMaNH
             // 
-            this.mANHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MANH", true));
-            this.mANHTextBox.Location = new System.Drawing.Point(463, 75);
-            this.mANHTextBox.Name = "mANHTextBox";
-            this.mANHTextBox.Size = new System.Drawing.Size(100, 20);
-            this.mANHTextBox.TabIndex = 7;
+            this.textBoxMaNH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MANH", true));
+            this.textBoxMaNH.Location = new System.Drawing.Point(463, 76);
+            this.textBoxMaNH.Name = "textBoxMaNH";
+            this.textBoxMaNH.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMaNH.TabIndex = 7;
             // 
-            // mAHKTextBox
+            // textBoxMaHK
             // 
-            this.mAHKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MAHK", true));
-            this.mAHKTextBox.Location = new System.Drawing.Point(463, 37);
-            this.mAHKTextBox.Name = "mAHKTextBox";
-            this.mAHKTextBox.Size = new System.Drawing.Size(100, 20);
-            this.mAHKTextBox.TabIndex = 5;
+            this.textBoxMaHK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MAHK", true));
+            this.textBoxMaHK.Location = new System.Drawing.Point(463, 33);
+            this.textBoxMaHK.Name = "textBoxMaHK";
+            this.textBoxMaHK.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMaHK.TabIndex = 5;
             // 
-            // tENLOPTextBox
+            // textBoxTenLop
             // 
-            this.tENLOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "TENLOP", true));
-            this.tENLOPTextBox.Location = new System.Drawing.Point(92, 75);
-            this.tENLOPTextBox.Name = "tENLOPTextBox";
-            this.tENLOPTextBox.Size = new System.Drawing.Size(262, 20);
-            this.tENLOPTextBox.TabIndex = 3;
+            this.textBoxTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "TENLOP", true));
+            this.textBoxTenLop.Location = new System.Drawing.Point(92, 76);
+            this.textBoxTenLop.Name = "textBoxTenLop";
+            this.textBoxTenLop.Size = new System.Drawing.Size(262, 20);
+            this.textBoxTenLop.TabIndex = 3;
             // 
-            // mALOPTextBox
+            // textBoxMaLop
             // 
-            this.mALOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MALOP", true));
-            this.mALOPTextBox.Location = new System.Drawing.Point(92, 37);
-            this.mALOPTextBox.Name = "mALOPTextBox";
-            this.mALOPTextBox.Size = new System.Drawing.Size(100, 20);
-            this.mALOPTextBox.TabIndex = 1;
+            this.textBoxMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MALOP", true));
+            this.textBoxMaLop.Enabled = false;
+            this.textBoxMaLop.Location = new System.Drawing.Point(92, 33);
+            this.textBoxMaLop.Name = "textBoxMaLop";
+            this.textBoxMaLop.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMaLop.TabIndex = 1;
             // 
-            // textBox1
+            // textBoxTim
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(597, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(597, 47);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(191, 20);
+            this.textBoxTim.TabIndex = 0;
+            // 
+            // labelTim
+            // 
+            this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim.AutoSize = true;
+            this.labelTim.Location = new System.Drawing.Point(542, 50);
+            this.labelTim.Name = "labelTim";
+            this.labelTim.Size = new System.Drawing.Size(49, 13);
+            this.labelTim.TabIndex = 17;
+            this.labelTim.Text = "Tìm kiếm";
             // 
             // FormLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.labelTim);
+            this.Controls.Add(this.textBoxTim);
+            this.Controls.Add(this.groupBoxCT);
             this.Controls.Add(this.lOPGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -428,8 +521,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxCT.ResumeLayout(false);
+            this.groupBoxCT.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,12 +546,12 @@
         private QLHSTHPTDataSet qLHSTHPTDataSet;
         private QLHSTHPTDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
         private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox bANComboBox;
-        private System.Windows.Forms.TextBox mANHTextBox;
-        private System.Windows.Forms.TextBox mAHKTextBox;
-        private System.Windows.Forms.TextBox tENLOPTextBox;
-        private System.Windows.Forms.TextBox mALOPTextBox;
+        private System.Windows.Forms.GroupBox groupBoxCT;
+        private System.Windows.Forms.ComboBox comboBoxBan;
+        private System.Windows.Forms.TextBox textBoxMaNH;
+        private System.Windows.Forms.TextBox textBoxMaHK;
+        private System.Windows.Forms.TextBox textBoxTenLop;
+        private System.Windows.Forms.TextBox textBoxMaLop;
         private DevExpress.XtraGrid.GridControl lOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
@@ -467,6 +560,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMANH;
         private DevExpress.XtraGrid.Columns.GridColumn colBAN;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTim;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelEMaNH;
+        private System.Windows.Forms.Label labelEMaHK;
+        private System.Windows.Forms.Label labelETenLop;
+        private System.Windows.Forms.Label labelEBan;
+        private System.Windows.Forms.Label labelEMaLop;
     }
 }

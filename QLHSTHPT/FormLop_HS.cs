@@ -187,11 +187,10 @@ namespace QLHSTHPT
             if (savedLop == 0)
             {
                 if (MessageBox.Show("Chưa lưu dữ liệu Lớp. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
-                goto End;
+                return;
             }
             if (savedHS == 0)
                 if (MessageBox.Show("Chưa lưu dữ liệu Học sinh. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
-        End:    formChinh.toolStripStatusLabelNote.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)

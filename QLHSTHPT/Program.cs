@@ -48,8 +48,8 @@ namespace QLHSTHPT
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
             formDangNhap = new FormDangNhap();
-            Application.Run(formDangNhap);
-            //Application.Run(new Form1());
+            //Application.Run(formDangNhap);
+            Application.Run(new Form1());
         }
     }
 }

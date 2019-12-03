@@ -279,5 +279,19 @@ namespace QLHSTHPT
                 f.Show();
             }
         }
+
+        private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormHocSinh_DB));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormHocSinh_DB f = new FormHocSinh_DB(this);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

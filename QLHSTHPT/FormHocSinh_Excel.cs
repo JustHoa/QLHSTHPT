@@ -2,6 +2,7 @@
 using DevExpress.DataAccess.Native.Data;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Columns;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,8 @@ namespace QLHSTHPT
 
             if (!string.IsNullOrEmpty(openFileDialog.FileName))
             {
+                this.labelEFile.Text = "";
+
                 textBoxFileName.Text = openFileDialog.FileName;
 
                 OleDbcon = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + openFileDialog.FileName + ";Extended Properties=Excel 12.0;");
@@ -102,8 +105,9 @@ namespace QLHSTHPT
 
                 }
 
-                comboBoxSheetName.SelectedIndex = 0;
+                this.labelESheet.Text = "";
 
+                comboBoxSheetName.SelectedIndex = 0;
             }
         }
 
@@ -114,6 +118,8 @@ namespace QLHSTHPT
 
         private void button2_Click(object sender, EventArgs e)
         {
+            labelEFile.Text = labelESheet.Text = "";
+
             if (textBoxFileName.Text == "")
             {
                 labelEFile.Text = "Chưa nhập Tên file. Chú ý!";
@@ -147,7 +153,7 @@ namespace QLHSTHPT
             {
                 barButtonItem8.Enabled = barButtonItem5.Enabled = barButtonItem2.Enabled = false;
                 MessageBox.Show("Lỗi: " + textBoxFileName.Text + " không tồn tại hoặc chứa dữ liệu không tương thích." +
-                    "\nĐảm bảo file excel có các trường sau:\nSTT, TENHS, NGAYSINH, GIOITINH, DIACHI, DANTOC, DIENTHOAI");
+                    "\n\nGợi ý: Đảm bảo file excel có các trường sau:\n       STT, TENHS, NGAYSINH, GIOITINH, DIACHI, DANTOC, DIENTHOAI, MALOP");
                 textBoxFileName.Focus();
             }
         }
@@ -199,7 +205,8 @@ namespace QLHSTHPT
                 string diaChi = gridView1.GetRowCellValue(i, "DIACHI").ToString();
                 string danToc = gridView1.GetRowCellValue(i, "DANTOC").ToString();
                 string dienThoai = gridView1.GetRowCellValue(i, "DIENTHOAI").ToString();
-                string maLop = "";
+
+                string maLop = (gridView1.GetRowCellValue(i, "MALOP") == null) ? "" : gridView1.GetRowCellValue(i, "MALOP").ToString();
                 int nghiHoc = 0;
 
                 SqlCommand sqlCommand = new SqlCommand();
@@ -256,7 +263,11 @@ namespace QLHSTHPT
                 dbMaLop.DbType = DbType.String;
                 dbMaLop.ParameterName = "@MALOP";
                 dbMaLop.Direction = ParameterDirection.Input;
-                dbMaLop.Value = maLop;
+                if (maLop == "")
+                {
+                    dbMaLop.Value = DBNull.Value;
+                }
+                else dbMaLop.Value = maLop;
 
                 dbNghiHoc.DbType = DbType.Int32;
                 dbNghiHoc.ParameterName = "@NGHIHOC";
@@ -283,6 +294,11 @@ namespace QLHSTHPT
                 catch (SqlException se)
                 {
                     MessageBox.Show("Loi: " + se.Message);
+                    break;
+                }
+                if (i == gridView1.RowCount) 
+                {
+                    MessageBox.Show("Lưu thành công!");
                 }
             }
         }
@@ -299,8 +315,8 @@ namespace QLHSTHPT
                 int [] soHS_Lop = Helper.xepLop(gridView1.RowCount);
                 if (soHS_Lop[0] == 0)
                 {
-                    MessageBox.Show("Số lượng học sinh nằm ngoài khoảng xếp lớp khả dụng!\nKhoảng khả dụng tối ưu: từ " +
-                        Program.MIN + " đến " + Program.MAX*Program.MAX_LOP + "\nHiện tại: " + gridView1.RowCount);
+                    MessageBox.Show("Số lượng học sinh nằm ngoài khoảng xếp lớp khả dụng!\n\nKhoảng khả dụng tối ưu: từ " +
+                        Program.MIN + " đến " + Program.MAX*Program.MAX_LOP + "\n\nHiện tại: " + gridView1.RowCount);
                 }
                 else
                 {
@@ -309,7 +325,10 @@ namespace QLHSTHPT
                     formXepLop.Validate();
                     formXepLop.Show();
                 }
-                
+            }
+            else
+            {
+                MessageBox.Show("Thiếu dữ liệu học sinh!\n Gợi ý: Thêm dữ liệu học sinh từ Excel.");
             }
         }
 

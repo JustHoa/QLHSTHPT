@@ -129,7 +129,7 @@ namespace QLHSTHPT
             }
             catch (InvalidOperationException ex)
             {
-                MessageBox.Show("Loi");
+                MessageBox.Show(ex.Message);
             }
         }
 

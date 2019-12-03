@@ -84,6 +84,12 @@
     <Compile Include="BaoCao\BangDiemHS.Designer.cs">
       <DependentUpon>BangDiemHS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBangDiemHS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCao\BangDiemHS.resx">
       <DependentUpon>BangDiemHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBangDiemHS.resx">
       <DependentUpon>FormBangDiemHS.cs</DependentUpon>

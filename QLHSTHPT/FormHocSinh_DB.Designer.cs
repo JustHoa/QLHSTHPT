@@ -35,18 +35,27 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
             this.sP_DSHS_TUDOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_DSHS_TUDOTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_DSHS_TUDOTableAdapter();
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
             this.sP_DSHS_TUDOGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENHS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDANTOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSHS_TUDOBindingSource)).BeginInit();
@@ -93,6 +102,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -109,12 +119,6 @@
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 3;
-            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // bar3
             // 
@@ -160,6 +164,12 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 387);
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
             // qLHSTHPTDataSet
             // 
             this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
@@ -204,8 +214,81 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAHS,
+            this.colTENHS,
+            this.colNGAYSINH,
+            this.colGIOITINH,
+            this.colDIACHI,
+            this.colDANTOC,
+            this.colDIENTHOAI,
+            this.colMALOP,
+            this.colNGHIHOC});
             this.gridView1.GridControl = this.sP_DSHS_TUDOGridControl;
             this.gridView1.Name = "gridView1";
+            // 
+            // colMAHS
+            // 
+            this.colMAHS.FieldName = "MAHS";
+            this.colMAHS.Name = "colMAHS";
+            this.colMAHS.Visible = true;
+            this.colMAHS.VisibleIndex = 0;
+            // 
+            // colTENHS
+            // 
+            this.colTENHS.FieldName = "TENHS";
+            this.colTENHS.Name = "colTENHS";
+            this.colTENHS.Visible = true;
+            this.colTENHS.VisibleIndex = 1;
+            // 
+            // colNGAYSINH
+            // 
+            this.colNGAYSINH.FieldName = "NGAYSINH";
+            this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.Visible = true;
+            this.colNGAYSINH.VisibleIndex = 2;
+            // 
+            // colGIOITINH
+            // 
+            this.colGIOITINH.FieldName = "GIOITINH";
+            this.colGIOITINH.Name = "colGIOITINH";
+            this.colGIOITINH.Visible = true;
+            this.colGIOITINH.VisibleIndex = 3;
+            // 
+            // colDIACHI
+            // 
+            this.colDIACHI.FieldName = "DIACHI";
+            this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.Visible = true;
+            this.colDIACHI.VisibleIndex = 4;
+            // 
+            // colDANTOC
+            // 
+            this.colDANTOC.FieldName = "DANTOC";
+            this.colDANTOC.Name = "colDANTOC";
+            this.colDANTOC.Visible = true;
+            this.colDANTOC.VisibleIndex = 5;
+            // 
+            // colDIENTHOAI
+            // 
+            this.colDIENTHOAI.FieldName = "DIENTHOAI";
+            this.colDIENTHOAI.Name = "colDIENTHOAI";
+            this.colDIENTHOAI.Visible = true;
+            this.colDIENTHOAI.VisibleIndex = 6;
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 7;
+            // 
+            // colNGHIHOC
+            // 
+            this.colNGHIHOC.FieldName = "NGHIHOC";
+            this.colNGHIHOC.Name = "colNGHIHOC";
+            this.colNGHIHOC.Visible = true;
+            this.colNGHIHOC.VisibleIndex = 8;
             // 
             // FormHocSinh_DB
             // 
@@ -249,5 +332,14 @@
         private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl sP_DSHS_TUDOGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAHS;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENHS;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colGIOITINH;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colDANTOC;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIENTHOAI;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGHIHOC;
     }
 }

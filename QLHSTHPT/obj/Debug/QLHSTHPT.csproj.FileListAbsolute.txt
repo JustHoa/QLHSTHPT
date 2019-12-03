@@ -321,3 +321,4 @@ D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimNH_Co
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimNH_PhanCong.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormHocSinh.resources
 D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormHocSinh_DB.resources
+D:\Documents\VisStudioProjects\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.Form1.resources

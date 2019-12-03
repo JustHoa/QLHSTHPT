@@ -73,16 +73,16 @@
             this.checkBoxNghi = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.labelETo = new System.Windows.Forms.Label();
+            this.labelEDT = new System.Windows.Forms.Label();
+            this.labelENS = new System.Windows.Forms.Label();
+            this.labelEDC = new System.Windows.Forms.Label();
+            this.labelETen = new System.Windows.Forms.Label();
             this.comboBoxMGV = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.labelTim = new System.Windows.Forms.Label();
             this.textBoxTim = new System.Windows.Forms.TextBox();
-            this.labelETen = new System.Windows.Forms.Label();
-            this.labelEDC = new System.Windows.Forms.Label();
-            this.labelENS = new System.Windows.Forms.Label();
-            this.labelEDT = new System.Windows.Forms.Label();
-            this.labelETo = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
             tENGVLabel = new System.Windows.Forms.Label();
             gIOITINHLabel = new System.Windows.Forms.Label();
@@ -516,6 +516,51 @@
             this.groupBoxCT.TabStop = false;
             this.groupBoxCT.Text = "Chi tiết giáo viên";
             // 
+            // labelETo
+            // 
+            this.labelETo.AutoSize = true;
+            this.labelETo.ForeColor = System.Drawing.Color.Red;
+            this.labelETo.Location = new System.Drawing.Point(602, 57);
+            this.labelETo.Name = "labelETo";
+            this.labelETo.Size = new System.Drawing.Size(0, 13);
+            this.labelETo.TabIndex = 26;
+            // 
+            // labelEDT
+            // 
+            this.labelEDT.AutoSize = true;
+            this.labelEDT.ForeColor = System.Drawing.Color.Red;
+            this.labelEDT.Location = new System.Drawing.Point(399, 141);
+            this.labelEDT.Name = "labelEDT";
+            this.labelEDT.Size = new System.Drawing.Size(0, 13);
+            this.labelEDT.TabIndex = 25;
+            // 
+            // labelENS
+            // 
+            this.labelENS.AutoSize = true;
+            this.labelENS.ForeColor = System.Drawing.Color.Red;
+            this.labelENS.Location = new System.Drawing.Point(399, 57);
+            this.labelENS.Name = "labelENS";
+            this.labelENS.Size = new System.Drawing.Size(0, 13);
+            this.labelENS.TabIndex = 24;
+            // 
+            // labelEDC
+            // 
+            this.labelEDC.AutoSize = true;
+            this.labelEDC.ForeColor = System.Drawing.Color.Red;
+            this.labelEDC.Location = new System.Drawing.Point(109, 141);
+            this.labelEDC.Name = "labelEDC";
+            this.labelEDC.Size = new System.Drawing.Size(0, 13);
+            this.labelEDC.TabIndex = 23;
+            // 
+            // labelETen
+            // 
+            this.labelETen.AutoSize = true;
+            this.labelETen.ForeColor = System.Drawing.Color.Red;
+            this.labelETen.Location = new System.Drawing.Point(109, 99);
+            this.labelETen.Name = "labelETen";
+            this.labelETen.Size = new System.Drawing.Size(0, 13);
+            this.labelETen.TabIndex = 22;
+            // 
             // comboBoxMGV
             // 
             this.comboBoxMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MAGV", true));
@@ -560,51 +605,6 @@
             this.textBoxTim.TabIndex = 7;
             this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
             this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
-            // 
-            // labelETen
-            // 
-            this.labelETen.AutoSize = true;
-            this.labelETen.ForeColor = System.Drawing.Color.Red;
-            this.labelETen.Location = new System.Drawing.Point(109, 99);
-            this.labelETen.Name = "labelETen";
-            this.labelETen.Size = new System.Drawing.Size(0, 13);
-            this.labelETen.TabIndex = 22;
-            // 
-            // labelEDC
-            // 
-            this.labelEDC.AutoSize = true;
-            this.labelEDC.ForeColor = System.Drawing.Color.Red;
-            this.labelEDC.Location = new System.Drawing.Point(109, 141);
-            this.labelEDC.Name = "labelEDC";
-            this.labelEDC.Size = new System.Drawing.Size(0, 13);
-            this.labelEDC.TabIndex = 23;
-            // 
-            // labelENS
-            // 
-            this.labelENS.AutoSize = true;
-            this.labelENS.ForeColor = System.Drawing.Color.Red;
-            this.labelENS.Location = new System.Drawing.Point(399, 57);
-            this.labelENS.Name = "labelENS";
-            this.labelENS.Size = new System.Drawing.Size(0, 13);
-            this.labelENS.TabIndex = 24;
-            // 
-            // labelEDT
-            // 
-            this.labelEDT.AutoSize = true;
-            this.labelEDT.ForeColor = System.Drawing.Color.Red;
-            this.labelEDT.Location = new System.Drawing.Point(399, 141);
-            this.labelEDT.Name = "labelEDT";
-            this.labelEDT.Size = new System.Drawing.Size(0, 13);
-            this.labelEDT.TabIndex = 25;
-            // 
-            // labelETo
-            // 
-            this.labelETo.AutoSize = true;
-            this.labelETo.ForeColor = System.Drawing.Color.Red;
-            this.labelETo.Location = new System.Drawing.Point(602, 57);
-            this.labelETo.Name = "labelETo";
-            this.labelETo.Size = new System.Drawing.Size(0, 13);
-            this.labelETo.TabIndex = 26;
             // 
             // FormGiaoVien
             // 
