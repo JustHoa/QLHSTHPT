@@ -357,7 +357,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(593, 78);
+            this.button2.Location = new System.Drawing.Point(585, 72);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 14;
@@ -395,7 +395,7 @@
             this.textBoxNg.Name = "textBoxNg";
             this.textBoxNg.Size = new System.Drawing.Size(100, 20);
             this.textBoxNg.TabIndex = 12;
-            this.textBoxNg.TextChanged += new System.EventHandler(this.textBoxNg_TextChanged);
+            this.textBoxNg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNg_KeyPress);
             // 
             // textBoxTen
             // 
@@ -409,7 +409,6 @@
             // textBoxMHK
             // 
             this.textBoxMHK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCKYBindingSource, "MAHK", true));
-            this.textBoxMHK.Enabled = false;
             this.textBoxMHK.Location = new System.Drawing.Point(124, 36);
             this.textBoxMHK.Name = "textBoxMHK";
             this.textBoxMHK.ReadOnly = true;
@@ -418,7 +417,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(490, 78);
+            this.button1.Location = new System.Drawing.Point(585, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;

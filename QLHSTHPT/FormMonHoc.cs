@@ -36,8 +36,12 @@ namespace QLHSTHPT
             {
                 this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem6.Enabled = false;
             }
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet.MONHOC);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet1.BOMON' table. You can move, or remove it, as needed.
+            this.bOMONTableAdapter.Fill(this.qLHSTHPTDataSet1.BOMON);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet1.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.MONHOC);
+            this.textBoxTenBM.Text = comboBoxMaBM.SelectedValue.ToString();
+            this.groupBoxCT.Enabled = false;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,6 +52,8 @@ namespace QLHSTHPT
             this.textBoxTim.Enabled = false;
             this.groupBoxCT.Enabled = true;
             this.mONHOCBindingSource.AddNew();
+            this.comboBoxMaBM.SelectedIndex = 1;
+            this.comboBoxMaBM.SelectedIndex = 0;
             this.textBoxMaMH.Focus();
         }
 
@@ -55,7 +61,7 @@ namespace QLHSTHPT
         {
             try
             {
-                this.mONHOCTableAdapter.Update(this.qLHSTHPTDataSet.MONHOC);
+                this.mONHOCTableAdapter.Update(this.qLHSTHPTDataSet1.MONHOC);
                 this.mONHOCGridControl.Enabled = true;
                 this.groupBoxCT.Enabled = false;
                 clkMan = clkOK = 1;
@@ -182,7 +188,7 @@ namespace QLHSTHPT
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet.MONHOC);
+            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.MONHOC);
             this.mONHOCGridControl.Enabled = true;
             this.labelTim.Enabled = true;
             this.textBoxTim.Enabled = true;
@@ -202,6 +208,20 @@ namespace QLHSTHPT
                 formChinh.toolStripStatusLabelNote.Text = "";
                 Close();
             }
+        }
+
+        private void comboBoxMaBM_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.textBoxTenBM.Text = comboBoxMaBM.SelectedValue.ToString();
+            }
+            catch { }
+        }
+
+        private void mONHOCGridControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

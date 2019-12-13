@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapDiem));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.error2 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.Label();
             this.comboBoxNH = new System.Windows.Forms.ComboBox();
@@ -72,12 +73,11 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelA = new System.Windows.Forms.Panel();
             this.labelTim = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTim = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.sP_BANGDIEMLOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_NAMHOC_DESCBindingSource1)).BeginInit();
@@ -113,6 +113,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 122);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(515, 66);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // error2
             // 
@@ -321,7 +331,7 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSubItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSubItem1, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
@@ -374,6 +384,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -450,7 +461,7 @@
             // panelA
             // 
             this.panelA.Controls.Add(this.labelTim);
-            this.panelA.Controls.Add(this.textBox1);
+            this.panelA.Controls.Add(this.textBoxTim);
             this.panelA.Controls.Add(this.panel2);
             this.panelA.Controls.Add(this.sP_BANGDIEMLOPGridControl);
             this.panelA.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -469,13 +480,15 @@
             this.labelTim.TabIndex = 35;
             this.labelTim.Text = "Tìm kiếm";
             // 
-            // textBox1
+            // textBoxTim
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(625, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 20);
-            this.textBox1.TabIndex = 34;
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(625, 6);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(163, 20);
+            this.textBoxTim.TabIndex = 34;
+            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
+            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
             // 
             // panel2
             // 
@@ -515,16 +528,6 @@
             // 
             this.gridView1.GridControl = this.sP_BANGDIEMLOPGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(515, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // imageList1
             // 
@@ -616,7 +619,7 @@
         private DevExpress.XtraGrid.GridControl sP_BANGDIEMLOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label labelTim;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTim;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ImageList imageList1;
     }

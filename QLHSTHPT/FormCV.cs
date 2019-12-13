@@ -27,6 +27,7 @@ namespace QLHSTHPT
 
         private void button3_Click(object sender, EventArgs e)
         {
+            labelEMaNH.Text = labelEMaHK.Text = "";
             if (textBoxMaNH.Text == "")
             {
                 this.labelEMaNH.Text = "Chưa nhập Mã năm học. Chú ý!";
@@ -43,7 +44,7 @@ namespace QLHSTHPT
 
             try
             {
-                this.sP_CV_GVTableAdapter.Fill(this.qLHSTHPTDataSet.SP_CV_GV, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(textBoxMaNH.Text, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(textBoxMaHK.Text, typeof(int))))));
+                this.sP_CV_GVTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_CV_GV, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(textBoxMaNH.Text, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(textBoxMaHK.Text, typeof(int))))));
                 if (sP_CV_GVBindingSource.Count == 0)
                 {
                     MessageBox.Show("Giáo viên chưa có thông tin phân công nhiệm vụ giảng dạy!");
@@ -64,7 +65,7 @@ namespace QLHSTHPT
         {
             this.textBoxMaGV.Text = Program.maGV;
             this.textBoxTenGV.Text = Program.tenGV;
-            this.textBoxMaNH.Focus();
+            this.textBoxMaNH.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,6 +82,20 @@ namespace QLHSTHPT
             FormTimHK_CongViec f = new FormTimHK_CongViec(formChinh, this);
             f.Activate();
             f.Show();
+        }
+
+        private void rbtnAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnAll.Checked)
+            {
+                sP_CV_GVBindingSource.RemoveFilter();
+                labelTitle.Text = "THÔNG TIN GIẢNG DẠY";
+            }
+            else
+            {
+                sP_CV_GVBindingSource.Filter = "CHUNHIEM = 1";
+                labelTitle.Text = "THÔNG TIN CHỦ NHIỆM";
+            }
         }
     }
 }

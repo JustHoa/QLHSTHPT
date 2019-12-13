@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Columns;
+using QLHSTHPT.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,7 +80,7 @@ namespace QLHSTHPT
             this.panel2.Visible = false;
             this.bar2.Visible = false;
             this.sP_BANGDIEMLOPGridControl.Visible = false;
-            this.textBox1.Visible = this.labelTim.Visible = false;
+            this.textBoxTim.Visible = this.labelTim.Visible = false;
             try
             {
                 this.sP_NAMHOC_DESCTableAdapter.Fill(this.qLHSTHPTDataSet.SP_NAMHOC_DESC, Program.maGV);
@@ -153,7 +154,7 @@ namespace QLHSTHPT
             this.bar2.Visible = true;
             this.sP_BANGDIEMLOPGridControl.Dock = DockStyle.Fill;
             this.sP_BANGDIEMLOPGridControl.Visible = true;
-            this.textBox1.Visible = this.labelTim.Visible = true;
+            this.textBoxTim.Visible = this.labelTim.Visible = true;
 
             resetData();
 
@@ -251,10 +252,12 @@ namespace QLHSTHPT
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textBoxTim.Focus();
             string maMH = this.comboBoxMH.SelectedValue.ToString();
             int maHK = int.Parse(this.comboBoxHK.SelectedValue.ToString());
             int maNH = int.Parse(this.comboBoxNH.SelectedValue.ToString());
             int count = this.sP_BANGDIEMLOPBindingSource.Count;
+            float diem = 0;
 
             if (count > 0)
             {
@@ -267,47 +270,108 @@ namespace QLHSTHPT
                         {
                             try
                             {
-                                string diem1 = gridView1.GetRowCellValue(i, co).ToString();
-                                float diem = float.Parse(((DataRowView)sP_BANGDIEMLOPBindingSource[i])[co.FieldName].ToString());
-                                if (diem < 0 || diem > 10)
-                                {
-                                    MessageBox.Show("Điểm sinh viên nằm trong khoảng từ 0 đến 10. Chú ý!");
-                                    return;
-                                }
-                                else
-                                {
-                                    string sql = "EXEC SP_CAPNHATDIEM '" + maHS + "', '" + maMH + "', " +
-                                        maHK + "," + maNH + ", '" + co.ToString() + "', " + diem;
-                                    SqlCommand sqlcommand = new SqlCommand(sql, Program.sqlConnection);
-                                    sqlcommand.ExecuteNonQuery();
-                                }
+                                diem = float.Parse(gridView1.GetRowCellValue(i, co.FieldName).ToString());
+                                //diem = float.Parse(((DataRowView)sP_BANGDIEMLOPBindingSource[i])[co.FieldName].ToString());
+                               
                             }
 
-                            catch (FormatException)
+                            catch (FormatException e1)
                             {
-                                continue;
+                                diem = 0;
+
+                            }
+                            if (diem < 0 || diem > 10)
+                            {
+                                MessageBox.Show("Điểm sinh viên nằm trong khoảng từ 0 đến 10. Chú ý!");
+                                return;
+                            }
+                            else
+                            {
+                                SqlCommand sqlCommand = new SqlCommand();
+                                SqlParameter dbMaHS = new SqlParameter();
+                                SqlParameter dbMaMH = new SqlParameter();
+                                SqlParameter dbMaHK = new SqlParameter();
+                                SqlParameter dbMaNH = new SqlParameter();
+                                SqlParameter dbLoaiDiem = new SqlParameter();
+                                SqlParameter dbDiem = new SqlParameter();
+
+                                dbMaHS.DbType = DbType.String;
+                                dbMaHS.ParameterName = "@MAHS";
+                                dbMaHS.Direction = ParameterDirection.Input;
+                                dbMaHS.Value = maHS;
+
+                                dbMaMH.DbType = DbType.String;
+                                dbMaMH.ParameterName = "@MAMH";
+                                dbMaMH.Direction = ParameterDirection.Input;
+                                dbMaMH.Value = maMH;
+
+                                dbMaHK.DbType = DbType.Int32;
+                                dbMaHK.ParameterName = "@MAHK";
+                                dbMaHK.Direction = ParameterDirection.Input;
+                                dbMaHK.Value = maHK;
+
+                                dbMaNH.DbType = DbType.Int32;
+                                dbMaNH.ParameterName = "@MANH";
+                                dbMaNH.Direction = ParameterDirection.Input;
+                                dbMaNH.Value = maNH;
+
+                                dbLoaiDiem.DbType = DbType.String;
+                                dbLoaiDiem.ParameterName = "@LOAIDIEM";
+                                dbLoaiDiem.Direction = ParameterDirection.Input;
+                                dbLoaiDiem.Value = co.FieldName;
+
+                                dbDiem.DbType = DbType.Decimal;
+                                dbDiem.ParameterName = "@DIEM";
+                                dbDiem.Direction = ParameterDirection.Input;
+                                if (diem != 0)
+                                   dbDiem.Value = diem;
+                                else
+                                    dbDiem.Value = DBNull.Value;
+
+                                try
+                                {
+                                    sqlCommand.Connection = Program.sqlConnection;
+                                    sqlCommand.CommandText = "SP_CAPNHATDIEM";
+                                    sqlCommand.Parameters.Add(dbMaHS);
+                                    sqlCommand.Parameters.Add(dbMaMH);
+                                    sqlCommand.Parameters.Add(dbMaHK);
+                                    sqlCommand.Parameters.Add(dbMaNH);
+                                    sqlCommand.Parameters.Add(dbLoaiDiem);
+                                    sqlCommand.Parameters.Add(dbDiem);
+                                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                                    sqlCommand.ExecuteNonQuery();
+                                    clkSave = 1;
+                                }
+                                catch (SqlException se)
+                                {
+                                    MessageBox.Show("Loi: " + se.Message);
+                                    return;
+                                }
                             }
                         }
                     }
+                    if (i == count - 1)
+                    {
+                        MessageBox.Show("Lưu điểm thành công!");
+                    }
                 }
             }
-
-            this.bar2.Visible = false;
-            this.sP_BANGDIEMLOPGridControl.Visible = false;
-            this.panel1.Visible = true;
-            
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.bar2.Visible = false;
-            this.sP_BANGDIEMLOPGridControl.Visible = false;
-            this.textBox1.Visible = this.labelTim.Visible = false;
-            this.panel1.Visible = true;
+                if (MessageBox.Show("Hãy đảm bảo bạn đã lưu dữ liệu trước khi thoát. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.bar2.Visible = false;
+                this.sP_BANGDIEMLOPGridControl.Visible = false;
+                this.textBoxTim.Visible = this.labelTim.Visible = false;
+                this.panel1.Visible = true;
+            }
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textBoxTim.Focus();
             //Program.addMieng = 4 + Program.arrMieng.Count();
             //int pos15p = 4 + Program.arrMieng.Count() + 2;
             //int pos1T = 4 + Program.arrMieng.Count() + 2 + Program.arr15p.Count() + 2;
@@ -323,22 +387,128 @@ namespace QLHSTHPT
                 colName = "MIENG_" + (int.Parse(spl[1]) + 1);
                 Program.arrMieng.Add(colName);
             }
-
+           
             GridColumn column = gridView1.Columns.AddVisible(colName, colName);
             gridView1.Columns[colName].VisibleIndex = Program.addMieng + Program.arrMieng.Count() - 1;
-            //gridView1.Columns[colName].Name = "col" + colName;
-            //qLHSTHPTDataSet.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
-            //qLHSTHPTDataSet.SP_BANGDIEMLOP.Columns[colName].
-            //this.sP_BANGDIEMLOPGridControl.Update();
-            //gridView1.UpdateSummary();
-            //gridView1.UpdateColumnsCustomization();
-            //gridView1.RefreshData();
-            //this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
 
+            // -----------------
+            string maHS = ((DataRowView)sP_BANGDIEMLOPBindingSource[0])["MAHS"].ToString().Trim();
+            string maMH = this.comboBoxMH.SelectedValue.ToString();
+            int maHK = int.Parse(this.comboBoxHK.SelectedValue.ToString());
+            int maNH = int.Parse(this.comboBoxNH.SelectedValue.ToString());
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlParameter dbMaHS = new SqlParameter();
+            SqlParameter dbMaMH = new SqlParameter();
+            SqlParameter dbMaHK = new SqlParameter();
+            SqlParameter dbMaNH = new SqlParameter();
+            SqlParameter dbLoaiDiem = new SqlParameter();
+            SqlParameter dbDiem = new SqlParameter();
+
+            dbMaHS.DbType = DbType.String;
+            dbMaHS.ParameterName = "@MAHS";
+            dbMaHS.Direction = ParameterDirection.Input;
+            dbMaHS.Value = maHS;
+
+            dbMaMH.DbType = DbType.String;
+            dbMaMH.ParameterName = "@MAMH";
+            dbMaMH.Direction = ParameterDirection.Input;
+            dbMaMH.Value = maMH;
+
+            dbMaHK.DbType = DbType.Int32;
+            dbMaHK.ParameterName = "@MAHK";
+            dbMaHK.Direction = ParameterDirection.Input;
+            dbMaHK.Value = maHK;
+
+            dbMaNH.DbType = DbType.Int32;
+            dbMaNH.ParameterName = "@MANH";
+            dbMaNH.Direction = ParameterDirection.Input;
+            dbMaNH.Value = maNH;
+
+            dbLoaiDiem.DbType = DbType.String;
+            dbLoaiDiem.ParameterName = "@LOAIDIEM";
+            dbLoaiDiem.Direction = ParameterDirection.Input;
+            dbLoaiDiem.Value = colName;
+
+            dbDiem.DbType = DbType.Double;
+            dbDiem.ParameterName = "@DIEM";
+            dbDiem.Direction = ParameterDirection.Input;
+            dbDiem.Value = DBNull.Value;
+
+            try
+            {
+                sqlCommand.Connection = Program.sqlConnection;
+                sqlCommand.CommandText = "SP_CAPNHATDIEM";
+                sqlCommand.Parameters.Add(dbMaHS);
+                sqlCommand.Parameters.Add(dbMaMH);
+                sqlCommand.Parameters.Add(dbMaHK);
+                sqlCommand.Parameters.Add(dbMaNH);
+                sqlCommand.Parameters.Add(dbLoaiDiem);
+                sqlCommand.Parameters.Add(dbDiem);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (SqlException se)
+            {
+                MessageBox.Show("Loi: " + se.Message);
+            }
+
+            string str1 = "MIENG_1, MIENG_2";
+            string str2 = "KT15P_1, KT15P_2";
+            string str3 = "KTTIET_1, KTTIET_2";
+            string str4 = "KTHK_1, KTHK_2";
+
+            foreach (string loai in Program.arrMieng)
+            {
+                str1 += (", " + loai);
+            }
+            foreach (string loai in Program.arr15p)
+            {
+                str2 += (", " + loai);
+            }
+            foreach (string loai in Program.arr1T)
+            {
+                str3 += (", " + loai);
+            }
+            string str = str1 + "," + str2 + "," + str3 + "," + str4;
+            //MessageBox.Show(str);
+            string sql2 = "ALTER PROC [dbo].[SP_BANGDIEMLOP] " +
+                "( @MALOP VARCHAR(10), @MAMH VARCHAR(10), @MAHK INT, @MANH INT) " +
+                "AS SELECT MAHS, TENHS, " + str +
+                " FROM(SELECT HS.MAHS, TENHS, LOAIDIEM, DIEM " +
+                "FROM(SELECT MAHS, TENHS FROM HOCSINH WHERE MALOP = @MALOP) HS " +
+                "LEFT OUTER JOIN (SELECT * FROM DIEM WHERE MAMH = @MAMH AND MAHK = @MAHK AND MANH = @MANH) D " +
+                "ON (HS.MAHS = D.MAHS)) SOURCETABLE " +
+                "PIVOT (SUM(DIEM) FOR [LOAIDIEM] IN (" + str + ")) as pivottable " +
+                "where TENHS IS NOT NULL " +
+                "ORDER BY MAHS";
+            SqlCommand sqlCommand2 = new SqlCommand(sql2, Program.sqlConnection);
+            int dataReader2 = sqlCommand2.ExecuteNonQuery();
+
+            try
+            {
+                this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
+
+                SqlCommand sqlCommand1 = new SqlCommand();
+                SqlParameter dbLoaiDiem1 = new SqlParameter();
+                dbLoaiDiem1.DbType = DbType.String;
+                dbLoaiDiem1.ParameterName = "@LOAIDIEM";
+                dbLoaiDiem1.Direction = ParameterDirection.Input;
+                dbLoaiDiem1.Value = colName;
+                sqlCommand1.Connection = Program.sqlConnection;
+                sqlCommand1.CommandText = "SP_XOADIEM_NULL";
+                sqlCommand1.Parameters.Add(dbLoaiDiem1);
+                sqlCommand1.CommandType = CommandType.StoredProcedure;
+                sqlCommand1.ExecuteNonQuery();
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textBoxTim.Focus();
             string colName = "";
             if (Program.arr15p.Count == 0)
             {
@@ -357,6 +527,7 @@ namespace QLHSTHPT
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textBoxTim.Focus();
             string colName = "";
             if (Program.arr1T.Count == 0)
             {
@@ -397,13 +568,18 @@ namespace QLHSTHPT
 
         private void textBoxTim_TextChanged(object sender, EventArgs e)
         {
-            sP_BANGDIEMLOPBindingSource.Filter = "TENHS LIKE '%" + textBox1.Text +
-                "%' OR MAHS LIKE '%" + textBox1.Text + "%'";
+            sP_BANGDIEMLOPBindingSource.Filter = "TENHS LIKE '%" + textBoxTim.Text +
+                "%' OR MAHS LIKE '%" + textBoxTim.Text + "%'";
         }
 
         private void textBoxTim_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Tìm kiếm theo Tên học sinh hoặc Mã học sinh", textBox1);
+            toolTip1.Show("Tìm kiếm theo Tên học sinh hoặc Mã học sinh", textBoxTim);
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

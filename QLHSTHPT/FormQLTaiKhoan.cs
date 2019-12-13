@@ -24,8 +24,6 @@ namespace QLHSTHPT
 
         private void FormQLTaiKhoan_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
             this.ControlBox = false;
 
             this.panelCTTK.Enabled = false;
@@ -40,7 +38,7 @@ namespace QLHSTHPT
             this.labelTim2.Visible = false;
             this.textBoxTim2.Visible = false;
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
+            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet1.GIAOVIEN);
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.V_DSTAIKHOAN' table. You can move, or remove it, as needed.
             this.v_DSTAIKHOANTableAdapter.Fill(this.qLHSTHPTDataSet.V_DSTAIKHOAN);
 
@@ -58,10 +56,14 @@ namespace QLHSTHPT
             this.buttonHuy1.Visible = true;
             this.gIAOVIENGridControl.Visible = false;
             this.groupBoxAddAcc.Visible = false;
+            this.textBoxTim2.Visible = false;
+            this.labelTim2.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //chua kt du lieu
+
             string sql = "ALTER LOGIN " + textBoxTenDN.Text + " WITH PASSWORD = '" + textBoxMK2.Text + "'";
             //string sql = "EXEC SP_DOIMATKHAU '" + textBoxTenDN.Text + "', '" + textBoxMK2.Text + "'";
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
@@ -236,6 +238,11 @@ namespace QLHSTHPT
         private void textBoxTim2_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Tìm kiếm theo Mã giáo viên hoặc Tên giáo viên", textBoxTim1);
+        }
+
+        private void buttonOK2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

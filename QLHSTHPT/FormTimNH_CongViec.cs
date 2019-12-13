@@ -26,14 +26,6 @@ namespace QLHSTHPT
             this.formCV = formCV;
         }
 
-        private void nAMHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.nAMHOCBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLHSTHPTDataSet);
-
-        }
-
         private void FormTimNH_CongViec_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.NAMHOC' table. You can move, or remove it, as needed.

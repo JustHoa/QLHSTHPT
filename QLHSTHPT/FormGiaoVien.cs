@@ -37,9 +37,10 @@ namespace QLHSTHPT
             }
             this.ControlBox = false;
             this.comboBoxGT.SelectedIndex = 0;
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
+            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet1.GIAOVIEN);
+            this.bOMONTableAdapter.Fill(this.qLHSTHPTDataSet1.BOMON);
             this.groupBoxCT.Enabled = false;
+            this.textBoxTenBM.Text = comboBoxMaBM.SelectedValue.ToString();
         }
 
         //private void textBoxTim_Leave(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace QLHSTHPT
         private void textBoxTim_TextChanged(object sender, EventArgs e)
         {
             gIAOVIENBindingSource.Filter = "TENGV LIKE '%" + textBoxTim.Text + 
-                "%' OR MAGV LIKE '%" + textBoxTim.Text + "%' OR TOMON LIKE '%" + textBoxTim.Text + "%'";
+                "%' OR MAGV LIKE '%" + textBoxTim.Text + "%'";
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -81,6 +82,7 @@ namespace QLHSTHPT
             this.comboBoxMGV.SelectedIndex = 0;
             this.textBoxTenGV.Focus();
             this.comboBoxGT.SelectedIndex = 0;
+            this.comboBoxMaBM.SelectedIndex = 0;
             this.checkBoxNghi.Checked = false;
         }
 
@@ -148,7 +150,7 @@ namespace QLHSTHPT
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
+            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet1.GIAOVIEN);
             this.gIAOVIENGridControl.Enabled = true;
             this.labelTim.Enabled = true;
             this.textBoxTim.Enabled = true;
@@ -158,7 +160,7 @@ namespace QLHSTHPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.gIAOVIENTableAdapter.Update(this.qLHSTHPTDataSet.GIAOVIEN);
+            this.gIAOVIENTableAdapter.Update(this.qLHSTHPTDataSet1.GIAOVIEN);
             this.gIAOVIENGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
             //clkSave = 1;
@@ -214,14 +216,6 @@ namespace QLHSTHPT
                 this.labelEDT.Text = "Chưa nhập Điện thoại. Chú ý!";
                 //MessageBox.Show("Chưa nhập Điện thoại. Chú ý!");
                 textBoxDT.Focus();
-                return;
-            }
-
-            if (this.textBoxTM.Text == "")
-            {
-                this.labelETo.Text = "Chưa nhập Tổ môn. Chú ý!";
-                //MessageBox.Show("Chưa nhập Tổ môn. Chú ý!");
-                textBoxTM.Focus();
                 return;
             }
 
@@ -323,24 +317,21 @@ namespace QLHSTHPT
             }
         }
 
-        private void textBoxTM_KeyPress(object sender, KeyPressEventArgs e)
+        private void gIAOVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if ((((e.KeyChar > (char)31) && (e.KeyChar < (char)45)) || ((e.KeyChar > (char)45) && (e.KeyChar < (char)65))))
-            {
-                this.labelETo.Text = "Tổ môn chỉ bao gồm chữ cái và kí tự '-' để chia môn! Ví dụ: Toán-Lý-Hóa";
-                e.Handled = true;
-            }
-            else if ((((e.KeyChar > (char)90) && (e.KeyChar < (char)97)) || ((e.KeyChar > (char)122) && (e.KeyChar < (char)127))))
-            {
-                this.labelETo.Text = "Tổ môn chỉ bao gồm chữ cái và kí tự '-' để chia môn! Ví dụ: Toán-Lý-Hóa";
-                e.Handled = true;
-            }
-            else
-            {
-                this.labelETo.Text = "";
-                e.Handled = false;
-            }
+            this.Validate();
+            this.gIAOVIENBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.qLHSTHPTDataSet1);
+
         }
 
+        private void comboBoxMaBM_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                textBoxTenBM.Text = comboBoxMaBM.SelectedValue.ToString();
+            }
+            catch { }
+        }
     }
 }

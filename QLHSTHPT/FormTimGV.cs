@@ -24,8 +24,8 @@ namespace QLHSTHPT
 
         private void FormTimGV_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.GIAOVIEN' table. You can move, or remove it, as needed.
-            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet.GIAOVIEN);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet1.GIAOVIEN' table. You can move, or remove it, as needed.
+            this.gIAOVIENTableAdapter.Fill(this.qLHSTHPTDataSet1.GIAOVIEN);
 
         }
 
@@ -53,7 +53,7 @@ namespace QLHSTHPT
 
         private void textBoxTim_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Tìm kiếm theo tên giáo viên, mã giáo viên hoặc môn học", textBoxTim);
+            toolTip1.Show("Tìm kiếm theo tên giáo viên, mã giáo viên", textBoxTim);
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label mAGVLabel;
-            System.Windows.Forms.Label tENGVLabel;
-            System.Windows.Forms.Label gIOITINHLabel;
-            System.Windows.Forms.Label nGAYSINHLabel;
-            System.Windows.Forms.Label dIACHILabel;
-            System.Windows.Forms.Label dIENTHOAILabel;
-            System.Windows.Forms.Label tOMONLabel;
             System.Windows.Forms.Label nGHILabel;
+            System.Windows.Forms.Label tOMONLabel;
+            System.Windows.Forms.Label dIENTHOAILabel;
+            System.Windows.Forms.Label dIACHILabel;
+            System.Windows.Forms.Label nGAYSINHLabel;
+            System.Windows.Forms.Label gIOITINHLabel;
+            System.Windows.Forms.Label tENGVLabel;
+            System.Windows.Forms.Label mAGVLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGiaoVien));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -50,10 +50,12 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
             this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gIAOVIENTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.GIAOVIENTableAdapter();
-            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
+            this.gIAOVIENTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.GIAOVIENTableAdapter();
+            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
+            this.bOMONTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.BOMONTableAdapter();
             this.gIAOVIENGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,17 +64,12 @@
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTOMON = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMABM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textBoxTenGV = new System.Windows.Forms.TextBox();
-            this.comboBoxGT = new System.Windows.Forms.ComboBox();
-            this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
-            this.textBoxDC = new System.Windows.Forms.TextBox();
-            this.textBoxDT = new System.Windows.Forms.TextBox();
-            this.textBoxTM = new System.Windows.Forms.TextBox();
-            this.checkBoxNghi = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.textBoxTenBM = new System.Windows.Forms.TextBox();
+            this.comboBoxMaBM = new System.Windows.Forms.ComboBox();
+            this.bOMONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelETo = new System.Windows.Forms.Label();
             this.labelEDT = new System.Windows.Forms.Label();
             this.labelENS = new System.Windows.Forms.Label();
@@ -80,71 +77,51 @@
             this.labelETen = new System.Windows.Forms.Label();
             this.comboBoxMGV = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelTim = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBoxNghi = new System.Windows.Forms.CheckBox();
+            this.textBoxDT = new System.Windows.Forms.TextBox();
+            this.textBoxDC = new System.Windows.Forms.TextBox();
+            this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
+            this.comboBoxGT = new System.Windows.Forms.ComboBox();
+            this.textBoxTenGV = new System.Windows.Forms.TextBox();
             this.textBoxTim = new System.Windows.Forms.TextBox();
-            mAGVLabel = new System.Windows.Forms.Label();
-            tENGVLabel = new System.Windows.Forms.Label();
-            gIOITINHLabel = new System.Windows.Forms.Label();
-            nGAYSINHLabel = new System.Windows.Forms.Label();
-            dIACHILabel = new System.Windows.Forms.Label();
-            dIENTHOAILabel = new System.Windows.Forms.Label();
-            tOMONLabel = new System.Windows.Forms.Label();
+            this.labelTim = new System.Windows.Forms.Label();
             nGHILabel = new System.Windows.Forms.Label();
+            tOMONLabel = new System.Windows.Forms.Label();
+            dIENTHOAILabel = new System.Windows.Forms.Label();
+            dIACHILabel = new System.Windows.Forms.Label();
+            nGAYSINHLabel = new System.Windows.Forms.Label();
+            gIOITINHLabel = new System.Windows.Forms.Label();
+            tENGVLabel = new System.Windows.Forms.Label();
+            mAGVLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.groupBoxCT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bOMONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).BeginInit();
-            this.groupBoxCT.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mAGVLabel
+            // nGHILabel
             // 
-            mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(38, 37);
-            mAGVLabel.Name = "mAGVLabel";
-            mAGVLabel.Size = new System.Drawing.Size(68, 13);
-            mAGVLabel.TabIndex = 0;
-            mAGVLabel.Text = "Mã giáo viên";
+            nGHILabel.AutoSize = true;
+            nGHILabel.Location = new System.Drawing.Point(587, 79);
+            nGHILabel.Name = "nGHILabel";
+            nGHILabel.Size = new System.Drawing.Size(29, 13);
+            nGHILabel.TabIndex = 14;
+            nGHILabel.Text = "Nghỉ";
             // 
-            // tENGVLabel
+            // tOMONLabel
             // 
-            tENGVLabel.AutoSize = true;
-            tENGVLabel.Location = new System.Drawing.Point(38, 79);
-            tENGVLabel.Name = "tENGVLabel";
-            tENGVLabel.Size = new System.Drawing.Size(39, 13);
-            tENGVLabel.TabIndex = 2;
-            tENGVLabel.Text = "Họ tên";
-            // 
-            // gIOITINHLabel
-            // 
-            gIOITINHLabel.AutoSize = true;
-            gIOITINHLabel.Location = new System.Drawing.Point(341, 79);
-            gIOITINHLabel.Name = "gIOITINHLabel";
-            gIOITINHLabel.Size = new System.Drawing.Size(47, 13);
-            gIOITINHLabel.TabIndex = 4;
-            gIOITINHLabel.Text = "Giới tính";
-            // 
-            // nGAYSINHLabel
-            // 
-            nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(341, 37);
-            nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(54, 13);
-            nGAYSINHLabel.TabIndex = 6;
-            nGAYSINHLabel.Text = "Ngày sinh";
-            // 
-            // dIACHILabel
-            // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(38, 121);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(40, 13);
-            dIACHILabel.TabIndex = 8;
-            dIACHILabel.Text = "Địa chỉ";
+            tOMONLabel.AutoSize = true;
+            tOMONLabel.Location = new System.Drawing.Point(556, 37);
+            tOMONLabel.Name = "tOMONLabel";
+            tOMONLabel.Size = new System.Drawing.Size(60, 13);
+            tOMONLabel.TabIndex = 12;
+            tOMONLabel.Text = "Mã bộ môn";
             // 
             // dIENTHOAILabel
             // 
@@ -155,23 +132,50 @@
             dIENTHOAILabel.TabIndex = 10;
             dIENTHOAILabel.Text = "Điện thoại";
             // 
-            // tOMONLabel
+            // dIACHILabel
             // 
-            tOMONLabel.AutoSize = true;
-            tOMONLabel.Location = new System.Drawing.Point(556, 37);
-            tOMONLabel.Name = "tOMONLabel";
-            tOMONLabel.Size = new System.Drawing.Size(43, 13);
-            tOMONLabel.TabIndex = 12;
-            tOMONLabel.Text = "Tổ môn";
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(38, 121);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(40, 13);
+            dIACHILabel.TabIndex = 8;
+            dIACHILabel.Text = "Địa chỉ";
             // 
-            // nGHILabel
+            // nGAYSINHLabel
             // 
-            nGHILabel.AutoSize = true;
-            nGHILabel.Location = new System.Drawing.Point(556, 79);
-            nGHILabel.Name = "nGHILabel";
-            nGHILabel.Size = new System.Drawing.Size(29, 13);
-            nGHILabel.TabIndex = 14;
-            nGHILabel.Text = "Nghỉ";
+            nGAYSINHLabel.AutoSize = true;
+            nGAYSINHLabel.Location = new System.Drawing.Point(341, 37);
+            nGAYSINHLabel.Name = "nGAYSINHLabel";
+            nGAYSINHLabel.Size = new System.Drawing.Size(54, 13);
+            nGAYSINHLabel.TabIndex = 6;
+            nGAYSINHLabel.Text = "Ngày sinh";
+            // 
+            // gIOITINHLabel
+            // 
+            gIOITINHLabel.AutoSize = true;
+            gIOITINHLabel.Location = new System.Drawing.Point(341, 79);
+            gIOITINHLabel.Name = "gIOITINHLabel";
+            gIOITINHLabel.Size = new System.Drawing.Size(47, 13);
+            gIOITINHLabel.TabIndex = 4;
+            gIOITINHLabel.Text = "Giới tính";
+            // 
+            // tENGVLabel
+            // 
+            tENGVLabel.AutoSize = true;
+            tENGVLabel.Location = new System.Drawing.Point(38, 79);
+            tENGVLabel.Name = "tENGVLabel";
+            tENGVLabel.Size = new System.Drawing.Size(39, 13);
+            tENGVLabel.TabIndex = 2;
+            tENGVLabel.Text = "Họ tên";
+            // 
+            // mAGVLabel
+            // 
+            mAGVLabel.AutoSize = true;
+            mAGVLabel.Location = new System.Drawing.Point(38, 37);
+            mAGVLabel.Name = "mAGVLabel";
+            mAGVLabel.Size = new System.Drawing.Size(68, 13);
+            mAGVLabel.TabIndex = 0;
+            mAGVLabel.Text = "Mã giáo viên";
             // 
             // barManager1
             // 
@@ -263,15 +267,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(808, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(897, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 475);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(808, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(897, 0);
             // 
             // barDockControlLeft
             // 
@@ -279,26 +283,31 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 410);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 435);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(808, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(897, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 410);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 435);
             // 
-            // qLHSTHPTDataSet
+            // toolTip1
             // 
-            this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
-            this.qLHSTHPTDataSet.EnforceConstraints = false;
-            this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // qLHSTHPTDataSet1
+            // 
+            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.EnforceConstraints = false;
+            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gIAOVIENBindingSource
             // 
             this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
-            this.gIAOVIENBindingSource.DataSource = this.qLHSTHPTDataSet;
+            this.gIAOVIENBindingSource.DataSource = this.qLHSTHPTDataSet1;
             // 
             // gIAOVIENTableAdapter
             // 
@@ -307,15 +316,23 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BOMONTableAdapter = this.bOMONTableAdapter;
             this.tableAdapterManager.DIEMTableAdapter = null;
             this.tableAdapterManager.GIAOVIENTableAdapter = this.gIAOVIENTableAdapter;
             this.tableAdapterManager.HOCKYTableAdapter = null;
             this.tableAdapterManager.HOCSINHTableAdapter = null;
+            this.tableAdapterManager.HS_LOPTableAdapter = null;
+            this.tableAdapterManager.KHOITableAdapter = null;
             this.tableAdapterManager.LOPTableAdapter = null;
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.NAMHOCTableAdapter = null;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // bOMONTableAdapter
+            // 
+            this.bOMONTableAdapter.ClearBeforeFill = true;
             // 
             // gIAOVIENGridControl
             // 
@@ -325,8 +342,8 @@
             this.gIAOVIENGridControl.MainView = this.gridView1;
             this.gIAOVIENGridControl.MenuManager = this.barManager1;
             this.gIAOVIENGridControl.Name = "gIAOVIENGridControl";
-            this.gIAOVIENGridControl.Size = new System.Drawing.Size(808, 220);
-            this.gIAOVIENGridControl.TabIndex = 5;
+            this.gIAOVIENGridControl.Size = new System.Drawing.Size(897, 245);
+            this.gIAOVIENGridControl.TabIndex = 17;
             this.gIAOVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -339,16 +356,16 @@
             this.colNGAYSINH,
             this.colDIACHI,
             this.colDIENTHOAI,
-            this.colTOMON,
+            this.colMABM,
             this.colNGHI});
             this.gridView1.GridControl = this.gIAOVIENGridControl;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
             // 
             // colMAGV
             // 
             this.colMAGV.FieldName = "MAGV";
             this.colMAGV.Name = "colMAGV";
+            this.colMAGV.OptionsColumn.AllowEdit = false;
             this.colMAGV.Visible = true;
             this.colMAGV.VisibleIndex = 0;
             // 
@@ -356,6 +373,7 @@
             // 
             this.colTENGV.FieldName = "TENGV";
             this.colTENGV.Name = "colTENGV";
+            this.colTENGV.OptionsColumn.AllowEdit = false;
             this.colTENGV.Visible = true;
             this.colTENGV.VisibleIndex = 1;
             // 
@@ -363,6 +381,7 @@
             // 
             this.colGIOITINH.FieldName = "GIOITINH";
             this.colGIOITINH.Name = "colGIOITINH";
+            this.colGIOITINH.OptionsColumn.AllowEdit = false;
             this.colGIOITINH.Visible = true;
             this.colGIOITINH.VisibleIndex = 2;
             // 
@@ -370,6 +389,7 @@
             // 
             this.colNGAYSINH.FieldName = "NGAYSINH";
             this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.OptionsColumn.AllowEdit = false;
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 3;
             // 
@@ -377,6 +397,7 @@
             // 
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 4;
             // 
@@ -384,107 +405,30 @@
             // 
             this.colDIENTHOAI.FieldName = "DIENTHOAI";
             this.colDIENTHOAI.Name = "colDIENTHOAI";
+            this.colDIENTHOAI.OptionsColumn.AllowEdit = false;
             this.colDIENTHOAI.Visible = true;
             this.colDIENTHOAI.VisibleIndex = 5;
             // 
-            // colTOMON
+            // colMABM
             // 
-            this.colTOMON.FieldName = "TOMON";
-            this.colTOMON.Name = "colTOMON";
-            this.colTOMON.Visible = true;
-            this.colTOMON.VisibleIndex = 6;
+            this.colMABM.FieldName = "MABM";
+            this.colMABM.Name = "colMABM";
+            this.colMABM.OptionsColumn.AllowEdit = false;
+            this.colMABM.Visible = true;
+            this.colMABM.VisibleIndex = 6;
             // 
             // colNGHI
             // 
             this.colNGHI.FieldName = "NGHI";
             this.colNGHI.Name = "colNGHI";
+            this.colNGHI.OptionsColumn.AllowEdit = false;
             this.colNGHI.Visible = true;
             this.colNGHI.VisibleIndex = 7;
             // 
-            // textBoxTenGV
-            // 
-            this.textBoxTenGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "TENGV", true));
-            this.textBoxTenGV.Location = new System.Drawing.Point(112, 76);
-            this.textBoxTenGV.Name = "textBoxTenGV";
-            this.textBoxTenGV.Size = new System.Drawing.Size(189, 20);
-            this.textBoxTenGV.TabIndex = 3;
-            this.textBoxTenGV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenGV_KeyPress);
-            // 
-            // comboBoxGT
-            // 
-            this.comboBoxGT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "GIOITINH", true));
-            this.comboBoxGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGT.FormattingEnabled = true;
-            this.comboBoxGT.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.comboBoxGT.Location = new System.Drawing.Point(401, 76);
-            this.comboBoxGT.Name = "comboBoxGT";
-            this.comboBoxGT.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGT.TabIndex = 5;
-            // 
-            // dateEditNS
-            // 
-            this.dateEditNS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gIAOVIENBindingSource, "NGAYSINH", true));
-            this.dateEditNS.EditValue = null;
-            this.dateEditNS.Location = new System.Drawing.Point(401, 34);
-            this.dateEditNS.MenuManager = this.barManager1;
-            this.dateEditNS.Name = "dateEditNS";
-            this.dateEditNS.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNS.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNS.Size = new System.Drawing.Size(121, 20);
-            this.dateEditNS.TabIndex = 7;
-            // 
-            // textBoxDC
-            // 
-            this.textBoxDC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "DIACHI", true));
-            this.textBoxDC.Location = new System.Drawing.Point(112, 118);
-            this.textBoxDC.Name = "textBoxDC";
-            this.textBoxDC.Size = new System.Drawing.Size(189, 20);
-            this.textBoxDC.TabIndex = 9;
-            // 
-            // textBoxDT
-            // 
-            this.textBoxDT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "DIENTHOAI", true));
-            this.textBoxDT.Location = new System.Drawing.Point(402, 118);
-            this.textBoxDT.MaxLength = 10;
-            this.textBoxDT.Name = "textBoxDT";
-            this.textBoxDT.Size = new System.Drawing.Size(120, 20);
-            this.textBoxDT.TabIndex = 11;
-            this.textBoxDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDT_KeyPress);
-            // 
-            // textBoxTM
-            // 
-            this.textBoxTM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "TOMON", true));
-            this.textBoxTM.Location = new System.Drawing.Point(605, 34);
-            this.textBoxTM.Name = "textBoxTM";
-            this.textBoxTM.Size = new System.Drawing.Size(112, 20);
-            this.textBoxTM.TabIndex = 13;
-            this.textBoxTM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTM_KeyPress);
-            // 
-            // checkBoxNghi
-            // 
-            this.checkBoxNghi.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.gIAOVIENBindingSource, "NGHI", true));
-            this.checkBoxNghi.Location = new System.Drawing.Point(605, 74);
-            this.checkBoxNghi.Name = "checkBoxNghi";
-            this.checkBoxNghi.Size = new System.Drawing.Size(104, 24);
-            this.checkBoxNghi.TabIndex = 15;
-            this.checkBoxNghi.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(559, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBoxCT
             // 
+            this.groupBoxCT.Controls.Add(this.textBoxTenBM);
+            this.groupBoxCT.Controls.Add(this.comboBoxMaBM);
             this.groupBoxCT.Controls.Add(this.labelETo);
             this.groupBoxCT.Controls.Add(this.labelEDT);
             this.groupBoxCT.Controls.Add(this.labelENS);
@@ -496,7 +440,6 @@
             this.groupBoxCT.Controls.Add(nGHILabel);
             this.groupBoxCT.Controls.Add(this.checkBoxNghi);
             this.groupBoxCT.Controls.Add(tOMONLabel);
-            this.groupBoxCT.Controls.Add(this.textBoxTM);
             this.groupBoxCT.Controls.Add(dIENTHOAILabel);
             this.groupBoxCT.Controls.Add(this.textBoxDT);
             this.groupBoxCT.Controls.Add(dIACHILabel);
@@ -509,12 +452,39 @@
             this.groupBoxCT.Controls.Add(this.textBoxTenGV);
             this.groupBoxCT.Controls.Add(mAGVLabel);
             this.groupBoxCT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxCT.Location = new System.Drawing.Point(0, 260);
+            this.groupBoxCT.Location = new System.Drawing.Point(0, 285);
             this.groupBoxCT.Name = "groupBoxCT";
-            this.groupBoxCT.Size = new System.Drawing.Size(808, 190);
-            this.groupBoxCT.TabIndex = 6;
+            this.groupBoxCT.Size = new System.Drawing.Size(897, 190);
+            this.groupBoxCT.TabIndex = 18;
             this.groupBoxCT.TabStop = false;
             this.groupBoxCT.Text = "Chi tiết giáo viên";
+            // 
+            // textBoxTenBM
+            // 
+            this.textBoxTenBM.Location = new System.Drawing.Point(682, 35);
+            this.textBoxTenBM.Name = "textBoxTenBM";
+            this.textBoxTenBM.ReadOnly = true;
+            this.textBoxTenBM.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTenBM.TabIndex = 28;
+            // 
+            // comboBoxMaBM
+            // 
+            this.comboBoxMaBM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MABM", true));
+            this.comboBoxMaBM.DataSource = this.bOMONBindingSource;
+            this.comboBoxMaBM.DisplayMember = "MABM";
+            this.comboBoxMaBM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaBM.FormattingEnabled = true;
+            this.comboBoxMaBM.Location = new System.Drawing.Point(622, 34);
+            this.comboBoxMaBM.Name = "comboBoxMaBM";
+            this.comboBoxMaBM.Size = new System.Drawing.Size(54, 21);
+            this.comboBoxMaBM.TabIndex = 27;
+            this.comboBoxMaBM.ValueMember = "TENBM";
+            this.comboBoxMaBM.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaBM_SelectedIndexChanged);
+            // 
+            // bOMONBindingSource
+            // 
+            this.bOMONBindingSource.DataMember = "BOMON";
+            this.bOMONBindingSource.DataSource = this.qLHSTHPTDataSet1;
             // 
             // labelETo
             // 
@@ -572,7 +542,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(642, 115);
+            this.button2.Location = new System.Drawing.Point(707, 115);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 17;
@@ -580,38 +550,105 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // toolTip1
+            // button1
             // 
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.button1.Location = new System.Drawing.Point(622, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBoxNghi
+            // 
+            this.checkBoxNghi.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.gIAOVIENBindingSource, "NGHI", true));
+            this.checkBoxNghi.Location = new System.Drawing.Point(622, 74);
+            this.checkBoxNghi.Name = "checkBoxNghi";
+            this.checkBoxNghi.Size = new System.Drawing.Size(104, 24);
+            this.checkBoxNghi.TabIndex = 15;
+            this.checkBoxNghi.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDT
+            // 
+            this.textBoxDT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "DIENTHOAI", true));
+            this.textBoxDT.Location = new System.Drawing.Point(402, 118);
+            this.textBoxDT.MaxLength = 10;
+            this.textBoxDT.Name = "textBoxDT";
+            this.textBoxDT.Size = new System.Drawing.Size(120, 20);
+            this.textBoxDT.TabIndex = 11;
+            this.textBoxDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDT_KeyPress);
+            // 
+            // textBoxDC
+            // 
+            this.textBoxDC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "DIACHI", true));
+            this.textBoxDC.Location = new System.Drawing.Point(112, 118);
+            this.textBoxDC.Name = "textBoxDC";
+            this.textBoxDC.Size = new System.Drawing.Size(189, 20);
+            this.textBoxDC.TabIndex = 9;
+            // 
+            // dateEditNS
+            // 
+            this.dateEditNS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gIAOVIENBindingSource, "NGAYSINH", true));
+            this.dateEditNS.EditValue = null;
+            this.dateEditNS.Location = new System.Drawing.Point(401, 34);
+            this.dateEditNS.MenuManager = this.barManager1;
+            this.dateEditNS.Name = "dateEditNS";
+            this.dateEditNS.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNS.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNS.Size = new System.Drawing.Size(121, 20);
+            this.dateEditNS.TabIndex = 7;
+            // 
+            // comboBoxGT
+            // 
+            this.comboBoxGT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "GIOITINH", true));
+            this.comboBoxGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGT.FormattingEnabled = true;
+            this.comboBoxGT.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.comboBoxGT.Location = new System.Drawing.Point(401, 76);
+            this.comboBoxGT.Name = "comboBoxGT";
+            this.comboBoxGT.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGT.TabIndex = 5;
+            // 
+            // textBoxTenGV
+            // 
+            this.textBoxTenGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "TENGV", true));
+            this.textBoxTenGV.Location = new System.Drawing.Point(112, 76);
+            this.textBoxTenGV.Name = "textBoxTenGV";
+            this.textBoxTenGV.Size = new System.Drawing.Size(189, 20);
+            this.textBoxTenGV.TabIndex = 3;
+            this.textBoxTenGV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenGV_KeyPress);
+            // 
+            // textBoxTim
+            // 
+            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim.Location = new System.Drawing.Point(682, 47);
+            this.textBoxTim.Name = "textBoxTim";
+            this.textBoxTim.Size = new System.Drawing.Size(186, 20);
+            this.textBoxTim.TabIndex = 19;
+            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
+            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
             // 
             // labelTim
             // 
             this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim.AutoSize = true;
-            this.labelTim.Location = new System.Drawing.Point(550, 49);
+            this.labelTim.Location = new System.Drawing.Point(627, 50);
             this.labelTim.Name = "labelTim";
             this.labelTim.Size = new System.Drawing.Size(49, 13);
-            this.labelTim.TabIndex = 12;
+            this.labelTim.TabIndex = 20;
             this.labelTim.Text = "Tìm kiếm";
-            // 
-            // textBoxTim
-            // 
-            this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim.ForeColor = System.Drawing.Color.Gray;
-            this.textBoxTim.Location = new System.Drawing.Point(605, 46);
-            this.textBoxTim.Name = "textBoxTim";
-            this.textBoxTim.Size = new System.Drawing.Size(191, 20);
-            this.textBoxTim.TabIndex = 7;
-            this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
-            this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
             // 
             // FormGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(808, 450);
+            this.ClientSize = new System.Drawing.Size(914, 467);
             this.Controls.Add(this.labelTim);
             this.Controls.Add(this.textBoxTim);
             this.Controls.Add(this.groupBoxCT);
@@ -625,14 +662,15 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).EndInit();
             this.groupBoxCT.ResumeLayout(false);
             this.groupBoxCT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bOMONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,38 +690,41 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.BindingSource gIAOVIENBindingSource;
-        private QLHSTHPTDataSet qLHSTHPTDataSet;
-        private QLHSTHPTDataSetTableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
-        private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl gIAOVIENGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private QLHSTHPTDataSet1 qLHSTHPTDataSet1;
+        private QLHSTHPTDataSet1TableAdapters.GIAOVIENTableAdapter gIAOVIENTableAdapter;
+        private QLHSTHPTDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.GroupBox groupBoxCT;
+        private System.Windows.Forms.Label labelETo;
+        private System.Windows.Forms.Label labelEDT;
+        private System.Windows.Forms.Label labelENS;
+        private System.Windows.Forms.Label labelEDC;
+        private System.Windows.Forms.Label labelETen;
+        private System.Windows.Forms.ComboBox comboBoxMGV;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBoxNghi;
-        private System.Windows.Forms.TextBox textBoxTM;
         private System.Windows.Forms.TextBox textBoxDT;
         private System.Windows.Forms.TextBox textBoxDC;
         private DevExpress.XtraEditors.DateEdit dateEditNS;
         private System.Windows.Forms.ComboBox comboBoxGT;
         private System.Windows.Forms.TextBox textBoxTenGV;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label labelTim;
-        private System.Windows.Forms.ComboBox comboBoxMGV;
-        private System.Windows.Forms.TextBox textBoxTim;
+        private DevExpress.XtraGrid.GridControl gIAOVIENGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
         private DevExpress.XtraGrid.Columns.GridColumn colTENGV;
         private DevExpress.XtraGrid.Columns.GridColumn colGIOITINH;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colDIENTHOAI;
-        private DevExpress.XtraGrid.Columns.GridColumn colTOMON;
+        private DevExpress.XtraGrid.Columns.GridColumn colMABM;
         private DevExpress.XtraGrid.Columns.GridColumn colNGHI;
-        private System.Windows.Forms.Label labelETo;
-        private System.Windows.Forms.Label labelEDT;
-        private System.Windows.Forms.Label labelENS;
-        private System.Windows.Forms.Label labelEDC;
-        private System.Windows.Forms.Label labelETen;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.TextBox textBoxTim;
+        private System.Windows.Forms.ComboBox comboBoxMaBM;
+        private QLHSTHPTDataSet1TableAdapters.BOMONTableAdapter bOMONTableAdapter;
+        private System.Windows.Forms.BindingSource bOMONBindingSource;
+        private System.Windows.Forms.TextBox textBoxTenBM;
     }
 }

@@ -124,7 +124,7 @@ namespace QLHSTHPT
 
                 maLop = "LO" + DateTime.Today.Year.ToString().Substring(2, 2) + part3;
             }
-            else maLop = "LO" + DateTime.Today.Year.ToString().Substring(2, 2) + "1";
+            else maLop = "LO" + DateTime.Today.Year.ToString().Substring(2, 2) + "000001";
             return maLop;
         }
 

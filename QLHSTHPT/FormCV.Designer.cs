@@ -32,9 +32,8 @@
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label tENMHLabel;
             System.Windows.Forms.Label sOTIETLabel;
+            System.Windows.Forms.Label cHUNHIEMLabel;
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.sP_CV_GVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,36 +50,74 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMaNH = new System.Windows.Forms.TextBox();
             this.textBoxMaHK = new System.Windows.Forms.TextBox();
-            this.sP_CV_GVTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_CV_GVTableAdapter();
-            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tENHKTextBox = new System.Windows.Forms.TextBox();
+            this.tENNHTextBox = new System.Windows.Forms.TextBox();
+            this.sOTIETTextBox = new System.Windows.Forms.TextBox();
+            this.tENMHTextBox = new System.Windows.Forms.TextBox();
+            this.tENLOPTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.sP_CV_GVGridControl = new DevExpress.XtraGrid.GridControl();
+            this.sP_CV_GVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTIET = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENNH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENHK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tENLOPTextBox = new System.Windows.Forms.TextBox();
-            this.tENMHTextBox = new System.Windows.Forms.TextBox();
-            this.sOTIETTextBox = new System.Windows.Forms.TextBox();
-            this.tENNHTextBox = new System.Windows.Forms.TextBox();
-            this.tENHKTextBox = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.colCHUNHIEM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelRB = new System.Windows.Forms.Panel();
+            this.rbtnCN = new System.Windows.Forms.RadioButton();
+            this.rbtnAll = new System.Windows.Forms.RadioButton();
+            this.sP_CV_GVTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.SP_CV_GVTableAdapter();
+            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
+            this.cHUNHIEMCheckBox = new System.Windows.Forms.CheckBox();
             tENLOPLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             sOTIETLabel = new System.Windows.Forms.Label();
+            cHUNHIEMLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.panelRB.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Location = new System.Drawing.Point(45, 75);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(43, 13);
+            tENLOPLabel.TabIndex = 0;
+            tENLOPLabel.Text = "Tên lớp";
+            // 
+            // tENMHLabel
+            // 
+            tENMHLabel.AutoSize = true;
+            tENMHLabel.Location = new System.Drawing.Point(45, 119);
+            tENMHLabel.Name = "tENMHLabel";
+            tENMHLabel.Size = new System.Drawing.Size(49, 13);
+            tENMHLabel.TabIndex = 2;
+            tENMHLabel.Text = "Môn học";
+            // 
+            // sOTIETLabel
+            // 
+            sOTIETLabel.AutoSize = true;
+            sOTIETLabel.Location = new System.Drawing.Point(45, 164);
+            sOTIETLabel.Name = "sOTIETLabel";
+            sOTIETLabel.Size = new System.Drawing.Size(37, 13);
+            sOTIETLabel.TabIndex = 4;
+            sOTIETLabel.Text = "Số tiết";
             // 
             // tableLayoutPanel1
             // 
@@ -88,28 +125,19 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.5F));
-            this.tableLayoutPanel1.Controls.Add(this.sP_CV_GVGridControl, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(874, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.95078F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.04922F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1139, 450);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // sP_CV_GVBindingSource
-            // 
-            this.sP_CV_GVBindingSource.DataMember = "SP_CV_GV";
-            this.sP_CV_GVBindingSource.DataSource = this.qLHSTHPTDataSet;
-            // 
-            // qLHSTHPTDataSet
-            // 
-            this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
-            this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -122,7 +150,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(422, 95);
+            this.panel1.Size = new System.Drawing.Size(553, 108);
             this.panel1.TabIndex = 0;
             // 
             // label4
@@ -174,9 +202,9 @@
             this.panel.Controls.Add(this.textBoxMaNH);
             this.panel.Controls.Add(this.textBoxMaHK);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(437, 6);
+            this.panel.Location = new System.Drawing.Point(568, 6);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(431, 95);
+            this.panel.Size = new System.Drawing.Size(565, 108);
             this.panel.TabIndex = 1;
             // 
             // labelEMaHK
@@ -269,35 +297,135 @@
             this.textBoxMaHK.Size = new System.Drawing.Size(147, 20);
             this.textBoxMaHK.TabIndex = 1;
             // 
-            // sP_CV_GVTableAdapter
+            // panel3
             // 
-            this.sP_CV_GVTableAdapter.ClearBeforeFill = true;
+            this.panel3.BackColor = System.Drawing.Color.Turquoise;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(cHUNHIEMLabel);
+            this.panel3.Controls.Add(this.cHUNHIEMCheckBox);
+            this.panel3.Controls.Add(this.tENHKTextBox);
+            this.panel3.Controls.Add(this.tENNHTextBox);
+            this.panel3.Controls.Add(this.sOTIETTextBox);
+            this.panel3.Controls.Add(this.tENMHTextBox);
+            this.panel3.Controls.Add(this.tENLOPTextBox);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.labelTitle);
+            this.panel3.Controls.Add(sOTIETLabel);
+            this.panel3.Controls.Add(tENMHLabel);
+            this.panel3.Controls.Add(tENLOPLabel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(568, 123);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(565, 321);
+            this.panel3.TabIndex = 2;
             // 
-            // tableAdapterManager
+            // tENHKTextBox
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.DIEMTableAdapter = null;
-            this.tableAdapterManager.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager.HOCKYTableAdapter = null;
-            this.tableAdapterManager.HOCSINHTableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = null;
-            this.tableAdapterManager.NAMHOCTableAdapter = null;
-            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tENHKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENHK", true));
+            this.tENHKTextBox.Location = new System.Drawing.Point(354, 115);
+            this.tENHKTextBox.Name = "tENHKTextBox";
+            this.tENHKTextBox.ReadOnly = true;
+            this.tENHKTextBox.Size = new System.Drawing.Size(147, 20);
+            this.tENHKTextBox.TabIndex = 15;
+            // 
+            // tENNHTextBox
+            // 
+            this.tENNHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENNH", true));
+            this.tENNHTextBox.Location = new System.Drawing.Point(354, 72);
+            this.tENNHTextBox.Name = "tENNHTextBox";
+            this.tENNHTextBox.ReadOnly = true;
+            this.tENNHTextBox.Size = new System.Drawing.Size(147, 20);
+            this.tENNHTextBox.TabIndex = 14;
+            // 
+            // sOTIETTextBox
+            // 
+            this.sOTIETTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "SOTIET", true));
+            this.sOTIETTextBox.Location = new System.Drawing.Point(117, 161);
+            this.sOTIETTextBox.Name = "sOTIETTextBox";
+            this.sOTIETTextBox.ReadOnly = true;
+            this.sOTIETTextBox.Size = new System.Drawing.Size(147, 20);
+            this.sOTIETTextBox.TabIndex = 13;
+            // 
+            // tENMHTextBox
+            // 
+            this.tENMHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENMH", true));
+            this.tENMHTextBox.Location = new System.Drawing.Point(117, 116);
+            this.tENMHTextBox.Name = "tENMHTextBox";
+            this.tENMHTextBox.ReadOnly = true;
+            this.tENMHTextBox.Size = new System.Drawing.Size(147, 20);
+            this.tENMHTextBox.TabIndex = 12;
+            // 
+            // tENLOPTextBox
+            // 
+            this.tENLOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENLOP", true));
+            this.tENLOPTextBox.Location = new System.Drawing.Point(117, 72);
+            this.tENLOPTextBox.Name = "tENLOPTextBox";
+            this.tENLOPTextBox.ReadOnly = true;
+            this.tENLOPTextBox.Size = new System.Drawing.Size(147, 20);
+            this.tENLOPTextBox.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(291, 118);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Học kỳ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(291, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Năm học";
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.DarkBlue;
+            this.labelTitle.Location = new System.Drawing.Point(45, 31);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(198, 20);
+            this.labelTitle.TabIndex = 6;
+            this.labelTitle.Text = "THÔNG TIN GIẢNG DẠY";
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.sP_CV_GVGridControl);
+            this.panel2.Controls.Add(this.panelRB);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(6, 123);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(553, 321);
+            this.panel2.TabIndex = 3;
             // 
             // sP_CV_GVGridControl
             // 
             this.sP_CV_GVGridControl.DataSource = this.sP_CV_GVBindingSource;
             this.sP_CV_GVGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sP_CV_GVGridControl.Location = new System.Drawing.Point(6, 110);
+            this.sP_CV_GVGridControl.Location = new System.Drawing.Point(0, 42);
             this.sP_CV_GVGridControl.MainView = this.gridView1;
             this.sP_CV_GVGridControl.Name = "sP_CV_GVGridControl";
-            this.sP_CV_GVGridControl.Size = new System.Drawing.Size(422, 334);
-            this.sP_CV_GVGridControl.TabIndex = 3;
+            this.sP_CV_GVGridControl.Size = new System.Drawing.Size(553, 279);
+            this.sP_CV_GVGridControl.TabIndex = 4;
             this.sP_CV_GVGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // sP_CV_GVBindingSource
+            // 
+            this.sP_CV_GVBindingSource.DataMember = "SP_CV_GV";
+            this.sP_CV_GVBindingSource.DataSource = this.qLHSTHPTDataSet1;
+            // 
+            // qLHSTHPTDataSet1
+            // 
+            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -306,7 +434,8 @@
             this.colTENMH,
             this.colSOTIET,
             this.colTENNH,
-            this.colTENHK});
+            this.colTENHK,
+            this.colCHUNHIEM});
             this.gridView1.GridControl = this.sP_CV_GVGridControl;
             this.gridView1.Name = "gridView1";
             // 
@@ -350,147 +479,112 @@
             this.colTENHK.Visible = true;
             this.colTENHK.VisibleIndex = 4;
             // 
-            // tENLOPLabel
+            // colCHUNHIEM
             // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(45, 75);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(43, 13);
-            tENLOPLabel.TabIndex = 0;
-            tENLOPLabel.Text = "Tên lớp";
+            this.colCHUNHIEM.FieldName = "CHUNHIEM";
+            this.colCHUNHIEM.Name = "colCHUNHIEM";
+            this.colCHUNHIEM.OptionsColumn.AllowEdit = false;
+            this.colCHUNHIEM.Visible = true;
+            this.colCHUNHIEM.VisibleIndex = 5;
             // 
-            // tENMHLabel
+            // panelRB
             // 
-            tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(45, 119);
-            tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(49, 13);
-            tENMHLabel.TabIndex = 2;
-            tENMHLabel.Text = "Môn học";
+            this.panelRB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelRB.Controls.Add(this.rbtnCN);
+            this.panelRB.Controls.Add(this.rbtnAll);
+            this.panelRB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelRB.Location = new System.Drawing.Point(0, 0);
+            this.panelRB.Name = "panelRB";
+            this.panelRB.Size = new System.Drawing.Size(553, 42);
+            this.panelRB.TabIndex = 4;
             // 
-            // sOTIETLabel
+            // rbtnCN
             // 
-            sOTIETLabel.AutoSize = true;
-            sOTIETLabel.Location = new System.Drawing.Point(45, 164);
-            sOTIETLabel.Name = "sOTIETLabel";
-            sOTIETLabel.Size = new System.Drawing.Size(37, 13);
-            sOTIETLabel.TabIndex = 4;
-            sOTIETLabel.Text = "Số tiết";
+            this.rbtnCN.AutoSize = true;
+            this.rbtnCN.Location = new System.Drawing.Point(195, 12);
+            this.rbtnCN.Name = "rbtnCN";
+            this.rbtnCN.Size = new System.Drawing.Size(75, 17);
+            this.rbtnCN.TabIndex = 1;
+            this.rbtnCN.Text = "Chủ nhiệm";
+            this.rbtnCN.UseVisualStyleBackColor = true;
             // 
-            // labelTitle
+            // rbtnAll
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(45, 31);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(190, 20);
-            this.labelTitle.TabIndex = 6;
-            this.labelTitle.Text = "THÔNG TIN GIẢNG DẠY";
+            this.rbtnAll.AutoSize = true;
+            this.rbtnAll.Checked = true;
+            this.rbtnAll.Location = new System.Drawing.Point(48, 12);
+            this.rbtnAll.Name = "rbtnAll";
+            this.rbtnAll.Size = new System.Drawing.Size(106, 17);
+            this.rbtnAll.TabIndex = 0;
+            this.rbtnAll.TabStop = true;
+            this.rbtnAll.Text = "Tất cả công việc";
+            this.rbtnAll.UseVisualStyleBackColor = true;
+            this.rbtnAll.CheckedChanged += new System.EventHandler(this.rbtnAll_CheckedChanged);
             // 
-            // label5
+            // sP_CV_GVTableAdapter
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 207);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Năm học";
+            this.sP_CV_GVTableAdapter.ClearBeforeFill = true;
             // 
-            // label6
+            // tableAdapterManager
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 250);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Học kỳ";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BOMONTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.DIEMTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = null;
+            this.tableAdapterManager.HOCKYTableAdapter = null;
+            this.tableAdapterManager.HOCSINHTableAdapter = null;
+            this.tableAdapterManager.HS_LOPTableAdapter = null;
+            this.tableAdapterManager.KHOITableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.NAMHOCTableAdapter = null;
+            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
+            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // tENLOPTextBox
+            // cHUNHIEMLabel
             // 
-            this.tENLOPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENLOP", true));
-            this.tENLOPTextBox.Location = new System.Drawing.Point(117, 72);
-            this.tENLOPTextBox.Name = "tENLOPTextBox";
-            this.tENLOPTextBox.ReadOnly = true;
-            this.tENLOPTextBox.Size = new System.Drawing.Size(147, 20);
-            this.tENLOPTextBox.TabIndex = 11;
+            cHUNHIEMLabel.AutoSize = true;
+            cHUNHIEMLabel.Location = new System.Drawing.Point(291, 164);
+            cHUNHIEMLabel.Name = "cHUNHIEMLabel";
+            cHUNHIEMLabel.Size = new System.Drawing.Size(57, 13);
+            cHUNHIEMLabel.TabIndex = 15;
+            cHUNHIEMLabel.Text = "Chủ nhiệm";
             // 
-            // tENMHTextBox
+            // cHUNHIEMCheckBox
             // 
-            this.tENMHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENMH", true));
-            this.tENMHTextBox.Location = new System.Drawing.Point(117, 116);
-            this.tENMHTextBox.Name = "tENMHTextBox";
-            this.tENMHTextBox.ReadOnly = true;
-            this.tENMHTextBox.Size = new System.Drawing.Size(147, 20);
-            this.tENMHTextBox.TabIndex = 12;
-            // 
-            // sOTIETTextBox
-            // 
-            this.sOTIETTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "SOTIET", true));
-            this.sOTIETTextBox.Location = new System.Drawing.Point(117, 161);
-            this.sOTIETTextBox.Name = "sOTIETTextBox";
-            this.sOTIETTextBox.ReadOnly = true;
-            this.sOTIETTextBox.Size = new System.Drawing.Size(147, 20);
-            this.sOTIETTextBox.TabIndex = 13;
-            // 
-            // tENNHTextBox
-            // 
-            this.tENNHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENNH", true));
-            this.tENNHTextBox.Location = new System.Drawing.Point(117, 204);
-            this.tENNHTextBox.Name = "tENNHTextBox";
-            this.tENNHTextBox.ReadOnly = true;
-            this.tENNHTextBox.Size = new System.Drawing.Size(147, 20);
-            this.tENNHTextBox.TabIndex = 14;
-            // 
-            // tENHKTextBox
-            // 
-            this.tENHKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_CV_GVBindingSource, "TENHK", true));
-            this.tENHKTextBox.Location = new System.Drawing.Point(117, 247);
-            this.tENHKTextBox.Name = "tENHKTextBox";
-            this.tENHKTextBox.ReadOnly = true;
-            this.tENHKTextBox.Size = new System.Drawing.Size(147, 20);
-            this.tENHKTextBox.TabIndex = 15;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Turquoise;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.tENHKTextBox);
-            this.panel3.Controls.Add(this.tENNHTextBox);
-            this.panel3.Controls.Add(this.sOTIETTextBox);
-            this.panel3.Controls.Add(this.tENMHTextBox);
-            this.panel3.Controls.Add(this.tENLOPTextBox);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.labelTitle);
-            this.panel3.Controls.Add(sOTIETLabel);
-            this.panel3.Controls.Add(tENMHLabel);
-            this.panel3.Controls.Add(tENLOPLabel);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(437, 110);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(431, 334);
-            this.panel3.TabIndex = 2;
+            this.cHUNHIEMCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.sP_CV_GVBindingSource, "CHUNHIEM", true));
+            this.cHUNHIEMCheckBox.Enabled = false;
+            this.cHUNHIEMCheckBox.Location = new System.Drawing.Point(354, 159);
+            this.cHUNHIEMCheckBox.Name = "cHUNHIEMCheckBox";
+            this.cHUNHIEMCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.cHUNHIEMCheckBox.TabIndex = 16;
+            this.cHUNHIEMCheckBox.UseVisualStyleBackColor = true;
             // 
             // FormCV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 450);
+            this.ClientSize = new System.Drawing.Size(1139, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormCV";
             this.Text = "FormCV";
             this.Load += new System.EventHandler(this.FormCV_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.panelRB.ResumeLayout(false);
+            this.panelRB.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -510,21 +604,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private QLHSTHPTDataSet qLHSTHPTDataSet;
-        private System.Windows.Forms.BindingSource sP_CV_GVBindingSource;
-        private QLHSTHPTDataSetTableAdapters.SP_CV_GVTableAdapter sP_CV_GVTableAdapter;
-        private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         public System.Windows.Forms.Label labelEMaHK;
         public System.Windows.Forms.Label labelEMaNH;
         public System.Windows.Forms.TextBox textBoxMaNH;
         public System.Windows.Forms.TextBox textBoxMaHK;
-        private DevExpress.XtraGrid.GridControl sP_CV_GVGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOTIET;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENNH;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENHK;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tENHKTextBox;
         private System.Windows.Forms.TextBox tENNHTextBox;
@@ -534,5 +617,22 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelRB;
+        private System.Windows.Forms.RadioButton rbtnCN;
+        private System.Windows.Forms.RadioButton rbtnAll;
+        private QLHSTHPTDataSet1 qLHSTHPTDataSet1;
+        private System.Windows.Forms.BindingSource sP_CV_GVBindingSource;
+        private QLHSTHPTDataSet1TableAdapters.SP_CV_GVTableAdapter sP_CV_GVTableAdapter;
+        private QLHSTHPTDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraGrid.GridControl sP_CV_GVGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOTIET;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENNH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENHK;
+        private DevExpress.XtraGrid.Columns.GridColumn colCHUNHIEM;
+        private System.Windows.Forms.CheckBox cHUNHIEMCheckBox;
     }
 }

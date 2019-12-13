@@ -29,10 +29,10 @@ namespace QLHSTHPT
         {
             this.ControlBox = false;
             groupBoxCT.Enabled = false;
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.PHANCONGGV' table. You can move, or remove it, as needed.
-            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet.PHANCONGGV);
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet.MONHOC);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet1.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.MONHOC);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet1.PHANCONGGV' table. You can move, or remove it, as needed.
+            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet1.PHANCONGGV);
         }
 
         private void buttonTimGV_Click(object sender, EventArgs e)
@@ -60,13 +60,16 @@ namespace QLHSTHPT
             this.pHANCONGGVGridControl.Enabled = false;
             this.groupBoxCT.Enabled = true;
             this.pHANCONGGVBindingSource.AddNew();
+            this.comboBoxMMH.SelectedIndex = 1;
             this.comboBoxMMH.SelectedIndex = 0;
             this.boxSoTiet.Value = 15;
+            this.checkBoxCN.Checked = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.pHANCONGGVBindingSource.RemoveCurrent();
+            labelEMaGV.Text = labelEMaHK.Text = labelEMaLop.Text = labelEMaNH.Text = labelEMMH.Text = "";
+            this.pHANCONGGVBindingSource.CancelEdit();
             this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem5.Enabled = true;
             this.pHANCONGGVGridControl.Enabled = true;
             this.labelTim.Enabled = true;
@@ -230,7 +233,7 @@ namespace QLHSTHPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet.PHANCONGGV);
+            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet1.PHANCONGGV);
             this.pHANCONGGVGridControl.Enabled = true;
             this.labelTim.Enabled = true;
             this.textBoxTim.Enabled = true;
@@ -240,7 +243,7 @@ namespace QLHSTHPT
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.pHANCONGGVTableAdapter.Update(this.qLHSTHPTDataSet.PHANCONGGV);
+            this.pHANCONGGVTableAdapter.Update(this.qLHSTHPTDataSet1.PHANCONGGV);
             this.pHANCONGGVGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
             //clkSave = 1;
@@ -265,6 +268,15 @@ namespace QLHSTHPT
         private void textBoxTim_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Tìm kiếm theo Mã giáo viên", textBoxTim);
+        }
+
+        private void comboBoxMMH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.textBoxTenMH.Text = comboBoxMMH.SelectedValue.ToString();
+            }
+            catch { }
         }
     }
 }

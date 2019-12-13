@@ -44,6 +44,7 @@ namespace QLHSTHPT
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem6.Enabled = false;
             this.hOCKYGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -57,6 +58,7 @@ namespace QLHSTHPT
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem6.Enabled = false;
             this.hOCKYGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -113,6 +115,7 @@ namespace QLHSTHPT
         {
             formChinh.toolStripStatusLabelNote.Text = "";
             this.hOCKYTableAdapter.Fill(this.qLHSTHPTDataSet.HOCKY);
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem6.Enabled = true;
             this.hOCKYGridControl.Enabled = true;
             this.labelTim.Enabled = true;
             this.textBoxTim.Enabled = true;
@@ -145,7 +148,7 @@ namespace QLHSTHPT
 
             if (this.textBoxTen.Text == "")
             {
-                this.textBoxTen.Text = "Chưa nhập Tên học kỳ. Chú ý!";
+                this.labelET.Text = "Chưa nhập Tên học kỳ. Chú ý!";
                 //MessageBox.Show("Chưa nhập Tên học kỳ. Chú ý!");
                 textBoxTen.Focus();
                 return;
@@ -155,6 +158,25 @@ namespace QLHSTHPT
             {
                 this.labelENg.Text = "Chưa nhập Ngày bắt đầu.Chú ý!";
                 //MessageBox.Show("Chưa nhập Ngày bắt đầu. Chú ý!");
+                textBoxNg.Focus();
+                return;
+            }
+
+            if (int.Parse(textBoxNg.Text) > 31 && (int.Parse(comboBoxTh.Text) == 1 || int.Parse(comboBoxTh.Text) == 3 || int.Parse(comboBoxTh.Text) == 5 || int.Parse(comboBoxTh.Text) == 7 || int.Parse(comboBoxTh.Text) == 8 || int.Parse(comboBoxTh.Text) == 10 || int.Parse(comboBoxTh.Text) == 12))
+            {
+                this.labelENg.Text = "Ngày bắt đầu không hợp lệ. Chú ý!";
+                textBoxNg.Focus();
+                return;
+            } 
+            else if (int.Parse(textBoxNg.Text) > 30 && (int.Parse(comboBoxTh.Text) == 4 || int.Parse(comboBoxTh.Text) == 6 || int.Parse(comboBoxTh.Text) == 9 || int.Parse(comboBoxTh.Text) == 11))
+            {
+                this.labelENg.Text = "Ngày bắt đầu không hợp lệ. Chú ý!";
+                textBoxNg.Focus();
+                return;
+            }
+            else if (int.Parse(textBoxNg.Text) > 29 && int.Parse(comboBoxTh.Text) == 2)
+            {
+                this.labelENg.Text = "Ngày bắt đầu không hợp lệ. Chú ý!";
                 textBoxNg.Focus();
                 return;
             }
@@ -175,7 +197,7 @@ namespace QLHSTHPT
             {
                 this.hOCKYBindingSource.EndEdit();
                 formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
-                //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem6.Enabled = true;
                 this.hOCKYGridControl.Enabled = true;
                 this.labelTim.Enabled = true;
                 this.textBoxTim.Enabled = true;
@@ -187,59 +209,14 @@ namespace QLHSTHPT
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.labelET.Text = this.labelENg.Text = "";
             this.hOCKYBindingSource.CancelEdit();
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem6.Enabled = true;
             this.hOCKYGridControl.Enabled = true;
             this.textBoxTim.Enabled = true;
             this.labelTim.Enabled = true;
             this.groupBoxCT.Enabled = false;
 
-        }
-
-        private void textBoxNg_TextChanged(object sender, EventArgs e)
-        {
-            int thangBD = int.Parse(this.comboBoxTh.Text);
-            int ngayBD = int.Parse(this.textBoxNg.Text);
-            if (ngayBD < 1 || ngayBD > 31)
-            {
-                this.labelENg.Text = "Ngày không hợp lệ!";
-                this.button1.Enabled = false;
-                this.textBoxNg.Focus();
-            }
-            if (thangBD == 2 && ngayBD > 29)
-            {
-                this.labelENg.Text = "Ngày không hợp lệ!";
-                this.button1.Enabled = false;
-                this.textBoxNg.Focus();
-                //if (Helper.namNhuan(date.Nam))
-                //{
-                //    if (ngayBD > 29)
-                //        return 0;
-                //}
-                //else
-                //{
-                //    if (ngayBD > 28)
-                //    {
-                //        return 0;
-                //    }
-                //}
-            }
-            else if ((thangBD == 4 || thangBD == 6 || thangBD == 9 || thangBD == 11) && ngayBD > 30)
-            {
-                this.labelENg.Text = "Ngày không hợp lệ!";
-                this.button1.Enabled = false;
-                this.textBoxNg.Focus();
-            }
-            else if ((thangBD == 1 || thangBD == 3 || thangBD == 5 || thangBD == 7 || thangBD == 8 || thangBD == 10 || thangBD == 12) && ngayBD > 31)
-            {
-                this.labelENg.Text = "Ngày không hợp lệ!";
-                this.button1.Enabled = false;
-                this.textBoxNg.Focus();
-            }
-            else
-            {
-                this.labelENg.Text = "";
-                this.button1.Enabled = true;
-            }
         }
 
         private void textBoxTen_KeyPress(object sender, KeyPressEventArgs e)
@@ -273,6 +250,25 @@ namespace QLHSTHPT
             {
                 this.labelET.Text = "";
                 e.Handled = false;
+            }
+        }
+
+        private void textBoxNg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
+            {
+                this.labelENg.Text = "";
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == (char)13) || (e.KeyChar == (char)8)) //enter, backspace
+            {
+                this.labelENg.Text = "";
+                e.Handled = false;
+            }
+            else
+            {
+                this.labelENg.Text = "Ngày bắt đầu chỉ bao gồm số!";
+                e.Handled = true;
             }
         }
     }

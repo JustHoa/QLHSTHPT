@@ -41,26 +41,26 @@ namespace QLHSTHPT
             }
 
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet.LOP);
-        
+            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet1.LOP);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.labelEMaLop.Text = this.labelEBan.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
-            if (this.textBoxTenLop.Text == "")
+            this.labelEMaLop.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
+            if (this.textBoxMaLop.Text == "")
             {
-                this.labelEMaLop.Text = "Chưa nhập Tên lớp. Chú ý!";
+                this.labelEMaLop.Text = "Chưa nhập Mã lớp. Chú ý!";
                 //MessageBox.Show("Chưa nhập Tên lớp. Chú ý!");
-                textBoxTenLop.Focus();
+                textBoxMaLop.Focus();
                 return;
             }
 
-            if (this.comboBoxBan.Text == "")
+            if (this.textBoxTenLop.Text == "")
             {
-                this.labelEBan.Text = "Chưa nhập Ban học. Chú ý!";
-                //MessageBox.Show("Chưa nhập Bộ môn giảng dạy. Chú ý!");
-                comboBoxBan.Focus();
+                this.labelETenLop.Text = "Chưa nhập Tên lớp. Chú ý!";
+                //MessageBox.Show("Chưa nhập Tên lớp. Chú ý!");
+                textBoxTenLop.Focus();
                 return;
             }
 
@@ -96,7 +96,7 @@ namespace QLHSTHPT
             {
                 this.lOPBindingSource.EndEdit();
                 formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
-                //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = true;
                 this.lOPGridControl.Enabled = true;
                 this.labelTim.Enabled = true;
                 this.textBoxTim.Enabled = true;
@@ -109,6 +109,7 @@ namespace QLHSTHPT
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = false;
             this.lOPGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -116,12 +117,14 @@ namespace QLHSTHPT
             this.lOPBindingSource.AddNew();
             this.textBoxMaLop.Text = Helper.createMaLop(lOPBindingSource);
             this.comboBoxBan.SelectedIndex = 0;
+            this.comboBoxMK.SelectedIndex = 0;
             this.textBoxTenLop.Focus();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = false;
             this.lOPGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -136,12 +139,12 @@ namespace QLHSTHPT
             string maLop = ((DataRowView)lOPBindingSource[vitri])["MALOP"].ToString().Trim();
             try
             {
-                string sql = "EXEC SP_KIEMTRAXOA '" + maLop + "', 'HOCSINH'";
+                string sql = "EXEC SP_KIEMTRAXOA '" + maLop + "', 'HS_LOP'";
                 SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
                 SqlDataReader dataReader = sqlCommand.ExecuteReader();
                 if (dataReader.Read())
                 {
-                    MessageBox.Show("Giáo viên đã được phân công nhiệm vụ. Không thể xóa!");
+                    MessageBox.Show("Lớp đã có học sinh. Không thể xóa!");
                     dataReader.Close();
                 }
                 else
@@ -169,7 +172,8 @@ namespace QLHSTHPT
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet.LOP);
+            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet1.LOP);
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = true;
             this.lOPGridControl.Enabled = true;
             this.labelTim.Enabled = true;
             this.textBoxTim.Enabled = true;
@@ -179,7 +183,8 @@ namespace QLHSTHPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.lOPTableAdapter.Update(this.qLHSTHPTDataSet.LOP);
+            this.lOPTableAdapter.Update(this.qLHSTHPTDataSet1.LOP);
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = true;
             this.lOPGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
             //clkSave = 1;
@@ -198,12 +203,24 @@ namespace QLHSTHPT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.labelEMaLop.Text = this.labelEBan.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
+            this.labelEMaLop.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
             this.lOPBindingSource.CancelEdit();
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = true;
             this.lOPGridControl.Enabled = true;
             this.textBoxTim.Enabled = true;
             this.labelTim.Enabled = true;
             this.groupBoxCT.Enabled = false;
+        }
+
+        private void textBoxTim_TextChanged(object sender, EventArgs e)
+        {
+            lOPBindingSource.Filter = "TENLOP LIKE '%" + textBoxTim.Text +
+                "%' OR MALOP LIKE '%" + textBoxTim.Text + "%'";
+        }
+
+        private void textBoxTim_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Tìm kiếm theo Tên lớp hoặc Mã lớp", textBoxTim);
         }
     }
 }

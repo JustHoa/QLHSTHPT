@@ -44,13 +44,14 @@ namespace QLHSTHPT
             }
 
             // TODO: This line of code loads data into the 'qLHSTHPTDataSet.HOCSINH' table. You can move, or remove it, as needed.
-            this.hOCSINHTableAdapter.Fill(this.qLHSTHPTDataSet.HOCSINH);
+            this.hOCSINHTableAdapter.Fill(this.qLHSTHPTDataSet1.HOCSINH);
 
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = false;
             this.hOCSINHGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -65,6 +66,7 @@ namespace QLHSTHPT
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = false;
             this.hOCSINHGridControl.Enabled = false;
             this.labelTim.Enabled = false;
             this.textBoxTim.Enabled = false;
@@ -86,22 +88,29 @@ namespace QLHSTHPT
                 {
                     MessageBox.Show("Học sinh đã có điểm. Không thể xóa!");
                     dataReader.Close();
+                    return;
                 }
-                else
+                dataReader.Close();
+                string sql1 = "EXEC SP_KIEMTRAXOA '" + maHS + "', 'HS_LOP_HS'";
+                SqlCommand sqlCommand1 = new SqlCommand(sql1, Program.sqlConnection);
+                SqlDataReader dataReader1 = sqlCommand1.ExecuteReader();
+                if (dataReader1.Read())
                 {
-
-                    if (MessageBox.Show("Bạn có thực sự muốn xóa?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                    {
-                        clkMan = 1;
-                        this.hOCSINHBindingSource.RemoveCurrent();
-                        formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
-                        //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
-                        //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connectionString;
-                        //this.mONHOCTableAdapter.Update(this.aSD_DataSet.MONHOC);
-                        //MessageBox.Show("Xóa môn học thành công!");
-                    }
-                    dataReader.Close();
+                    MessageBox.Show("Học sinh đã được phân lớp. Không thể xóa!" +
+                        "\n\nMẸO: Quản lý học sinh trong lớp:" +
+                        "\n\nQuản trị > Lớp-Học sinh > Học sinh trong lớp");
+                    dataReader1.Close();
+                    return;
                 }
+                dataReader1.Close();
+
+                if (MessageBox.Show("Bạn có thực sự muốn xóa?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    clkMan = 1;
+                    this.hOCSINHBindingSource.RemoveCurrent();
+                    formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
+                }
+
             }
             catch (InvalidOperationException ex)
             {
@@ -112,7 +121,8 @@ namespace QLHSTHPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.hOCSINHTableAdapter.Fill(this.qLHSTHPTDataSet.HOCSINH);
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = true;
+            this.hOCSINHTableAdapter.Fill(this.qLHSTHPTDataSet1.HOCSINH);
             this.hOCSINHGridControl.Enabled = true;
             this.labelTim.Enabled = true;
             this.textBoxTim.Enabled = true;
@@ -122,7 +132,7 @@ namespace QLHSTHPT
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.hOCSINHTableAdapter.Update(this.qLHSTHPTDataSet.HOCSINH);
+            this.hOCSINHTableAdapter.Update(this.qLHSTHPTDataSet1.HOCSINH);
             this.hOCSINHGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
             //clkSave = 1;
@@ -222,7 +232,7 @@ namespace QLHSTHPT
             {
                 this.hOCSINHBindingSource.EndEdit();
                 formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
-                //MessageBox.Show("Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!");
+                barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = true;
                 this.hOCSINHGridControl.Enabled = true;
                 this.labelTim.Enabled = true;
                 this.textBoxTim.Enabled = true;
@@ -236,10 +246,127 @@ namespace QLHSTHPT
         {
             this.labelEHT.Text = this.textBoxDC.Text = this.dateEditNS.Text = this.textBoxDT.Text = this.textBoxDToc.Text = "";
             this.hOCSINHBindingSource.CancelEdit();
+            barButtonItem1.Enabled = barButtonItem2.Enabled = barButtonItem3.Enabled = barButtonItem4.Enabled = barButtonItem5.Enabled = true;
             this.hOCSINHGridControl.Enabled = true;
             this.textBoxTim.Enabled = true;
             this.labelTim.Enabled = true;
             this.groupBoxCT.Enabled = false;
+        }
+
+        private void hOCSINHBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.hOCSINHBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.qLHSTHPTDataSet1);
+
+        }
+
+        private void textBoxMaHS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelEMaHS.Text = "Mã học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelEMaHS.Text = "Mã học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelEMaHS.Text = "Mã học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelEMaHS.Text = "Mã học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelEMaHS.Text = "Mã học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelEMaHS.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxTenHS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelEHT.Text = "Họ tên học sinh không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelEHT.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxDC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBoxDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)48 && textBoxDT.Text.Length == 0)
+            {
+                this.labelEDT.Text = "Điện thoại phải bắt đầu bắt đầu bằng 0";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
+            {
+                this.labelEDT.Text = "";
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == (char)13) || (e.KeyChar == (char)8)) //enter, backspace
+            {
+                this.labelEDT.Text = "";
+                e.Handled = false;
+            }
+            else
+            {
+                this.labelEDT.Text = "Điện thoại chỉ bao gồm số!";
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxTim_TextChanged(object sender, EventArgs e)
+        {
+            hOCSINHBindingSource.Filter = "TENHS LIKE '%" + textBoxTim.Text +
+                "%' OR MAHS LIKE '%" + textBoxTim.Text + "%'";
+        }
+
+        private void textBoxTim_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Tìm kiếm theo Tên học sinh, Mã học sinh hoặc Mã lớp", textBoxTim);
         }
     }
 }
