@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,7 @@ namespace QLHSTHPT
         {
             formPhanCongGV.labelEMaLop.Text = "";
             formPhanCongGV.textBoxMaLop.Text = this.textBoxMaLop.Text;
+            formPhanCongGV.textBoxMaNH.Text = ((DataRowView)lOPBindingSource[lOPBindingSource.Position])["MANH"].ToString().Trim();
             this.Visible = false;
             formChinh.Activate();
             formChinh.Enabled = true;

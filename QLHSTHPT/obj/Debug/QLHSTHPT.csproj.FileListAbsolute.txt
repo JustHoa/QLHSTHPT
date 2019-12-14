@@ -551,3 +551,4 @@ D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.pdb
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimInfoHS.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimHK_LHS.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimNH_LHS.resources
+D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormDiemTBM_HK.resources

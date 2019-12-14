@@ -89,6 +89,7 @@
             this.toolStripStatusLabelTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelNhom = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelNote = new System.Windows.Forms.ToolStripStatusLabel();
+            this.processBar = new System.Windows.Forms.ToolStripProgressBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -582,7 +583,8 @@
             this.toolStripStatusLabelMGV,
             this.toolStripStatusLabelTen,
             this.toolStripStatusLabelNhom,
-            this.toolStripStatusLabelNote});
+            this.toolStripStatusLabelNote,
+            this.processBar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 423);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(927, 22);
@@ -614,6 +616,13 @@
             this.toolStripStatusLabelNote.Size = new System.Drawing.Size(797, 17);
             this.toolStripStatusLabelNote.Spring = true;
             this.toolStripStatusLabelNote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // processBar
+            // 
+            this.processBar.Name = "processBar";
+            this.processBar.Size = new System.Drawing.Size(100, 16);
+            this.processBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.processBar.Visible = false;
             // 
             // xtraTabbedMdiManager1
             // 
@@ -704,5 +713,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem32;
         private DevExpress.XtraBars.BarButtonItem barButtonItem33;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        public System.Windows.Forms.ToolStripProgressBar processBar;
     }
 }

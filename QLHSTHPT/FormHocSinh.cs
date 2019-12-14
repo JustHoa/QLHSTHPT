@@ -59,6 +59,7 @@ namespace QLHSTHPT
             this.hOCSINHBindingSource.AddNew();
             this.textBoxMaHS.Text = Helper.createMaHS(hOCSINHBindingSource);
             this.textBoxTenHS.Focus();
+            this.comboBoxGT.SelectedIndex = 1;
             this.comboBoxGT.SelectedIndex = 0;
             this.checkBoxNghi.Checked = false;
         }
@@ -151,7 +152,7 @@ namespace QLHSTHPT
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.labelEHT.Text = this.textBoxDC.Text = this.dateEditNS.Text = this.textBoxDT.Text = this.textBoxDToc.Text = "";
+            this.labelEHT.Text = this.labelEDC.Text = this.labelEDT.Text = this.labelEDTo.Text = this.labelEMaHS.Text = this.labelENS.Text = "";
 
             if (this.textBoxTenHS.Text == "")
             {
@@ -199,7 +200,7 @@ namespace QLHSTHPT
                 return;
             }
 
-            if (this.textBoxDToc.Text == "Chưa nhập Dân tộc. Chú ý!")
+            if (this.textBoxDToc.Text == "")
             {
                 this.labelEDTo.Text = "Chưa nhập Dân tộc. Chú ý!";
                 //MessageBox.Show("Chưa nhập Dân tộc. Chú ý!");

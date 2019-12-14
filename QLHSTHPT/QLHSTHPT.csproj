@@ -114,6 +114,12 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDiemTBM_HK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiemTBM_HK.Designer.cs">
+      <DependentUpon>FormDiemTBM_HK.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,8 +270,15 @@
     <Compile Include="FormXepLop.Designer.cs">
       <DependentUpon>FormXepLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXetLenLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXetLenLop.Designer.cs">
+      <DependentUpon>FormXetLenLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Key.cs" />
+    <Compile Include="Model\DTBMHK_HS.cs" />
     <Compile Include="Model\HocSinh.cs" />
     <Compile Include="Model\Lop_HS.cs" />
     <Compile Include="Model\MyCache.cs" />
@@ -304,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiemTBM_HK.resx">
+      <DependentUpon>FormDiemTBM_HK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGiaoVien.resx">
       <DependentUpon>FormGiaoVien.cs</DependentUpon>

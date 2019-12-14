@@ -618,7 +618,7 @@ namespace QLHSTHPT
                 return;
             }
 
-            string sql = "EXEC SP_KTMA '" + textBoxMHS.Text + "', 'HOCSINH'";
+            string sql = "EXEC SP_KTMA '" + textBoxMHS.Text + "', 'HS_LOP_HS'";
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
             int nowPosition = sP_HS_LOPBindingSource.Position;

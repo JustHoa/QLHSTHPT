@@ -1196,7 +1196,7 @@
             // textBoxTim2
             // 
             this.textBoxTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim2.Location = new System.Drawing.Point(742, 440);
+            this.textBoxTim2.Location = new System.Drawing.Point(725, 440);
             this.textBoxTim2.Name = "textBoxTim2";
             this.textBoxTim2.Size = new System.Drawing.Size(168, 20);
             this.textBoxTim2.TabIndex = 48;
@@ -1207,7 +1207,7 @@
             // 
             this.labelTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim2.AutoSize = true;
-            this.labelTim2.Location = new System.Drawing.Point(687, 443);
+            this.labelTim2.Location = new System.Drawing.Point(670, 443);
             this.labelTim2.Name = "labelTim2";
             this.labelTim2.Size = new System.Drawing.Size(49, 13);
             this.labelTim2.TabIndex = 49;

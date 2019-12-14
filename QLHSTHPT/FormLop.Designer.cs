@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLop));
             System.Windows.Forms.Label bANLabel;
             System.Windows.Forms.Label mANHLabel;
             System.Windows.Forms.Label mAHKLabel;
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label mAKHOILabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLop));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -61,6 +61,7 @@
             this.colBAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
+            this.comboBoxMK = new System.Windows.Forms.ComboBox();
             this.labelEMaNH = new System.Windows.Forms.Label();
             this.labelEMaHK = new System.Windows.Forms.Label();
             this.labelETenLop = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.textBoxMaHK = new System.Windows.Forms.TextBox();
             this.textBoxTenLop = new System.Windows.Forms.TextBox();
             this.textBoxMaLop = new System.Windows.Forms.TextBox();
-            this.comboBoxMK = new System.Windows.Forms.ComboBox();
             this.textBoxTim = new System.Windows.Forms.TextBox();
             this.labelTim = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -90,6 +90,60 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBoxCT.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // bANLabel
+            // 
+            bANLabel.AutoSize = true;
+            bANLabel.Location = new System.Drawing.Point(226, 36);
+            bANLabel.Name = "bANLabel";
+            bANLabel.Size = new System.Drawing.Size(26, 13);
+            bANLabel.TabIndex = 8;
+            bANLabel.Text = "Ban";
+            // 
+            // mANHLabel
+            // 
+            mANHLabel.AutoSize = true;
+            mANHLabel.Location = new System.Drawing.Point(414, 79);
+            mANHLabel.Name = "mANHLabel";
+            mANHLabel.Size = new System.Drawing.Size(66, 13);
+            mANHLabel.TabIndex = 6;
+            mANHLabel.Text = "Mã năm học";
+            // 
+            // mAHKLabel
+            // 
+            mAHKLabel.AutoSize = true;
+            mAHKLabel.Location = new System.Drawing.Point(414, 36);
+            mAHKLabel.Name = "mAHKLabel";
+            mAHKLabel.Size = new System.Drawing.Size(57, 13);
+            mAHKLabel.TabIndex = 4;
+            mAHKLabel.Text = "Mã học kỳ";
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Location = new System.Drawing.Point(43, 79);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(43, 13);
+            tENLOPLabel.TabIndex = 2;
+            tENLOPLabel.Text = "Tên lớp";
+            // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Location = new System.Drawing.Point(43, 36);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(39, 13);
+            mALOPLabel.TabIndex = 0;
+            mALOPLabel.Text = "Mã lớp";
+            // 
+            // mAKHOILabel
+            // 
+            mAKHOILabel.AutoSize = true;
+            mAKHOILabel.Location = new System.Drawing.Point(226, 79);
+            mAKHOILabel.Name = "mAKHOILabel";
+            mAKHOILabel.Size = new System.Drawing.Size(45, 13);
+            mAKHOILabel.TabIndex = 17;
+            mAKHOILabel.Text = "Mã khối";
             // 
             // barManager1
             // 
@@ -342,6 +396,20 @@
             this.groupBoxCT.TabStop = false;
             this.groupBoxCT.Text = "CHI TIẾT LỚP";
             // 
+            // comboBoxMK
+            // 
+            this.comboBoxMK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MAKHOI", true));
+            this.comboBoxMK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMK.FormattingEnabled = true;
+            this.comboBoxMK.Items.AddRange(new object[] {
+            "10",
+            "11",
+            "12"});
+            this.comboBoxMK.Location = new System.Drawing.Point(277, 75);
+            this.comboBoxMK.Name = "comboBoxMK";
+            this.comboBoxMK.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxMK.TabIndex = 18;
+            // 
             // labelEMaNH
             // 
             this.labelEMaNH.AutoSize = true;
@@ -390,7 +458,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(390, 119);
+            this.button2.Location = new System.Drawing.Point(339, 120);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
@@ -400,22 +468,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(279, 119);
+            this.button1.Location = new System.Drawing.Point(228, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bANLabel
-            // 
-            bANLabel.AutoSize = true;
-            bANLabel.Location = new System.Drawing.Point(226, 36);
-            bANLabel.Name = "bANLabel";
-            bANLabel.Size = new System.Drawing.Size(26, 13);
-            bANLabel.TabIndex = 8;
-            bANLabel.Text = "Ban";
             // 
             // comboBoxBan
             // 
@@ -430,15 +489,6 @@
             this.comboBoxBan.Size = new System.Drawing.Size(100, 21);
             this.comboBoxBan.TabIndex = 9;
             // 
-            // mANHLabel
-            // 
-            mANHLabel.AutoSize = true;
-            mANHLabel.Location = new System.Drawing.Point(414, 79);
-            mANHLabel.Name = "mANHLabel";
-            mANHLabel.Size = new System.Drawing.Size(66, 13);
-            mANHLabel.TabIndex = 6;
-            mANHLabel.Text = "Mã năm học";
-            // 
             // textBoxMaNH
             // 
             this.textBoxMaNH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MANH", true));
@@ -446,15 +496,6 @@
             this.textBoxMaNH.Name = "textBoxMaNH";
             this.textBoxMaNH.Size = new System.Drawing.Size(100, 20);
             this.textBoxMaNH.TabIndex = 7;
-            // 
-            // mAHKLabel
-            // 
-            mAHKLabel.AutoSize = true;
-            mAHKLabel.Location = new System.Drawing.Point(414, 36);
-            mAHKLabel.Name = "mAHKLabel";
-            mAHKLabel.Size = new System.Drawing.Size(57, 13);
-            mAHKLabel.TabIndex = 4;
-            mAHKLabel.Text = "Mã học kỳ";
             // 
             // textBoxMaHK
             // 
@@ -464,15 +505,6 @@
             this.textBoxMaHK.Size = new System.Drawing.Size(100, 20);
             this.textBoxMaHK.TabIndex = 5;
             // 
-            // tENLOPLabel
-            // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(43, 79);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(43, 13);
-            tENLOPLabel.TabIndex = 2;
-            tENLOPLabel.Text = "Tên lớp";
-            // 
             // textBoxTenLop
             // 
             this.textBoxTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "TENLOP", true));
@@ -481,15 +513,6 @@
             this.textBoxTenLop.Size = new System.Drawing.Size(100, 20);
             this.textBoxTenLop.TabIndex = 3;
             // 
-            // mALOPLabel
-            // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(43, 36);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(39, 13);
-            mALOPLabel.TabIndex = 0;
-            mALOPLabel.Text = "Mã lớp";
-            // 
             // textBoxMaLop
             // 
             this.textBoxMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MALOP", true));
@@ -497,29 +520,6 @@
             this.textBoxMaLop.Name = "textBoxMaLop";
             this.textBoxMaLop.Size = new System.Drawing.Size(100, 20);
             this.textBoxMaLop.TabIndex = 1;
-            // 
-            // mAKHOILabel
-            // 
-            mAKHOILabel.AutoSize = true;
-            mAKHOILabel.Location = new System.Drawing.Point(226, 79);
-            mAKHOILabel.Name = "mAKHOILabel";
-            mAKHOILabel.Size = new System.Drawing.Size(45, 13);
-            mAKHOILabel.TabIndex = 17;
-            mAKHOILabel.Text = "Mã khối";
-            // 
-            // comboBoxMK
-            // 
-            this.comboBoxMK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MAKHOI", true));
-            this.comboBoxMK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMK.FormattingEnabled = true;
-            this.comboBoxMK.Items.AddRange(new object[] {
-            "10",
-            "11",
-            "12"});
-            this.comboBoxMK.Location = new System.Drawing.Point(277, 75);
-            this.comboBoxMK.Name = "comboBoxMK";
-            this.comboBoxMK.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxMK.TabIndex = 18;
             // 
             // textBoxTim
             // 
