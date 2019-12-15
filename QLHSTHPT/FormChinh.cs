@@ -280,15 +280,15 @@ namespace QLHSTHPT
             }
         }
 
-        private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonItem34_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.toolStripStatusLabelNote.Text = "";
 
-            Form frm = this.checkExists(typeof(FormHocSinh_DB));
+            Form frm = this.checkExists(typeof(FormXetLenLop));
             if (frm != null) frm.Activate();
             else
             {
-                FormHocSinh_DB f = new FormHocSinh_DB(this);
+                FormXetLenLop f = new FormXetLenLop(this);
                 f.MdiParent = this;
                 f.Show();
             }

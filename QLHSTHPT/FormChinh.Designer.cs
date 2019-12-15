@@ -69,6 +69,8 @@
             this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -138,9 +140,11 @@
             this.barButtonItem30,
             this.barButtonItem31,
             this.barButtonItem32,
-            this.barButtonItem33});
+            this.barButtonItem33,
+            this.barButtonItem34,
+            this.barButtonItem35});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 41;
+            this.ribbon.MaxItemId = 43;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -395,7 +399,7 @@
             // 
             // barSubItem2
             // 
-            this.barSubItem2.Caption = "Xếp lớp tự động";
+            this.barSubItem2.Caption = "Excel - Học sinh";
             this.barSubItem2.Id = 32;
             this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
             this.barSubItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.LargeImage")));
@@ -418,7 +422,6 @@
             this.barButtonItem28.Id = 34;
             this.barButtonItem28.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem28.ImageOptions.Image")));
             this.barButtonItem28.Name = "barButtonItem28";
-            this.barButtonItem28.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem28_ItemClick);
             // 
             // barButtonItem29
             // 
@@ -473,6 +476,24 @@
             this.barButtonItem33.Name = "barButtonItem33";
             this.barButtonItem33.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem33_ItemClick);
             // 
+            // barButtonItem34
+            // 
+            this.barButtonItem34.Caption = "Quản lý lên lớp";
+            this.barButtonItem34.Id = 41;
+            this.barButtonItem34.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem34.ImageOptions.Image")));
+            this.barButtonItem34.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem34.ImageOptions.LargeImage")));
+            this.barButtonItem34.Name = "barButtonItem34";
+            this.barButtonItem34.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem34_ItemClick);
+            // 
+            // barButtonItem35
+            // 
+            this.barButtonItem35.Caption = "Excel - Học sinh";
+            this.barButtonItem35.Id = 42;
+            this.barButtonItem35.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem35.ImageOptions.Image")));
+            this.barButtonItem35.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem35.ImageOptions.LargeImage")));
+            this.barButtonItem35.Name = "barButtonItem35";
+            this.barButtonItem35.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -514,7 +535,8 @@
             // ribbonPCCV
             // 
             this.ribbonPCCV.ItemLinks.Add(this.barButtonItem19);
-            this.ribbonPCCV.ItemLinks.Add(this.barSubItem2);
+            this.ribbonPCCV.ItemLinks.Add(this.barButtonItem35);
+            this.ribbonPCCV.ItemLinks.Add(this.barButtonItem34);
             this.ribbonPCCV.Name = "ribbonPCCV";
             this.ribbonPCCV.Text = "Nâng cao";
             // 
@@ -714,5 +736,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem33;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         public System.Windows.Forms.ToolStripProgressBar processBar;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem34;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem35;
     }
 }

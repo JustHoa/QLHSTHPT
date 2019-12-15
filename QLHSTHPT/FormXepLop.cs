@@ -13,7 +13,7 @@ namespace QLHSTHPT
     public partial class FormXepLop : Form
     {
         public string idHS = "";
-        int[] xepLop;
+        int[] xepLop; //mang si so cac lop
         FormChinh formChinh;
         GridView gridView;
 

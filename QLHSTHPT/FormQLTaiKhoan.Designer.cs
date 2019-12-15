@@ -32,8 +32,8 @@
             System.Windows.Forms.Label mAGVLabel;
             System.Windows.Forms.Label tENDANGNHAPLabel;
             System.Windows.Forms.Label nHOMQUYENLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLTaiKhoan));
             System.Windows.Forms.Label mAGVLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLTaiKhoan));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -48,8 +48,15 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelTim1 = new System.Windows.Forms.Label();
+            this.textBoxTim1 = new System.Windows.Forms.TextBox();
+            this.v_DSTAIKHOANGridControl = new DevExpress.XtraGrid.GridControl();
             this.v_DSTAIKHOANBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENDANGNHAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNHOMQUYEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelCTTK = new System.Windows.Forms.Panel();
             this.buttonHuy1 = new System.Windows.Forms.Button();
             this.buttonOK1 = new System.Windows.Forms.Button();
@@ -63,20 +70,8 @@
             this.v_DSTAIKHOANTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.V_DSTAIKHOANTableAdapter();
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelTim1 = new System.Windows.Forms.Label();
-            this.textBoxTim1 = new System.Windows.Forms.TextBox();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENDANGNHAP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNHOMQUYEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.v_DSTAIKHOANGridControl = new DevExpress.XtraGrid.GridControl();
-            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
-            this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gIAOVIENTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.GIAOVIENTableAdapter();
-            this.tableAdapterManager1 = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
-            this.gIAOVIENGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelTim2 = new System.Windows.Forms.Label();
+            this.textBoxTim2 = new System.Windows.Forms.TextBox();
             this.groupBoxAddAcc = new System.Windows.Forms.GroupBox();
             this.labelEMGV = new System.Windows.Forms.Label();
             this.labelEMK2 = new System.Windows.Forms.Label();
@@ -89,10 +84,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMGV = new System.Windows.Forms.TextBox();
+            this.gIAOVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.textBoxAddMK2 = new System.Windows.Forms.TextBox();
             this.textBoxAddMK = new System.Windows.Forms.TextBox();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.gIAOVIENGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAGV1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -101,8 +100,9 @@
             this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMABM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textBoxTim2 = new System.Windows.Forms.TextBox();
-            this.labelTim2 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.gIAOVIENTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.GIAOVIENTableAdapter();
+            this.tableAdapterManager1 = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
             mAGVLabel = new System.Windows.Forms.Label();
             tENDANGNHAPLabel = new System.Windows.Forms.Label();
             nHOMQUYENLabel = new System.Windows.Forms.Label();
@@ -110,17 +110,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DSTAIKHOANGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSTAIKHOANBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panelCTTK.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DSTAIKHOANGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
+            this.groupBoxAddAcc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            this.groupBoxAddAcc.SuspendLayout();
             this.SuspendLayout();
             // 
             // mAGVLabel
@@ -149,6 +149,15 @@
             nHOMQUYENLabel.Size = new System.Drawing.Size(67, 13);
             nHOMQUYENLabel.TabIndex = 4;
             nHOMQUYENLabel.Text = "Nhóm quyền";
+            // 
+            // mAGVLabel1
+            // 
+            mAGVLabel1.AutoSize = true;
+            mAGVLabel1.Location = new System.Drawing.Point(320, 74);
+            mAGVLabel1.Name = "mAGVLabel1";
+            mAGVLabel1.Size = new System.Drawing.Size(68, 13);
+            mAGVLabel1.TabIndex = 4;
+            mAGVLabel1.Text = "Mã giáo viên";
             // 
             // barManager1
             // 
@@ -289,6 +298,39 @@
             this.panel1.Size = new System.Drawing.Size(674, 285);
             this.panel1.TabIndex = 0;
             // 
+            // labelTim1
+            // 
+            this.labelTim1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim1.AutoSize = true;
+            this.labelTim1.Location = new System.Drawing.Point(456, 9);
+            this.labelTim1.Name = "labelTim1";
+            this.labelTim1.Size = new System.Drawing.Size(49, 13);
+            this.labelTim1.TabIndex = 2;
+            this.labelTim1.Text = "Tìm kiếm";
+            // 
+            // textBoxTim1
+            // 
+            this.textBoxTim1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim1.Location = new System.Drawing.Point(511, 6);
+            this.textBoxTim1.Name = "textBoxTim1";
+            this.textBoxTim1.Size = new System.Drawing.Size(160, 20);
+            this.textBoxTim1.TabIndex = 1;
+            this.textBoxTim1.TextChanged += new System.EventHandler(this.textBoxTim1_TextChanged);
+            this.textBoxTim1.MouseHover += new System.EventHandler(this.textBoxTim1_MouseHover);
+            // 
+            // v_DSTAIKHOANGridControl
+            // 
+            this.v_DSTAIKHOANGridControl.DataSource = this.v_DSTAIKHOANBindingSource;
+            this.v_DSTAIKHOANGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.v_DSTAIKHOANGridControl.Location = new System.Drawing.Point(0, 0);
+            this.v_DSTAIKHOANGridControl.MainView = this.gridView1;
+            this.v_DSTAIKHOANGridControl.MenuManager = this.barManager1;
+            this.v_DSTAIKHOANGridControl.Name = "v_DSTAIKHOANGridControl";
+            this.v_DSTAIKHOANGridControl.Size = new System.Drawing.Size(674, 285);
+            this.v_DSTAIKHOANGridControl.TabIndex = 0;
+            this.v_DSTAIKHOANGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
             // v_DSTAIKHOANBindingSource
             // 
             this.v_DSTAIKHOANBindingSource.DataMember = "V_DSTAIKHOAN";
@@ -297,7 +339,38 @@
             // qLHSTHPTDataSet
             // 
             this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
+            this.qLHSTHPTDataSet.EnforceConstraints = false;
             this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAGV,
+            this.colTENDANGNHAP,
+            this.colNHOMQUYEN});
+            this.gridView1.GridControl = this.v_DSTAIKHOANGridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colMAGV
+            // 
+            this.colMAGV.FieldName = "MAGV";
+            this.colMAGV.Name = "colMAGV";
+            this.colMAGV.Visible = true;
+            this.colMAGV.VisibleIndex = 0;
+            // 
+            // colTENDANGNHAP
+            // 
+            this.colTENDANGNHAP.FieldName = "TENDANGNHAP";
+            this.colTENDANGNHAP.Name = "colTENDANGNHAP";
+            this.colTENDANGNHAP.Visible = true;
+            this.colTENDANGNHAP.VisibleIndex = 1;
+            // 
+            // colNHOMQUYEN
+            // 
+            this.colNHOMQUYEN.FieldName = "NHOMQUYEN";
+            this.colNHOMQUYEN.Name = "colNHOMQUYEN";
+            this.colNHOMQUYEN.Visible = true;
+            this.colNHOMQUYEN.VisibleIndex = 2;
             // 
             // panelCTTK
             // 
@@ -430,130 +503,25 @@
             this.panel2.Size = new System.Drawing.Size(1370, 412);
             this.panel2.TabIndex = 20;
             // 
-            // toolTip1
+            // labelTim2
             // 
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.labelTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim2.AutoSize = true;
+            this.labelTim2.Location = new System.Drawing.Point(1144, 9);
+            this.labelTim2.Name = "labelTim2";
+            this.labelTim2.Size = new System.Drawing.Size(49, 13);
+            this.labelTim2.TabIndex = 28;
+            this.labelTim2.Text = "Tìm kiếm";
             // 
-            // labelTim1
+            // textBoxTim2
             // 
-            this.labelTim1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTim1.AutoSize = true;
-            this.labelTim1.Location = new System.Drawing.Point(456, 9);
-            this.labelTim1.Name = "labelTim1";
-            this.labelTim1.Size = new System.Drawing.Size(49, 13);
-            this.labelTim1.TabIndex = 2;
-            this.labelTim1.Text = "Tìm kiếm";
-            // 
-            // textBoxTim1
-            // 
-            this.textBoxTim1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim1.Location = new System.Drawing.Point(511, 6);
-            this.textBoxTim1.Name = "textBoxTim1";
-            this.textBoxTim1.Size = new System.Drawing.Size(160, 20);
-            this.textBoxTim1.TabIndex = 1;
-            this.textBoxTim1.TextChanged += new System.EventHandler(this.textBoxTim1_TextChanged);
-            this.textBoxTim1.MouseHover += new System.EventHandler(this.textBoxTim1_MouseHover);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAGV,
-            this.colTENDANGNHAP,
-            this.colNHOMQUYEN});
-            this.gridView1.GridControl = this.v_DSTAIKHOANGridControl;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colMAGV
-            // 
-            this.colMAGV.FieldName = "MAGV";
-            this.colMAGV.Name = "colMAGV";
-            this.colMAGV.Visible = true;
-            this.colMAGV.VisibleIndex = 0;
-            // 
-            // colTENDANGNHAP
-            // 
-            this.colTENDANGNHAP.FieldName = "TENDANGNHAP";
-            this.colTENDANGNHAP.Name = "colTENDANGNHAP";
-            this.colTENDANGNHAP.Visible = true;
-            this.colTENDANGNHAP.VisibleIndex = 1;
-            // 
-            // colNHOMQUYEN
-            // 
-            this.colNHOMQUYEN.FieldName = "NHOMQUYEN";
-            this.colNHOMQUYEN.Name = "colNHOMQUYEN";
-            this.colNHOMQUYEN.Visible = true;
-            this.colNHOMQUYEN.VisibleIndex = 2;
-            // 
-            // v_DSTAIKHOANGridControl
-            // 
-            this.v_DSTAIKHOANGridControl.DataSource = this.v_DSTAIKHOANBindingSource;
-            this.v_DSTAIKHOANGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.v_DSTAIKHOANGridControl.Location = new System.Drawing.Point(0, 0);
-            this.v_DSTAIKHOANGridControl.MainView = this.gridView1;
-            this.v_DSTAIKHOANGridControl.MenuManager = this.barManager1;
-            this.v_DSTAIKHOANGridControl.Name = "v_DSTAIKHOANGridControl";
-            this.v_DSTAIKHOANGridControl.Size = new System.Drawing.Size(674, 285);
-            this.v_DSTAIKHOANGridControl.TabIndex = 0;
-            this.v_DSTAIKHOANGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // qLHSTHPTDataSet1
-            // 
-            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
-            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gIAOVIENBindingSource
-            // 
-            this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
-            this.gIAOVIENBindingSource.DataSource = this.qLHSTHPTDataSet1;
-            // 
-            // gIAOVIENTableAdapter
-            // 
-            this.gIAOVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.BOMONTableAdapter = null;
-           // this.tableAdapterManager1.Data_dqTableAdapter = null;
-            this.tableAdapterManager1.DIEMTableAdapter = null;
-            this.tableAdapterManager1.GIAOVIENTableAdapter = this.gIAOVIENTableAdapter;
-            this.tableAdapterManager1.HOCKYTableAdapter = null;
-            this.tableAdapterManager1.HOCSINHTableAdapter = null;
-            this.tableAdapterManager1.LOPTableAdapter = null;
-            this.tableAdapterManager1.MONHOCTableAdapter = null;
-            this.tableAdapterManager1.NAMHOCTableAdapter = null;
-            this.tableAdapterManager1.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager1.TOTRUONGBMTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // gIAOVIENGridControl
-            // 
-            this.gIAOVIENGridControl.DataSource = this.gIAOVIENBindingSource;
-            this.gIAOVIENGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gIAOVIENGridControl.Location = new System.Drawing.Point(0, 0);
-            this.gIAOVIENGridControl.MainView = this.gridView2;
-            this.gIAOVIENGridControl.MenuManager = this.barManager1;
-            this.gIAOVIENGridControl.Name = "gIAOVIENGridControl";
-            this.gIAOVIENGridControl.Size = new System.Drawing.Size(1370, 243);
-            this.gIAOVIENGridControl.TabIndex = 0;
-            this.gIAOVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAGV1,
-            this.colTENGV,
-            this.colGIOITINH,
-            this.colNGAYSINH,
-            this.colDIACHI,
-            this.colDIENTHOAI,
-            this.colMABM,
-            this.colNGHI});
-            this.gridView2.GridControl = this.gIAOVIENGridControl;
-            this.gridView2.Name = "gridView2";
+            this.textBoxTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim2.Location = new System.Drawing.Point(1199, 6);
+            this.textBoxTim2.Name = "textBoxTim2";
+            this.textBoxTim2.Size = new System.Drawing.Size(165, 20);
+            this.textBoxTim2.TabIndex = 27;
+            this.textBoxTim2.TextChanged += new System.EventHandler(this.textBoxTim2_TextChanged);
+            this.textBoxTim2.MouseHover += new System.EventHandler(this.textBoxTim2_MouseHover);
             // 
             // groupBoxAddAcc
             // 
@@ -672,15 +640,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Tên đăng nhập";
             // 
-            // mAGVLabel1
-            // 
-            mAGVLabel1.AutoSize = true;
-            mAGVLabel1.Location = new System.Drawing.Point(320, 74);
-            mAGVLabel1.Name = "mAGVLabel1";
-            mAGVLabel1.Size = new System.Drawing.Size(68, 13);
-            mAGVLabel1.TabIndex = 4;
-            mAGVLabel1.Text = "Mã giáo viên";
-            // 
             // textBoxMGV
             // 
             this.textBoxMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIAOVIENBindingSource, "MAGV", true));
@@ -689,6 +648,17 @@
             this.textBoxMGV.Name = "textBoxMGV";
             this.textBoxMGV.Size = new System.Drawing.Size(121, 20);
             this.textBoxMGV.TabIndex = 5;
+            // 
+            // gIAOVIENBindingSource
+            // 
+            this.gIAOVIENBindingSource.DataMember = "GIAOVIEN";
+            this.gIAOVIENBindingSource.DataSource = this.qLHSTHPTDataSet1;
+            // 
+            // qLHSTHPTDataSet1
+            // 
+            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.EnforceConstraints = false;
+            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBoxRole
             // 
@@ -724,6 +694,33 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(121, 20);
             this.textBoxLogin.TabIndex = 0;
+            // 
+            // gIAOVIENGridControl
+            // 
+            this.gIAOVIENGridControl.DataSource = this.gIAOVIENBindingSource;
+            this.gIAOVIENGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gIAOVIENGridControl.Location = new System.Drawing.Point(0, 0);
+            this.gIAOVIENGridControl.MainView = this.gridView2;
+            this.gIAOVIENGridControl.MenuManager = this.barManager1;
+            this.gIAOVIENGridControl.Name = "gIAOVIENGridControl";
+            this.gIAOVIENGridControl.Size = new System.Drawing.Size(1370, 243);
+            this.gIAOVIENGridControl.TabIndex = 0;
+            this.gIAOVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAGV1,
+            this.colTENGV,
+            this.colGIOITINH,
+            this.colNGAYSINH,
+            this.colDIACHI,
+            this.colDIENTHOAI,
+            this.colMABM,
+            this.colNGHI});
+            this.gridView2.GridControl = this.gIAOVIENGridControl;
+            this.gridView2.Name = "gridView2";
             // 
             // colMAGV1
             // 
@@ -781,25 +778,31 @@
             this.colNGHI.Visible = true;
             this.colNGHI.VisibleIndex = 7;
             // 
-            // textBoxTim2
+            // toolTip1
             // 
-            this.textBoxTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim2.Location = new System.Drawing.Point(1199, 6);
-            this.textBoxTim2.Name = "textBoxTim2";
-            this.textBoxTim2.Size = new System.Drawing.Size(165, 20);
-            this.textBoxTim2.TabIndex = 27;
-            this.textBoxTim2.TextChanged += new System.EventHandler(this.textBoxTim2_TextChanged);
-            this.textBoxTim2.MouseHover += new System.EventHandler(this.textBoxTim2_MouseHover);
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
-            // labelTim2
+            // gIAOVIENTableAdapter
             // 
-            this.labelTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTim2.AutoSize = true;
-            this.labelTim2.Location = new System.Drawing.Point(1144, 9);
-            this.labelTim2.Name = "labelTim2";
-            this.labelTim2.Size = new System.Drawing.Size(49, 13);
-            this.labelTim2.TabIndex = 28;
-            this.labelTim2.Text = "Tìm kiếm";
+            this.gIAOVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.BOMONTableAdapter = null;
+            this.tableAdapterManager1.DIEMTableAdapter = null;
+            this.tableAdapterManager1.GIAOVIENTableAdapter = this.gIAOVIENTableAdapter;
+            this.tableAdapterManager1.HOCKYTableAdapter = null;
+            this.tableAdapterManager1.HOCSINHTableAdapter = null;
+            this.tableAdapterManager1.HS_LOPTableAdapter = null;
+            this.tableAdapterManager1.KHOITableAdapter = null;
+            this.tableAdapterManager1.LOPTableAdapter = null;
+            this.tableAdapterManager1.MONHOCTableAdapter = null;
+            this.tableAdapterManager1.NAMHOCTableAdapter = null;
+            this.tableAdapterManager1.PHANCONGGVTableAdapter = null;
+            this.tableAdapterManager1.TOTRUONGBMTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // FormQLTaiKhoan
             // 
@@ -821,20 +824,20 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DSTAIKHOANGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSTAIKHOANBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panelCTTK.ResumeLayout(false);
             this.panelCTTK.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DSTAIKHOANGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.groupBoxAddAcc.ResumeLayout(false);
             this.groupBoxAddAcc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIENGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

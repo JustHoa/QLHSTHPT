@@ -328,7 +328,7 @@ namespace QLHSTHPT
             }
             else
             {
-                MessageBox.Show("Thiếu dữ liệu học sinh!\n Gợi ý: Thêm dữ liệu học sinh từ Excel.");
+                MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel.");
             }
         }
 

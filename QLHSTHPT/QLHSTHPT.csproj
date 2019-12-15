@@ -150,6 +150,30 @@
     <Compile Include="FormHocSinh_Excel.Designer.cs">
       <DependentUpon>FormHocSinh_Excel.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLenLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLenLop.Designer.cs">
+      <DependentUpon>FormLenLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLL10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLL10.Designer.cs">
+      <DependentUpon>FormLL10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLL11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLL11.Designer.cs">
+      <DependentUpon>FormLL11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLL12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLL12.Designer.cs">
+      <DependentUpon>FormLL12.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +221,12 @@
     </Compile>
     <Compile Include="FormQLTaiKhoan.Designer.cs">
       <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTienTrinhLL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTienTrinhLL.Designer.cs">
+      <DependentUpon>FormTienTrinhLL.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTimGV.cs">
       <SubType>Form</SubType>
@@ -280,6 +310,7 @@
     <Compile Include="Key.cs" />
     <Compile Include="Model\DTBMHK_HS.cs" />
     <Compile Include="Model\HocSinh.cs" />
+    <Compile Include="Model\HocSinh_LL.cs" />
     <Compile Include="Model\Lop_HS.cs" />
     <Compile Include="Model\MyCache.cs" />
     <Compile Include="Program.cs" />
@@ -336,6 +367,18 @@
     <EmbeddedResource Include="FormHocSinh_Excel.resx">
       <DependentUpon>FormHocSinh_Excel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLenLop.resx">
+      <DependentUpon>FormLenLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLL10.resx">
+      <DependentUpon>FormLL10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLL11.resx">
+      <DependentUpon>FormLL11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLL12.resx">
+      <DependentUpon>FormLL12.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLop.resx">
       <DependentUpon>FormLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLTaiKhoan.resx">
       <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTienTrinhLL.resx">
+      <DependentUpon>FormTienTrinhLL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimGV.resx">
       <DependentUpon>FormTimGV.cs</DependentUpon>
@@ -395,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormXepLop.resx">
       <DependentUpon>FormXepLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXetLenLop.resx">
+      <DependentUpon>FormXetLenLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
