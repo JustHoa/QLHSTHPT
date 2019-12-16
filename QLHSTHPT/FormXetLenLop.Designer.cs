@@ -196,7 +196,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 842);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 825);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1080, 0);
             // 
@@ -206,7 +206,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 802);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 785);
             // 
             // barDockControlRight
             // 
@@ -214,7 +214,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1080, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 802);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 785);
             // 
             // panel1
             // 
@@ -252,7 +252,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 317);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1080, 300);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // panelK10
@@ -264,7 +264,7 @@
             this.panelK10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelK10.Location = new System.Drawing.Point(3, 3);
             this.panelK10.Name = "panelK10";
-            this.panelK10.Size = new System.Drawing.Size(354, 311);
+            this.panelK10.Size = new System.Drawing.Size(354, 294);
             this.panelK10.TabIndex = 0;
             // 
             // sP_DSLOP10_NHGridControl
@@ -275,7 +275,7 @@
             this.sP_DSLOP10_NHGridControl.MainView = this.gridView1;
             this.sP_DSLOP10_NHGridControl.MenuManager = this.barManager1;
             this.sP_DSLOP10_NHGridControl.Name = "sP_DSLOP10_NHGridControl";
-            this.sP_DSLOP10_NHGridControl.Size = new System.Drawing.Size(350, 280);
+            this.sP_DSLOP10_NHGridControl.Size = new System.Drawing.Size(350, 263);
             this.sP_DSLOP10_NHGridControl.TabIndex = 1;
             this.sP_DSLOP10_NHGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -355,7 +355,7 @@
             this.panelK11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelK11.Location = new System.Drawing.Point(363, 3);
             this.panelK11.Name = "panelK11";
-            this.panelK11.Size = new System.Drawing.Size(354, 311);
+            this.panelK11.Size = new System.Drawing.Size(354, 294);
             this.panelK11.TabIndex = 1;
             // 
             // sP_DSLOP11_NHGridControl
@@ -366,7 +366,7 @@
             this.sP_DSLOP11_NHGridControl.MainView = this.gridView2;
             this.sP_DSLOP11_NHGridControl.MenuManager = this.barManager1;
             this.sP_DSLOP11_NHGridControl.Name = "sP_DSLOP11_NHGridControl";
-            this.sP_DSLOP11_NHGridControl.Size = new System.Drawing.Size(350, 280);
+            this.sP_DSLOP11_NHGridControl.Size = new System.Drawing.Size(350, 263);
             this.sP_DSLOP11_NHGridControl.TabIndex = 1;
             this.sP_DSLOP11_NHGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -440,7 +440,7 @@
             this.panelK12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelK12.Location = new System.Drawing.Point(723, 3);
             this.panelK12.Name = "panelK12";
-            this.panelK12.Size = new System.Drawing.Size(354, 311);
+            this.panelK12.Size = new System.Drawing.Size(354, 294);
             this.panelK12.TabIndex = 2;
             // 
             // sP_DSLOP12_NHGridControl
@@ -451,7 +451,7 @@
             this.sP_DSLOP12_NHGridControl.MainView = this.gridView3;
             this.sP_DSLOP12_NHGridControl.MenuManager = this.barManager1;
             this.sP_DSLOP12_NHGridControl.Name = "sP_DSLOP12_NHGridControl";
-            this.sP_DSLOP12_NHGridControl.Size = new System.Drawing.Size(350, 280);
+            this.sP_DSLOP12_NHGridControl.Size = new System.Drawing.Size(350, 263);
             this.sP_DSLOP12_NHGridControl.TabIndex = 1;
             this.sP_DSLOP12_NHGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -522,7 +522,7 @@
             this.panelTitleHS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTitleHS.Controls.Add(this.labelTitleHS);
             this.panelTitleHS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleHS.Location = new System.Drawing.Point(0, 421);
+            this.panelTitleHS.Location = new System.Drawing.Point(0, 404);
             this.panelTitleHS.Name = "panelTitleHS";
             this.panelTitleHS.Size = new System.Drawing.Size(1080, 64);
             this.panelTitleHS.TabIndex = 10;
@@ -546,7 +546,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panel5, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel6, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 485);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 468);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

@@ -80,11 +80,23 @@ namespace QLHSTHPT
                 return;
             }
 
-            string sql = "EXEC SP_KTMA '" + textBoxMaLop.Text + "', 'LOP'";
+            string sql = "EXEC SP_KT_LOP_NH '" + textBoxTenLop.Text + "', " + int.Parse(textBoxMaNH.Text);
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
             int nowPosition = lOPBindingSource.Position;
-            int position = lOPBindingSource.Find("MALOP", textBoxMaLop.Text);
+            int position = -1;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                if (gridView1.GetRowCellValue(i, "TENLOP") != null)
+                {
+                    string tenLop = gridView1.GetRowCellValue(i, "TENLOP").ToString();
+                    string maNH = gridView1.GetRowCellValue(i, "MANH").ToString();
+                    if (tenLop == textBoxTenLop.Text && maNH == textBoxMaNH.Text)
+                        position = i;
+                }
+
+            }
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
                 this.labelEMaLop.Text = "Mã lớp đã tồn tại. Chú ý!";

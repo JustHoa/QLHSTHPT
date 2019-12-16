@@ -14,6 +14,9 @@ namespace QLHSTHPT
     public partial class FormLenLop : Form
     {
         FormChinh formChinh;
+        public int _ll10 = 0;
+        public int _ll11 = 0;
+        public int _ll12 = 0;
 
         public FormLenLop()
         {

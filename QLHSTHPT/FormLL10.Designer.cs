@@ -165,6 +165,7 @@
             this.barButtonItem5.Id = 0;
             this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -502,9 +503,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSiSo;
-        private System.Windows.Forms.ComboBox comboBoxTenLop;
         private System.Windows.Forms.TextBox textBoxSoLop;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ComboBox comboBoxTenLop;
     }
 }

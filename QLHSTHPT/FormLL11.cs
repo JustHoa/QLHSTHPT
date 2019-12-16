@@ -43,7 +43,7 @@ namespace QLHSTHPT
                 {
                     MessageBox.Show("Số lượng học sinh lên lớp nằm ngoài khoảng xếp lớp khả dụng!\n\nKhoảng khả dụng tối ưu: từ " +
                         Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL11BindingSource.Count);
-                    barButtonItem1.Enabled = false;
+                    //barButtonItem1.Enabled = false;
                 }
                 else
                 {
@@ -98,6 +98,25 @@ namespace QLHSTHPT
             gridView1.Columns[0].Caption = "MAHS";
             gridView1.Columns[1].Caption = "TENHS";
             gridView1.Columns[2].Caption = "GHICHU";
+        }
+        
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (formLenLop._ll11 == 0)
+            {
+                formLenLop._ll11 = 1;
+                comboBoxTenLop.Items.Add("11A1");
+                comboBoxTenLop.Items.Add("11A1");
+                FormTienTrinhLL f = new FormTienTrinhLL(this, comboBoxTenLop, v_XL11BindingSource);
+                f.Text = "Tiến trình lên lớp 11";
+                f.MdiParent = formLenLop;
+                f.Show();
+            }
+            else
+            {
+                formLenLop.toolStripStatusLabelNote.Text = "Tiến trình lên lớp 11 đang mở!";
+            }
         }
     }
 }

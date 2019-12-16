@@ -557,3 +557,6 @@ D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormLenLop.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormLL10.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormLL11.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormLL12.resources
+D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTienTrinhLL.resources
+D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormThemHK_LL.resources
+D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormThemNH_LL.resources

@@ -156,7 +156,7 @@ namespace QLHSTHPT
                 dbMaHS.DbType = DbType.String;
                 dbMaHS.ParameterName = "@MAHS";
                 dbMaHS.Direction = ParameterDirection.Input;
-                dbMaHS.Value = maHS; ;
+                dbMaHS.Value = maHS; 
 
                 dbTenHS.DbType = DbType.String;
                 dbTenHS.ParameterName = "@TENHS";

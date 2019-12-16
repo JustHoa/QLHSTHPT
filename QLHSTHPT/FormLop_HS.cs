@@ -244,15 +244,26 @@ namespace QLHSTHPT
                 return;
             }
 
-            string sql = "EXEC SP_KTMA '" + textBoxML.Text + "', 'LOP'";
+            string sql = "EXEC SP_KT_LOP_NH '" + textBoxTenLop.Text + "', " + int.Parse(textBoxMNH.Text);
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
 
             int nowPosition = lOPBindingSource.Position;
-            int position = lOPBindingSource.Find("MALOP", textBoxML.Text);
+            int position = -1;
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                if (gridView1.GetRowCellValue(i, "TENLOP") != null)
+                {
+                    string tenLop = gridView1.GetRowCellValue(i, "TENLOP").ToString();
+                    string maNH = gridView1.GetRowCellValue(i, "MANH").ToString();
+                    if (tenLop == textBoxTenLop.Text && maNH == textBoxMNH.Text)
+                        position = i;
+                }
+                
+            }
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
-                this.labelEMaLop.Text = "Mã lớp đã tồn tại. Chú ý!";
+                this.labelETenLop.Text = "Tên lớp đã tồn tại. Chú ý!";
                 //MessageBox.Show("Mã lớp đã tồn tại. Chú ý!");
                 dataReader.Close();
                 return;
@@ -293,6 +304,8 @@ namespace QLHSTHPT
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.labelEMaLop.Text = this.labelEBM.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
+
             this.barButtonItem1.Enabled = true;
             this.barButtonItem2.Enabled = true;
             this.barButtonItem3.Enabled = true;
@@ -1033,6 +1046,91 @@ namespace QLHSTHPT
         }
 
         private void textBoxDToc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMHK_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxMK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTenLop_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxML_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mAKHOILabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEMaNH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEMaHK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEBM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelETenLop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelEMaLop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMNH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bANLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mANHLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mAHKLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tENLOPLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mALOPLabel_Click(object sender, EventArgs e)
         {
 
         }

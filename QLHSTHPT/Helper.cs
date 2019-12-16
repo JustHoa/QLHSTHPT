@@ -162,6 +162,40 @@ namespace QLHSTHPT
             return maLop;
         }
 
+        static public int layMaNHMoiNhat()
+        {
+            string sql = "SELECT TOP(1) * FROM NAMHOC ORDER BY MANH DESC";
+            SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+            dataReader.Read();
+            int id = int.Parse(dataReader.GetValue(0).ToString());
+            dataReader.Close();
+            return id;
+        }
+
+        static public int layMaHKMoiNhat()
+        {
+            string sql = "SELECT TOP(1) * FROM HOCKY ORDER BY MAHK DESC";
+            SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+            dataReader.Read();
+            int id = int.Parse(dataReader.GetValue(0).ToString());
+            dataReader.Close();
+            return id;
+        }
+
+        static public string layNamHoc(int maNH)
+        {
+            string sql = "SELECT NAMBD, NAMKT FROM NAMHOC WHERE MANH = " + maNH;
+            SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+            dataReader.Read();
+            string namBD = dataReader.GetValue(0).ToString();
+            string namKT = dataReader.GetValue(1).ToString();
+            dataReader.Close();
+            return string.Format("{0}-{1}", namBD, namKT);
+        }
+
         static public string createMaNH(BindingSource bindingSource)
         {
             int last = bindingSource.Count - 2;

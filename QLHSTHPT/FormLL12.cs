@@ -99,5 +99,18 @@ namespace QLHSTHPT
             gridView1.Columns[1].Caption = "TENHS";
             gridView1.Columns[2].Caption = "GHICHU";
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (formLenLop._ll12 == 0)
+            {
+                formLenLop._ll12 = 1;
+                FormTienTrinhLL f = new FormTienTrinhLL(this);
+                f.Text = "Tiến trình lên lớp 12";
+                f.MdiParent = formLenLop;
+                f.Show();
+            }
+            else formLenLop.toolStripStatusLabelNote.Text = "Tiến trình lên lớp 12 đang mở!";
+        }
     }
 }

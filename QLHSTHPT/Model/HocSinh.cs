@@ -34,5 +34,11 @@ namespace QLHSTHPT.Model
             this.maLop = maLop;
             this.nghiHoc = nghiHoc;
         }
+
+        public HocSinh(string maHS, string tenHS)
+        {
+            this.maHS = maHS;
+            this.tenHS = tenHS;
+        }
     }
 }

@@ -42,7 +42,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelNote = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.processBar = new System.Windows.Forms.ToolStripProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -153,7 +153,7 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
+            this.toolStripStatusLabelNote,
             this.toolStripStatusLabel2,
             this.processBar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 550);
@@ -161,11 +161,13 @@
             this.statusStrip1.Size = new System.Drawing.Size(902, 22);
             this.statusStrip1.TabIndex = 5;
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusLabelNote
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(887, 17);
-            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabelNote.ForeColor = System.Drawing.Color.DarkOrange;
+            this.toolStripStatusLabelNote.Name = "toolStripStatusLabelNote";
+            this.toolStripStatusLabelNote.Size = new System.Drawing.Size(754, 17);
+            this.toolStripStatusLabelNote.Spring = true;
+            this.toolStripStatusLabelNote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStripStatusLabel2
             // 
@@ -216,8 +218,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         public System.Windows.Forms.ToolStripProgressBar processBar;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelNote;
     }
 }

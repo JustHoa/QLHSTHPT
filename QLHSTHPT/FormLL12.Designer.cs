@@ -31,16 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLL12));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.v_XL12GridControl = new DevExpress.XtraGrid.GridControl();
+            this.v_XL12BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENHS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,18 +63,15 @@
             this.textBoxSoLop = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
-            this.v_XL12BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_XL12TableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.V_XL12TableAdapter();
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
-            this.v_XL12GridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENHS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.v_XL12GridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_XL12BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -75,10 +79,6 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_XL12BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_XL12GridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -96,6 +96,42 @@
             this.barButtonItem3});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 3;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Đưa vào hoạt động";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Làm mới";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Hướng dẫn";
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // barDockControlTop
             // 
@@ -129,40 +165,6 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 542);
             // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Đưa vào hoạt động";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Làm mới";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Hướng dẫn";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -189,6 +191,62 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 536);
             this.panel1.TabIndex = 0;
+            // 
+            // v_XL12GridControl
+            // 
+            this.v_XL12GridControl.DataSource = this.v_XL12BindingSource;
+            this.v_XL12GridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.v_XL12GridControl.Location = new System.Drawing.Point(0, 39);
+            this.v_XL12GridControl.MainView = this.gridView1;
+            this.v_XL12GridControl.MenuManager = this.barManager1;
+            this.v_XL12GridControl.Name = "v_XL12GridControl";
+            this.v_XL12GridControl.Size = new System.Drawing.Size(452, 493);
+            this.v_XL12GridControl.TabIndex = 1;
+            this.v_XL12GridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // v_XL12BindingSource
+            // 
+            this.v_XL12BindingSource.DataMember = "V_XL12";
+            this.v_XL12BindingSource.DataSource = this.qLHSTHPTDataSet1;
+            // 
+            // qLHSTHPTDataSet1
+            // 
+            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAHS,
+            this.colTENHS,
+            this.colGHICHU});
+            this.gridView1.GridControl = this.v_XL12GridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colMAHS
+            // 
+            this.colMAHS.FieldName = "MAHS";
+            this.colMAHS.Name = "colMAHS";
+            this.colMAHS.OptionsColumn.AllowEdit = false;
+            this.colMAHS.Visible = true;
+            this.colMAHS.VisibleIndex = 0;
+            // 
+            // colTENHS
+            // 
+            this.colTENHS.FieldName = "TENHS";
+            this.colTENHS.Name = "colTENHS";
+            this.colTENHS.OptionsColumn.AllowEdit = false;
+            this.colTENHS.Visible = true;
+            this.colTENHS.VisibleIndex = 1;
+            // 
+            // colGHICHU
+            // 
+            this.colGHICHU.FieldName = "GHICHU";
+            this.colGHICHU.Name = "colGHICHU";
+            this.colGHICHU.OptionsColumn.AllowEdit = false;
+            this.colGHICHU.Visible = true;
+            this.colGHICHU.VisibleIndex = 2;
             // 
             // panel3
             // 
@@ -342,16 +400,6 @@
             this.label2.Text = "THÔNG TIN XẾP LỚP DỰ KIẾN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // qLHSTHPTDataSet1
-            // 
-            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
-            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // v_XL12BindingSource
-            // 
-            this.v_XL12BindingSource.DataMember = "V_XL12";
-            this.v_XL12BindingSource.DataSource = this.qLHSTHPTDataSet1;
-            // 
             // v_XL12TableAdapter
             // 
             this.v_XL12TableAdapter.ClearBeforeFill = true;
@@ -374,52 +422,6 @@
             this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // v_XL12GridControl
-            // 
-            this.v_XL12GridControl.DataSource = this.v_XL12BindingSource;
-            this.v_XL12GridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.v_XL12GridControl.Location = new System.Drawing.Point(0, 39);
-            this.v_XL12GridControl.MainView = this.gridView1;
-            this.v_XL12GridControl.MenuManager = this.barManager1;
-            this.v_XL12GridControl.Name = "v_XL12GridControl";
-            this.v_XL12GridControl.Size = new System.Drawing.Size(452, 493);
-            this.v_XL12GridControl.TabIndex = 1;
-            this.v_XL12GridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAHS,
-            this.colTENHS,
-            this.colGHICHU});
-            this.gridView1.GridControl = this.v_XL12GridControl;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colMAHS
-            // 
-            this.colMAHS.FieldName = "MAHS";
-            this.colMAHS.Name = "colMAHS";
-            this.colMAHS.OptionsColumn.AllowEdit = false;
-            this.colMAHS.Visible = true;
-            this.colMAHS.VisibleIndex = 0;
-            // 
-            // colTENHS
-            // 
-            this.colTENHS.FieldName = "TENHS";
-            this.colTENHS.Name = "colTENHS";
-            this.colTENHS.OptionsColumn.AllowEdit = false;
-            this.colTENHS.Visible = true;
-            this.colTENHS.VisibleIndex = 1;
-            // 
-            // colGHICHU
-            // 
-            this.colGHICHU.FieldName = "GHICHU";
-            this.colGHICHU.Name = "colGHICHU";
-            this.colGHICHU.OptionsColumn.AllowEdit = false;
-            this.colGHICHU.Visible = true;
-            this.colGHICHU.VisibleIndex = 2;
-            // 
             // FormLL12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,11 +433,15 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormLL12";
-            this.Text = "FormLL12";
+            this.Text = "Khối 12";
             this.Load += new System.EventHandler(this.FormLL12_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.v_XL12GridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_XL12BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -444,10 +450,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_XL12BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.v_XL12GridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,7 +481,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSiSo;
-        private System.Windows.Forms.ComboBox comboBoxTenLop;
         private System.Windows.Forms.TextBox textBoxSoLop;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
@@ -490,5 +491,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAHS;
         private DevExpress.XtraGrid.Columns.GridColumn colTENHS;
         private DevExpress.XtraGrid.Columns.GridColumn colGHICHU;
+        public System.Windows.Forms.ComboBox comboBoxTenLop;
     }
 }

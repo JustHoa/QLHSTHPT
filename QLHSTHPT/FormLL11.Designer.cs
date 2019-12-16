@@ -117,6 +117,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -432,7 +433,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormLL11";
-            this.Text = "FormLL11";
+            this.Text = "Khối 11";
             this.Load += new System.EventHandler(this.FormLL11_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -478,7 +479,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSiSo;
-        private System.Windows.Forms.ComboBox comboBoxTenLop;
         private System.Windows.Forms.TextBox textBoxSoLop;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
@@ -491,5 +491,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAHS;
         private DevExpress.XtraGrid.Columns.GridColumn colTENHS;
         private DevExpress.XtraGrid.Columns.GridColumn colGHICHU;
+        public System.Windows.Forms.ComboBox comboBoxTenLop;
     }
 }

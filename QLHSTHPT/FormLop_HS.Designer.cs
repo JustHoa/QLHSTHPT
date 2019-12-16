@@ -203,6 +203,7 @@
             bANLabel.Size = new System.Drawing.Size(26, 13);
             bANLabel.TabIndex = 34;
             bANLabel.Text = "Ban";
+            bANLabel.Click += new System.EventHandler(this.bANLabel_Click);
             // 
             // mANHLabel
             // 
@@ -212,6 +213,7 @@
             mANHLabel.Size = new System.Drawing.Size(66, 13);
             mANHLabel.TabIndex = 32;
             mANHLabel.Text = "Mã năm học";
+            mANHLabel.Click += new System.EventHandler(this.mANHLabel_Click);
             // 
             // mAHKLabel
             // 
@@ -221,6 +223,7 @@
             mAHKLabel.Size = new System.Drawing.Size(57, 13);
             mAHKLabel.TabIndex = 30;
             mAHKLabel.Text = "Mã học kỳ";
+            mAHKLabel.Click += new System.EventHandler(this.mAHKLabel_Click);
             // 
             // tENLOPLabel
             // 
@@ -230,6 +233,7 @@
             tENLOPLabel.Size = new System.Drawing.Size(43, 13);
             tENLOPLabel.TabIndex = 28;
             tENLOPLabel.Text = "Tên lớp";
+            tENLOPLabel.Click += new System.EventHandler(this.tENLOPLabel_Click);
             // 
             // mALOPLabel
             // 
@@ -239,6 +243,7 @@
             mALOPLabel.Size = new System.Drawing.Size(39, 13);
             mALOPLabel.TabIndex = 26;
             mALOPLabel.Text = "Mã lớp";
+            mALOPLabel.Click += new System.EventHandler(this.mALOPLabel_Click);
             // 
             // mAKHOILabel
             // 
@@ -248,6 +253,7 @@
             mAKHOILabel.Size = new System.Drawing.Size(45, 13);
             mAKHOILabel.TabIndex = 42;
             mAKHOILabel.Text = "Mã khối";
+            mAKHOILabel.Click += new System.EventHandler(this.mAKHOILabel_Click);
             // 
             // nGHIHOCLabel
             // 
@@ -678,6 +684,7 @@
             this.textBoxMNH.Name = "textBoxMNH";
             this.textBoxMNH.Size = new System.Drawing.Size(103, 20);
             this.textBoxMNH.TabIndex = 53;
+            this.textBoxMNH.TextChanged += new System.EventHandler(this.textBoxMNH_TextChanged);
             this.textBoxMNH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMNH_KeyPress);
             // 
             // textBoxMHK
@@ -687,6 +694,7 @@
             this.textBoxMHK.Name = "textBoxMHK";
             this.textBoxMHK.Size = new System.Drawing.Size(100, 20);
             this.textBoxMHK.TabIndex = 52;
+            this.textBoxMHK.TextChanged += new System.EventHandler(this.textBoxMHK_TextChanged);
             this.textBoxMHK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMHK_KeyPress);
             // 
             // buttonTimNH
@@ -721,6 +729,7 @@
             this.comboBoxBan.Name = "comboBoxBan";
             this.comboBoxBan.Size = new System.Drawing.Size(105, 21);
             this.comboBoxBan.TabIndex = 49;
+            this.comboBoxBan.SelectedIndexChanged += new System.EventHandler(this.comboBoxBan_SelectedIndexChanged);
             // 
             // comboBoxMK
             // 
@@ -734,6 +743,7 @@
             this.comboBoxMK.Size = new System.Drawing.Size(104, 21);
             this.comboBoxMK.TabIndex = 46;
             this.comboBoxMK.ValueMember = "MAKHOI";
+            this.comboBoxMK.SelectedIndexChanged += new System.EventHandler(this.comboBoxMK_SelectedIndexChanged);
             // 
             // kHOIBindingSource
             // 
@@ -747,6 +757,7 @@
             this.textBoxTenLop.Name = "textBoxTenLop";
             this.textBoxTenLop.Size = new System.Drawing.Size(100, 20);
             this.textBoxTenLop.TabIndex = 44;
+            this.textBoxTenLop.TextChanged += new System.EventHandler(this.textBoxTenLop_TextChanged);
             this.textBoxTenLop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenLop_KeyPress);
             // 
             // textBoxML
@@ -756,6 +767,7 @@
             this.textBoxML.Name = "textBoxML";
             this.textBoxML.Size = new System.Drawing.Size(100, 20);
             this.textBoxML.TabIndex = 43;
+            this.textBoxML.TextChanged += new System.EventHandler(this.textBoxML_TextChanged);
             this.textBoxML.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxML_KeyPress);
             // 
             // labelEMaNH
@@ -766,6 +778,7 @@
             this.labelEMaNH.Name = "labelEMaNH";
             this.labelEMaNH.Size = new System.Drawing.Size(0, 13);
             this.labelEMaNH.TabIndex = 42;
+            this.labelEMaNH.Click += new System.EventHandler(this.labelEMaNH_Click);
             // 
             // labelEMaHK
             // 
@@ -775,6 +788,7 @@
             this.labelEMaHK.Name = "labelEMaHK";
             this.labelEMaHK.Size = new System.Drawing.Size(0, 13);
             this.labelEMaHK.TabIndex = 41;
+            this.labelEMaHK.Click += new System.EventHandler(this.labelEMaHK_Click);
             // 
             // labelEBM
             // 
@@ -784,6 +798,7 @@
             this.labelEBM.Name = "labelEBM";
             this.labelEBM.Size = new System.Drawing.Size(0, 13);
             this.labelEBM.TabIndex = 40;
+            this.labelEBM.Click += new System.EventHandler(this.labelEBM_Click);
             // 
             // labelETenLop
             // 
@@ -793,6 +808,7 @@
             this.labelETenLop.Name = "labelETenLop";
             this.labelETenLop.Size = new System.Drawing.Size(0, 13);
             this.labelETenLop.TabIndex = 39;
+            this.labelETenLop.Click += new System.EventHandler(this.labelETenLop_Click);
             // 
             // labelEMaLop
             // 
@@ -802,6 +818,7 @@
             this.labelEMaLop.Name = "labelEMaLop";
             this.labelEMaLop.Size = new System.Drawing.Size(0, 13);
             this.labelEMaLop.TabIndex = 38;
+            this.labelEMaLop.Click += new System.EventHandler(this.labelEMaLop_Click);
             // 
             // button2
             // 
@@ -1196,7 +1213,7 @@
             // textBoxTim2
             // 
             this.textBoxTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim2.Location = new System.Drawing.Point(725, 440);
+            this.textBoxTim2.Location = new System.Drawing.Point(691, 440);
             this.textBoxTim2.Name = "textBoxTim2";
             this.textBoxTim2.Size = new System.Drawing.Size(168, 20);
             this.textBoxTim2.TabIndex = 48;
@@ -1207,7 +1224,7 @@
             // 
             this.labelTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim2.AutoSize = true;
-            this.labelTim2.Location = new System.Drawing.Point(670, 443);
+            this.labelTim2.Location = new System.Drawing.Point(636, 443);
             this.labelTim2.Name = "labelTim2";
             this.labelTim2.Size = new System.Drawing.Size(49, 13);
             this.labelTim2.TabIndex = 49;
