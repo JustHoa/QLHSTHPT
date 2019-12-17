@@ -292,5 +292,91 @@ namespace QLHSTHPT
             }
             return arrSV_Lop;
         }
+
+        public static string hocLuc(float dTB, float dHoa, float dSinh, float dAnh, float dGDCD, float dToan, float dLy, float dVan, float dSu, float dDia)
+        {
+            if (dTB >= 8 && dToan >= 8 && dVan >= 8)
+            {
+                if (dHoa >= 6.5 && dSinh >= 6.5 && dAnh >= 6.5 && dGDCD >= 6.5 && dLy >= 6.5 && dSu >= 6.5 && dDia >= 6.5)
+                    return "Giỏi";
+                else
+                {
+                    int demTB = 0, demYK = 0;
+                    if (dHoa >= 0 && dHoa < 3.5) demYK++;
+                    if (dSinh >= 0 && dSinh < 3.5) demYK++;
+                    if (dAnh >= 0 && dAnh < 3.5) demYK++;
+                    if (dGDCD >= 0 && dGDCD < 3.5) demYK++;
+                    if (dLy >= 0 && dLy < 3.5) demYK++;
+                    if (dSu >= 0 && dSu < 3.5) demYK++;
+                    if (dDia >= 0 && dDia < 3.5) demYK++;
+
+                    if (dHoa >= 3.5 && dHoa < 5) demTB++;
+                    if (dSinh >= 3.5 && dSinh < 5) demTB++;
+                    if (dAnh >= 3.5 && dAnh < 5) demTB++;
+                    if (dGDCD >= 3.5 && dGDCD < 5) demTB++;
+                    if (dLy >= 3.5 && dLy < 5) demTB++;
+                    if (dSu >= 3.5 && dSu < 5) demTB++;
+                    if (dDia >= 3.5 && dDia < 5) demTB++;
+
+                    if (demYK == 1) return "Trung bình";
+                    else if (demTB == 1) return "Khá";
+                }
+            }
+            else if (dTB >= 6.5 && dToan >= 6.5 && dVan >= 6.5)
+            {
+                if (dHoa >= 5 && dSinh >= 5 && dAnh >= 5 && dGDCD >= 5 && dLy >= 5 && dSu >= 5 && dDia >= 5)
+                    return "Khá";
+                else
+                {
+                    int demY = 0, demKe = 0;
+                    if (dHoa >= 2 && dHoa < 3.5) demY++;
+                    if (dSinh >= 2 && dSinh < 3.5) demY++;
+                    if (dAnh >= 2 && dAnh < 3.5) demY++;
+                    if (dGDCD >= 2 && dGDCD < 3.5) demY++;
+                    if (dLy >= 2 && dLy < 3.5) demY++;
+                    if (dSu >= 2 && dSu < 3.5) demY++;
+                    if (dDia >= 2 && dDia < 3.5) demY++;
+
+                    if (dHoa >= 0 && dHoa < 2) demKe++;
+                    if (dSinh >= 0 && dSinh < 2) demKe++;
+                    if (dAnh >= 0 && dAnh < 2) demKe++;
+                    if (dGDCD >= 0 && dGDCD < 2) demKe++;
+                    if (dLy >= 0 && dLy < 2) demKe++;
+                    if (dSu >= 0 && dSu < 2) demKe++;
+                    if (dDia >= 0 && dDia < 2) demKe++;
+
+                    if (demKe == 1) return "Yếu";
+                    else if (demY == 1) return "Trung bình";
+                }
+            }
+            else if (dTB >= 5 && dToan >= 5 && dVan >= 5 && dHoa >= 3.5 && dSinh >= 3.5 && dAnh >= 3.5 && dGDCD >= 3.5 && dLy >= 3.5 && dSu >= 3.5 && dDia >= 3.5)
+                return "Trung bình";
+            else if (dTB >= 3.5 && dToan >= 3.5 && dVan >= 3.5 && dHoa >= 2 && dSinh >= 2 && dAnh >= 2 && dGDCD >= 2 && dLy >= 2 && dSu >= 2 && dDia >= 2)
+                return "Yếu";
+            else return "Kém";
+            return "Lỗi...";
+        }
+
+        public static void capNhatHocLuc(int index, string maHS, string maLop, string hocLuc)
+        {
+            if (index == 1)
+            {
+                string sql = "UPDATE HS_LOP SET HLHK1 = '" + hocLuc + "' WHERE MAHS = '" + maHS + "' AND MALOP = '" + maLop + "'";
+                SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+            }
+            else if (index == 2)
+            {
+                string sql = "UPDATE HS_LOP SET HLHK2 = '" + hocLuc + "' WHERE MAHS = '" + maHS + "' AND MALOP = '" + maLop + "'";
+                SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+            }
+            else if (index == 3)
+            {
+                string sql = "UPDATE HS_LOP SET HLCN = '" + hocLuc + "' WHERE MAHS = '" + maHS + "' AND MALOP = '" + maLop + "'";
+                SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+            }
+        }
     }
 }

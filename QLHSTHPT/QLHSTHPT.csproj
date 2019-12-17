@@ -300,6 +300,12 @@
     <Compile Include="FormTimNH_PhanCong.Designer.cs">
       <DependentUpon>FormTimNH_PhanCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTongKetLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTongKetLop.Designer.cs">
+      <DependentUpon>FormTongKetLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTTDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimNH_PhanCong.resx">
       <DependentUpon>FormTimNH_PhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTongKetLop.resx">
+      <DependentUpon>FormTongKetLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTTDangNhap.resx">
       <DependentUpon>FormTTDangNhap.cs</DependentUpon>

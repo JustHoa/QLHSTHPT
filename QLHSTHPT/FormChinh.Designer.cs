@@ -93,6 +93,10 @@
             this.toolStripStatusLabelNote = new System.Windows.Forms.ToolStripStatusLabel();
             this.processBar = new System.Windows.Forms.ToolStripProgressBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem36 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem37 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -142,15 +146,17 @@
             this.barButtonItem32,
             this.barButtonItem33,
             this.barButtonItem34,
-            this.barButtonItem35});
+            this.barButtonItem35,
+            this.barButtonItem36,
+            this.barButtonItem37});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 43;
+            this.ribbon.MaxItemId = 46;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(927, 143);
+            this.ribbon.Size = new System.Drawing.Size(1062, 143);
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // barButtonItem1
@@ -501,7 +507,9 @@
             this.ribbonPageGroup9,
             this.ribbonPageGroup5,
             this.ribbonPageGroup4,
-            this.ribbonPCCV});
+            this.ribbonPageGroup6,
+            this.ribbonPCCV,
+            this.ribbonPageGroup10});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Quản trị";
             // 
@@ -609,7 +617,7 @@
             this.processBar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 423);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(927, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1062, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -635,7 +643,7 @@
             // 
             this.toolStripStatusLabelNote.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabelNote.Name = "toolStripStatusLabelNote";
-            this.toolStripStatusLabelNote.Size = new System.Drawing.Size(797, 17);
+            this.toolStripStatusLabelNote.Size = new System.Drawing.Size(932, 17);
             this.toolStripStatusLabelNote.Spring = true;
             this.toolStripStatusLabelNote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -650,12 +658,41 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem36);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Chủ nhiệm";
+            // 
+            // barButtonItem36
+            // 
+            this.barButtonItem36.Caption = "Tổng kết điểm";
+            this.barButtonItem36.Id = 43;
+            this.barButtonItem36.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem36.ImageOptions.Image")));
+            this.barButtonItem36.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem36.ImageOptions.LargeImage")));
+            this.barButtonItem36.Name = "barButtonItem36";
+            this.barButtonItem36.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem36_ItemClick);
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem37);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Thoát";
+            // 
+            // barButtonItem37
+            // 
+            this.barButtonItem37.Caption = "Thoát";
+            this.barButtonItem37.Id = 45;
+            this.barButtonItem37.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem37.ImageOptions.Image")));
+            this.barButtonItem37.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem37.ImageOptions.LargeImage")));
+            this.barButtonItem37.Name = "barButtonItem37";
+            // 
             // FormChinh
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 445);
+            this.ClientSize = new System.Drawing.Size(1062, 445);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
@@ -738,5 +775,9 @@
         public System.Windows.Forms.ToolStripProgressBar processBar;
         private DevExpress.XtraBars.BarButtonItem barButtonItem34;
         private DevExpress.XtraBars.BarButtonItem barButtonItem35;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem36;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem37;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }
