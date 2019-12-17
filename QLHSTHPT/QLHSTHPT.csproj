@@ -300,6 +300,18 @@
     <Compile Include="FormTimNH_PhanCong.Designer.cs">
       <DependentUpon>FormTimNH_PhanCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTimNH_XLL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimNH_XLL.Designer.cs">
+      <DependentUpon>FormTimNH_XLL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTK_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTK_1.Designer.cs">
+      <DependentUpon>FormTK_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTongKetLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,8 +339,10 @@
     <Compile Include="Helper.cs" />
     <Compile Include="Key.cs" />
     <Compile Include="Model\DTBMHK_HS.cs" />
+    <Compile Include="Model\DTBM_HS.cs" />
     <Compile Include="Model\HocSinh.cs" />
     <Compile Include="Model\HocSinh_LL.cs" />
+    <Compile Include="Model\HS.cs" />
     <Compile Include="Model\Lop_HS.cs" />
     <Compile Include="Model\MyCache.cs" />
     <Compile Include="Model\Lop.cs" />
@@ -460,6 +474,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimNH_PhanCong.resx">
       <DependentUpon>FormTimNH_PhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimNH_XLL.resx">
+      <DependentUpon>FormTimNH_XLL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTK_1.resx">
+      <DependentUpon>FormTK_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTongKetLop.resx">
       <DependentUpon>FormTongKetLop.cs</DependentUpon>

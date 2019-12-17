@@ -128,7 +128,7 @@ namespace QLHSTHPT
             List<string> arrDiemMieng = new List<string>();
             List<string> arrDiem15p = new List<string>();
             List<string> arrDiem1T = new List<string>();
-            List<DTBMHK_HS> arrData = new List<DTBMHK_HS>();
+            List<DTBM_HS> arrData = new List<DTBM_HS>();
             string diemHK = "";
 
             foreach (var co in listBox2.Items)
@@ -184,7 +184,7 @@ namespace QLHSTHPT
                     }
                     diemTB = (_diemMieng + _diem15p + _diem1T * 2 + _diemHK * 3) / (arrDiemMieng.Count + arrDiem15p.Count + 2 * arrDiem1T.Count + 3);
                    // MessageBox.Show(maHS + " " + (_diemMieng + _diem15p + _diem1T * 2 + _diemHK * 3).ToString() + " " + (arrDiemMieng.Count + arrDiem15p.Count + 2 * arrDiem1T.Count + 3));
-                    arrData.Add(new DTBMHK_HS (maHS, tenHS, float.Parse(diemTB.ToString("0.00"))));
+                    arrData.Add(new DTBM_HS(maHS, tenHS, float.Parse(diemTB.ToString("0.00"))));
                 }
                 gridControl1.DataSource = arrData;
                 gridView1.Columns[0].Caption = "MÃ HS";

@@ -38,12 +38,12 @@ namespace QLHSTHPT
             List<string> arrTenLop = new List<string>();
             if (v_XL10BindingSource.Count != 0)
             {
-                soHS_Lop = Helper.xepLop(gridView1.RowCount);
+                soHS_Lop = Helper.xepLop(v_XL10BindingSource.Count);
                 if (soHS_Lop[0] == 0)
                 {
                     MessageBox.Show("Số lượng học sinh lên lớp nằm ngoài khoảng xếp lớp khả dụng!\n\nKhoảng khả dụng tối ưu: từ " +
                         Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL10BindingSource.Count);
-                    //barButtonItem5.Enabled = false;
+                    barButtonItem5.Enabled = false;
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace QLHSTHPT
                         }
                     }
 
-                    this.textBoxSiSo.Text = soLop.ToString();
+                    this.textBoxSoLop.Text = soLop.ToString();
 
                     for (int i = 0; i < soLop; i++)
                     {
@@ -105,8 +105,6 @@ namespace QLHSTHPT
             if (formLenLop._ll10 == 0)
             {
                 formLenLop._ll10 = 1;
-                comboBoxTenLop.Items.Add("10A1");
-                comboBoxTenLop.Items.Add("10A1");
                 FormTienTrinhLL f = new FormTienTrinhLL(this, comboBoxTenLop, v_XL10BindingSource);
                 f.Text = "Tiến trình lên lớp 10";
                 f.MdiParent = formLenLop;

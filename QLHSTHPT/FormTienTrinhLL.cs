@@ -358,6 +358,9 @@ namespace QLHSTHPT
             try
             {
                 this.sP_LOP_NAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LOP_NAMHOC, Helper.layMaNHMoiNhat());
+                textBoxSLLop.Text = comboBoxLopNH.Items.Count.ToString();
+                comboBoxLopNH.SelectedIndex = 0;
+                comboBoxLopNH.SelectedIndex = 0;
             }
             catch (System.Exception ex)
             {
@@ -488,6 +491,8 @@ namespace QLHSTHPT
             try
             {
                 this.sP_LOP_NAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LOP_NAMHOC, Helper.layMaNHMoiNhat());
+                textBoxSLLop.Text = comboBoxLopNH.Items.Count.ToString();
+                comboBoxLopNH.SelectedIndex = 0;
             }
             catch (System.Exception ex)
             {
@@ -503,8 +508,8 @@ namespace QLHSTHPT
             {
                 if (soHS_Lop[i] != 0)
                 {
-                    sP_LOP_NAMHOCComboBox.SelectedIndex = indexCB++;
-                    string maLop = sP_LOP_NAMHOCComboBox.SelectedValue.ToString();
+                    comboBoxLopNH.SelectedIndex = indexCB++;
+                    string maLop = comboBoxLopNH.SelectedValue.ToString();
                     for (int j = 0; j < soHS_Lop[i]; j++)
                     {
                         string maHS = ((DataRowView)bindingSource[indexBS++])["MAHS"].ToString();
@@ -535,19 +540,21 @@ namespace QLHSTHPT
                         catch (SqlException se)
                         {
                             MessageBox.Show(se.Message);
+                            return;
                         }
                     }
                 }
             }
+            MessageBox.Show("Tiến trình lên lớp 10 đã hoàn tất");
         }
 
         private void sP_LOP_NAMHOCComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BindingList<HocSinh> ds = new BindingList<HocSinh>();
+            BindingList<HS> ds = new BindingList<HS>();
             int numLeft = 0;
-            int index = this.sP_LOP_NAMHOCComboBox.SelectedIndex;
+            int index = this.comboBoxLopNH.SelectedIndex;
             this.textBoxSiSo.Text = soHS_Lop[index].ToString() + " học sinh";
-            this.labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + sP_LOP_NAMHOCComboBox.Text;
+            this.labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + comboBoxLopNH.Text;
             for (int i = 0; i < index; i++)
             {
                 numLeft += soHS_Lop[i];
@@ -557,7 +564,7 @@ namespace QLHSTHPT
                 string maHS = ((DataRowView)bindingSource[numLeft])["MAHS"].ToString();
                 string tenHS = ((DataRowView)bindingSource[numLeft])["TENHS"].ToString();
 
-                ds.Add(new HocSinh(maHS, tenHS));
+                ds.Add(new HS(maHS, tenHS));
                 numLeft++;
             }
             ds.AllowNew = true;

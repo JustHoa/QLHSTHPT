@@ -153,7 +153,7 @@ namespace QLHSTHPT
             {
                 barButtonItem8.Enabled = barButtonItem5.Enabled = barButtonItem2.Enabled = false;
                 MessageBox.Show("Lỗi: " + textBoxFileName.Text + " không tồn tại hoặc chứa dữ liệu không tương thích." +
-                    "\n\nGợi ý: Đảm bảo file excel có các trường sau:\n       STT, TENHS, NGAYSINH, GIOITINH, DIACHI, DANTOC, DIENTHOAI, MALOP");
+                    "\n\nGợi ý: Đảm bảo file excel có các trường sau:\n       STT, TENHS, NGAYSINH, GIOITINH, DIACHI, DANTOC, DIENTHOAI");
                 textBoxFileName.Focus();
             }
         }
@@ -195,6 +195,8 @@ namespace QLHSTHPT
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            formChinh.processBar.Visible = true;
+
             //if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
             for (int i = 0; i < gridView1.RowCount; i++)
             {
@@ -205,8 +207,6 @@ namespace QLHSTHPT
                 string diaChi = gridView1.GetRowCellValue(i, "DIACHI").ToString();
                 string danToc = gridView1.GetRowCellValue(i, "DANTOC").ToString();
                 string dienThoai = gridView1.GetRowCellValue(i, "DIENTHOAI").ToString();
-
-                string maLop = (gridView1.GetRowCellValue(i, "MALOP") == null) ? "" : gridView1.GetRowCellValue(i, "MALOP").ToString();
                 int nghiHoc = 0;
 
                 SqlCommand sqlCommand = new SqlCommand();
@@ -218,7 +218,6 @@ namespace QLHSTHPT
                 SqlParameter dbDiaChi = new SqlParameter();
                 SqlParameter dbDanToc = new SqlParameter();
                 SqlParameter dbDienThoai = new SqlParameter();
-                SqlParameter dbMaLop = new SqlParameter();
                 SqlParameter dbNghiHoc = new SqlParameter();
 
                 Return.DbType = DbType.Int32;
@@ -260,15 +259,6 @@ namespace QLHSTHPT
                 dbDienThoai.Direction = ParameterDirection.Input;
                 dbDienThoai.Value = dienThoai;
 
-                dbMaLop.DbType = DbType.String;
-                dbMaLop.ParameterName = "@MALOP";
-                dbMaLop.Direction = ParameterDirection.Input;
-                if (maLop == "")
-                {
-                    dbMaLop.Value = DBNull.Value;
-                }
-                else dbMaLop.Value = maLop;
-
                 dbNghiHoc.DbType = DbType.Int32;
                 dbNghiHoc.ParameterName = "@NGHIHOC";
                 dbNghiHoc.Direction = ParameterDirection.Input;
@@ -284,21 +274,23 @@ namespace QLHSTHPT
                 sqlCommand.Parameters.Add(dbDiaChi);
                 sqlCommand.Parameters.Add(dbDienThoai);
                 sqlCommand.Parameters.Add(dbDanToc);
-                sqlCommand.Parameters.Add(dbMaLop);
                 sqlCommand.Parameters.Add(dbNghiHoc);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 try
                 {
                     sqlCommand.ExecuteNonQuery();
+                    formChinh.processBar.Value = (i + 1) / gridView1.RowCount * 100;
                 }
                 catch (SqlException se)
                 {
                     MessageBox.Show("Loi: " + se.Message);
+                    formChinh.processBar.Visible = false;
                     break;
                 }
                 if (i == gridView1.RowCount) 
                 {
                     MessageBox.Show("Lưu thành công!");
+                    formChinh.processBar.Visible = false;
                 }
             }
         }
@@ -334,6 +326,13 @@ namespace QLHSTHPT
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            int[] sd = Helper.xepLop(47);
+            string str = "";
+            for (int i= 0; i<sd.Length; i++)
+            {
+                str += sd[i] + " ";
+            }
+            MessageBox.Show(str);
             ExcelDataSource excelDataSource1 = new ExcelDataSource();
             excelDataSource1.FileName = textBoxFileName.Text;
             ExcelSourceOptions excelSourceOptions1 = new ExcelSourceOptions();

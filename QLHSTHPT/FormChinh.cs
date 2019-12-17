@@ -307,5 +307,11 @@ namespace QLHSTHPT
                 f.Show();
             }
         }
+
+        private void barButtonItem37_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+            Program.formDangNhap.Visible = true;
+        }
     }
 }

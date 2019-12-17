@@ -167,6 +167,7 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -827,7 +828,6 @@
         private System.Windows.Forms.Panel panelK11;
         private System.Windows.Forms.Panel panelK12;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelTitleNH;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
@@ -836,7 +836,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panelTitleHS;
-        private System.Windows.Forms.Label labelTitleHS;
         private QLHSTHPTDataSet1 qLHSTHPTDataSet1;
         private QLHSTHPTDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
@@ -846,16 +845,10 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.BindingSource sP_DSLOP10_NHBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.SP_DSLOP10_NHTableAdapter sP_DSLOP10_NHTableAdapter;
         private DevExpress.XtraGrid.GridControl sP_DSLOP10_NHGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.BindingSource sP_DSLOP11_NHBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.SP_DSLOP11_NHTableAdapter sP_DSLOP11_NHTableAdapter;
         private DevExpress.XtraGrid.GridControl sP_DSLOP11_NHGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private System.Windows.Forms.BindingSource sP_DSLOP12_NHBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.SP_DSLOP12_NHTableAdapter sP_DSLOP12_NHTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
         private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
         private DevExpress.XtraGrid.Columns.GridColumn colBAN;
@@ -868,11 +861,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTENLOP2;
         private DevExpress.XtraGrid.Columns.GridColumn colBAN2;
         private System.Windows.Forms.BindingSource sP_OL_LOPBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.SP_OL_LOPTableAdapter sP_OL_LOPTableAdapter;
         private DevExpress.XtraGrid.GridControl sP_OL_LOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private System.Windows.Forms.BindingSource sP_LL_LOPBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.SP_LL_LOPTableAdapter sP_LL_LOPTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMAHS1;
         private DevExpress.XtraGrid.Columns.GridColumn colTENHS1;
         private DevExpress.XtraGrid.Columns.GridColumn colHLCN1;
@@ -882,5 +872,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTENHS;
         private DevExpress.XtraGrid.Columns.GridColumn colHLCN;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        public QLHSTHPTDataSet1TableAdapters.SP_DSLOP10_NHTableAdapter sP_DSLOP10_NHTableAdapter;
+        public QLHSTHPTDataSet1TableAdapters.SP_DSLOP11_NHTableAdapter sP_DSLOP11_NHTableAdapter;
+        public QLHSTHPTDataSet1TableAdapters.SP_DSLOP12_NHTableAdapter sP_DSLOP12_NHTableAdapter;
+        public System.Windows.Forms.Label labelTitleNH;
+        public System.Windows.Forms.Label labelTitleHS;
+        public System.Windows.Forms.BindingSource sP_DSLOP10_NHBindingSource;
+        public System.Windows.Forms.BindingSource sP_DSLOP11_NHBindingSource;
+        public System.Windows.Forms.BindingSource sP_DSLOP12_NHBindingSource;
+        public System.Windows.Forms.BindingSource sP_LL_LOPBindingSource;
+        public QLHSTHPTDataSet1TableAdapters.SP_OL_LOPTableAdapter sP_OL_LOPTableAdapter;
+        public QLHSTHPTDataSet1TableAdapters.SP_LL_LOPTableAdapter sP_LL_LOPTableAdapter;
     }
 }

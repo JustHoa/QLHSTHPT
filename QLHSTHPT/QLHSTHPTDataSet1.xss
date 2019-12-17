@@ -30,7 +30,7 @@
     <Shape ID="DesignTable:SP_LOP_GV_TD" ZOrder="40" X="5197" Y="70" Height="115" Width="250" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:SP_MONHOC_GV_TD" ZOrder="39" X="5517" Y="70" Height="115" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:SP_NAMHOC_DESC" ZOrder="38" X="5887" Y="70" Height="134" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:SP_TAIKHOANINFO" ZOrder="37" X="6213" Y="70" Height="267" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:SP_TAIKHOANINFO" ZOrder="37" X="6213" Y="70" Height="286" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:HS_LOP" ZOrder="34" X="655" Y="1161" Height="172" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:KHOI" ZOrder="33" X="7077" Y="384" Height="115" Width="175" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:SP_HS_LOP" ZOrder="16" X="51" Y="8" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
@@ -48,8 +48,8 @@
     <Shape ID="DesignTable:SP_LOP_NAMHOC" ZOrder="4" X="10173" Y="8" Height="191" Width="249" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:SP_LOP_NAMHOC_CN" ZOrder="3" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:SP_NAMHOC_CN" ZOrder="2" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="35" X="6542" Y="70" Height="124" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
     <Shape ID="DesignTable:SP_TBM_LOP" ZOrder="1" X="10492" Y="0" Height="286" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="35" X="6542" Y="70" Height="124" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_BOMON_TOTRUONGBM" ZOrder="21" LineWidth="11">
@@ -76,15 +76,19 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_LOP_NAMHOC" ZOrder="18" LineWidth="11">
+    <Connector ID="DesignRelation:FK_LOP_KHOI" ZOrder="32" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>450</X>
-          <Y>1223</Y>
+          <X>7094</X>
+          <Y>499</Y>
         </Point>
         <Point>
-          <X>450</X>
-          <Y>1097</Y>
+          <X>7094</X>
+          <Y>931</Y>
+        </Point>
+        <Point>
+          <X>542</X>
+          <Y>931</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -100,19 +104,15 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_LOP_KHOI" ZOrder="32" LineWidth="11">
+    <Connector ID="DesignRelation:FK_LOP_NAMHOC" ZOrder="18" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>7094</X>
-          <Y>499</Y>
+          <X>450</X>
+          <Y>1223</Y>
         </Point>
         <Point>
-          <X>7094</X>
-          <Y>931</Y>
-        </Point>
-        <Point>
-          <X>542</X>
-          <Y>931</Y>
+          <X>450</X>
+          <Y>1097</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -132,46 +132,18 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_PHANCONGGV_NAMHOC" ZOrder="25" LineWidth="11">
+    <Connector ID="DesignRelation:FK_PHANCONGGV_MONHOC" ZOrder="31" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>373</X>
-          <Y>1240</Y>
+          <Y>457</Y>
         </Point>
         <Point>
-          <X>274</X>
-          <Y>1240</Y>
+          <X>298</X>
+          <Y>457</Y>
         </Point>
         <Point>
-          <X>274</X>
-          <Y>319</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_PHANCONGGV_GIAOVIEN" ZOrder="28" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>373</X>
-          <Y>214</Y>
-        </Point>
-        <Point>
-          <X>315</X>
-          <Y>214</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_PHANCONGGV_LOP" ZOrder="29" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>374</X>
-          <Y>923</Y>
-        </Point>
-        <Point>
-          <X>282</X>
-          <Y>923</Y>
-        </Point>
-        <Point>
-          <X>282</X>
+          <X>298</X>
           <Y>319</Y>
         </Point>
       </RoutePoints>
@@ -192,18 +164,46 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_PHANCONGGV_MONHOC" ZOrder="31" LineWidth="11">
+    <Connector ID="DesignRelation:FK_PHANCONGGV_LOP" ZOrder="29" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>374</X>
+          <Y>923</Y>
+        </Point>
+        <Point>
+          <X>282</X>
+          <Y>923</Y>
+        </Point>
+        <Point>
+          <X>282</X>
+          <Y>319</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_PHANCONGGV_GIAOVIEN" ZOrder="28" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>373</X>
-          <Y>457</Y>
+          <Y>214</Y>
         </Point>
         <Point>
-          <X>298</X>
-          <Y>457</Y>
+          <X>315</X>
+          <Y>214</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_PHANCONGGV_NAMHOC" ZOrder="25" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>373</X>
+          <Y>1240</Y>
         </Point>
         <Point>
-          <X>298</X>
+          <X>274</X>
+          <Y>1240</Y>
+        </Point>
+        <Point>
+          <X>274</X>
           <Y>319</Y>
         </Point>
       </RoutePoints>
@@ -220,6 +220,18 @@
         </Point>
       </RoutePoints>
     </Connector>
+    <Connector ID="DesignRelation:FK_HS_LOP_HOCSINH" ZOrder="24" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>921</X>
+          <Y>1187</Y>
+        </Point>
+        <Point>
+          <X>844</X>
+          <Y>1187</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
     <Connector ID="DesignRelation:FK_HS_LOP_LOP" ZOrder="17" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -233,18 +245,6 @@
         <Point>
           <X>655</X>
           <Y>1178</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_HS_LOP_HOCSINH" ZOrder="24" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>921</X>
-          <Y>1187</Y>
-        </Point>
-        <Point>
-          <X>844</X>
-          <Y>1187</Y>
         </Point>
       </RoutePoints>
     </Connector>

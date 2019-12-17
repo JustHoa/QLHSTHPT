@@ -143,5 +143,13 @@ namespace QLHSTHPT
             f.Activate();
             f.Show();
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            formChinh.Enabled = false;
+            FormTimNH_XLL f = new FormTimNH_XLL(formChinh, this);
+            f.Activate();
+            f.Show();
+        }
     }
 }

@@ -48,23 +48,20 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
-            this.sP_TAIKHOANINFOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_TAIKHOANINFOTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_TAIKHOANINFOTableAdapter();
-            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.tENBMTextBox = new System.Windows.Forms.TextBox();
+            this.sP_TAIKHOANINFOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
+            this.textBoxDT = new System.Windows.Forms.TextBox();
+            this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
+            this.textBoxDC = new System.Windows.Forms.TextBox();
+            this.comboBoxGT = new System.Windows.Forms.ComboBox();
+            this.textBoxTenGV = new System.Windows.Forms.TextBox();
+            this.mAGVTextBox = new System.Windows.Forms.TextBox();
+            this.tENDANGNHAPTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBoxQuyen = new System.Windows.Forms.ComboBox();
-            this.textBoxTDN = new System.Windows.Forms.TextBox();
-            this.textBoxTM = new System.Windows.Forms.TextBox();
-            this.textBoxDT = new System.Windows.Forms.TextBox();
-            this.textBoxDC = new System.Windows.Forms.TextBox();
-            this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
-            this.comboBoxGT = new System.Windows.Forms.ComboBox();
-            this.textBoxTen = new System.Windows.Forms.TextBox();
-            this.textBoxMGV = new System.Windows.Forms.TextBox();
             this.panelPass = new System.Windows.Forms.Panel();
             this.labelEMK2 = new System.Windows.Forms.Label();
             this.labelEMK1 = new System.Windows.Forms.Label();
@@ -74,6 +71,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMK2 = new System.Windows.Forms.TextBox();
             this.textBoxMK1 = new System.Windows.Forms.TextBox();
+            this.sP_TAIKHOANINFOTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.SP_TAIKHOANINFOTableAdapter();
+            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
+            this.nHOMQUYENTextBox = new System.Windows.Forms.TextBox();
             nHOMQUYENLabel = new System.Windows.Forms.Label();
             tENDANGNHAPLabel = new System.Windows.Forms.Label();
             tOMONLabel = new System.Windows.Forms.Label();
@@ -84,10 +84,10 @@
             tENGVLabel = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_TAIKHOANINFOBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_TAIKHOANINFOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).BeginInit();
             this.panelPass.SuspendLayout();
@@ -260,34 +260,6 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 410);
             // 
-            // qLHSTHPTDataSet
-            // 
-            this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
-            this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_TAIKHOANINFOBindingSource
-            // 
-            this.sP_TAIKHOANINFOBindingSource.DataMember = "SP_TAIKHOANINFO";
-            this.sP_TAIKHOANINFOBindingSource.DataSource = this.qLHSTHPTDataSet;
-            // 
-            // sP_TAIKHOANINFOTableAdapter
-            // 
-            this.sP_TAIKHOANINFOTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.DIEMTableAdapter = null;
-            this.tableAdapterManager.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager.HOCKYTableAdapter = null;
-            this.tableAdapterManager.HOCSINHTableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = null;
-            this.tableAdapterManager.NAMHOCTableAdapter = null;
-            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -315,79 +287,50 @@
             // 
             this.panelInfo.AutoScroll = true;
             this.panelInfo.AutoSize = true;
+            this.panelInfo.Controls.Add(this.nHOMQUYENTextBox);
+            this.panelInfo.Controls.Add(this.tENBMTextBox);
+            this.panelInfo.Controls.Add(this.textBoxDT);
+            this.panelInfo.Controls.Add(this.dateEditNS);
+            this.panelInfo.Controls.Add(this.textBoxDC);
+            this.panelInfo.Controls.Add(this.comboBoxGT);
+            this.panelInfo.Controls.Add(this.textBoxTenGV);
+            this.panelInfo.Controls.Add(this.mAGVTextBox);
+            this.panelInfo.Controls.Add(this.tENDANGNHAPTextBox);
             this.panelInfo.Controls.Add(this.button2);
             this.panelInfo.Controls.Add(this.button1);
             this.panelInfo.Controls.Add(nHOMQUYENLabel);
-            this.panelInfo.Controls.Add(this.comboBoxQuyen);
             this.panelInfo.Controls.Add(tENDANGNHAPLabel);
-            this.panelInfo.Controls.Add(this.textBoxTDN);
             this.panelInfo.Controls.Add(tOMONLabel);
-            this.panelInfo.Controls.Add(this.textBoxTM);
             this.panelInfo.Controls.Add(dIENTHOAILabel);
-            this.panelInfo.Controls.Add(this.textBoxDT);
             this.panelInfo.Controls.Add(dIACHILabel);
-            this.panelInfo.Controls.Add(this.textBoxDC);
             this.panelInfo.Controls.Add(nGAYSINHLabel);
-            this.panelInfo.Controls.Add(this.dateEditNS);
             this.panelInfo.Controls.Add(gIOITINHLabel);
-            this.panelInfo.Controls.Add(this.comboBoxGT);
             this.panelInfo.Controls.Add(tENGVLabel);
-            this.panelInfo.Controls.Add(this.textBoxTen);
             this.panelInfo.Controls.Add(mAGVLabel);
-            this.panelInfo.Controls.Add(this.textBoxMGV);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInfo.Location = new System.Drawing.Point(3, 3);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(394, 404);
             this.panelInfo.TabIndex = 0;
             // 
-            // button2
+            // tENBMTextBox
             // 
-            this.button2.Location = new System.Drawing.Point(366, 262);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tENBMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "TENBM", true));
+            this.tENBMTextBox.Location = new System.Drawing.Point(369, 170);
+            this.tENBMTextBox.Name = "tENBMTextBox";
+            this.tENBMTextBox.ReadOnly = true;
+            this.tENBMTextBox.Size = new System.Drawing.Size(121, 20);
+            this.tENBMTextBox.TabIndex = 56;
             // 
-            // button1
+            // sP_TAIKHOANINFOBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(176, 262);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.sP_TAIKHOANINFOBindingSource.DataMember = "SP_TAIKHOANINFO";
+            this.sP_TAIKHOANINFOBindingSource.DataSource = this.qLHSTHPTDataSet1;
             // 
-            // comboBoxQuyen
+            // qLHSTHPTDataSet1
             // 
-            this.comboBoxQuyen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "NHOMQUYEN", true));
-            this.comboBoxQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxQuyen.Enabled = false;
-            this.comboBoxQuyen.FormattingEnabled = true;
-            this.comboBoxQuyen.Items.AddRange(new object[] {
-            "GiaoVien",
-            "PGV"});
-            this.comboBoxQuyen.Location = new System.Drawing.Point(366, 39);
-            this.comboBoxQuyen.Name = "comboBoxQuyen";
-            this.comboBoxQuyen.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxQuyen.TabIndex = 43;
-            // 
-            // textBoxTDN
-            // 
-            this.textBoxTDN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "TENDANGNHAP", true));
-            this.textBoxTDN.Location = new System.Drawing.Point(131, 39);
-            this.textBoxTDN.Name = "textBoxTDN";
-            this.textBoxTDN.Size = new System.Drawing.Size(120, 20);
-            this.textBoxTDN.TabIndex = 41;
-            // 
-            // textBoxTM
-            // 
-            this.textBoxTM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "TOMON", true));
-            this.textBoxTM.Location = new System.Drawing.Point(367, 170);
-            this.textBoxTM.Name = "textBoxTM";
-            this.textBoxTM.Size = new System.Drawing.Size(122, 20);
-            this.textBoxTM.TabIndex = 39;
+            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBoxDT
             // 
@@ -395,7 +338,21 @@
             this.textBoxDT.Location = new System.Drawing.Point(369, 126);
             this.textBoxDT.Name = "textBoxDT";
             this.textBoxDT.Size = new System.Drawing.Size(121, 20);
-            this.textBoxDT.TabIndex = 37;
+            this.textBoxDT.TabIndex = 55;
+            // 
+            // dateEditNS
+            // 
+            this.dateEditNS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sP_TAIKHOANINFOBindingSource, "NGAYSINH", true));
+            this.dateEditNS.EditValue = null;
+            this.dateEditNS.Location = new System.Drawing.Point(369, 83);
+            this.dateEditNS.MenuManager = this.barManager1;
+            this.dateEditNS.Name = "dateEditNS";
+            this.dateEditNS.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNS.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNS.Size = new System.Drawing.Size(121, 20);
+            this.dateEditNS.TabIndex = 54;
             // 
             // textBoxDC
             // 
@@ -403,21 +360,7 @@
             this.textBoxDC.Location = new System.Drawing.Point(131, 215);
             this.textBoxDC.Name = "textBoxDC";
             this.textBoxDC.Size = new System.Drawing.Size(359, 20);
-            this.textBoxDC.TabIndex = 35;
-            // 
-            // dateEditNS
-            // 
-            this.dateEditNS.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sP_TAIKHOANINFOBindingSource, "NGAYSINH", true));
-            this.dateEditNS.EditValue = null;
-            this.dateEditNS.Location = new System.Drawing.Point(367, 83);
-            this.dateEditNS.MenuManager = this.barManager1;
-            this.dateEditNS.Name = "dateEditNS";
-            this.dateEditNS.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNS.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNS.Size = new System.Drawing.Size(120, 20);
-            this.dateEditNS.TabIndex = 33;
+            this.textBoxDC.TabIndex = 52;
             // 
             // comboBoxGT
             // 
@@ -427,27 +370,56 @@
             this.comboBoxGT.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBoxGT.Location = new System.Drawing.Point(130, 169);
+            this.comboBoxGT.Location = new System.Drawing.Point(130, 170);
             this.comboBoxGT.Name = "comboBoxGT";
             this.comboBoxGT.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGT.TabIndex = 31;
+            this.comboBoxGT.TabIndex = 51;
             // 
-            // textBoxTen
+            // textBoxTenGV
             // 
-            this.textBoxTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "TENGV", true));
-            this.textBoxTen.Location = new System.Drawing.Point(131, 126);
-            this.textBoxTen.Name = "textBoxTen";
-            this.textBoxTen.Size = new System.Drawing.Size(120, 20);
-            this.textBoxTen.TabIndex = 29;
+            this.textBoxTenGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "TENGV", true));
+            this.textBoxTenGV.Location = new System.Drawing.Point(131, 126);
+            this.textBoxTenGV.Name = "textBoxTenGV";
+            this.textBoxTenGV.Size = new System.Drawing.Size(121, 20);
+            this.textBoxTenGV.TabIndex = 50;
             // 
-            // textBoxMGV
+            // mAGVTextBox
             // 
-            this.textBoxMGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "MAGV", true));
-            this.textBoxMGV.Enabled = false;
-            this.textBoxMGV.Location = new System.Drawing.Point(131, 83);
-            this.textBoxMGV.Name = "textBoxMGV";
-            this.textBoxMGV.Size = new System.Drawing.Size(120, 20);
-            this.textBoxMGV.TabIndex = 27;
+            this.mAGVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "MAGV", true));
+            this.mAGVTextBox.Location = new System.Drawing.Point(131, 83);
+            this.mAGVTextBox.Name = "mAGVTextBox";
+            this.mAGVTextBox.ReadOnly = true;
+            this.mAGVTextBox.Size = new System.Drawing.Size(121, 20);
+            this.mAGVTextBox.TabIndex = 49;
+            // 
+            // tENDANGNHAPTextBox
+            // 
+            this.tENDANGNHAPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "TENDANGNHAP", true));
+            this.tENDANGNHAPTextBox.Enabled = false;
+            this.tENDANGNHAPTextBox.Location = new System.Drawing.Point(131, 39);
+            this.tENDANGNHAPTextBox.Name = "tENDANGNHAPTextBox";
+            this.tENDANGNHAPTextBox.Size = new System.Drawing.Size(121, 20);
+            this.tENDANGNHAPTextBox.TabIndex = 48;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(366, 262);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 45;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 262);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelPass
             // 
@@ -500,6 +472,7 @@
             this.button3.TabIndex = 45;
             this.button3.Text = "OK";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
@@ -535,6 +508,37 @@
             this.textBoxMK1.Size = new System.Drawing.Size(141, 20);
             this.textBoxMK1.TabIndex = 0;
             // 
+            // sP_TAIKHOANINFOTableAdapter
+            // 
+            this.sP_TAIKHOANINFOTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BOMONTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.DIEMTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = null;
+            this.tableAdapterManager.HOCKYTableAdapter = null;
+            this.tableAdapterManager.HOCSINHTableAdapter = null;
+            this.tableAdapterManager.HS_LOPTableAdapter = null;
+            this.tableAdapterManager.KHOITableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.NAMHOCTableAdapter = null;
+            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
+            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // nHOMQUYENTextBox
+            // 
+            this.nHOMQUYENTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_TAIKHOANINFOBindingSource, "NHOMQUYEN", true));
+            this.nHOMQUYENTextBox.Location = new System.Drawing.Point(369, 39);
+            this.nHOMQUYENTextBox.Name = "nHOMQUYENTextBox";
+            this.nHOMQUYENTextBox.ReadOnly = true;
+            this.nHOMQUYENTextBox.Size = new System.Drawing.Size(121, 20);
+            this.nHOMQUYENTextBox.TabIndex = 57;
+            // 
             // FormTTDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,12 +554,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormTTDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_TAIKHOANINFOBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_TAIKHOANINFOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).EndInit();
             this.panelPass.ResumeLayout(false);
@@ -576,23 +580,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private System.Windows.Forms.BindingSource sP_TAIKHOANINFOBindingSource;
-        private QLHSTHPTDataSet qLHSTHPTDataSet;
-        private QLHSTHPTDataSetTableAdapters.SP_TAIKHOANINFOTableAdapter sP_TAIKHOANINFOTableAdapter;
-        private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBoxQuyen;
-        private System.Windows.Forms.TextBox textBoxTDN;
-        private System.Windows.Forms.TextBox textBoxTM;
-        private System.Windows.Forms.TextBox textBoxDT;
-        private System.Windows.Forms.TextBox textBoxDC;
-        private DevExpress.XtraEditors.DateEdit dateEditNS;
-        private System.Windows.Forms.ComboBox comboBoxGT;
-        private System.Windows.Forms.TextBox textBoxTen;
-        private System.Windows.Forms.TextBox textBoxMGV;
         private System.Windows.Forms.Panel panelPass;
         private System.Windows.Forms.Label labelEMK2;
         private System.Windows.Forms.Label labelEMK1;
@@ -602,5 +593,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMK2;
         private System.Windows.Forms.TextBox textBoxMK1;
+        private System.Windows.Forms.BindingSource sP_TAIKHOANINFOBindingSource;
+        private QLHSTHPTDataSet1 qLHSTHPTDataSet1;
+        private QLHSTHPTDataSet1TableAdapters.SP_TAIKHOANINFOTableAdapter sP_TAIKHOANINFOTableAdapter;
+        private QLHSTHPTDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox tENBMTextBox;
+        private System.Windows.Forms.TextBox textBoxDT;
+        private DevExpress.XtraEditors.DateEdit dateEditNS;
+        private System.Windows.Forms.TextBox textBoxDC;
+        private System.Windows.Forms.ComboBox comboBoxGT;
+        private System.Windows.Forms.TextBox textBoxTenGV;
+        private System.Windows.Forms.TextBox mAGVTextBox;
+        private System.Windows.Forms.TextBox tENDANGNHAPTextBox;
+        private System.Windows.Forms.TextBox nHOMQUYENTextBox;
     }
 }

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTongKetLop));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelLC = new System.Windows.Forms.Panel();
             this.labelELop = new System.Windows.Forms.Label();
             this.labelENH = new System.Windows.Forms.Label();
@@ -58,21 +59,11 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.label1 = new System.Windows.Forms.Label();
             this.sP_TBM_LOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_TBM_LOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.SP_TBM_LOPTableAdapter();
             this.panelTK = new System.Windows.Forms.Panel();
-            this.panelThongKe = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxKe = new System.Windows.Forms.TextBox();
-            this.textBoxY = new System.Windows.Forms.TextBox();
-            this.textBoxTB = new System.Windows.Forms.TextBox();
-            this.textBoxK = new System.Windows.Forms.TextBox();
-            this.textBoxG = new System.Windows.Forms.TextBox();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sP_TBM_LOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -88,6 +79,18 @@
             this.colĐỊA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDTBHK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelThongKe = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxKe = new System.Windows.Forms.TextBox();
+            this.textBoxY = new System.Windows.Forms.TextBox();
+            this.textBoxTB = new System.Windows.Forms.TextBox();
+            this.textBoxK = new System.Windows.Forms.TextBox();
+            this.textBoxG = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_NAMHOC_CNBindingSource)).BeginInit();
@@ -96,9 +99,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_TBM_LOPBindingSource)).BeginInit();
             this.panelTK.SuspendLayout();
-            this.panelThongKe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_TBM_LOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.panelThongKe.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,6 +114,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 48);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Turquoise;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(800, 48);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "CHỌN NĂM HỌC VÀ LỚP CHỦ NHIỆM";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelLC
             // 
@@ -369,18 +386,6 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 474);
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Turquoise;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(800, 48);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "CHỌN NĂM HỌC VÀ LỚP CHỦ NHIỆM";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // sP_TBM_LOPBindingSource
             // 
             this.sP_TBM_LOPBindingSource.DataMember = "SP_TBM_LOP";
@@ -393,6 +398,7 @@
             // panelTK
             // 
             this.panelTK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelTK.Controls.Add(this.gridControl1);
             this.panelTK.Controls.Add(this.sP_TBM_LOPGridControl);
             this.panelTK.Controls.Add(this.panelThongKe);
             this.panelTK.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -401,115 +407,27 @@
             this.panelTK.Size = new System.Drawing.Size(800, 292);
             this.panelTK.TabIndex = 16;
             // 
-            // panelThongKe
+            // gridControl1
             // 
-            this.panelThongKe.BackColor = System.Drawing.Color.Turquoise;
-            this.panelThongKe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelThongKe.Controls.Add(this.label8);
-            this.panelThongKe.Controls.Add(this.label7);
-            this.panelThongKe.Controls.Add(this.label6);
-            this.panelThongKe.Controls.Add(this.label5);
-            this.panelThongKe.Controls.Add(this.label4);
-            this.panelThongKe.Controls.Add(this.textBoxKe);
-            this.panelThongKe.Controls.Add(this.textBoxY);
-            this.panelThongKe.Controls.Add(this.textBoxTB);
-            this.panelThongKe.Controls.Add(this.textBoxK);
-            this.panelThongKe.Controls.Add(this.textBoxG);
-            this.panelThongKe.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelThongKe.Location = new System.Drawing.Point(541, 0);
-            this.panelThongKe.Name = "panelThongKe";
-            this.panelThongKe.Size = new System.Drawing.Size(255, 288);
-            this.panelThongKe.TabIndex = 15;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridControl1.Location = new System.Drawing.Point(0, 288);
+            this.gridControl1.MainView = this.gridView2;
+            this.gridControl1.MenuManager = this.barManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(541, 70);
+            this.gridControl1.TabIndex = 17;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
             // 
-            // label8
+            // gridView2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 219);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 13);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Xếp loại KÉM";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 172);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Xếp loại YẾU";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Xếp loại TB";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Xếp loại KHÁ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Xếp loại GIỎI";
-            // 
-            // textBoxKe
-            // 
-            this.textBoxKe.Location = new System.Drawing.Point(117, 216);
-            this.textBoxKe.Name = "textBoxKe";
-            this.textBoxKe.ReadOnly = true;
-            this.textBoxKe.Size = new System.Drawing.Size(100, 20);
-            this.textBoxKe.TabIndex = 4;
-            // 
-            // textBoxY
-            // 
-            this.textBoxY.Location = new System.Drawing.Point(117, 169);
-            this.textBoxY.Name = "textBoxY";
-            this.textBoxY.ReadOnly = true;
-            this.textBoxY.Size = new System.Drawing.Size(100, 20);
-            this.textBoxY.TabIndex = 3;
-            // 
-            // textBoxTB
-            // 
-            this.textBoxTB.Location = new System.Drawing.Point(117, 124);
-            this.textBoxTB.Name = "textBoxTB";
-            this.textBoxTB.ReadOnly = true;
-            this.textBoxTB.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTB.TabIndex = 2;
-            // 
-            // textBoxK
-            // 
-            this.textBoxK.Location = new System.Drawing.Point(117, 77);
-            this.textBoxK.Name = "textBoxK";
-            this.textBoxK.ReadOnly = true;
-            this.textBoxK.Size = new System.Drawing.Size(100, 20);
-            this.textBoxK.TabIndex = 1;
-            // 
-            // textBoxG
-            // 
-            this.textBoxG.Location = new System.Drawing.Point(117, 32);
-            this.textBoxG.Name = "textBoxG";
-            this.textBoxG.ReadOnly = true;
-            this.textBoxG.Size = new System.Drawing.Size(100, 20);
-            this.textBoxG.TabIndex = 0;
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.Name = "gridView2";
             // 
             // sP_TBM_LOPGridControl
             // 
             this.sP_TBM_LOPGridControl.DataSource = this.sP_TBM_LOPBindingSource;
-            this.sP_TBM_LOPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sP_TBM_LOPGridControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.sP_TBM_LOPGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_TBM_LOPGridControl.MainView = this.gridView1;
             this.sP_TBM_LOPGridControl.MenuManager = this.barManager1;
@@ -644,6 +562,123 @@
             this.colHL.Visible = true;
             this.colHL.VisibleIndex = 12;
             // 
+            // panelThongKe
+            // 
+            this.panelThongKe.BackColor = System.Drawing.Color.Turquoise;
+            this.panelThongKe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelThongKe.Controls.Add(this.button3);
+            this.panelThongKe.Controls.Add(this.label8);
+            this.panelThongKe.Controls.Add(this.label7);
+            this.panelThongKe.Controls.Add(this.label6);
+            this.panelThongKe.Controls.Add(this.label5);
+            this.panelThongKe.Controls.Add(this.label4);
+            this.panelThongKe.Controls.Add(this.textBoxKe);
+            this.panelThongKe.Controls.Add(this.textBoxY);
+            this.panelThongKe.Controls.Add(this.textBoxTB);
+            this.panelThongKe.Controls.Add(this.textBoxK);
+            this.panelThongKe.Controls.Add(this.textBoxG);
+            this.panelThongKe.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelThongKe.Location = new System.Drawing.Point(541, 0);
+            this.panelThongKe.Name = "panelThongKe";
+            this.panelThongKe.Size = new System.Drawing.Size(255, 288);
+            this.panelThongKe.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(41, 219);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Xếp loại KÉM";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(41, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Xếp loại YẾU";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(41, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Xếp loại TB";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(41, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Xếp loại KHÁ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(41, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Xếp loại GIỎI";
+            // 
+            // textBoxKe
+            // 
+            this.textBoxKe.Location = new System.Drawing.Point(117, 216);
+            this.textBoxKe.Name = "textBoxKe";
+            this.textBoxKe.ReadOnly = true;
+            this.textBoxKe.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKe.TabIndex = 4;
+            // 
+            // textBoxY
+            // 
+            this.textBoxY.Location = new System.Drawing.Point(117, 169);
+            this.textBoxY.Name = "textBoxY";
+            this.textBoxY.ReadOnly = true;
+            this.textBoxY.Size = new System.Drawing.Size(100, 20);
+            this.textBoxY.TabIndex = 3;
+            // 
+            // textBoxTB
+            // 
+            this.textBoxTB.Location = new System.Drawing.Point(117, 124);
+            this.textBoxTB.Name = "textBoxTB";
+            this.textBoxTB.ReadOnly = true;
+            this.textBoxTB.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTB.TabIndex = 2;
+            // 
+            // textBoxK
+            // 
+            this.textBoxK.Location = new System.Drawing.Point(117, 77);
+            this.textBoxK.Name = "textBoxK";
+            this.textBoxK.ReadOnly = true;
+            this.textBoxK.Size = new System.Drawing.Size(100, 20);
+            this.textBoxK.TabIndex = 1;
+            // 
+            // textBoxG
+            // 
+            this.textBoxG.Location = new System.Drawing.Point(117, 32);
+            this.textBoxG.Name = "textBoxG";
+            this.textBoxG.ReadOnly = true;
+            this.textBoxG.Size = new System.Drawing.Size(100, 20);
+            this.textBoxG.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button3.Location = new System.Drawing.Point(0, 261);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(251, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Học sinh giỏi nhất lớp";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FormTongKetLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,10 +704,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_TBM_LOPBindingSource)).EndInit();
             this.panelTK.ResumeLayout(false);
-            this.panelThongKe.ResumeLayout(false);
-            this.panelThongKe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_TBM_LOPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.panelThongKe.ResumeLayout(false);
+            this.panelThongKe.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -738,5 +775,8 @@
         private System.Windows.Forms.TextBox textBoxTB;
         private System.Windows.Forms.TextBox textBoxK;
         private System.Windows.Forms.TextBox textBoxG;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -139,6 +139,8 @@
             this.panel25 = new System.Windows.Forms.Panel();
             this.labelTitleHS = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
+            this.comboBoxLopNH = new System.Windows.Forms.ComboBox();
+            this.sP_LOP_NAMHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxSiSo = new System.Windows.Forms.TextBox();
@@ -153,9 +155,7 @@
             this.nAMHOCTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.NAMHOCTableAdapter();
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
             this.hOCKYTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.HOCKYTableAdapter();
-            this.sP_LOP_NAMHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_LOP_NAMHOCTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.SP_LOP_NAMHOCTableAdapter();
-            this.sP_LOP_NAMHOCComboBox = new System.Windows.Forms.ComboBox();
             tENNHLabel = new System.Windows.Forms.Label();
             nAMKTLabel = new System.Windows.Forms.Label();
             nAMBDLabel = new System.Windows.Forms.Label();
@@ -205,11 +205,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.panel25.SuspendLayout();
             this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_LOP_NAMHOCBindingSource)).BeginInit();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_LOP_NAMHOCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tENNHLabel
@@ -967,7 +967,7 @@
             this.panelAddLop.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAddLop.Location = new System.Drawing.Point(534, 138);
             this.panelAddLop.Name = "panelAddLop";
-            this.panelAddLop.Size = new System.Drawing.Size(671, 416);
+            this.panelAddLop.Size = new System.Drawing.Size(466, 416);
             this.panelAddLop.TabIndex = 3;
             // 
             // label5
@@ -976,7 +976,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(486, 70);
+            this.label5.Location = new System.Drawing.Point(281, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(179, 15);
             this.label5.TabIndex = 6;
@@ -1006,7 +1006,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 281);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(671, 117);
+            this.groupBox3.Size = new System.Drawing.Size(466, 117);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "CHI TIẾT LỚP";
@@ -1184,7 +1184,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 61);
             this.gridControl1.MainView = this.gridView3;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(671, 220);
+            this.gridControl1.Size = new System.Drawing.Size(466, 220);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1204,7 +1204,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(671, 61);
+            this.panel12.Size = new System.Drawing.Size(466, 61);
             this.panel12.TabIndex = 3;
             // 
             // panel13
@@ -1214,7 +1214,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(83, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(505, 61);
+            this.panel13.Size = new System.Drawing.Size(300, 61);
             this.panel13.TabIndex = 3;
             // 
             // label4
@@ -1223,7 +1223,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(501, 57);
+            this.label4.Size = new System.Drawing.Size(296, 57);
             this.label4.TabIndex = 3;
             this.label4.Text = "THÊM LỚP MỚI";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1255,7 +1255,7 @@
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel15.Controls.Add(this.button6);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel15.Location = new System.Drawing.Point(588, 0);
+            this.panel15.Location = new System.Drawing.Point(383, 0);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(83, 61);
             this.panel15.TabIndex = 0;
@@ -1279,9 +1279,9 @@
             this.panelAddHS.Controls.Add(this.panel24);
             this.panelAddHS.Controls.Add(this.panel20);
             this.panelAddHS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAddHS.Location = new System.Drawing.Point(1205, 138);
+            this.panelAddHS.Location = new System.Drawing.Point(1000, 138);
             this.panelAddHS.Name = "panelAddHS";
-            this.panelAddHS.Size = new System.Drawing.Size(165, 416);
+            this.panelAddHS.Size = new System.Drawing.Size(370, 416);
             this.panelAddHS.TabIndex = 4;
             // 
             // gridControl2
@@ -1290,7 +1290,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 219);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(165, 197);
+            this.gridControl2.Size = new System.Drawing.Size(370, 197);
             this.gridControl2.TabIndex = 7;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1308,7 +1308,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel25.Location = new System.Drawing.Point(0, 177);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(165, 42);
+            this.panel25.Size = new System.Drawing.Size(370, 42);
             this.panel25.TabIndex = 6;
             // 
             // labelTitleHS
@@ -1317,7 +1317,7 @@
             this.labelTitleHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleHS.Location = new System.Drawing.Point(0, 0);
             this.labelTitleHS.Name = "labelTitleHS";
-            this.labelTitleHS.Size = new System.Drawing.Size(161, 38);
+            this.labelTitleHS.Size = new System.Drawing.Size(366, 38);
             this.labelTitleHS.TabIndex = 0;
             this.labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP 10A1";
             this.labelTitleHS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1325,7 +1325,7 @@
             // panel24
             // 
             this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel24.Controls.Add(this.sP_LOP_NAMHOCComboBox);
+            this.panel24.Controls.Add(this.comboBoxLopNH);
             this.panel24.Controls.Add(this.label14);
             this.panel24.Controls.Add(this.label13);
             this.panel24.Controls.Add(this.textBoxSiSo);
@@ -1333,8 +1333,26 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(0, 61);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(165, 116);
+            this.panel24.Size = new System.Drawing.Size(370, 116);
             this.panel24.TabIndex = 5;
+            // 
+            // comboBoxLopNH
+            // 
+            this.comboBoxLopNH.DataSource = this.sP_LOP_NAMHOCBindingSource;
+            this.comboBoxLopNH.DisplayMember = "TENLOP";
+            this.comboBoxLopNH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLopNH.FormattingEnabled = true;
+            this.comboBoxLopNH.Location = new System.Drawing.Point(153, 68);
+            this.comboBoxLopNH.Name = "comboBoxLopNH";
+            this.comboBoxLopNH.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxLopNH.TabIndex = 4;
+            this.comboBoxLopNH.ValueMember = "MALOP";
+            this.comboBoxLopNH.SelectedIndexChanged += new System.EventHandler(this.sP_LOP_NAMHOCComboBox_SelectedIndexChanged);
+            // 
+            // sP_LOP_NAMHOCBindingSource
+            // 
+            this.sP_LOP_NAMHOCBindingSource.DataMember = "SP_LOP_NAMHOC";
+            this.sP_LOP_NAMHOCBindingSource.DataSource = this.qLHSTHPTDataSet1;
             // 
             // label14
             // 
@@ -1379,7 +1397,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(165, 61);
+            this.panel20.Size = new System.Drawing.Size(370, 61);
             this.panel20.TabIndex = 4;
             // 
             // panel21
@@ -1389,7 +1407,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(83, 0);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(0, 61);
+            this.panel21.Size = new System.Drawing.Size(204, 61);
             this.panel21.TabIndex = 3;
             // 
             // label12
@@ -1398,7 +1416,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(0, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(0, 61);
+            this.label12.Size = new System.Drawing.Size(200, 57);
             this.label12.TabIndex = 3;
             this.label12.Text = "XẾP LỚP";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1430,7 +1448,7 @@
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel23.Controls.Add(this.button9);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel23.Location = new System.Drawing.Point(82, 0);
+            this.panel23.Location = new System.Drawing.Point(287, 0);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(83, 61);
             this.panel23.TabIndex = 0;
@@ -1472,27 +1490,9 @@
             // 
             this.hOCKYTableAdapter.ClearBeforeFill = true;
             // 
-            // sP_LOP_NAMHOCBindingSource
-            // 
-            this.sP_LOP_NAMHOCBindingSource.DataMember = "SP_LOP_NAMHOC";
-            this.sP_LOP_NAMHOCBindingSource.DataSource = this.qLHSTHPTDataSet1;
-            // 
             // sP_LOP_NAMHOCTableAdapter
             // 
             this.sP_LOP_NAMHOCTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_LOP_NAMHOCComboBox
-            // 
-            this.sP_LOP_NAMHOCComboBox.DataSource = this.sP_LOP_NAMHOCBindingSource;
-            this.sP_LOP_NAMHOCComboBox.DisplayMember = "TENLOP";
-            this.sP_LOP_NAMHOCComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sP_LOP_NAMHOCComboBox.FormattingEnabled = true;
-            this.sP_LOP_NAMHOCComboBox.Location = new System.Drawing.Point(153, 68);
-            this.sP_LOP_NAMHOCComboBox.Name = "sP_LOP_NAMHOCComboBox";
-            this.sP_LOP_NAMHOCComboBox.Size = new System.Drawing.Size(100, 21);
-            this.sP_LOP_NAMHOCComboBox.TabIndex = 4;
-            this.sP_LOP_NAMHOCComboBox.ValueMember = "MALOP";
-            this.sP_LOP_NAMHOCComboBox.SelectedIndexChanged += new System.EventHandler(this.sP_LOP_NAMHOCComboBox_SelectedIndexChanged);
             // 
             // FormTienTrinhLL
             // 
@@ -1559,11 +1559,11 @@
             this.panel25.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_LOP_NAMHOCBindingSource)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sP_LOP_NAMHOCBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1688,6 +1688,6 @@
         private System.Windows.Forms.Label labelTitleHS;
         private System.Windows.Forms.BindingSource sP_LOP_NAMHOCBindingSource;
         private QLHSTHPTDataSet1TableAdapters.SP_LOP_NAMHOCTableAdapter sP_LOP_NAMHOCTableAdapter;
-        private System.Windows.Forms.ComboBox sP_LOP_NAMHOCComboBox;
+        private System.Windows.Forms.ComboBox comboBoxLopNH;
     }
 }

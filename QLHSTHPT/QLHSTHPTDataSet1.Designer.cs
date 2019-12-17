@@ -114,29 +114,29 @@ namespace QLHSTHPT {
         
         private global::System.Data.DataRelation relationFK_GIAOVIEN_BOMON;
         
-        private global::System.Data.DataRelation relationFK_LOP_KHOI;
+        private global::System.Data.DataRelation relationFK_LOP_NAMHOC;
         
         private global::System.Data.DataRelation relationFK_LOP_HOCKY;
         
-        private global::System.Data.DataRelation relationFK_LOP_NAMHOC;
+        private global::System.Data.DataRelation relationFK_LOP_KHOI;
         
         private global::System.Data.DataRelation relationFK_MONHOC_BOMON;
         
-        private global::System.Data.DataRelation relationFK_PHANCONGGV_MONHOC;
-        
-        private global::System.Data.DataRelation relationFK_PHANCONGGV_HOCKY;
-        
-        private global::System.Data.DataRelation relationFK_PHANCONGGV_LOP;
+        private global::System.Data.DataRelation relationFK_PHANCONGGV_NAMHOC;
         
         private global::System.Data.DataRelation relationFK_PHANCONGGV_GIAOVIEN;
         
-        private global::System.Data.DataRelation relationFK_PHANCONGGV_NAMHOC;
+        private global::System.Data.DataRelation relationFK_PHANCONGGV_LOP;
+        
+        private global::System.Data.DataRelation relationFK_PHANCONGGV_HOCKY;
+        
+        private global::System.Data.DataRelation relationFK_PHANCONGGV_MONHOC;
         
         private global::System.Data.DataRelation relationFK_TOTRUONGBM_GIAOVIEN;
         
-        private global::System.Data.DataRelation relationFK_HS_LOP_HOCSINH;
-        
         private global::System.Data.DataRelation relationFK_HS_LOP_LOP;
+        
+        private global::System.Data.DataRelation relationFK_HS_LOP_HOCSINH;
         
         private global::System.Data.DataRelation relationFK_DIEM_HOCSINH;
         
@@ -1234,18 +1234,18 @@ namespace QLHSTHPT {
             }
             this.relationFK_BOMON_TOTRUONGBM = this.Relations["FK_BOMON_TOTRUONGBM"];
             this.relationFK_GIAOVIEN_BOMON = this.Relations["FK_GIAOVIEN_BOMON"];
-            this.relationFK_LOP_KHOI = this.Relations["FK_LOP_KHOI"];
-            this.relationFK_LOP_HOCKY = this.Relations["FK_LOP_HOCKY"];
             this.relationFK_LOP_NAMHOC = this.Relations["FK_LOP_NAMHOC"];
+            this.relationFK_LOP_HOCKY = this.Relations["FK_LOP_HOCKY"];
+            this.relationFK_LOP_KHOI = this.Relations["FK_LOP_KHOI"];
             this.relationFK_MONHOC_BOMON = this.Relations["FK_MONHOC_BOMON"];
-            this.relationFK_PHANCONGGV_MONHOC = this.Relations["FK_PHANCONGGV_MONHOC"];
-            this.relationFK_PHANCONGGV_HOCKY = this.Relations["FK_PHANCONGGV_HOCKY"];
-            this.relationFK_PHANCONGGV_LOP = this.Relations["FK_PHANCONGGV_LOP"];
-            this.relationFK_PHANCONGGV_GIAOVIEN = this.Relations["FK_PHANCONGGV_GIAOVIEN"];
             this.relationFK_PHANCONGGV_NAMHOC = this.Relations["FK_PHANCONGGV_NAMHOC"];
+            this.relationFK_PHANCONGGV_GIAOVIEN = this.Relations["FK_PHANCONGGV_GIAOVIEN"];
+            this.relationFK_PHANCONGGV_LOP = this.Relations["FK_PHANCONGGV_LOP"];
+            this.relationFK_PHANCONGGV_HOCKY = this.Relations["FK_PHANCONGGV_HOCKY"];
+            this.relationFK_PHANCONGGV_MONHOC = this.Relations["FK_PHANCONGGV_MONHOC"];
             this.relationFK_TOTRUONGBM_GIAOVIEN = this.Relations["FK_TOTRUONGBM_GIAOVIEN"];
-            this.relationFK_HS_LOP_HOCSINH = this.Relations["FK_HS_LOP_HOCSINH"];
             this.relationFK_HS_LOP_LOP = this.Relations["FK_HS_LOP_LOP"];
+            this.relationFK_HS_LOP_HOCSINH = this.Relations["FK_HS_LOP_HOCSINH"];
             this.relationFK_DIEM_HOCSINH = this.Relations["FK_DIEM_HOCSINH"];
         }
         
@@ -1358,9 +1358,9 @@ namespace QLHSTHPT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_LOP_KHOI", new global::System.Data.DataColumn[] {
-                        this.tableKHOI.MAKHOIColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLOP.MAKHOIColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_LOP_NAMHOC", new global::System.Data.DataColumn[] {
+                        this.tableNAMHOC.MANHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLOP.MANHColumn});
             this.tableLOP.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -1372,9 +1372,9 @@ namespace QLHSTHPT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_LOP_NAMHOC", new global::System.Data.DataColumn[] {
-                        this.tableNAMHOC.MANHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLOP.MANHColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_LOP_KHOI", new global::System.Data.DataColumn[] {
+                        this.tableKHOI.MAKHOIColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLOP.MAKHOIColumn});
             this.tableLOP.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -1386,23 +1386,9 @@ namespace QLHSTHPT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_MONHOC", new global::System.Data.DataColumn[] {
-                        this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MAMHColumn});
-            this.tablePHANCONGGV.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_HOCKY", new global::System.Data.DataColumn[] {
-                        this.tableHOCKY.MAHKColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MAHKColumn});
-            this.tablePHANCONGGV.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_LOP", new global::System.Data.DataColumn[] {
-                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MALOPColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_NAMHOC", new global::System.Data.DataColumn[] {
+                        this.tableNAMHOC.MANHColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MANHColumn});
             this.tablePHANCONGGV.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -1414,9 +1400,23 @@ namespace QLHSTHPT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_NAMHOC", new global::System.Data.DataColumn[] {
-                        this.tableNAMHOC.MANHColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MANHColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_LOP", new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MALOPColumn});
+            this.tablePHANCONGGV.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_HOCKY", new global::System.Data.DataColumn[] {
+                        this.tableHOCKY.MAHKColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MAHKColumn});
+            this.tablePHANCONGGV.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHANCONGGV_MONHOC", new global::System.Data.DataColumn[] {
+                        this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MAMHColumn});
             this.tablePHANCONGGV.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -1428,16 +1428,16 @@ namespace QLHSTHPT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_HS_LOP_HOCSINH", new global::System.Data.DataColumn[] {
-                        this.tableHOCSINH.MAHSColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHS_LOP.MAHSColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HS_LOP_LOP", new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHS_LOP.MALOPColumn});
             this.tableHS_LOP.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_HS_LOP_LOP", new global::System.Data.DataColumn[] {
-                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHS_LOP.MALOPColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_HS_LOP_HOCSINH", new global::System.Data.DataColumn[] {
+                        this.tableHOCSINH.MAHSColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHS_LOP.MAHSColumn});
             this.tableHS_LOP.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -1450,54 +1450,54 @@ namespace QLHSTHPT {
                         this.tableBOMON.MABMColumn}, new global::System.Data.DataColumn[] {
                         this.tableGIAOVIEN.MABMColumn}, false);
             this.Relations.Add(this.relationFK_GIAOVIEN_BOMON);
-            this.relationFK_LOP_KHOI = new global::System.Data.DataRelation("FK_LOP_KHOI", new global::System.Data.DataColumn[] {
-                        this.tableKHOI.MAKHOIColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLOP.MAKHOIColumn}, false);
-            this.Relations.Add(this.relationFK_LOP_KHOI);
-            this.relationFK_LOP_HOCKY = new global::System.Data.DataRelation("FK_LOP_HOCKY", new global::System.Data.DataColumn[] {
-                        this.tableHOCKY.MAHKColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLOP.MAHKColumn}, false);
-            this.Relations.Add(this.relationFK_LOP_HOCKY);
             this.relationFK_LOP_NAMHOC = new global::System.Data.DataRelation("FK_LOP_NAMHOC", new global::System.Data.DataColumn[] {
                         this.tableNAMHOC.MANHColumn}, new global::System.Data.DataColumn[] {
                         this.tableLOP.MANHColumn}, false);
             this.Relations.Add(this.relationFK_LOP_NAMHOC);
+            this.relationFK_LOP_HOCKY = new global::System.Data.DataRelation("FK_LOP_HOCKY", new global::System.Data.DataColumn[] {
+                        this.tableHOCKY.MAHKColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLOP.MAHKColumn}, false);
+            this.Relations.Add(this.relationFK_LOP_HOCKY);
+            this.relationFK_LOP_KHOI = new global::System.Data.DataRelation("FK_LOP_KHOI", new global::System.Data.DataColumn[] {
+                        this.tableKHOI.MAKHOIColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLOP.MAKHOIColumn}, false);
+            this.Relations.Add(this.relationFK_LOP_KHOI);
             this.relationFK_MONHOC_BOMON = new global::System.Data.DataRelation("FK_MONHOC_BOMON", new global::System.Data.DataColumn[] {
                         this.tableBOMON.MABMColumn}, new global::System.Data.DataColumn[] {
                         this.tableMONHOC.MABMColumn}, false);
             this.Relations.Add(this.relationFK_MONHOC_BOMON);
-            this.relationFK_PHANCONGGV_MONHOC = new global::System.Data.DataRelation("FK_PHANCONGGV_MONHOC", new global::System.Data.DataColumn[] {
-                        this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MAMHColumn}, false);
-            this.Relations.Add(this.relationFK_PHANCONGGV_MONHOC);
-            this.relationFK_PHANCONGGV_HOCKY = new global::System.Data.DataRelation("FK_PHANCONGGV_HOCKY", new global::System.Data.DataColumn[] {
-                        this.tableHOCKY.MAHKColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MAHKColumn}, false);
-            this.Relations.Add(this.relationFK_PHANCONGGV_HOCKY);
-            this.relationFK_PHANCONGGV_LOP = new global::System.Data.DataRelation("FK_PHANCONGGV_LOP", new global::System.Data.DataColumn[] {
-                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MALOPColumn}, false);
-            this.Relations.Add(this.relationFK_PHANCONGGV_LOP);
-            this.relationFK_PHANCONGGV_GIAOVIEN = new global::System.Data.DataRelation("FK_PHANCONGGV_GIAOVIEN", new global::System.Data.DataColumn[] {
-                        this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHANCONGGV.MAGVColumn}, false);
-            this.Relations.Add(this.relationFK_PHANCONGGV_GIAOVIEN);
             this.relationFK_PHANCONGGV_NAMHOC = new global::System.Data.DataRelation("FK_PHANCONGGV_NAMHOC", new global::System.Data.DataColumn[] {
                         this.tableNAMHOC.MANHColumn}, new global::System.Data.DataColumn[] {
                         this.tablePHANCONGGV.MANHColumn}, false);
             this.Relations.Add(this.relationFK_PHANCONGGV_NAMHOC);
+            this.relationFK_PHANCONGGV_GIAOVIEN = new global::System.Data.DataRelation("FK_PHANCONGGV_GIAOVIEN", new global::System.Data.DataColumn[] {
+                        this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MAGVColumn}, false);
+            this.Relations.Add(this.relationFK_PHANCONGGV_GIAOVIEN);
+            this.relationFK_PHANCONGGV_LOP = new global::System.Data.DataRelation("FK_PHANCONGGV_LOP", new global::System.Data.DataColumn[] {
+                        this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MALOPColumn}, false);
+            this.Relations.Add(this.relationFK_PHANCONGGV_LOP);
+            this.relationFK_PHANCONGGV_HOCKY = new global::System.Data.DataRelation("FK_PHANCONGGV_HOCKY", new global::System.Data.DataColumn[] {
+                        this.tableHOCKY.MAHKColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MAHKColumn}, false);
+            this.Relations.Add(this.relationFK_PHANCONGGV_HOCKY);
+            this.relationFK_PHANCONGGV_MONHOC = new global::System.Data.DataRelation("FK_PHANCONGGV_MONHOC", new global::System.Data.DataColumn[] {
+                        this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHANCONGGV.MAMHColumn}, false);
+            this.Relations.Add(this.relationFK_PHANCONGGV_MONHOC);
             this.relationFK_TOTRUONGBM_GIAOVIEN = new global::System.Data.DataRelation("FK_TOTRUONGBM_GIAOVIEN", new global::System.Data.DataColumn[] {
                         this.tableGIAOVIEN.MAGVColumn}, new global::System.Data.DataColumn[] {
                         this.tableTOTRUONGBM.MAGVColumn}, false);
             this.Relations.Add(this.relationFK_TOTRUONGBM_GIAOVIEN);
-            this.relationFK_HS_LOP_HOCSINH = new global::System.Data.DataRelation("FK_HS_LOP_HOCSINH", new global::System.Data.DataColumn[] {
-                        this.tableHOCSINH.MAHSColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHS_LOP.MAHSColumn}, false);
-            this.Relations.Add(this.relationFK_HS_LOP_HOCSINH);
             this.relationFK_HS_LOP_LOP = new global::System.Data.DataRelation("FK_HS_LOP_LOP", new global::System.Data.DataColumn[] {
                         this.tableLOP.MALOPColumn}, new global::System.Data.DataColumn[] {
                         this.tableHS_LOP.MALOPColumn}, false);
             this.Relations.Add(this.relationFK_HS_LOP_LOP);
+            this.relationFK_HS_LOP_HOCSINH = new global::System.Data.DataRelation("FK_HS_LOP_HOCSINH", new global::System.Data.DataColumn[] {
+                        this.tableHOCSINH.MAHSColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHS_LOP.MAHSColumn}, false);
+            this.Relations.Add(this.relationFK_HS_LOP_HOCSINH);
             this.relationFK_DIEM_HOCSINH = new global::System.Data.DataRelation("FK_DIEM_HOCSINH", new global::System.Data.DataColumn[] {
                         this.tableHOCSINH.MAHSColumn}, new global::System.Data.DataColumn[] {
                         this.tableDIEM.MAHSColumn}, false);
@@ -9583,6 +9583,8 @@ namespace QLHSTHPT {
             
             private global::System.Data.DataColumn columnNHOMQUYEN;
             
+            private global::System.Data.DataColumn columnTENBM;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SP_TAIKHOANINFODataTable() {
@@ -9698,6 +9700,14 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TENBMColumn {
+                get {
+                    return this.columnTENBM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9733,7 +9743,7 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SP_TAIKHOANINFORow AddSP_TAIKHOANINFORow(string MAGV, string TENGV, string GIOITINH, System.DateTime NGAYSINH, string DIACHI, string DIENTHOAI, int MABM, int NGHI, string TENDANGNHAP, string NHOMQUYEN) {
+            public SP_TAIKHOANINFORow AddSP_TAIKHOANINFORow(string MAGV, string TENGV, string GIOITINH, System.DateTime NGAYSINH, string DIACHI, string DIENTHOAI, int MABM, int NGHI, string TENDANGNHAP, string NHOMQUYEN, string TENBM) {
                 SP_TAIKHOANINFORow rowSP_TAIKHOANINFORow = ((SP_TAIKHOANINFORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MAGV,
@@ -9745,7 +9755,8 @@ namespace QLHSTHPT {
                         MABM,
                         NGHI,
                         TENDANGNHAP,
-                        NHOMQUYEN};
+                        NHOMQUYEN,
+                        TENBM};
                 rowSP_TAIKHOANINFORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_TAIKHOANINFORow);
                 return rowSP_TAIKHOANINFORow;
@@ -9785,6 +9796,7 @@ namespace QLHSTHPT {
                 this.columnNGHI = base.Columns["NGHI"];
                 this.columnTENDANGNHAP = base.Columns["TENDANGNHAP"];
                 this.columnNHOMQUYEN = base.Columns["NHOMQUYEN"];
+                this.columnTENBM = base.Columns["TENBM"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9810,6 +9822,8 @@ namespace QLHSTHPT {
                 base.Columns.Add(this.columnTENDANGNHAP);
                 this.columnNHOMQUYEN = new global::System.Data.DataColumn("NHOMQUYEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNHOMQUYEN);
+                this.columnTENBM = new global::System.Data.DataColumn("TENBM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTENBM);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMAGV}, true));
                 this.columnMAGV.AllowDBNull = false;
@@ -9828,6 +9842,8 @@ namespace QLHSTHPT {
                 this.columnNGHI.AllowDBNull = false;
                 this.columnTENDANGNHAP.MaxLength = 128;
                 this.columnNHOMQUYEN.MaxLength = 128;
+                this.columnTENBM.AllowDBNull = false;
+                this.columnTENBM.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16012,12 +16028,12 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public KHOIRow KHOIRow {
+            public NAMHOCRow NAMHOCRow {
                 get {
-                    return ((KHOIRow)(this.GetParentRow(this.Table.ParentRelations["FK_LOP_KHOI"])));
+                    return ((NAMHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_LOP_NAMHOC"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_LOP_KHOI"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_LOP_NAMHOC"]);
                 }
             }
             
@@ -16034,12 +16050,12 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public NAMHOCRow NAMHOCRow {
+            public KHOIRow KHOIRow {
                 get {
-                    return ((NAMHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_LOP_NAMHOC"])));
+                    return ((KHOIRow)(this.GetParentRow(this.Table.ParentRelations["FK_LOP_KHOI"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_LOP_NAMHOC"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_LOP_KHOI"]);
                 }
             }
             
@@ -16315,34 +16331,12 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MONHOCRow MONHOCRow {
+            public NAMHOCRow NAMHOCRow {
                 get {
-                    return ((MONHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_MONHOC"])));
+                    return ((NAMHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_NAMHOC"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_MONHOC"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HOCKYRow HOCKYRow {
-                get {
-                    return ((HOCKYRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_HOCKY"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_HOCKY"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LOPRow LOPRow {
-                get {
-                    return ((LOPRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_LOP"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_LOP"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_NAMHOC"]);
                 }
             }
             
@@ -16359,12 +16353,34 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public NAMHOCRow NAMHOCRow {
+            public LOPRow LOPRow {
                 get {
-                    return ((NAMHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_NAMHOC"])));
+                    return ((LOPRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_LOP"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_NAMHOC"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_LOP"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HOCKYRow HOCKYRow {
+                get {
+                    return ((HOCKYRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_HOCKY"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_HOCKY"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public MONHOCRow MONHOCRow {
+                get {
+                    return ((MONHOCRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHANCONGGV_MONHOC"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHANCONGGV_MONHOC"]);
                 }
             }
             
@@ -17937,6 +17953,17 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string TENBM {
+                get {
+                    return ((string)(this[this.tableSP_TAIKHOANINFO.TENBMColumn]));
+                }
+                set {
+                    this[this.tableSP_TAIKHOANINFO.TENBMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsTENDANGNHAPNull() {
                 return this.IsNull(this.tableSP_TAIKHOANINFO.TENDANGNHAPColumn);
             }
@@ -18046,23 +18073,23 @@ namespace QLHSTHPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public HOCSINHRow HOCSINHRow {
-                get {
-                    return ((HOCSINHRow)(this.GetParentRow(this.Table.ParentRelations["FK_HS_LOP_HOCSINH"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_HS_LOP_HOCSINH"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public LOPRow LOPRow {
                 get {
                     return ((LOPRow)(this.GetParentRow(this.Table.ParentRelations["FK_HS_LOP_LOP"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_HS_LOP_LOP"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public HOCSINHRow HOCSINHRow {
+                get {
+                    return ((HOCSINHRow)(this.GetParentRow(this.Table.ParentRelations["FK_HS_LOP_HOCSINH"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_HS_LOP_HOCSINH"]);
                 }
             }
             
@@ -27703,6 +27730,7 @@ SELECT MAGV, MALOP, MAMH, MAHK, MANH, SOTIET, CHUNHIEM FROM PHANCONGGV WHERE (MA
             tableMapping.ColumnMappings.Add("NGHI", "NGHI");
             tableMapping.ColumnMappings.Add("TENDANGNHAP", "TENDANGNHAP");
             tableMapping.ColumnMappings.Add("NHOMQUYEN", "NHOMQUYEN");
+            tableMapping.ColumnMappings.Add("TENBM", "TENBM");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -32184,6 +32212,24 @@ SELECT MAHS, MALOP, HLCN, HLHK1, HLHK2 FROM HS_LOP WHERE (MAHS = @MAHS) AND (MAL
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._nAMHOCTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.NAMHOC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._nAMHOCTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._kHOITableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.KHOI.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._kHOITableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._hOCSINHTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.HOCSINH.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -32208,24 +32254,6 @@ SELECT MAHS, MALOP, HLCN, HLHK1, HLHK2 FROM HS_LOP WHERE (MAHS = @MAHS) AND (MAL
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._mONHOCTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._nAMHOCTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.NAMHOC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._nAMHOCTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._kHOITableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.KHOI.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._kHOITableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32298,6 +32326,22 @@ SELECT MAHS, MALOP, HLCN, HLHK1, HLHK2 FROM HS_LOP WHERE (MAHS = @MAHS) AND (MAL
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._nAMHOCTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.NAMHOC.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._nAMHOCTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._kHOITableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.KHOI.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._kHOITableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._hOCSINHTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.HOCSINH.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -32319,22 +32363,6 @@ SELECT MAHS, MALOP, HLCN, HLHK1, HLHK2 FROM HS_LOP WHERE (MAHS = @MAHS) AND (MAL
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._mONHOCTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._nAMHOCTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.NAMHOC.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._nAMHOCTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._kHOITableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.KHOI.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._kHOITableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32396,22 +32424,6 @@ SELECT MAHS, MALOP, HLCN, HLHK1, HLHK2 FROM HS_LOP WHERE (MAHS = @MAHS) AND (MAL
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._kHOITableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.KHOI.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._kHOITableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._nAMHOCTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.NAMHOC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._nAMHOCTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._mONHOCTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.MONHOC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -32433,6 +32445,22 @@ SELECT MAHS, MALOP, HLCN, HLHK1, HLHK2 FROM HS_LOP WHERE (MAHS = @MAHS) AND (MAL
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._hOCSINHTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._kHOITableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.KHOI.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._kHOITableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._nAMHOCTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.NAMHOC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._nAMHOCTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
