@@ -38,11 +38,11 @@ namespace QLHSTHPT
             List<string> arrTenLop = new List<string>();
             if (v_XL11BindingSource.Count != 0)
             {
-                soHS_Lop = Helper.xepLop(gridView1.RowCount);
+                soHS_Lop = Helper.xepLop(v_XL11BindingSource.Count);
                 if (soHS_Lop[0] == 0)
                 {
                     MessageBox.Show("Số lượng học sinh lên lớp nằm ngoài khoảng xếp lớp khả dụng!\n\nKhoảng khả dụng tối ưu: từ " +
-                        Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL11BindingSource.Count);
+                        Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL11BindingSource.Count, "Lớp 11", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     barButtonItem1.Enabled = false;
                 }
                 else
@@ -69,7 +69,7 @@ namespace QLHSTHPT
             else
             {
                 barButtonItem1.Enabled = false;
-                MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel:\n\nQuản trị -> Excel-Học sinh");
+                MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel:\n\nQuản trị -> Excel-Học sinh", "Lớp 11", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

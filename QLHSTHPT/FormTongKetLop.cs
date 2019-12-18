@@ -91,6 +91,7 @@ namespace QLHSTHPT
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textBoxG.Text = textBoxK.Text = textBoxTB.Text = textBoxY.Text = textBoxKe.Text = "";
             sP_TBM_LOPGridControl.Visible = true;
             gridControl1.Visible = false;
             try
@@ -163,6 +164,8 @@ namespace QLHSTHPT
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textBoxG.Text = textBoxK.Text = textBoxTB.Text = textBoxY.Text = textBoxKe.Text = "";
+
             sP_TBM_LOPGridControl.Visible = true;
             gridControl1.Visible = false;
             try
@@ -308,6 +311,8 @@ namespace QLHSTHPT
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            textBoxG.Text = textBoxK.Text = textBoxTB.Text = textBoxY.Text = textBoxKe.Text = "";
+
             gridControl1.Dock = DockStyle.Fill;
             gridControl1.Visible = true;
             sP_TBM_LOPGridControl.Visible = false;
@@ -338,32 +343,40 @@ namespace QLHSTHPT
                 sqlCommand.Parameters.Add(dbMaHK);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dataReader = sqlCommand.ExecuteReader();
-                while (dataReader.Read())
+                try
                 {
-                    string maHS = dataReader.GetValue(0).ToString();
-                    string tenHS = dataReader.GetValue(1).ToString();
-                    float dToan = float.Parse(dataReader.GetValue(2).ToString());
-                    float dLy = float.Parse(dataReader.GetValue(3).ToString());
-                    float dHoa = float.Parse(dataReader.GetValue(4).ToString());
-                    float dVan = float.Parse(dataReader.GetValue(5).ToString());
-                    float dSu = float.Parse(dataReader.GetValue(6).ToString());
-                    float dDia = float.Parse(dataReader.GetValue(7).ToString());
-                    float dSinh = float.Parse(dataReader.GetValue(8).ToString());
-                    float dAnh = float.Parse(dataReader.GetValue(9).ToString());
-                    float dGDCD = float.Parse(dataReader.GetValue(10).ToString());
-                    //float dToan = 0;
-                    //float dLy = 0;
-                    //float dHoa = 0;
-                    //float dVan = 0;
-                    //float dSu = 0;
-                    //float dDia = 0;
-                    //float dSinh = 0;
-                    //float dAnh = 0;
-                    //float dGDCD = 0;
-                    arrDHK1.Add(new DTBMHK_HS(maHS, tenHS, dHoa, dSinh, dAnh, dGDCD, dToan, dLy, dVan, dSu, dDia));
+                    while (dataReader.Read())
+                    {
+                        string maHS = dataReader.GetValue(0).ToString();
+                        string tenHS = dataReader.GetValue(1).ToString();
+                        float dToan = float.Parse(dataReader.GetValue(2).ToString());
+                        float dLy = float.Parse(dataReader.GetValue(3).ToString());
+                        float dHoa = float.Parse(dataReader.GetValue(4).ToString());
+                        float dVan = float.Parse(dataReader.GetValue(5).ToString());
+                        float dSu = float.Parse(dataReader.GetValue(6).ToString());
+                        float dDia = float.Parse(dataReader.GetValue(7).ToString());
+                        float dSinh = float.Parse(dataReader.GetValue(8).ToString());
+                        float dAnh = float.Parse(dataReader.GetValue(9).ToString());
+                        float dGDCD = float.Parse(dataReader.GetValue(10).ToString());
+                        //float dToan = 0;
+                        //float dLy = 0;
+                        //float dHoa = 0;
+                        //float dVan = 0;
+                        //float dSu = 0;
+                        //float dDia = 0;
+                        //float dSinh = 0;
+                        //float dAnh = 0;
+                        //float dGDCD = 0;
+                        arrDHK1.Add(new DTBMHK_HS(maHS, tenHS, dHoa, dSinh, dAnh, dGDCD, dToan, dLy, dVan, dSu, dDia));
+                    }
+                    dataReader.Close();
                 }
-                dataReader.Close();
-                
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: Chưa có đủ dữ liệu tổng kết học kỳ!");
+                    dataReader.Close();
+                    return;
+                }
             }
             catch (SqlException se)
             {
@@ -392,32 +405,40 @@ namespace QLHSTHPT
                 _sqlCommand.Parameters.Add(_dbMaHK);
                 _sqlCommand.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dataReader = _sqlCommand.ExecuteReader();
-                while (dataReader.Read())
+                try
                 {
-                    string maHS = dataReader.GetValue(0).ToString();
-                    string tenHS = dataReader.GetValue(1).ToString();
-                    //float dToan = float.Parse(dataReader.GetValue(2).ToString());
-                    //float dLy = float.Parse(dataReader.GetValue(3).ToString());
-                    //float dHoa = float.Parse(dataReader.GetValue(4).ToString());
-                    //float dVan = float.Parse(dataReader.GetValue(5).ToString());
-                    //float dSu = float.Parse(dataReader.GetValue(6).ToString());
-                    //float dDia = float.Parse(dataReader.GetValue(7).ToString());
-                    //float dSinh = float.Parse(dataReader.GetValue(8).ToString());
-                    //float dAnh = float.Parse(dataReader.GetValue(9).ToString());
-                    //float dGDCD = float.Parse(dataReader.GetValue(10).ToString());
-                    float dToan = 0;
-                    float dLy = 0;
-                    float dHoa = 0;
-                    float dVan = 0;
-                    float dSu = 0;
-                    float dDia = 0;
-                    float dSinh = 0;
-                    float dAnh = 0;
-                    float dGDCD = 0;
-                    arrDHK2.Add(new DTBMHK_HS(maHS, tenHS, dHoa, dSinh, dAnh, dGDCD, dToan, dLy, dVan, dSu, dDia));
+                    while (dataReader.Read())
+                    {
+                        string maHS = dataReader.GetValue(0).ToString();
+                        string tenHS = dataReader.GetValue(1).ToString();
+                        float dToan = float.Parse(dataReader.GetValue(2).ToString());
+                        float dLy = float.Parse(dataReader.GetValue(3).ToString());
+                        float dHoa = float.Parse(dataReader.GetValue(4).ToString());
+                        float dVan = float.Parse(dataReader.GetValue(5).ToString());
+                        float dSu = float.Parse(dataReader.GetValue(6).ToString());
+                        float dDia = float.Parse(dataReader.GetValue(7).ToString());
+                        float dSinh = float.Parse(dataReader.GetValue(8).ToString());
+                        float dAnh = float.Parse(dataReader.GetValue(9).ToString());
+                        float dGDCD = float.Parse(dataReader.GetValue(10).ToString());
+                        //float dToan = 0;
+                        //float dLy = 0;
+                        //float dHoa = 0;
+                        //float dVan = 0;
+                        //float dSu = 0;
+                        //float dDia = 0;
+                        //float dSinh = 0;
+                        //float dAnh = 0;
+                        //float dGDCD = 0;
+                        arrDHK2.Add(new DTBMHK_HS(maHS, tenHS, dHoa, dSinh, dAnh, dGDCD, dToan, dLy, dVan, dSu, dDia));
+                    }
+                    dataReader.Close();
                 }
-                dataReader.Close();
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: Chưa có đủ dữ liệu tổng kết học kỳ!");
+                    dataReader.Close();
+                    return;
+                }
             }
             catch (SqlException se)
             {

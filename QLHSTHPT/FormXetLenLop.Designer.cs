@@ -41,6 +41,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitleNH = new System.Windows.Forms.Label();
+            this.labelNamBD = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelK10 = new System.Windows.Forms.Panel();
             this.sP_DSLOP10_NHGridControl = new DevExpress.XtraGrid.GridControl();
@@ -222,6 +223,7 @@
             this.panel1.BackColor = System.Drawing.Color.Turquoise;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.labelTitleNH);
+            this.panel1.Controls.Add(this.labelNamBD);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
@@ -234,10 +236,20 @@
             this.labelTitleNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleNH.Location = new System.Drawing.Point(0, 0);
             this.labelTitleNH.Name = "labelTitleNH";
-            this.labelTitleNH.Size = new System.Drawing.Size(1076, 60);
-            this.labelTitleNH.TabIndex = 0;
+            this.labelTitleNH.Size = new System.Drawing.Size(1049, 60);
+            this.labelTitleNH.TabIndex = 1;
             this.labelTitleNH.Text = "DANH SÁCH LỚP NĂM HỌC 2018-2019";
             this.labelTitleNH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNamBD
+            // 
+            this.labelNamBD.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labelNamBD.Location = new System.Drawing.Point(1049, 0);
+            this.labelNamBD.Name = "labelNamBD";
+            this.labelNamBD.Size = new System.Drawing.Size(27, 60);
+            this.labelNamBD.TabIndex = 0;
+            this.labelNamBD.Visible = false;
+            this.labelNamBD.TextChanged += new System.EventHandler(this.labelNamBD_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -875,7 +887,6 @@
         public QLHSTHPTDataSet1TableAdapters.SP_DSLOP10_NHTableAdapter sP_DSLOP10_NHTableAdapter;
         public QLHSTHPTDataSet1TableAdapters.SP_DSLOP11_NHTableAdapter sP_DSLOP11_NHTableAdapter;
         public QLHSTHPTDataSet1TableAdapters.SP_DSLOP12_NHTableAdapter sP_DSLOP12_NHTableAdapter;
-        public System.Windows.Forms.Label labelTitleNH;
         public System.Windows.Forms.Label labelTitleHS;
         public System.Windows.Forms.BindingSource sP_DSLOP10_NHBindingSource;
         public System.Windows.Forms.BindingSource sP_DSLOP11_NHBindingSource;
@@ -883,5 +894,7 @@
         public System.Windows.Forms.BindingSource sP_LL_LOPBindingSource;
         public QLHSTHPTDataSet1TableAdapters.SP_OL_LOPTableAdapter sP_OL_LOPTableAdapter;
         public QLHSTHPTDataSet1TableAdapters.SP_LL_LOPTableAdapter sP_LL_LOPTableAdapter;
+        public System.Windows.Forms.Label labelTitleNH;
+        public System.Windows.Forms.Label labelNamBD;
     }
 }

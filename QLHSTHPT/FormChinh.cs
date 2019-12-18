@@ -130,20 +130,6 @@ namespace QLHSTHPT
             }
         }
 
-        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.toolStripStatusLabelNote.Text = "";
-
-            Form frm = this.checkExists(typeof(FormHocKy));
-            if (frm != null) frm.Activate();
-            else
-            {
-                FormHocKy f = new FormHocKy(this);
-                f.MdiParent = this;
-                f.Show();
-            }
-        }
-
         private void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.toolStripStatusLabelNote.Text = "";
@@ -238,20 +224,6 @@ namespace QLHSTHPT
             }
         }
 
-        private void barButtonItem33_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.toolStripStatusLabelNote.Text = "";
-
-            Form frm = this.checkExists(typeof(FormCV));
-            if (frm != null) frm.Activate();
-            else
-            {
-                FormCV f = new FormCV(this);
-                f.MdiParent = this;
-                f.Show();
-            }
-        }
-
         private void barButtonItem30_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.toolStripStatusLabelNote.Text = "";
@@ -312,6 +284,20 @@ namespace QLHSTHPT
         {
             this.Close();
             Program.formDangNhap.Visible = true;
+        }
+
+        private void barButtonItem38_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.toolStripStatusLabelNote.Text = "";
+
+            Form frm = this.checkExists(typeof(FormCV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormCV f = new FormCV(this);
+                f.MdiParent = this;
+                f.Show();
+            }
         }
     }
 }

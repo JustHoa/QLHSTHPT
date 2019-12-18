@@ -165,7 +165,7 @@
             // 
             this.toolStripStatusLabelNote.ForeColor = System.Drawing.Color.DarkOrange;
             this.toolStripStatusLabelNote.Name = "toolStripStatusLabelNote";
-            this.toolStripStatusLabelNote.Size = new System.Drawing.Size(754, 17);
+            this.toolStripStatusLabelNote.Size = new System.Drawing.Size(887, 17);
             this.toolStripStatusLabelNote.Spring = true;
             this.toolStripStatusLabelNote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -191,6 +191,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IsMdiContainer = true;
             this.Name = "FormLenLop";
             this.Text = "FormLenLop";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

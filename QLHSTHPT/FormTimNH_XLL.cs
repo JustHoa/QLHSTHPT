@@ -36,26 +36,8 @@ namespace QLHSTHPT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int namBD = int.Parse(textBoxNBD.Text);
-            formXetLenLop.labelTitleNH.Text = "DANH SÁCH LỚP NĂM HỌC " + namBD + "-" + (namBD + 1);
-            try
-            {
-                formXetLenLop.sP_DSLOP10_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP10_NH, namBD);
-                formXetLenLop.sP_DSLOP11_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP11_NH, namBD);
-                formXetLenLop.sP_DSLOP12_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP12_NH, namBD);
-
-                int viTri = formXetLenLop.sP_DSLOP10_NHBindingSource.Position;
-                string maLop = ((DataRowView)formXetLenLop.sP_DSLOP10_NHBindingSource[viTri])["MALOP"].ToString().Trim();
-                string tenLop = ((DataRowView)formXetLenLop.sP_DSLOP10_NHBindingSource[viTri])["TENLOP"].ToString().Trim();
-                formXetLenLop.labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + tenLop;
-                formXetLenLop.sP_OL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_OL_LOP, maLop);
-                formXetLenLop.sP_LL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LL_LOP, maLop);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-                return;
-            }
+            formXetLenLop.labelNamBD.Text = int.Parse(textBoxNBD.Text).ToString();
+            
             this.Visible = false;
             formChinh.Activate();
             formChinh.Enabled = true;

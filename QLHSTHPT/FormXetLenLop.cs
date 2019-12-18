@@ -57,25 +57,26 @@ namespace QLHSTHPT
 
             //int namBD = DateTime.Today.Year - 1; dung
             int namBD = DateTime.Today.Year; //sai, nam nay la NAMKT
-            labelTitleNH.Text = "DANH SÁCH LỚP NĂM HỌC " + (namBD - 1) + "-" + namBD;
-            try
-            {
-                this.sP_DSLOP10_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP10_NH, DateTime.Today.Year);
-                this.sP_DSLOP11_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP11_NH, DateTime.Today.Year);
-                this.sP_DSLOP12_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP12_NH, DateTime.Today.Year);
+            labelNamBD.Text = namBD.ToString();
+            //labelTitleNH.Text = "DANH SÁCH LỚP NĂM HỌC " + (namBD - 1) + "-" + namBD;
+            //try
+            //{
+            //    this.sP_DSLOP10_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP10_NH, DateTime.Today.Year);
+            //    this.sP_DSLOP11_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP11_NH, DateTime.Today.Year);
+            //    this.sP_DSLOP12_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP12_NH, DateTime.Today.Year);
 
-                int viTri = sP_DSLOP10_NHBindingSource.Position;
-                string maLop = ((DataRowView)sP_DSLOP10_NHBindingSource[viTri])["MALOP"].ToString().Trim();
-                string tenLop = ((DataRowView)sP_DSLOP10_NHBindingSource[viTri])["TENLOP"].ToString().Trim();
-                labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + tenLop;
-                this.sP_OL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_OL_LOP, maLop);
-                this.sP_LL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LL_LOP, maLop);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-                return;
-            }
+            //    int viTri = sP_DSLOP10_NHBindingSource.Position;
+            //    string maLop = ((DataRowView)sP_DSLOP10_NHBindingSource[viTri])["MALOP"].ToString().Trim();
+            //    string tenLop = ((DataRowView)sP_DSLOP10_NHBindingSource[viTri])["TENLOP"].ToString().Trim();
+            //    labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + tenLop;
+            //    this.sP_OL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_OL_LOP, maLop);
+            //    this.sP_LL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LL_LOP, maLop);
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    System.Windows.Forms.MessageBox.Show(ex.Message);
+            //    return;
+            //}
         }
         private void gridView1_Click(object sender, EventArgs e)
         {
@@ -150,6 +151,30 @@ namespace QLHSTHPT
             FormTimNH_XLL f = new FormTimNH_XLL(formChinh, this);
             f.Activate();
             f.Show();
+        }
+
+        private void labelNamBD_TextChanged(object sender, EventArgs e)
+        {
+            int namBD = int.Parse(labelNamBD.Text);
+            labelTitleNH.Text = "DANH SÁCH LỚP NĂM HỌC " + namBD + "-" + (namBD + 1);
+            try
+            {
+                this.sP_DSLOP10_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP10_NH, namBD);
+                this.sP_DSLOP11_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP11_NH, namBD);
+                this.sP_DSLOP12_NHTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_DSLOP12_NH, namBD);
+
+                int viTri = sP_DSLOP10_NHBindingSource.Position;
+                string maLop = ((DataRowView)sP_DSLOP10_NHBindingSource[viTri])["MALOP"].ToString().Trim();
+                string tenLop = ((DataRowView)sP_DSLOP10_NHBindingSource[viTri])["TENLOP"].ToString().Trim();
+                labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + tenLop;
+                this.sP_OL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_OL_LOP, maLop);
+                this.sP_LL_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LL_LOP, maLop);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                return;
+            }
         }
     }
 }

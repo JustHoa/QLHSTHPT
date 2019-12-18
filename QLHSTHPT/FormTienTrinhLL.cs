@@ -300,7 +300,7 @@ namespace QLHSTHPT
 
             arrLop = new List<Lop>();
             string maLop = Helper.createMaLop();
-            int maHK = Helper.layMaHKMoiNhat();
+            int maHK = 1;
             int maNH = Helper.layMaNHMoiNhat();
 
             //kt lop vs maNH
@@ -359,7 +359,6 @@ namespace QLHSTHPT
             {
                 this.sP_LOP_NAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LOP_NAMHOC, Helper.layMaNHMoiNhat());
                 textBoxSLLop.Text = comboBoxLopNH.Items.Count.ToString();
-                comboBoxLopNH.SelectedIndex = 0;
                 comboBoxLopNH.SelectedIndex = 0;
             }
             catch (System.Exception ex)
@@ -550,27 +549,31 @@ namespace QLHSTHPT
 
         private void sP_LOP_NAMHOCComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BindingList<HS> ds = new BindingList<HS>();
-            int numLeft = 0;
-            int index = this.comboBoxLopNH.SelectedIndex;
-            this.textBoxSiSo.Text = soHS_Lop[index].ToString() + " học sinh";
-            this.labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + comboBoxLopNH.Text;
-            for (int i = 0; i < index; i++)
+            try
             {
-                numLeft += soHS_Lop[i];
-            }
-            for (int j = 0; j < soHS_Lop[index]; j++)
-            {
-                string maHS = ((DataRowView)bindingSource[numLeft])["MAHS"].ToString();
-                string tenHS = ((DataRowView)bindingSource[numLeft])["TENHS"].ToString();
+                BindingList<HS> ds = new BindingList<HS>();
+                int numLeft = 0;
+                int index = this.comboBoxLopNH.SelectedIndex;
+                this.textBoxSiSo.Text = soHS_Lop[index].ToString() + " học sinh";
+                this.labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + comboBoxLopNH.Text;
+                for (int i = 0; i < index; i++)
+                {
+                    numLeft += soHS_Lop[i];
+                }
+                for (int j = 0; j < soHS_Lop[index]; j++)
+                {
+                    string maHS = ((DataRowView)bindingSource[numLeft])["MAHS"].ToString();
+                    string tenHS = ((DataRowView)bindingSource[numLeft])["TENHS"].ToString();
 
-                ds.Add(new HS(maHS, tenHS));
-                numLeft++;
+                    ds.Add(new HS(maHS, tenHS));
+                    numLeft++;
+                }
+                ds.AllowNew = true;
+                gridControl2.DataSource = ds;
+                gridView4.Columns[0].Caption = "MÃ HỌC SINH";
+                gridView4.Columns[1].Caption = "TÊN HỌC SINH";
             }
-            ds.AllowNew = true;
-            gridControl2.DataSource = ds;
-            gridView4.Columns[0].Caption = "MÃ HỌC SINH";
-            gridView4.Columns[1].Caption = "TÊN HỌC SINH";
+            catch { }
         }
 
         private void button8_Click(object sender, EventArgs e)

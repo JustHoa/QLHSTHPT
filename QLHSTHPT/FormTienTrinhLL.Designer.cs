@@ -600,6 +600,7 @@
             // qLHSTHPTDataSet1
             // 
             this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.EnforceConstraints = false;
             this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
@@ -1338,6 +1339,7 @@
             // 
             // comboBoxLopNH
             // 
+            this.comboBoxLopNH.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sP_LOP_NAMHOCBindingSource, "MALOP", true));
             this.comboBoxLopNH.DataSource = this.sP_LOP_NAMHOCBindingSource;
             this.comboBoxLopNH.DisplayMember = "TENLOP";
             this.comboBoxLopNH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

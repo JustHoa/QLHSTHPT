@@ -90,6 +90,7 @@
             // qLHSTHPTDataSet1
             // 
             this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.EnforceConstraints = false;
             this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // v_XL10TableAdapter

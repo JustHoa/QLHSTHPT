@@ -364,6 +364,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLHSTHPTDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLHSTHPTDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHSTHPTDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaoCao\BangDiemHS.resx">
       <DependentUpon>BangDiemHS.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +545,17 @@
     </None>
     <None Include="QLHSTHPTDataSet1.xss">
       <DependentUpon>QLHSTHPTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLHSTHPTDataSet2.xsc">
+      <DependentUpon>QLHSTHPTDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLHSTHPTDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHSTHPTDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHSTHPTDataSet2.xss">
+      <DependentUpon>QLHSTHPTDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Resources\Diagram.PNG" />
   </ItemGroup>

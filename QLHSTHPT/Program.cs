@@ -19,8 +19,8 @@ namespace QLHSTHPT
         public static string tenGV = "";
         public static int vitri = 0;
 
-        public static int MIN = 35;
-        public static int MAX = 45;
+        public static int MIN = 3;
+        public static int MAX = 10;
         public static int MAX_LOP = 8;
 
         public static bool flagMieng = false;

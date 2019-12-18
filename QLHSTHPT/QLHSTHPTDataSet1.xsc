@@ -123,60 +123,44 @@
     <TableUISetting Name="SP_TAIKHOANINFO">
       <ColumnUISettings>
         <ColumnUISetting Name="MAGV">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="TENGV">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="GIOITINH">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="ComboBox" Type="System.Windows.Forms.ComboBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="DIACHI">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="DIENTHOAI">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="TENDANGNHAP">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="NHOMQUYEN">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="TENBM">
-          <ControlSettings>
-            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting>
-          </ControlSettings>
+            </ControlSetting></ControlSettings>
         </ColumnUISetting>
       </ColumnUISettings>
     </TableUISetting>

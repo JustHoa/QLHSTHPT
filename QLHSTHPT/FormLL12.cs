@@ -42,7 +42,7 @@ namespace QLHSTHPT
                 if (soHS_Lop[0] == 0)
                 {
                     MessageBox.Show("Số lượng học sinh lên lớp nằm ngoài khoảng xếp lớp khả dụng!\n\nKhoảng khả dụng tối ưu: từ " +
-                        Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL12BindingSource.Count);
+                        Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL12BindingSource.Count, "Lớp 12", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     barButtonItem1.Enabled = false;
                 }
                 else
@@ -69,7 +69,7 @@ namespace QLHSTHPT
             else
             {
                 barButtonItem1.Enabled = false;
-                MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel:\n\nQuản trị -> Excel-Học sinh");
+                MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel:\n\nQuản trị -> Excel-Học sinh", "Lớp 12", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
