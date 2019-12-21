@@ -801,7 +801,7 @@
             this.tableAdapterManager1.MONHOCTableAdapter = null;
             this.tableAdapterManager1.NAMHOCTableAdapter = null;
             this.tableAdapterManager1.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager1.TOTRUONGBMTableAdapter = null;
+            //this.tableAdapterManager1.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager1.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // FormQLTaiKhoan

@@ -25,11 +25,6 @@ namespace QLHSTHPT
             this.formChinh = formChinh;
         }
 
-        private void nAMHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void resetData()
         {
             // reset data
@@ -47,9 +42,9 @@ namespace QLHSTHPT
                     gridView1.Columns[loai].Visible = false;
                     gridView1.Columns.Remove(gridView1.Columns[loai]);
                 } 
-                if (qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[loai] != null)
+                if (qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[loai] != null)
                 {
-                    qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns.Remove(qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[loai]);
+                    qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns.Remove(qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[loai]);
                 }
             }
             foreach (string loai in Program.arr15p)
@@ -59,9 +54,9 @@ namespace QLHSTHPT
                     gridView1.Columns[loai].Visible = false;
                     gridView1.Columns.Remove(gridView1.Columns[loai]);
                 }
-                if (qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[loai] != null)
+                if (qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[loai] != null)
                 {
-                    qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns.Remove(qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[loai]);
+                    qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns.Remove(qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[loai]);
                 }
             }
             foreach (string loai in Program.arr1T)
@@ -71,9 +66,9 @@ namespace QLHSTHPT
                     gridView1.Columns[loai].Visible = false;
                     gridView1.Columns.Remove(gridView1.Columns[loai]);
                 }
-                if (qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[loai] != null)
+                if (qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[loai] != null)
                 {
-                    qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns.Remove(qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[loai]);
+                    qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns.Remove(qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[loai]);
                 }
             }
 
@@ -85,6 +80,8 @@ namespace QLHSTHPT
 
         private void FormNhapDiem_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet2.HOCKY' table. You can move, or remove it, as needed.
+            this.hOCKYTableAdapter.Fill(this.qLHSTHPTDataSet2.HOCKY);
             this.ControlBox = false;
             this.panel2.Visible = false;
             this.bar2.Visible = false;
@@ -92,15 +89,21 @@ namespace QLHSTHPT
             this.textBoxTim.Visible = this.labelTim.Visible = false;
             try
             {
-                this.sP_NAMHOC_DESCTableAdapter.Fill(this.qLHSTHPTDataSet.SP_NAMHOC_DESC, Program.maGV);
-                this.hOCKYTableAdapter.Fill(this.qLHSTHPTDataSet.HOCKY);
-                this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
+                this.sP_NAMHOC_DESCTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_NAMHOC_DESC);
+                this.hOCKYTableAdapter.Fill(this.qLHSTHPTDataSet2.HOCKY);
+                this.sP_LOP_PC_NHTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_LOP_PC_NH, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))));
                 if(comboBoxLop.SelectedValue == null)
                 {
-                    this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, 2, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
-                    comboBoxLop.SelectedValue = 2;
+                    this.sP_LOP_PC_NHTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_LOP_PC_NH, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), 2);
+                    comboBoxLop.SelectedValue = 0;
+                    if (comboBoxLop.SelectedValue == null)
+                    {
+                        labelENH.Text = "Chọn năm học khác!";
+                        comboBoxNH.Focus();
+                        return;
+                    }
                 }
-                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
             }
             catch (System.Exception ex)
             {
@@ -112,10 +115,9 @@ namespace QLHSTHPT
         {
             try
             {
-                this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
-                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
-                this.error.Text = "";
-                this.error2.Text = "";
+                this.sP_LOP_PC_NHTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_LOP_PC_NH, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))));
+                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+                error.Text = error2.Text = labelENH.Text = "";
             }
             catch (System.Exception ex)
             {
@@ -127,10 +129,9 @@ namespace QLHSTHPT
         {
             try
             {
-                this.sP_LOP_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_LOP_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
-                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
-                this.error.Text = "";
-                this.error2.Text = "";
+                this.sP_LOP_PC_NHTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_LOP_PC_NH, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))));
+                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+                error.Text = error2.Text = labelENH.Text = "";
             }
             catch (System.Exception ex)
             {
@@ -142,9 +143,8 @@ namespace QLHSTHPT
         {
             try
             {
-                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
-                this.error.Text = "";
-                this.error2.Text = "";
+                this.sP_MONHOC_GV_TDTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_MONHOC_GV_TD, Program.maGV, new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), comboBoxLop.SelectedValue.ToString());
+                error.Text = error2.Text = labelENH.Text = "";
             }
             catch (System.Exception ex)
             {
@@ -156,7 +156,7 @@ namespace QLHSTHPT
         {
             if(this.comboBoxLop.SelectedValue == null || this.comboBoxMH.SelectedValue == null)
             {
-                this.error2.Text = "Lỗi: Không lấy được dữ liệu.\n\nXem lại thông tin Năm học hoặc Học kỳ!";
+                MessageBox.Show("Lỗi: Không lấy được dữ liệu.\n\nXem lại thông tin Năm học hoặc Học kỳ!");
                 return;
             }
             this.panel1.Visible = false;
@@ -168,13 +168,13 @@ namespace QLHSTHPT
             resetData();
 
             //kiem tra trong bang PHANCONGCV
-            string sql = "EXEC SP_KTCV '" + Program.maGV + "', '" + comboBoxLop.SelectedValue.ToString() + "', '" + comboBoxMH.SelectedValue.ToString() + "'," + int.Parse(comboBoxHK.SelectedValue.ToString()) + "," + int.Parse(comboBoxNH.SelectedValue.ToString());
+            string sql = "EXEC SP_KTCV '" + Program.maGV + "', '" + comboBoxLop.SelectedValue.ToString() + "', '" + comboBoxMH.SelectedValue.ToString() + "'," + int.Parse(comboBoxHK.SelectedValue.ToString());
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
             if (dataReader.Read())
             {
                 dataReader.Close();
-                string sql1 = "EXEC SP_LOAIDIEMLOP '" + comboBoxLop.SelectedValue.ToString() + "', '" + comboBoxMH.SelectedValue.ToString() + "', " + int.Parse(comboBoxHK.SelectedValue.ToString()) + ", " + int.Parse(comboBoxNH.SelectedValue.ToString()); ;
+                string sql1 = "EXEC SP_LOAIDIEMLOP '" + comboBoxLop.SelectedValue.ToString() + "', '" + comboBoxMH.SelectedValue.ToString() + "', " + int.Parse(comboBoxHK.SelectedValue.ToString());
                 SqlCommand sqlCommand1 = new SqlCommand(sql1, Program.sqlConnection);
                 SqlDataReader dataReader1 = sqlCommand1.ExecuteReader();
                 while (dataReader1.Read())
@@ -228,13 +228,13 @@ namespace QLHSTHPT
                 string str = str1 + "," + str2 + "," + str3 + "," + str4;
                 //MessageBox.Show(str);
                 string sql2 = "ALTER PROC [dbo].[SP_BANGDIEMLOP] " +
-                    "( @MALOP VARCHAR(10), @MAMH VARCHAR(10), @MAHK INT, @MANH INT) " +
+                    "( @MALOP VARCHAR(10), @MAMH VARCHAR(10), @MAHK INT) " +
                     "AS SELECT MAHS, TENHS, " + str +
                     " FROM(SELECT HS.MAHS, TENHS, LOAIDIEM, DIEM " +
                     "FROM(SELECT HSL.MAHS, TENHS FROM HOCSINH HS, " +
                     "(SELECT * FROM HS_LOP WHERE MALOP = @MALOP) HSL WHERE HS.MAHS = HSL.MAHS) HS " +
                     "LEFT OUTER JOIN (SELECT D.* FROM DIEM D, " +
-                    "(SELECT * FROM PHANCONGGV WHERE MALOP = @MALOP AND MAMH = @MAMH AND MAHK = @MAHK AND MANH = @MANH) PC " +
+                    "(SELECT * FROM PHANCONGGV WHERE MALOP = @MALOP AND MAMH = @MAMH AND MAHK = @MAHK) PC " +
                     "WHERE D.MAPHC = PC.MAPHC) DI " +
                     "ON (HS.MAHS = DI.MAHS)) SOURCETABLE " +
                     "PIVOT (MAX(DIEM) FOR [LOAIDIEM] IN (" + str + ")) as pivottable " +
@@ -245,7 +245,7 @@ namespace QLHSTHPT
                 
                 try
                 {
-                    this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
+                    this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))));
                 }
                 catch (System.Exception ex)
                 {
@@ -437,146 +437,8 @@ namespace QLHSTHPT
            
             GridColumn column = gridView1.Columns.AddVisible(colName, colName);
             gridView1.Columns[colName].VisibleIndex = Program.addMieng + Program.arrMieng.Count() - 1;
-            this.qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
-            this.qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[colName].ReadOnly = false;
-
-            // -----------------
-            //string maHS = ((DataRowView)sP_BANGDIEMLOPBindingSource[0])["MAHS"].ToString().Trim();
-            //string maMH = this.comboBoxMH.SelectedValue.ToString();
-            //int maHK = int.Parse(this.comboBoxHK.SelectedValue.ToString());
-            //int maNH = int.Parse(this.comboBoxNH.SelectedValue.ToString());
-            //SqlCommand sqlCommand = new SqlCommand();
-            //SqlParameter dbMaGV = new SqlParameter();
-            //SqlParameter dbMaLop = new SqlParameter();
-            //SqlParameter dbMaHS = new SqlParameter();
-            //SqlParameter dbMaMH = new SqlParameter();
-            //SqlParameter dbMaHK = new SqlParameter();
-            //SqlParameter dbMaNH = new SqlParameter();
-            //SqlParameter dbLoaiDiem = new SqlParameter();
-            //SqlParameter dbDiem = new SqlParameter();
-            //SqlParameter dbHeSo = new SqlParameter();
-
-            //dbMaGV.DbType = DbType.String;
-            //dbMaGV.ParameterName = "@MAGV";
-            //dbMaGV.Direction = ParameterDirection.Input;
-            //dbMaGV.Value = Program.maGV;
-
-            //dbMaLop.DbType = DbType.String;
-            //dbMaLop.ParameterName = "@MALOP";
-            //dbMaLop.Direction = ParameterDirection.Input;
-            //dbMaLop.Value = comboBoxLop.SelectedValue;
-
-            //dbMaHS.DbType = DbType.String;
-            //dbMaHS.ParameterName = "@MAHS";
-            //dbMaHS.Direction = ParameterDirection.Input;
-            //dbMaHS.Value = maHS;
-
-            //dbMaMH.DbType = DbType.String;
-            //dbMaMH.ParameterName = "@MAMH";
-            //dbMaMH.Direction = ParameterDirection.Input;
-            //dbMaMH.Value = maMH;
-
-            //dbMaHK.DbType = DbType.Int32;
-            //dbMaHK.ParameterName = "@MAHK";
-            //dbMaHK.Direction = ParameterDirection.Input;
-            //dbMaHK.Value = maHK;
-
-            //dbMaNH.DbType = DbType.Int32;
-            //dbMaNH.ParameterName = "@MANH";
-            //dbMaNH.Direction = ParameterDirection.Input;
-            //dbMaNH.Value = maNH;
-
-            //dbLoaiDiem.DbType = DbType.String;
-            //dbLoaiDiem.ParameterName = "@LOAIDIEM";
-            //dbLoaiDiem.Direction = ParameterDirection.Input;
-            //dbLoaiDiem.Value = colName;
-
-            //dbDiem.DbType = DbType.Double;
-            //dbDiem.ParameterName = "@DIEM";
-            //dbDiem.Direction = ParameterDirection.Input;
-            //dbDiem.Value = DBNull.Value;
-
-            //dbHeSo.DbType = DbType.Int32;
-            //dbHeSo.ParameterName = "@HESO";
-            //dbHeSo.Direction = ParameterDirection.Input;
-            //dbHeSo.Value = DBNull.Value;
-
-            //try
-            //{
-            //    sqlCommand.Connection = Program.sqlConnection;
-            //    sqlCommand.CommandText = "SP_CAPNHATDIEM";
-            //    sqlCommand.Parameters.Add(dbMaGV);
-            //    sqlCommand.Parameters.Add(dbMaLop);
-            //    sqlCommand.Parameters.Add(dbMaHS);
-            //    sqlCommand.Parameters.Add(dbMaMH);
-            //    sqlCommand.Parameters.Add(dbMaHK);
-            //    sqlCommand.Parameters.Add(dbMaNH);
-            //    sqlCommand.Parameters.Add(dbLoaiDiem);
-            //    sqlCommand.Parameters.Add(dbDiem);
-            //    sqlCommand.Parameters.Add(dbHeSo);
-            //    sqlCommand.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand.ExecuteNonQuery();
-            //}
-            //catch (SqlException se)
-            //{
-            //    MessageBox.Show("Loi: " + se.Message);
-            //}
-
-            //string str1 = "MIENG_1, MIENG_2";
-            //string str2 = "KT15P_1, KT15P_2";
-            //string str3 = "KTTIET_1, KTTIET_2";
-            //string str4 = "KTHK_1, KTHK_2";
-
-            //foreach (string loai in Program.arrMieng)
-            //{
-            //    str1 += (", " + loai);
-            //}
-            //foreach (string loai in Program.arr15p)
-            //{
-            //    str2 += (", " + loai);
-            //}
-            //foreach (string loai in Program.arr1T)
-            //{
-            //    str3 += (", " + loai);
-            //}
-            //string str = str1 + "," + str2 + "," + str3 + "," + str4;
-            ////MessageBox.Show(str);
-            //string sql2 = "ALTER PROC [dbo].[SP_BANGDIEMLOP] " +
-            //        "( @MALOP VARCHAR(10), @MAMH VARCHAR(10), @MAHK INT, @MANH INT) " +
-            //        "AS SELECT MAHS, TENHS, " + str +
-            //        " FROM(SELECT HS.MAHS, TENHS, LOAIDIEM, DIEM " +
-            //        "FROM(SELECT HSL.MAHS, TENHS FROM HOCSINH HS, " +
-            //        "(SELECT * FROM HS_LOP WHERE MALOP = @MALOP) HSL WHERE HS.MAHS = HSL.MAHS) HS " +
-            //        "LEFT OUTER JOIN (SELECT D.* FROM DIEM D, " +
-            //        "(SELECT * FROM PHANCONGGV WHERE MALOP = @MALOP AND MAMH = @MAMH AND MAHK = @MAHK AND MANH = @MANH) PC " +
-            //        "WHERE D.MAPHC = PC.MAPHC) DI " +
-            //        "ON (HS.MAHS = DI.MAHS)) SOURCETABLE " +
-            //        "PIVOT (SUM(DIEM) FOR [LOAIDIEM] IN (" + str + ")) as pivottable " +
-            //        "where TENHS IS NOT NULL " +
-            //        "ORDER BY MAHS";
-            //SqlCommand sqlCommand2 = new SqlCommand(sql2, Program.sqlConnection);
-            //int dataReader2 = sqlCommand2.ExecuteNonQuery();
-
-            //try
-            //{
-            //    this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
-
-            //    SqlCommand sqlCommand1 = new SqlCommand();
-            //    SqlParameter dbLoaiDiem1 = new SqlParameter();
-            //    dbLoaiDiem1.DbType = DbType.String;
-            //    dbLoaiDiem1.ParameterName = "@LOAIDIEM";
-            //    dbLoaiDiem1.Direction = ParameterDirection.Input;
-            //    dbLoaiDiem1.Value = colName;
-            //    sqlCommand1.Connection = Program.sqlConnection;
-            //    sqlCommand1.CommandText = "SP_XOADIEM_NULL";
-            //    sqlCommand1.Parameters.Add(dbLoaiDiem1);
-            //    sqlCommand1.CommandType = CommandType.StoredProcedure;
-            //    sqlCommand1.ExecuteNonQuery();
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    System.Windows.Forms.MessageBox.Show(ex.Message);
-            //}
+            this.qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
+            this.qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[colName].ReadOnly = false;
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -596,8 +458,8 @@ namespace QLHSTHPT
             }
             GridColumn column = gridView1.Columns.AddVisible(colName, colName);
             gridView1.Columns[colName].VisibleIndex = Program.add15p + Program.arrMieng.Count() + Program.arr15p.Count() - 1;
-            this.qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
-            this.qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[colName].ReadOnly = false;
+            this.qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
+            this.qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[colName].ReadOnly = false;
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -617,8 +479,8 @@ namespace QLHSTHPT
             }
             GridColumn column = gridView1.Columns.AddVisible(colName, colName);
             gridView1.Columns[colName].VisibleIndex = Program.add1T + Program.arrMieng.Count() + Program.arr15p.Count() + Program.arr1T.Count() - 1;
-            this.qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
-            this.qLHSTHPTDataSet1.SP_BANGDIEMLOP.Columns[colName].ReadOnly = false;
+            this.qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns.Add(colName, typeof(Double));
+            this.qLHSTHPTDataSet2.SP_BANGDIEMLOP.Columns[colName].ReadOnly = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -654,16 +516,11 @@ namespace QLHSTHPT
             toolTip1.Show("Tìm kiếm theo Tên học sinh hoặc Mã học sinh", textBoxTim);
         }
 
-        private void textBoxTim_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
-                this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxNH.SelectedValue, typeof(int))))));
+                this.sP_BANGDIEMLOPTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_BANGDIEMLOP, comboBoxLop.SelectedValue.ToString(), comboBoxMH.SelectedValue.ToString(), new System.Nullable<int>(((int)(System.Convert.ChangeType(comboBoxHK.SelectedValue, typeof(int))))));
             }
             catch (System.Exception ex)
             {

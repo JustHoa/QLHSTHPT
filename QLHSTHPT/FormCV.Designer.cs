@@ -44,13 +44,14 @@
             this.labelEMaNH = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMaNH = new System.Windows.Forms.TextBox();
-            this.textBoxMaHK = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cHUNHIEMCheckBox = new System.Windows.Forms.CheckBox();
+            this.sP_CV_GVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
             this.tENHKTextBox = new System.Windows.Forms.TextBox();
             this.tENNHTextBox = new System.Windows.Forms.TextBox();
             this.sOTIETTextBox = new System.Windows.Forms.TextBox();
@@ -61,8 +62,6 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sP_CV_GVGridControl = new DevExpress.XtraGrid.GridControl();
-            this.sP_CV_GVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,7 +74,7 @@
             this.rbtnAll = new System.Windows.Forms.RadioButton();
             this.sP_CV_GVTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.SP_CV_GVTableAdapter();
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
-            this.cHUNHIEMCheckBox = new System.Windows.Forms.CheckBox();
+            this.comboBoxHK = new System.Windows.Forms.ComboBox();
             tENLOPLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             sOTIETLabel = new System.Windows.Forms.Label();
@@ -84,10 +83,10 @@
             this.panel1.SuspendLayout();
             this.panel.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panelRB.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +117,15 @@
             sOTIETLabel.Size = new System.Drawing.Size(37, 13);
             sOTIETLabel.TabIndex = 4;
             sOTIETLabel.Text = "Số tiết";
+            // 
+            // cHUNHIEMLabel
+            // 
+            cHUNHIEMLabel.AutoSize = true;
+            cHUNHIEMLabel.Location = new System.Drawing.Point(291, 164);
+            cHUNHIEMLabel.Name = "cHUNHIEMLabel";
+            cHUNHIEMLabel.Size = new System.Drawing.Size(57, 13);
+            cHUNHIEMLabel.TabIndex = 15;
+            cHUNHIEMLabel.Text = "Chủ nhiệm";
             // 
             // tableLayoutPanel1
             // 
@@ -190,17 +198,17 @@
             // panel
             // 
             this.panel.AutoScroll = true;
+            this.panel.BackColor = System.Drawing.Color.Orange;
             this.panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel.Controls.Add(this.comboBoxHK);
             this.panel.Controls.Add(this.labelEMaHK);
             this.panel.Controls.Add(this.labelEMaNH);
             this.panel.Controls.Add(this.button4);
             this.panel.Controls.Add(this.button3);
-            this.panel.Controls.Add(this.button2);
             this.panel.Controls.Add(this.button1);
             this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.textBoxMaNH);
-            this.panel.Controls.Add(this.textBoxMaHK);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.Location = new System.Drawing.Point(568, 6);
             this.panel.Name = "panel";
@@ -245,16 +253,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(270, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 20);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(270, 21);
@@ -289,13 +287,8 @@
             this.textBoxMaNH.Name = "textBoxMaNH";
             this.textBoxMaNH.Size = new System.Drawing.Size(147, 20);
             this.textBoxMaNH.TabIndex = 0;
-            // 
-            // textBoxMaHK
-            // 
-            this.textBoxMaHK.Location = new System.Drawing.Point(117, 64);
-            this.textBoxMaHK.Name = "textBoxMaHK";
-            this.textBoxMaHK.Size = new System.Drawing.Size(147, 20);
-            this.textBoxMaHK.TabIndex = 1;
+            this.textBoxMaNH.TextChanged += new System.EventHandler(this.textBoxMaNH_TextChanged);
+            this.textBoxMaNH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMaNH_KeyPress);
             // 
             // panel3
             // 
@@ -319,6 +312,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(565, 321);
             this.panel3.TabIndex = 2;
+            // 
+            // cHUNHIEMCheckBox
+            // 
+            this.cHUNHIEMCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.sP_CV_GVBindingSource, "CHUNHIEM", true));
+            this.cHUNHIEMCheckBox.Enabled = false;
+            this.cHUNHIEMCheckBox.Location = new System.Drawing.Point(354, 159);
+            this.cHUNHIEMCheckBox.Name = "cHUNHIEMCheckBox";
+            this.cHUNHIEMCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.cHUNHIEMCheckBox.TabIndex = 16;
+            this.cHUNHIEMCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // sP_CV_GVBindingSource
+            // 
+            this.sP_CV_GVBindingSource.DataMember = "SP_CV_GV";
+            this.sP_CV_GVBindingSource.DataSource = this.qLHSTHPTDataSet1;
+            // 
+            // qLHSTHPTDataSet1
+            // 
+            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
+            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tENHKTextBox
             // 
@@ -416,16 +429,6 @@
             this.sP_CV_GVGridControl.TabIndex = 4;
             this.sP_CV_GVGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // sP_CV_GVBindingSource
-            // 
-            this.sP_CV_GVBindingSource.DataMember = "SP_CV_GV";
-            this.sP_CV_GVBindingSource.DataSource = this.qLHSTHPTDataSet1;
-            // 
-            // qLHSTHPTDataSet1
-            // 
-            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
-            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -540,27 +543,19 @@
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.NAMHOCTableAdapter = null;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // cHUNHIEMLabel
+            // comboBoxHK
             // 
-            cHUNHIEMLabel.AutoSize = true;
-            cHUNHIEMLabel.Location = new System.Drawing.Point(291, 164);
-            cHUNHIEMLabel.Name = "cHUNHIEMLabel";
-            cHUNHIEMLabel.Size = new System.Drawing.Size(57, 13);
-            cHUNHIEMLabel.TabIndex = 15;
-            cHUNHIEMLabel.Text = "Chủ nhiệm";
-            // 
-            // cHUNHIEMCheckBox
-            // 
-            this.cHUNHIEMCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.sP_CV_GVBindingSource, "CHUNHIEM", true));
-            this.cHUNHIEMCheckBox.Enabled = false;
-            this.cHUNHIEMCheckBox.Location = new System.Drawing.Point(354, 159);
-            this.cHUNHIEMCheckBox.Name = "cHUNHIEMCheckBox";
-            this.cHUNHIEMCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.cHUNHIEMCheckBox.TabIndex = 16;
-            this.cHUNHIEMCheckBox.UseVisualStyleBackColor = true;
+            this.comboBoxHK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxHK.FormattingEnabled = true;
+            this.comboBoxHK.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.comboBoxHK.Location = new System.Drawing.Point(117, 64);
+            this.comboBoxHK.Name = "comboBoxHK";
+            this.comboBoxHK.Size = new System.Drawing.Size(147, 21);
+            this.comboBoxHK.TabIndex = 10;
             // 
             // FormCV
             // 
@@ -578,10 +573,10 @@
             this.panel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sP_CV_GVGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panelRB.ResumeLayout(false);
             this.panelRB.PerformLayout();
@@ -600,14 +595,12 @@
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label labelEMaHK;
         public System.Windows.Forms.Label labelEMaNH;
         public System.Windows.Forms.TextBox textBoxMaNH;
-        public System.Windows.Forms.TextBox textBoxMaHK;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tENHKTextBox;
         private System.Windows.Forms.TextBox tENNHTextBox;
@@ -634,5 +627,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTENHK;
         private DevExpress.XtraGrid.Columns.GridColumn colCHUNHIEM;
         private System.Windows.Forms.CheckBox cHUNHIEMCheckBox;
+        private System.Windows.Forms.ComboBox comboBoxHK;
     }
 }

@@ -95,9 +95,9 @@ namespace QLHSTHPT
             }
             ds.AllowNew = true;
             gridControl1.DataSource = ds;
-            gridView1.Columns[0].Caption = "MAHS";
-            gridView1.Columns[1].Caption = "TENHS";
-            gridView1.Columns[2].Caption = "GHICHU";
+            gridView2.Columns[0].Caption = "MAHS";
+            gridView2.Columns[1].Caption = "TENHS";
+            gridView2.Columns[2].Caption = "GHICHU";
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,6 +111,49 @@ namespace QLHSTHPT
                 f.Show();
             }
             else formLenLop.toolStripStatusLabelNote.Text = "Tiến trình lên lớp 10 đang mở!";
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.v_XL10TableAdapter.Fill(this.qLHSTHPTDataSet1.V_XL10);
+
+            int soLop = 0;
+            List<string> arrTenLop = new List<string>();
+            if (v_XL10BindingSource.Count != 0)
+            {
+                soHS_Lop = Helper.xepLop(v_XL10BindingSource.Count);
+                if (soHS_Lop[0] == 0)
+                {
+                    MessageBox.Show("Số lượng học sinh lên lớp nằm ngoài khoảng xếp lớp khả dụng!\n\nKhoảng khả dụng tối ưu: từ " +
+                        Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL10BindingSource.Count, "Lớp 10", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    barButtonItem5.Enabled = false;
+                }
+                else
+                {
+                    barButtonItem5.Enabled = true;
+                    for (int i = 0; i < Program.MAX_LOP; i++)
+                    {
+                        if (soHS_Lop[i] != 0)
+                        {
+                            soLop += 1;
+                        }
+                    }
+
+                    this.textBoxSoLop.Text = soLop.ToString();
+
+                    for (int i = 0; i < soLop; i++)
+                    {
+                        arrTenLop.Add("10A" + (i + 1));
+                    }
+                    this.comboBoxTenLop.DataSource = arrTenLop;
+                    this.comboBoxTenLop.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                barButtonItem5.Enabled = false;
+                MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel:\n\nQuản trị -> Excel-Học sinh", "Lớp 10", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

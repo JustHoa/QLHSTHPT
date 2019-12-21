@@ -120,6 +120,8 @@ namespace QLHSTHPT
                 DataBinding();
             }
             checkBox1.Enabled = false;
+            checkBox1.Checked = false;
+            textBoxCT.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -213,7 +215,7 @@ namespace QLHSTHPT
         {
             panelSetup.Enabled = true;
             panelCTCD.BackColor = Color.MediumTurquoise;
-            await Task.Delay(TimeSpan.FromMilliseconds(500));
+            await Task.Delay(TimeSpan.FromMilliseconds(400));
             panelCTCD.BackColor = Color.Turquoise;
         }
 

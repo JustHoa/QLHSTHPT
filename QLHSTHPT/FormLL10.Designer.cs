@@ -112,7 +112,6 @@
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.NAMHOCTableAdapter = null;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // standaloneBarDockControl1
@@ -174,6 +173,7 @@
             this.barButtonItem6.Id = 1;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem7
             // 

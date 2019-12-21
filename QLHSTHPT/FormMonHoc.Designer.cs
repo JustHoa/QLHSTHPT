@@ -258,7 +258,7 @@
             this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
             this.tableAdapterManager.NAMHOCTableAdapter = null;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
+           // this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // bOMONTableAdapter

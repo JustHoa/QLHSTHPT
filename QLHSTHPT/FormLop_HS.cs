@@ -51,15 +51,17 @@ namespace QLHSTHPT
             this.groupBoxCTLop.Enabled = false;
             this.groupBoxCTHS.Enabled = false;
 
-            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet1.LOP);
-            this.kHOITableAdapter.Fill(this.qLHSTHPTDataSet1.KHOI);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet2.KHOI' table. You can move, or remove it, as needed.
+            this.kHOITableAdapter.Fill(this.qLHSTHPTDataSet2.KHOI);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet2.LOP' table. You can move, or remove it, as needed.
+            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet2.LOP);
 
             try
             {
                 int pos = lOPBindingSource.Position;
                 string maLop = ((DataRowView)lOPBindingSource[pos])["MALOP"].ToString().Trim();
                 this.labelTitHS.Text = "HỌC SINH LỚP " + maLop;
-                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_HS_LOP, maLop);
+                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_HS_LOP, maLop);
             }
             catch (System.Exception ex)
             {
@@ -99,6 +101,7 @@ namespace QLHSTHPT
             this.labelTim1.Enabled = false;
             this.textBoxTim1.Enabled = false;
             this.groupBoxCTLop.Enabled = true;
+            //this.textBoxML.Enabled = false;
             this.lOPBindingSource.AddNew();
             this.textBoxML.Text = Helper.createMaLop(lOPBindingSource);
             this.comboBoxBan.SelectedIndex = 1;
@@ -164,7 +167,7 @@ namespace QLHSTHPT
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.lOPTableAdapter.Update(this.qLHSTHPTDataSet1.LOP);
+            this.lOPTableAdapter.Update(this.qLHSTHPTDataSet2.LOP);
             this.lOPGridControl.Enabled = true;
             this.groupBoxCTLop.Enabled = false;
             //clkSaveLop = 1;
@@ -177,13 +180,13 @@ namespace QLHSTHPT
         {
             formChinh.toolStripStatusLabelNote.Text = "";
 
-            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet1.LOP);
+            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet2.LOP);
             try
             {
                 int pos = lOPBindingSource.Position;
                 string maLop = ((DataRowView)lOPBindingSource[pos])["MALOP"].ToString().Trim();
                 this.labelTitHS.Text = "HỌC SINH LỚP " + maLop;
-                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_HS_LOP, maLop);
+                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_HS_LOP, maLop);
             }
             catch (System.Exception ex)
             {
@@ -219,20 +222,12 @@ namespace QLHSTHPT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.labelEMaLop.Text = this.labelEBM.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
+            this.labelEMaLop.Text = this.labelEBM.Text = this.labelETenLop.Text = this.labelEMaNH.Text = "";
             if (this.textBoxTenLop.Text == "")
             {
                 this.labelETenLop.Text = "Chưa nhập Tên lớp. Chú ý!";
                 //MessageBox.Show("Chưa nhập Tên lớp. Chú ý!");
                 textBoxTenLop.Focus();
-                return;
-            }
-
-            if (this.textBoxMHK.Text == "")
-            {
-                this.labelEMaHK.Text = "Chưa nhập Mã học kỳ. Chú ý!";
-                //MessageBox.Show("Chưa nhập Mã học kỳ. Chú ý!");
-                textBoxMHK.Focus();
                 return;
             }
 
@@ -244,11 +239,23 @@ namespace QLHSTHPT
                 return;
             }
 
+            string sql1 = "EXEC SP_KTMA '" + textBoxML.Text + "', 'LOP'";
+            SqlCommand sqlCommand1 = new SqlCommand(sql1, Program.sqlConnection);
+            SqlDataReader dataReader1 = sqlCommand1.ExecuteReader();
+            int nowPosition = lOPBindingSource.Position;
+            int position1 = lOPBindingSource.Find("MALOP", textBoxML.Text);
+            if ((dataReader1.Read() || position1 != -1) && nowPosition != position1)
+            {
+                this.labelEMaLop.Text = "Mã lớp đã tồn tại. Chú ý!";
+                //MessageBox.Show("Mã lớp đã tồn tại. Chú ý!");
+                dataReader1.Close();
+                return;
+            }
+            dataReader1.Close();
+
             string sql = "EXEC SP_KT_LOP_NH '" + textBoxTenLop.Text + "', " + int.Parse(textBoxMNH.Text);
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
-
-            int nowPosition = lOPBindingSource.Position;
             int position = -1;
             for (int i = 0; i < gridView1.RowCount; i++)
             {
@@ -264,22 +271,23 @@ namespace QLHSTHPT
             if ((dataReader.Read() || position != -1) && nowPosition != position)
             {
                 this.labelETenLop.Text = "Tên lớp đã tồn tại. Chú ý!";
+                this.textBoxTenLop.Focus();
                 //MessageBox.Show("Mã lớp đã tồn tại. Chú ý!");
                 dataReader.Close();
                 return;
             }
             dataReader.Close();
-            string sql1 = "EXEC SP_KT_LOP_HK '" + textBoxTenLop.Text + "', " + int.Parse(textBoxMNH.Text);
-            SqlCommand sqlCommand1 = new SqlCommand(sql1, Program.sqlConnection);
-            SqlDataReader dataReader1 = sqlCommand1.ExecuteReader();
+            //string sql1 = "EXEC SP_KT_LOP_HK '" + textBoxTenLop.Text + "', " + int.Parse(textBoxMNH.Text);
+            //SqlCommand sqlCommand1 = new SqlCommand(sql1, Program.sqlConnection);
+            //SqlDataReader dataReader1 = sqlCommand1.ExecuteReader();
 
-            if (dataReader1.Read())
-            {
-                this.labelETenLop.Text = "Tên lớp này đã được sử dụng. Chọn tên khác!";
-                dataReader1.Close();
-                return;
-            }
-            dataReader1.Close();
+            //if (dataReader1.Read())
+            //{
+            //    this.labelETenLop.Text = "Tên lớp này đã được sử dụng. Chọn tên khác!";
+            //    dataReader1.Close();
+            //    return;
+            //}
+            //dataReader1.Close();
 
             this.lOPBindingSource.EndEdit();
             formChinh.toolStripStatusLabelNote.Text = "Nhắc nhở: Bạn cần Lưu để thực hiện thay đổi!";
@@ -304,7 +312,7 @@ namespace QLHSTHPT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.labelEMaLop.Text = this.labelEBM.Text = this.labelETenLop.Text = this.labelEMaNH.Text = this.labelEMaHK.Text = "";
+            this.labelEMaLop.Text = this.labelEBM.Text = this.labelETenLop.Text = this.labelEMaNH.Text = "";
 
             this.barButtonItem1.Enabled = true;
             this.barButtonItem2.Enabled = true;
@@ -344,6 +352,7 @@ namespace QLHSTHPT
             string maLop = ((DataRowView)lOPBindingSource[vitri])["MALOP"].ToString().Trim();
             this.textBoxMLHS.Text = maLop;
             this.textBoxTenHS.Focus();
+            this.comboBoxGT.SelectedIndex = 1;
             this.comboBoxGT.SelectedIndex = 0;
             this.checkBoxNghi.Checked = false;
         }
@@ -362,6 +371,7 @@ namespace QLHSTHPT
             this.labelTim2.Enabled = false;
             this.textBoxTim2.Enabled = false;
             this.groupBoxCTHS.Enabled = true;
+            this.textBoxMHS.Enabled = false;
             this.textBoxTenHS.Focus();
         }
 
@@ -548,7 +558,7 @@ namespace QLHSTHPT
                 int pos = lOPBindingSource.Position;
                 string maLop = ((DataRowView)lOPBindingSource[pos])["MALOP"].ToString().Trim();
                 this.labelTitHS.Text = "HỌC SINH LỚP " + maLop;
-                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_HS_LOP, maLop);
+                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_HS_LOP, maLop);
             }
             catch (System.Exception ex)
             {
@@ -631,13 +641,14 @@ namespace QLHSTHPT
                 return;
             }
 
-            string sql = "EXEC SP_KTMA '" + textBoxMHS.Text + "', 'HS_LOP_HS'";
+            string sql = "EXEC SP_KTMA '" + textBoxMHS.Text + "', 'HOCSINH'"; 
+
             SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
             int nowPosition = sP_HS_LOPBindingSource.Position;
             //int position = hOCSINHBindingSource.Find("MAHS", textBoxMHS.Text);
             int position = -1;
-            for (int i = 0; i < sP_HS_LOPBindingSource.Count; i++)
+            for (int i = 0; i < sP_HS_LOPBindingSource.Count - 1; i++)
             {
                 if (((DataRowView)sP_HS_LOPBindingSource[i])["MAHS"].ToString() == textBoxMHS.Text)
                 {
@@ -695,38 +706,6 @@ namespace QLHSTHPT
         {
             sP_HS_LOPBindingSource.Filter = "TENHS LIKE '%" + textBoxTim2.Text +
                 "%' OR MAHS LIKE '%" + textBoxTim2.Text + "%' OR MALOP LIKE '%" + textBoxTim2.Text + "%'";
-        }
-
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            try
-            {
-                int pos = lOPBindingSource.Position;
-                string maLop = ((DataRowView)lOPBindingSource[pos])["MALOP"].ToString().Trim();
-                this.labelTitHS.Text = "HỌC SINH LỚP " + maLop;
-                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_HS_LOP, maLop);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-                return;
-            }
-        }
-
-        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
-        {
-            try
-            {
-                int pos = lOPBindingSource.Position;
-                string maLop = ((DataRowView)lOPBindingSource[pos])["MALOP"].ToString().Trim();
-                this.labelTitHS.Text = "HỌC SINH LỚP " + maLop;
-                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_HS_LOP, maLop);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-                return;
-            }
         }
 
         private void textBoxTim2_MouseHover(object sender, EventArgs e)
@@ -939,25 +918,6 @@ namespace QLHSTHPT
             f.Show();
         }
 
-        private void textBoxMHK_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
-            {
-                this.labelEMaHK.Text = "";
-                e.Handled = false;
-            }
-            else if ((e.KeyChar == (char)13) || (e.KeyChar == (char)8)) //enter, backspace
-            {
-                this.labelEMaHK.Text = "";
-                e.Handled = false;
-            }
-            else
-            {
-                this.labelEMaHK.Text = "Mã học kỳ chỉ bao gồm số!";
-                e.Handled = true;
-            }
-        }
-
         private void textBoxMNH_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
@@ -1045,92 +1005,46 @@ namespace QLHSTHPT
             }
         }
 
-        private void textBoxDToc_TextChanged(object sender, EventArgs e)
+        private void gridView1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBoxMHK_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxBan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxMK_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxTenLop_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxML_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mAKHOILabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelEMaNH_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelEMaHK_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelEBM_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelETenLop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelEMaLop_Click(object sender, EventArgs e)
-        {
-
+            try
+            {
+                int pos = lOPBindingSource.Position;
+                string maLop = ((DataRowView)lOPBindingSource[pos])["MALOP"].ToString().Trim();
+                this.labelTitHS.Text = "HỌC SINH LỚP " + maLop;
+                this.sP_HS_LOPTableAdapter.Fill(this.qLHSTHPTDataSet2.SP_HS_LOP, maLop);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void textBoxMNH_TextChanged(object sender, EventArgs e)
         {
-
+            labelEMaNH.Text = "";
+            string sql = "EXEC SP_TENNH '" + textBoxMNH.Text + "'";
+            SqlCommand sqlCommand = new SqlCommand(sql, Program.sqlConnection);
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+            if (dataReader.Read())
+                textBoxTenNH.Text = dataReader.GetValue(0).ToString();
+            else
+            {
+                labelEMaNH.Text = "Mã năm học không tồn tại. Chú ý!";
+                textBoxTenNH.Text = "";
+                textBoxTenNH.Focus();
+                return;
+            }
+            dataReader.Close();
         }
 
-        private void bANLabel_Click(object sender, EventArgs e)
+        private void groupBoxCTHS_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void mANHLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mAHKLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tENLOPLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mALOPLabel_Click(object sender, EventArgs e)
+        private void textBoxMHS_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -38,6 +38,7 @@ namespace QLHSTHPT
         {
             formLop_HS.labelEMaNH.Text = "";
             formLop_HS.textBoxMNH.Text = this.textBoxMaNH.Text;
+            formLop_HS.textBoxTenNH.Text = this.textBoxTenNH.Text;
             this.Visible = false;
             formChinh.Activate();
             formChinh.Enabled = true;

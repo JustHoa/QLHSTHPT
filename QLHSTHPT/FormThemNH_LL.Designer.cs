@@ -191,7 +191,7 @@
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.NAMHOCTableAdapter = this.nAMHOCTableAdapter;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
+           // this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // nAMHOCGridControl

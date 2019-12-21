@@ -36,8 +36,8 @@ namespace QLHSTHPT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            formLop_HS.labelEMaHK.Text = "";
-            formLop_HS.textBoxMHK.Text = this.textBoxMaHK.Text;
+           // formLop_HS.labelEMaHK.Text = "";
+            //formLop_HS.textBoxMHK.Text = this.textBoxMaHK.Text;
             this.Visible = false;
             formChinh.Activate();
             formChinh.Enabled = true;

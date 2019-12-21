@@ -749,7 +749,6 @@
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.NAMHOCTableAdapter = null;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // sP_DSLOP10_NHTableAdapter

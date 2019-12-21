@@ -27,12 +27,14 @@ namespace QLHSTHPT
 
         private void FormPhanCongGV_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet2.PHANCONGGV' table. You can move, or remove it, as needed.
+            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet2.PHANCONGGV);
             this.ControlBox = false;
             groupBoxCT.Enabled = false;
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet1.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.MONHOC);
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet1.PHANCONGGV' table. You can move, or remove it, as needed.
-            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet1.PHANCONGGV);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet2.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Fill(this.qLHSTHPTDataSet2.MONHOC);
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet2.PHANCONGGV' table. You can move, or remove it, as needed.
+            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet2.PHANCONGGV);
         }
 
         private void buttonTimGV_Click(object sender, EventArgs e)
@@ -62,13 +64,18 @@ namespace QLHSTHPT
             this.pHANCONGGVBindingSource.AddNew();
             this.comboBoxMMH.SelectedIndex = 1;
             this.comboBoxMMH.SelectedIndex = 0;
+            this.comboBoxMHK.SelectedIndex = 1;
+            this.comboBoxMHK.SelectedIndex = 0;
+            this.boxSoTiet.Value = 0;
             this.boxSoTiet.Value = 15;
             this.checkBoxCN.Checked = false;
+            this.textBoxMaGV.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            labelEMaGV.Text = labelEMaHK.Text = labelEMaLop.Text = labelEMaNH.Text = labelEMMH.Text = "";
+            labelEMaGV.Text = labelEMaHK.Text = labelEMaLop.Text = labelEMMH.Text = "";
+            this.pHANCONGGVBindingSource.RemoveCurrent();
             this.pHANCONGGVBindingSource.CancelEdit();
             this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem5.Enabled = true;
             this.pHANCONGGVGridControl.Enabled = true;
@@ -79,7 +86,7 @@ namespace QLHSTHPT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.labelEMaGV.Text = this.labelEMaHK.Text = this.labelEMaLop.Text = this.labelEMaNH.Text = "";
+            this.labelEMaGV.Text = this.labelEMaHK.Text = this.labelEMaLop.Text = "";
 
             if (this.textBoxMaGV.Text == "")
             {
@@ -96,26 +103,35 @@ namespace QLHSTHPT
                 return;
             }
 
-            if (this.textBoxMaNH.Text == "")
+            string sql1 = "EXEC SP_KTMA '" + textBoxMaGV.Text + "', 'GIAOVIEN'";
+            SqlCommand sqlCommand1 = new SqlCommand(sql1, Program.sqlConnection);
+            SqlDataReader dataReader1 = sqlCommand1.ExecuteReader();
+            if (!dataReader1.Read())
             {
-                this.labelEMaNH.Text = "Chưa nhập Mã năm học. Chú ý!";
-                textBoxMaNH.Focus();
+                labelEMaGV.Text = "Mã giáo viên không tồn tại. Chú ý!";
+                textBoxMaGV.Focus();
+                dataReader1.Close();
                 return;
             }
+            dataReader1.Close();
 
-            if (this.textBoxMaHK.Text == "")
+            string sql2 = "EXEC SP_KTMA '" + textBoxMaLop.Text + "', 'LOP'";
+            SqlCommand sqlCommand2 = new SqlCommand(sql2, Program.sqlConnection);
+            SqlDataReader dataReader2 = sqlCommand2.ExecuteReader();
+            if (!dataReader2.Read())
             {
-                this.labelEMaHK.Text = "Chưa nhập Mã học kỳ. Chú ý!";
-                textBoxMaHK.Focus();
+                labelEMaLop.Text = "Mã lớp không tồn tại. Chú ý!";
+                textBoxMaLop.Focus();
+                dataReader2.Close();
                 return;
             }
+            dataReader2.Close();
 
             SqlCommand sqlCommand = new SqlCommand();
             SqlParameter maGV = new SqlParameter();
             SqlParameter maLop = new SqlParameter();
             SqlParameter maMH = new SqlParameter();
             SqlParameter maHK = new SqlParameter();
-            SqlParameter maNH = new SqlParameter();
 
             maGV.DbType = DbType.String;
             maGV.ParameterName = "@MAGV";
@@ -135,12 +151,7 @@ namespace QLHSTHPT
             maHK.DbType = DbType.Int32;
             maHK.ParameterName = "@MAHK";
             maHK.Direction = ParameterDirection.Input;
-            maHK.Value = textBoxMaHK.Text;
-
-            maNH.DbType = DbType.Int32;
-            maNH.ParameterName = "@MANH";
-            maNH.Direction = ParameterDirection.Input;
-            maNH.Value = textBoxMaNH.Text;
+            maHK.Value = comboBoxMHK.Text;
 
             sqlCommand.Connection = Program.sqlConnection;
             sqlCommand.CommandText = "SP_KT_PHANCONG";
@@ -148,7 +159,6 @@ namespace QLHSTHPT
             sqlCommand.Parameters.Add(maLop);
             sqlCommand.Parameters.Add(maMH);
             sqlCommand.Parameters.Add(maHK);
-            sqlCommand.Parameters.Add(maNH);
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
@@ -161,9 +171,8 @@ namespace QLHSTHPT
                 string _maLop = ((DataRowView)pHANCONGGVBindingSource[i])["MALOP"].ToString().Trim();
                 string _maMH = ((DataRowView)pHANCONGGVBindingSource[i])["MAMH"].ToString().Trim();
                 string _maHK = ((DataRowView)pHANCONGGVBindingSource[i])["MAHK"].ToString().Trim();
-                string _maNH = ((DataRowView)pHANCONGGVBindingSource[i])["MANH"].ToString().Trim();
 
-                if (maGV.Value.Equals(_maGV) && maLop.Value.Equals(_maLop) && maMH.Value.Equals(_maMH) && maHK.Value.Equals(_maHK) && maNH.Value.Equals(_maNH))
+                if (maGV.Value.Equals(_maGV) && maLop.Value.Equals(_maLop) && maMH.Value.Equals(_maMH) && maHK.Value.Equals(_maHK))
                 {
                     position = i;
                     break;
@@ -192,22 +201,6 @@ namespace QLHSTHPT
             }
         }
 
-        private void buttonTimNH_Click(object sender, EventArgs e)
-        {
-            formChinh.Enabled = false;
-            FormTimNH_PhanCong f = new FormTimNH_PhanCong(formChinh, this);
-            f.Activate();
-            f.Show();
-        }
-
-        private void buttonTimHK_Click(object sender, EventArgs e)
-        {
-            formChinh.Enabled = false;
-            FormTimHK_PhanCong f = new FormTimHK_PhanCong(formChinh, this);
-            f.Activate();
-            f.Show();
-        }
-
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.barButtonItem1.Enabled = this.barButtonItem2.Enabled = this.barButtonItem3.Enabled = this.barButtonItem4.Enabled = this.barButtonItem5.Enabled = false;
@@ -233,7 +226,7 @@ namespace QLHSTHPT
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet1.PHANCONGGV);
+            this.pHANCONGGVTableAdapter.Fill(this.qLHSTHPTDataSet2.PHANCONGGV);
             this.pHANCONGGVGridControl.Enabled = true;
             this.labelTim.Enabled = true;
             this.textBoxTim.Enabled = true;
@@ -243,7 +236,7 @@ namespace QLHSTHPT
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formChinh.toolStripStatusLabelNote.Text = "";
-            this.pHANCONGGVTableAdapter.Update(this.qLHSTHPTDataSet1.PHANCONGGV);
+            this.pHANCONGGVTableAdapter.Update(this.qLHSTHPTDataSet2.PHANCONGGV);
             this.pHANCONGGVGridControl.Enabled = true;
             this.groupBoxCT.Enabled = false;
             //clkSave = 1;
@@ -277,6 +270,74 @@ namespace QLHSTHPT
                 this.textBoxTenMH.Text = comboBoxMMH.SelectedValue.ToString();
             }
             catch { }
+        }
+
+        private void textBoxMaGV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelEMaGV.Text = "Mã giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelEMaGV.Text = "Mã giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelEMaGV.Text = "Mã giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelEMaGV.Text = "Mã giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelEMaGV.Text = "Mã giáo viên không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelEMaGV.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxMaLop_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelEMaLop.Text = "Mã lớp không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelEMaLop.Text = "Mã lớp không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelEMaLop.Text = "Mã lớp không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelEMaLop.Text = "Mã lớp không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelEMaLop.Text = "Mã lớp không chứa kí tự đặc biệt!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelEMaLop.Text = "";
+                e.Handled = false;
+            }
         }
     }
 }

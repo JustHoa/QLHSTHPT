@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHocSinh));
             System.Windows.Forms.Label nGHIHOCLabel;
             System.Windows.Forms.Label dIENTHOAILabel;
             System.Windows.Forms.Label dANTOCLabel;
@@ -38,6 +37,7 @@
             System.Windows.Forms.Label nGAYSINHLabel;
             System.Windows.Forms.Label tENHSLabel;
             System.Windows.Forms.Label mAHSLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHocSinh));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -56,6 +56,14 @@
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
             this.hOCSINHGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENHS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDANTOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxCT = new System.Windows.Forms.GroupBox();
             this.labelEMaHS = new System.Windows.Forms.Label();
             this.labelEDTo = new System.Windows.Forms.Label();
@@ -73,14 +81,6 @@
             this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
             this.textBoxTenHS = new System.Windows.Forms.TextBox();
             this.textBoxMaHS = new System.Windows.Forms.TextBox();
-            this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENHS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDANTOC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textBoxTim = new System.Windows.Forms.TextBox();
             this.labelTim = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -101,6 +101,78 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNS.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nGHIHOCLabel
+            // 
+            nGHIHOCLabel.AutoSize = true;
+            nGHIHOCLabel.Location = new System.Drawing.Point(581, 87);
+            nGHIHOCLabel.Name = "nGHIHOCLabel";
+            nGHIHOCLabel.Size = new System.Drawing.Size(50, 13);
+            nGHIHOCLabel.TabIndex = 44;
+            nGHIHOCLabel.Text = "Nghỉ học";
+            // 
+            // dIENTHOAILabel
+            // 
+            dIENTHOAILabel.AutoSize = true;
+            dIENTHOAILabel.Location = new System.Drawing.Point(364, 131);
+            dIENTHOAILabel.Name = "dIENTHOAILabel";
+            dIENTHOAILabel.Size = new System.Drawing.Size(55, 13);
+            dIENTHOAILabel.TabIndex = 40;
+            dIENTHOAILabel.Text = "Điện thoại";
+            // 
+            // dANTOCLabel
+            // 
+            dANTOCLabel.AutoSize = true;
+            dANTOCLabel.Location = new System.Drawing.Point(581, 41);
+            dANTOCLabel.Name = "dANTOCLabel";
+            dANTOCLabel.Size = new System.Drawing.Size(45, 13);
+            dANTOCLabel.TabIndex = 38;
+            dANTOCLabel.Text = "Dân tộc";
+            // 
+            // dIACHILabel
+            // 
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(60, 132);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(40, 13);
+            dIACHILabel.TabIndex = 36;
+            dIACHILabel.Text = "Địa chỉ";
+            // 
+            // gIOITINHLabel
+            // 
+            gIOITINHLabel.AutoSize = true;
+            gIOITINHLabel.Location = new System.Drawing.Point(364, 85);
+            gIOITINHLabel.Name = "gIOITINHLabel";
+            gIOITINHLabel.Size = new System.Drawing.Size(47, 13);
+            gIOITINHLabel.TabIndex = 34;
+            gIOITINHLabel.Text = "Giới tính";
+            // 
+            // nGAYSINHLabel
+            // 
+            nGAYSINHLabel.AutoSize = true;
+            nGAYSINHLabel.Location = new System.Drawing.Point(364, 41);
+            nGAYSINHLabel.Name = "nGAYSINHLabel";
+            nGAYSINHLabel.Size = new System.Drawing.Size(54, 13);
+            nGAYSINHLabel.TabIndex = 32;
+            nGAYSINHLabel.Text = "Ngày sinh";
+            // 
+            // tENHSLabel
+            // 
+            tENHSLabel.AutoSize = true;
+            tENHSLabel.Location = new System.Drawing.Point(61, 88);
+            tENHSLabel.Name = "tENHSLabel";
+            tENHSLabel.Size = new System.Drawing.Size(39, 13);
+            tENHSLabel.TabIndex = 30;
+            tENHSLabel.Text = "Họ tên";
+            // 
+            // mAHSLabel
+            // 
+            mAHSLabel.AutoSize = true;
+            mAHSLabel.Location = new System.Drawing.Point(61, 44);
+            mAHSLabel.Name = "mAHSLabel";
+            mAHSLabel.Size = new System.Drawing.Size(65, 13);
+            mAHSLabel.TabIndex = 28;
+            mAHSLabel.Text = "Mã học sinh";
             // 
             // barManager1
             // 
@@ -246,7 +318,6 @@
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.NAMHOCTableAdapter = null;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // hOCSINHGridControl
@@ -275,6 +346,70 @@
             this.colNGHIHOC});
             this.gridView1.GridControl = this.hOCSINHGridControl;
             this.gridView1.Name = "gridView1";
+            // 
+            // colMAHS
+            // 
+            this.colMAHS.FieldName = "MAHS";
+            this.colMAHS.Name = "colMAHS";
+            this.colMAHS.OptionsColumn.AllowEdit = false;
+            this.colMAHS.Visible = true;
+            this.colMAHS.VisibleIndex = 0;
+            // 
+            // colTENHS
+            // 
+            this.colTENHS.FieldName = "TENHS";
+            this.colTENHS.Name = "colTENHS";
+            this.colTENHS.OptionsColumn.AllowEdit = false;
+            this.colTENHS.Visible = true;
+            this.colTENHS.VisibleIndex = 1;
+            // 
+            // colNGAYSINH
+            // 
+            this.colNGAYSINH.FieldName = "NGAYSINH";
+            this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.OptionsColumn.AllowEdit = false;
+            this.colNGAYSINH.Visible = true;
+            this.colNGAYSINH.VisibleIndex = 2;
+            // 
+            // colGIOITINH
+            // 
+            this.colGIOITINH.FieldName = "GIOITINH";
+            this.colGIOITINH.Name = "colGIOITINH";
+            this.colGIOITINH.OptionsColumn.AllowEdit = false;
+            this.colGIOITINH.Visible = true;
+            this.colGIOITINH.VisibleIndex = 3;
+            // 
+            // colDIACHI
+            // 
+            this.colDIACHI.FieldName = "DIACHI";
+            this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
+            this.colDIACHI.Visible = true;
+            this.colDIACHI.VisibleIndex = 4;
+            // 
+            // colDANTOC
+            // 
+            this.colDANTOC.FieldName = "DANTOC";
+            this.colDANTOC.Name = "colDANTOC";
+            this.colDANTOC.OptionsColumn.AllowEdit = false;
+            this.colDANTOC.Visible = true;
+            this.colDANTOC.VisibleIndex = 5;
+            // 
+            // colDIENTHOAI
+            // 
+            this.colDIENTHOAI.FieldName = "DIENTHOAI";
+            this.colDIENTHOAI.Name = "colDIENTHOAI";
+            this.colDIENTHOAI.OptionsColumn.AllowEdit = false;
+            this.colDIENTHOAI.Visible = true;
+            this.colDIENTHOAI.VisibleIndex = 6;
+            // 
+            // colNGHIHOC
+            // 
+            this.colNGHIHOC.FieldName = "NGHIHOC";
+            this.colNGHIHOC.Name = "colNGHIHOC";
+            this.colNGHIHOC.OptionsColumn.AllowEdit = false;
+            this.colNGHIHOC.Visible = true;
+            this.colNGHIHOC.VisibleIndex = 7;
             // 
             // groupBoxCT
             // 
@@ -385,15 +520,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // nGHIHOCLabel
-            // 
-            nGHIHOCLabel.AutoSize = true;
-            nGHIHOCLabel.Location = new System.Drawing.Point(581, 87);
-            nGHIHOCLabel.Name = "nGHIHOCLabel";
-            nGHIHOCLabel.Size = new System.Drawing.Size(50, 13);
-            nGHIHOCLabel.TabIndex = 44;
-            nGHIHOCLabel.Text = "Nghỉ học";
-            // 
             // checkBoxNghi
             // 
             this.checkBoxNghi.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.hOCSINHBindingSource, "NGHIHOC", true));
@@ -402,15 +528,6 @@
             this.checkBoxNghi.Size = new System.Drawing.Size(104, 24);
             this.checkBoxNghi.TabIndex = 45;
             this.checkBoxNghi.UseVisualStyleBackColor = true;
-            // 
-            // dIENTHOAILabel
-            // 
-            dIENTHOAILabel.AutoSize = true;
-            dIENTHOAILabel.Location = new System.Drawing.Point(364, 131);
-            dIENTHOAILabel.Name = "dIENTHOAILabel";
-            dIENTHOAILabel.Size = new System.Drawing.Size(55, 13);
-            dIENTHOAILabel.TabIndex = 40;
-            dIENTHOAILabel.Text = "Điện thoại";
             // 
             // textBoxDT
             // 
@@ -421,15 +538,6 @@
             this.textBoxDT.TabIndex = 41;
             this.textBoxDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDT_KeyPress);
             // 
-            // dANTOCLabel
-            // 
-            dANTOCLabel.AutoSize = true;
-            dANTOCLabel.Location = new System.Drawing.Point(581, 41);
-            dANTOCLabel.Name = "dANTOCLabel";
-            dANTOCLabel.Size = new System.Drawing.Size(45, 13);
-            dANTOCLabel.TabIndex = 38;
-            dANTOCLabel.Text = "Dân tộc";
-            // 
             // textBoxDToc
             // 
             this.textBoxDToc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "DANTOC", true));
@@ -437,15 +545,6 @@
             this.textBoxDToc.Name = "textBoxDToc";
             this.textBoxDToc.Size = new System.Drawing.Size(100, 20);
             this.textBoxDToc.TabIndex = 39;
-            // 
-            // dIACHILabel
-            // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(60, 132);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(40, 13);
-            dIACHILabel.TabIndex = 36;
-            dIACHILabel.Text = "Địa chỉ";
             // 
             // textBoxDC
             // 
@@ -455,15 +554,6 @@
             this.textBoxDC.Size = new System.Drawing.Size(203, 20);
             this.textBoxDC.TabIndex = 37;
             this.textBoxDC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDC_KeyPress);
-            // 
-            // gIOITINHLabel
-            // 
-            gIOITINHLabel.AutoSize = true;
-            gIOITINHLabel.Location = new System.Drawing.Point(364, 85);
-            gIOITINHLabel.Name = "gIOITINHLabel";
-            gIOITINHLabel.Size = new System.Drawing.Size(47, 13);
-            gIOITINHLabel.TabIndex = 34;
-            gIOITINHLabel.Text = "Giới tính";
             // 
             // comboBoxGT
             // 
@@ -477,15 +567,6 @@
             this.comboBoxGT.Name = "comboBoxGT";
             this.comboBoxGT.Size = new System.Drawing.Size(121, 21);
             this.comboBoxGT.TabIndex = 35;
-            // 
-            // nGAYSINHLabel
-            // 
-            nGAYSINHLabel.AutoSize = true;
-            nGAYSINHLabel.Location = new System.Drawing.Point(364, 41);
-            nGAYSINHLabel.Name = "nGAYSINHLabel";
-            nGAYSINHLabel.Size = new System.Drawing.Size(54, 13);
-            nGAYSINHLabel.TabIndex = 32;
-            nGAYSINHLabel.Text = "Ngày sinh";
             // 
             // dateEditNS
             // 
@@ -501,15 +582,6 @@
             this.dateEditNS.Size = new System.Drawing.Size(121, 20);
             this.dateEditNS.TabIndex = 33;
             // 
-            // tENHSLabel
-            // 
-            tENHSLabel.AutoSize = true;
-            tENHSLabel.Location = new System.Drawing.Point(61, 88);
-            tENHSLabel.Name = "tENHSLabel";
-            tENHSLabel.Size = new System.Drawing.Size(39, 13);
-            tENHSLabel.TabIndex = 30;
-            tENHSLabel.Text = "Họ tên";
-            // 
             // textBoxTenHS
             // 
             this.textBoxTenHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "TENHS", true));
@@ -519,92 +591,20 @@
             this.textBoxTenHS.TabIndex = 31;
             this.textBoxTenHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenHS_KeyPress);
             // 
-            // mAHSLabel
-            // 
-            mAHSLabel.AutoSize = true;
-            mAHSLabel.Location = new System.Drawing.Point(61, 44);
-            mAHSLabel.Name = "mAHSLabel";
-            mAHSLabel.Size = new System.Drawing.Size(65, 13);
-            mAHSLabel.TabIndex = 28;
-            mAHSLabel.Text = "Mã học sinh";
-            // 
             // textBoxMaHS
             // 
             this.textBoxMaHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOCSINHBindingSource, "MAHS", true));
+            this.textBoxMaHS.Enabled = false;
             this.textBoxMaHS.Location = new System.Drawing.Point(132, 41);
             this.textBoxMaHS.Name = "textBoxMaHS";
             this.textBoxMaHS.Size = new System.Drawing.Size(100, 20);
             this.textBoxMaHS.TabIndex = 29;
             this.textBoxMaHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMaHS_KeyPress);
             // 
-            // colMAHS
-            // 
-            this.colMAHS.FieldName = "MAHS";
-            this.colMAHS.Name = "colMAHS";
-            this.colMAHS.OptionsColumn.AllowEdit = false;
-            this.colMAHS.Visible = true;
-            this.colMAHS.VisibleIndex = 0;
-            // 
-            // colTENHS
-            // 
-            this.colTENHS.FieldName = "TENHS";
-            this.colTENHS.Name = "colTENHS";
-            this.colTENHS.OptionsColumn.AllowEdit = false;
-            this.colTENHS.Visible = true;
-            this.colTENHS.VisibleIndex = 1;
-            // 
-            // colNGAYSINH
-            // 
-            this.colNGAYSINH.FieldName = "NGAYSINH";
-            this.colNGAYSINH.Name = "colNGAYSINH";
-            this.colNGAYSINH.OptionsColumn.AllowEdit = false;
-            this.colNGAYSINH.Visible = true;
-            this.colNGAYSINH.VisibleIndex = 2;
-            // 
-            // colGIOITINH
-            // 
-            this.colGIOITINH.FieldName = "GIOITINH";
-            this.colGIOITINH.Name = "colGIOITINH";
-            this.colGIOITINH.OptionsColumn.AllowEdit = false;
-            this.colGIOITINH.Visible = true;
-            this.colGIOITINH.VisibleIndex = 3;
-            // 
-            // colDIACHI
-            // 
-            this.colDIACHI.FieldName = "DIACHI";
-            this.colDIACHI.Name = "colDIACHI";
-            this.colDIACHI.OptionsColumn.AllowEdit = false;
-            this.colDIACHI.Visible = true;
-            this.colDIACHI.VisibleIndex = 4;
-            // 
-            // colDANTOC
-            // 
-            this.colDANTOC.FieldName = "DANTOC";
-            this.colDANTOC.Name = "colDANTOC";
-            this.colDANTOC.OptionsColumn.AllowEdit = false;
-            this.colDANTOC.Visible = true;
-            this.colDANTOC.VisibleIndex = 5;
-            // 
-            // colDIENTHOAI
-            // 
-            this.colDIENTHOAI.FieldName = "DIENTHOAI";
-            this.colDIENTHOAI.Name = "colDIENTHOAI";
-            this.colDIENTHOAI.OptionsColumn.AllowEdit = false;
-            this.colDIENTHOAI.Visible = true;
-            this.colDIENTHOAI.VisibleIndex = 6;
-            // 
-            // colNGHIHOC
-            // 
-            this.colNGHIHOC.FieldName = "NGHIHOC";
-            this.colNGHIHOC.Name = "colNGHIHOC";
-            this.colNGHIHOC.OptionsColumn.AllowEdit = false;
-            this.colNGHIHOC.Visible = true;
-            this.colNGHIHOC.VisibleIndex = 7;
-            // 
             // textBoxTim
             // 
             this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim.Location = new System.Drawing.Point(584, 47);
+            this.textBoxTim.Location = new System.Drawing.Point(567, 47);
             this.textBoxTim.Name = "textBoxTim";
             this.textBoxTim.Size = new System.Drawing.Size(187, 20);
             this.textBoxTim.TabIndex = 19;
@@ -615,7 +615,7 @@
             // 
             this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim.AutoSize = true;
-            this.labelTim.Location = new System.Drawing.Point(529, 50);
+            this.labelTim.Location = new System.Drawing.Point(512, 50);
             this.labelTim.Name = "labelTim";
             this.labelTim.Size = new System.Drawing.Size(49, 13);
             this.labelTim.TabIndex = 20;

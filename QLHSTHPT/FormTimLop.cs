@@ -23,18 +23,11 @@ namespace QLHSTHPT
             this.formPhanCongGV = formPhanCongGV;
         }
 
-        private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.lOPBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLHSTHPTDataSet);
-
-        }
-
         private void FormTimLop_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLHSTHPTDataSet.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.qLHSTHPTDataSet.LOP);
+            panelFilter.Visible = false;
+            // TODO: This line of code loads data into the 'qLHSTHPTDataSet2.SP_DSLOP_FI' table. You can move, or remove it, as needed.
+            this.sP_DSLOP_FITableAdapter.Fill(this.qLHSTHPTDataSet2.SP_DSLOP_FI);
 
         }
 
@@ -42,7 +35,7 @@ namespace QLHSTHPT
         {
             formPhanCongGV.labelEMaLop.Text = "";
             formPhanCongGV.textBoxMaLop.Text = this.textBoxMaLop.Text;
-            formPhanCongGV.textBoxMaNH.Text = ((DataRowView)lOPBindingSource[lOPBindingSource.Position])["MANH"].ToString().Trim();
+           // formPhanCongGV.textBoxMaNH.Text = ((DataRowView)lOPBindingSource[lOPBindingSource.Position])["MANH"].ToString().Trim();
             this.Visible = false;
             formChinh.Activate();
             formChinh.Enabled = true;
@@ -57,13 +50,20 @@ namespace QLHSTHPT
 
         private void textBoxTim_TextChanged(object sender, EventArgs e)
         {
-            lOPBindingSource.Filter = "TENLOP LIKE '%" + textBoxTim.Text +
+            sP_DSLOP_FIBindingSource.Filter = "TENLOP LIKE '%" + textBoxTim.Text +
                 "%' OR MALOP LIKE '%" + textBoxTim.Text + "%'";
         }
 
         private void textBoxTim_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Tìm kiếm theo Tên lớp hoặc Mã lớp", textBoxTim);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            formChinh.Activate();
+            formChinh.Enabled = true;
         }
     }
 }

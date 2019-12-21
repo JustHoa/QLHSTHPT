@@ -32,6 +32,7 @@
             System.Windows.Forms.Label nAMKTLabel;
             System.Windows.Forms.Label nAMBDLabel;
             System.Windows.Forms.Label mANHLabel;
+            System.Windows.Forms.Label tENNHLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
             this.nAMHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -39,25 +40,54 @@
             this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
             this.nAMHOCGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMANH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENNH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNAMBD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNAMKT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.nAMKTTextBox = new System.Windows.Forms.TextBox();
             this.nAMBDTextBox = new System.Windows.Forms.TextBox();
             this.textBoxMaNH = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.colMANH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENNH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNAMBD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNAMKT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textBoxTenNH = new System.Windows.Forms.TextBox();
             nAMKTLabel = new System.Windows.Forms.Label();
             nAMBDLabel = new System.Windows.Forms.Label();
             mANHLabel = new System.Windows.Forms.Label();
+            tENNHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nAMHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nAMHOCGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // nAMKTLabel
+            // 
+            nAMKTLabel.AutoSize = true;
+            nAMKTLabel.Location = new System.Drawing.Point(279, 66);
+            nAMKTLabel.Name = "nAMKTLabel";
+            nAMKTLabel.Size = new System.Drawing.Size(71, 13);
+            nAMKTLabel.TabIndex = 4;
+            nAMKTLabel.Text = "Năm kết thúc";
+            // 
+            // nAMBDLabel
+            // 
+            nAMBDLabel.AutoSize = true;
+            nAMBDLabel.Location = new System.Drawing.Point(279, 26);
+            nAMBDLabel.Name = "nAMBDLabel";
+            nAMBDLabel.Size = new System.Drawing.Size(69, 13);
+            nAMBDLabel.TabIndex = 2;
+            nAMBDLabel.Text = "Năm bắt đầu";
+            // 
+            // mANHLabel
+            // 
+            mANHLabel.AutoSize = true;
+            mANHLabel.Location = new System.Drawing.Point(74, 26);
+            mANHLabel.Name = "mANHLabel";
+            mANHLabel.Size = new System.Drawing.Size(66, 13);
+            mANHLabel.TabIndex = 0;
+            mANHLabel.Text = "Mã năm học";
             // 
             // label1
             // 
@@ -101,7 +131,6 @@
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.NAMHOCTableAdapter = this.nAMHOCTableAdapter;
             this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.TOTRUONGBMTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // nAMHOCGridControl
@@ -126,8 +155,42 @@
             this.gridView1.GridControl = this.nAMHOCGridControl;
             this.gridView1.Name = "gridView1";
             // 
+            // colMANH
+            // 
+            this.colMANH.FieldName = "MANH";
+            this.colMANH.Name = "colMANH";
+            this.colMANH.OptionsColumn.AllowEdit = false;
+            this.colMANH.Visible = true;
+            this.colMANH.VisibleIndex = 0;
+            // 
+            // colTENNH
+            // 
+            this.colTENNH.FieldName = "TENNH";
+            this.colTENNH.Name = "colTENNH";
+            this.colTENNH.OptionsColumn.AllowEdit = false;
+            this.colTENNH.Visible = true;
+            this.colTENNH.VisibleIndex = 1;
+            // 
+            // colNAMBD
+            // 
+            this.colNAMBD.FieldName = "NAMBD";
+            this.colNAMBD.Name = "colNAMBD";
+            this.colNAMBD.OptionsColumn.AllowEdit = false;
+            this.colNAMBD.Visible = true;
+            this.colNAMBD.VisibleIndex = 2;
+            // 
+            // colNAMKT
+            // 
+            this.colNAMKT.FieldName = "NAMKT";
+            this.colNAMKT.Name = "colNAMKT";
+            this.colNAMKT.OptionsColumn.AllowEdit = false;
+            this.colNAMKT.Visible = true;
+            this.colNAMKT.VisibleIndex = 3;
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(tENNHLabel);
+            this.panel1.Controls.Add(this.textBoxTenNH);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.nAMKTTextBox);
             this.panel1.Controls.Add(this.nAMBDTextBox);
@@ -173,7 +236,7 @@
             // textBoxMaNH
             // 
             this.textBoxMaNH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "MANH", true));
-            this.textBoxMaNH.Location = new System.Drawing.Point(144, 43);
+            this.textBoxMaNH.Location = new System.Drawing.Point(146, 23);
             this.textBoxMaNH.Name = "textBoxMaNH";
             this.textBoxMaNH.ReadOnly = true;
             this.textBoxMaNH.Size = new System.Drawing.Size(100, 20);
@@ -189,64 +252,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // nAMKTLabel
+            // tENNHLabel
             // 
-            nAMKTLabel.AutoSize = true;
-            nAMKTLabel.Location = new System.Drawing.Point(279, 66);
-            nAMKTLabel.Name = "nAMKTLabel";
-            nAMKTLabel.Size = new System.Drawing.Size(71, 13);
-            nAMKTLabel.TabIndex = 4;
-            nAMKTLabel.Text = "Năm kết thúc";
+            tENNHLabel.AutoSize = true;
+            tENNHLabel.Location = new System.Drawing.Point(74, 66);
+            tENNHLabel.Name = "tENNHLabel";
+            tENNHLabel.Size = new System.Drawing.Size(70, 13);
+            tENNHLabel.TabIndex = 11;
+            tENNHLabel.Text = "Tên năm học";
             // 
-            // nAMBDLabel
+            // textBoxTenNH
             // 
-            nAMBDLabel.AutoSize = true;
-            nAMBDLabel.Location = new System.Drawing.Point(279, 26);
-            nAMBDLabel.Name = "nAMBDLabel";
-            nAMBDLabel.Size = new System.Drawing.Size(69, 13);
-            nAMBDLabel.TabIndex = 2;
-            nAMBDLabel.Text = "Năm bắt đầu";
-            // 
-            // mANHLabel
-            // 
-            mANHLabel.AutoSize = true;
-            mANHLabel.Location = new System.Drawing.Point(72, 46);
-            mANHLabel.Name = "mANHLabel";
-            mANHLabel.Size = new System.Drawing.Size(66, 13);
-            mANHLabel.TabIndex = 0;
-            mANHLabel.Text = "Mã năm học";
-            // 
-            // colMANH
-            // 
-            this.colMANH.FieldName = "MANH";
-            this.colMANH.Name = "colMANH";
-            this.colMANH.OptionsColumn.AllowEdit = false;
-            this.colMANH.Visible = true;
-            this.colMANH.VisibleIndex = 0;
-            // 
-            // colTENNH
-            // 
-            this.colTENNH.FieldName = "TENNH";
-            this.colTENNH.Name = "colTENNH";
-            this.colTENNH.OptionsColumn.AllowEdit = false;
-            this.colTENNH.Visible = true;
-            this.colTENNH.VisibleIndex = 1;
-            // 
-            // colNAMBD
-            // 
-            this.colNAMBD.FieldName = "NAMBD";
-            this.colNAMBD.Name = "colNAMBD";
-            this.colNAMBD.OptionsColumn.AllowEdit = false;
-            this.colNAMBD.Visible = true;
-            this.colNAMBD.VisibleIndex = 2;
-            // 
-            // colNAMKT
-            // 
-            this.colNAMKT.FieldName = "NAMKT";
-            this.colNAMKT.Name = "colNAMKT";
-            this.colNAMKT.OptionsColumn.AllowEdit = false;
-            this.colNAMKT.Visible = true;
-            this.colNAMKT.VisibleIndex = 3;
+            this.textBoxTenNH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nAMHOCBindingSource, "TENNH", true));
+            this.textBoxTenNH.Location = new System.Drawing.Point(146, 63);
+            this.textBoxTenNH.Name = "textBoxTenNH";
+            this.textBoxTenNH.ReadOnly = true;
+            this.textBoxTenNH.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTenNH.TabIndex = 12;
             // 
             // FormTimNH_LHS
             // 
@@ -289,5 +311,6 @@
         private System.Windows.Forms.TextBox nAMBDTextBox;
         private System.Windows.Forms.TextBox textBoxMaNH;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxTenNH;
     }
 }

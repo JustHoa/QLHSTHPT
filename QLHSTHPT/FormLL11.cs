@@ -95,9 +95,9 @@ namespace QLHSTHPT
             }
             ds.AllowNew = true;
             gridControl1.DataSource = ds;
-            gridView1.Columns[0].Caption = "MAHS";
-            gridView1.Columns[1].Caption = "TENHS";
-            gridView1.Columns[2].Caption = "GHICHU";
+            gridView2.Columns[0].Caption = "MAHS";
+            gridView2.Columns[1].Caption = "TENHS";
+            gridView2.Columns[2].Caption = "GHICHU";
         }
         
 

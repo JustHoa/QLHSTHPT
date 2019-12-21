@@ -31,17 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapDiem));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelENH = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.error2 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.Label();
             this.comboBoxNH = new System.Windows.Forms.ComboBox();
-            this.sP_NAMHOC_DESCBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.qLHSTHPTDataSet = new QLHSTHPT.QLHSTHPTDataSet();
+            this.sPNAMHOCDESCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLHSTHPTDataSet2 = new QLHSTHPT.QLHSTHPTDataSet2();
             this.comboBoxLop = new System.Windows.Forms.ComboBox();
-            this.sP_LOP_GV_TDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPLOPPCNHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxMH = new System.Windows.Forms.ComboBox();
-            this.sP_MONHOC_GV_TDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPMONHOCGVTDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,10 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxHK = new System.Windows.Forms.ComboBox();
             this.hOCKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
-            this.hOCKYTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.HOCKYTableAdapter();
-            this.sP_MONHOC_GV_TDTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_MONHOC_GV_TDTableAdapter();
-            this.sP_LOP_GV_TDTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_LOP_GV_TDTableAdapter();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -69,7 +66,6 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.sP_NAMHOC_DESCTableAdapter = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.SP_NAMHOC_DESCTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelA = new System.Windows.Forms.Panel();
             this.labelTim = new System.Windows.Forms.Label();
@@ -78,7 +74,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.sP_BANGDIEMLOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.sP_BANGDIEMLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENHS = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -89,20 +84,23 @@
             this.colKTTIET_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKTTIET_2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKTHK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sP_BANGDIEMLOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.SP_BANGDIEMLOPTableAdapter();
-            this.tableAdapterManager1 = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
+            this.sP_BANGDIEMLOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.SP_BANGDIEMLOPTableAdapter();
+            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.TableAdapterManager();
+            this.hOCKYTableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.HOCKYTableAdapter();
+            this.sP_NAMHOC_DESCTableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.SP_NAMHOC_DESCTableAdapter();
+            this.sP_LOP_PC_NHTableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.SP_LOP_PC_NHTableAdapter();
+            this.sP_MONHOC_GV_TDTableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.SP_MONHOC_GV_TDTableAdapter();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_NAMHOC_DESCBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_LOP_GV_TDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_MONHOC_GV_TDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPNAMHOCDESCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPLOPPCNHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPMONHOCGVTDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panelA.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +108,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Turquoise;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.labelENH);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.error2);
@@ -128,6 +127,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 144);
             this.panel1.TabIndex = 0;
+            // 
+            // labelENH
+            // 
+            this.labelENH.AutoSize = true;
+            this.labelENH.ForeColor = System.Drawing.Color.Red;
+            this.labelENH.Location = new System.Drawing.Point(95, 71);
+            this.labelENH.Name = "labelENH";
+            this.labelENH.Size = new System.Drawing.Size(0, 13);
+            this.labelENH.TabIndex = 14;
             // 
             // label6
             // 
@@ -169,7 +177,7 @@
             // 
             // comboBoxNH
             // 
-            this.comboBoxNH.DataSource = this.sP_NAMHOC_DESCBindingSource1;
+            this.comboBoxNH.DataSource = this.sPNAMHOCDESCBindingSource;
             this.comboBoxNH.DisplayMember = "TENNH";
             this.comboBoxNH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNH.FormattingEnabled = true;
@@ -180,20 +188,19 @@
             this.comboBoxNH.ValueMember = "MANH";
             this.comboBoxNH.SelectionChangeCommitted += new System.EventHandler(this.nAMHOCComboBox_SelectedIndexChanged);
             // 
-            // sP_NAMHOC_DESCBindingSource1
+            // sPNAMHOCDESCBindingSource
             // 
-            this.sP_NAMHOC_DESCBindingSource1.DataMember = "SP_NAMHOC_DESC";
-            this.sP_NAMHOC_DESCBindingSource1.DataSource = this.qLHSTHPTDataSet;
+            this.sPNAMHOCDESCBindingSource.DataMember = "SP_NAMHOC_DESC";
+            this.sPNAMHOCDESCBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
-            // qLHSTHPTDataSet
+            // qLHSTHPTDataSet2
             // 
-            this.qLHSTHPTDataSet.DataSetName = "QLHSTHPTDataSet";
-            this.qLHSTHPTDataSet.EnforceConstraints = false;
-            this.qLHSTHPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.qLHSTHPTDataSet2.DataSetName = "QLHSTHPTDataSet2";
+            this.qLHSTHPTDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBoxLop
             // 
-            this.comboBoxLop.DataSource = this.sP_LOP_GV_TDBindingSource;
+            this.comboBoxLop.DataSource = this.sPLOPPCNHBindingSource;
             this.comboBoxLop.DisplayMember = "TENLOP";
             this.comboBoxLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLop.FormattingEnabled = true;
@@ -204,14 +211,14 @@
             this.comboBoxLop.ValueMember = "MALOP";
             this.comboBoxLop.SelectionChangeCommitted += new System.EventHandler(this.comboBoxLop_SelectedIndexChanged);
             // 
-            // sP_LOP_GV_TDBindingSource
+            // sPLOPPCNHBindingSource
             // 
-            this.sP_LOP_GV_TDBindingSource.DataMember = "SP_LOP_GV_TD";
-            this.sP_LOP_GV_TDBindingSource.DataSource = this.qLHSTHPTDataSet;
+            this.sPLOPPCNHBindingSource.DataMember = "SP_LOP_PC_NH";
+            this.sPLOPPCNHBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
             // comboBoxMH
             // 
-            this.comboBoxMH.DataSource = this.sP_MONHOC_GV_TDBindingSource;
+            this.comboBoxMH.DataSource = this.sPMONHOCGVTDBindingSource;
             this.comboBoxMH.DisplayMember = "TENMH";
             this.comboBoxMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMH.FormattingEnabled = true;
@@ -221,10 +228,10 @@
             this.comboBoxMH.TabIndex = 7;
             this.comboBoxMH.ValueMember = "MAMH";
             // 
-            // sP_MONHOC_GV_TDBindingSource
+            // sPMONHOCGVTDBindingSource
             // 
-            this.sP_MONHOC_GV_TDBindingSource.DataMember = "SP_MONHOC_GV_TD";
-            this.sP_MONHOC_GV_TDBindingSource.DataSource = this.qLHSTHPTDataSet;
+            this.sPMONHOCGVTDBindingSource.DataMember = "SP_MONHOC_GV_TD";
+            this.sPMONHOCGVTDBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
             // button1
             // 
@@ -288,32 +295,7 @@
             // hOCKYBindingSource
             // 
             this.hOCKYBindingSource.DataMember = "HOCKY";
-            this.hOCKYBindingSource.DataSource = this.qLHSTHPTDataSet;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DIEMTableAdapter = null;
-            this.tableAdapterManager.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager.HOCKYTableAdapter = this.hOCKYTableAdapter;
-            this.tableAdapterManager.HOCSINHTableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = null;
-            this.tableAdapterManager.NAMHOCTableAdapter = null;
-            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // hOCKYTableAdapter
-            // 
-            this.hOCKYTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_MONHOC_GV_TDTableAdapter
-            // 
-            this.sP_MONHOC_GV_TDTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_LOP_GV_TDTableAdapter
-            // 
-            this.sP_LOP_GV_TDTableAdapter.ClearBeforeFill = true;
+            this.hOCKYBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
             // standaloneBarDockControl1
             // 
@@ -475,10 +457,6 @@
             this.barButtonItem4.Id = 3;
             this.barButtonItem4.Name = "barButtonItem4";
             // 
-            // sP_NAMHOC_DESCTableAdapter
-            // 
-            this.sP_NAMHOC_DESCTableAdapter.ClearBeforeFill = true;
-            // 
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
@@ -500,19 +478,19 @@
             // 
             this.labelTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim.AutoSize = true;
-            this.labelTim.Location = new System.Drawing.Point(560, 10);
+            this.labelTim.Location = new System.Drawing.Point(563, 10);
             this.labelTim.Name = "labelTim";
             this.labelTim.Size = new System.Drawing.Size(49, 13);
-            this.labelTim.TabIndex = 38;
+            this.labelTim.TabIndex = 39;
             this.labelTim.Text = "Tìm kiếm";
             // 
             // textBoxTim
             // 
             this.textBoxTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim.Location = new System.Drawing.Point(615, 7);
+            this.textBoxTim.Location = new System.Drawing.Point(618, 7);
             this.textBoxTim.Name = "textBoxTim";
-            this.textBoxTim.Size = new System.Drawing.Size(173, 20);
-            this.textBoxTim.TabIndex = 37;
+            this.textBoxTim.Size = new System.Drawing.Size(170, 20);
+            this.textBoxTim.TabIndex = 38;
             this.textBoxTim.TextChanged += new System.EventHandler(this.textBoxTim_TextChanged);
             this.textBoxTim.MouseHover += new System.EventHandler(this.textBoxTim_MouseHover);
             // 
@@ -523,10 +501,10 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 251);
+            this.panel2.Location = new System.Drawing.Point(0, 240);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 74);
-            this.panel2.TabIndex = 36;
+            this.panel2.Size = new System.Drawing.Size(800, 85);
+            this.panel2.TabIndex = 37;
             // 
             // label5
             // 
@@ -548,7 +526,7 @@
             this.sP_BANGDIEMLOPGridControl.MainView = this.gridView1;
             this.sP_BANGDIEMLOPGridControl.MenuManager = this.barManager1;
             this.sP_BANGDIEMLOPGridControl.Name = "sP_BANGDIEMLOPGridControl";
-            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 251);
+            this.sP_BANGDIEMLOPGridControl.Size = new System.Drawing.Size(800, 240);
             this.sP_BANGDIEMLOPGridControl.TabIndex = 0;
             this.sP_BANGDIEMLOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -556,12 +534,7 @@
             // sP_BANGDIEMLOPBindingSource
             // 
             this.sP_BANGDIEMLOPBindingSource.DataMember = "SP_BANGDIEMLOP";
-            this.sP_BANGDIEMLOPBindingSource.DataSource = this.qLHSTHPTDataSet1;
-            // 
-            // qLHSTHPTDataSet1
-            // 
-            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
-            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.sP_BANGDIEMLOPBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
             // gridView1
             // 
@@ -577,12 +550,12 @@
             this.colKTHK});
             this.gridView1.GridControl = this.sP_BANGDIEMLOPGridControl;
             this.gridView1.Name = "gridView1";
-            this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
             // colMAHS
             // 
             this.colMAHS.FieldName = "MAHS";
             this.colMAHS.Name = "colMAHS";
+            this.colMAHS.OptionsColumn.AllowEdit = false;
             this.colMAHS.Visible = true;
             this.colMAHS.VisibleIndex = 0;
             // 
@@ -590,6 +563,7 @@
             // 
             this.colTENHS.FieldName = "TENHS";
             this.colTENHS.Name = "colTENHS";
+            this.colTENHS.OptionsColumn.AllowEdit = false;
             this.colTENHS.Visible = true;
             this.colTENHS.VisibleIndex = 1;
             // 
@@ -646,23 +620,38 @@
             // 
             this.sP_BANGDIEMLOPTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager1
+            // tableAdapterManager
             // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.BOMONTableAdapter = null;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.DIEMTableAdapter = null;
-            this.tableAdapterManager1.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager1.HOCKYTableAdapter = null;
-            this.tableAdapterManager1.HOCSINHTableAdapter = null;
-            this.tableAdapterManager1.HS_LOPTableAdapter = null;
-            this.tableAdapterManager1.KHOITableAdapter = null;
-            this.tableAdapterManager1.LOPTableAdapter = null;
-            this.tableAdapterManager1.MONHOCTableAdapter = null;
-            this.tableAdapterManager1.NAMHOCTableAdapter = null;
-            this.tableAdapterManager1.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager1.TOTRUONGBMTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BOMONTableAdapter = null;
+            this.tableAdapterManager.DIEMTableAdapter = null;
+            this.tableAdapterManager.DIEMTBM_HKTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = null;
+            this.tableAdapterManager.HOCKYTableAdapter = this.hOCKYTableAdapter;
+            this.tableAdapterManager.HOCSINHTableAdapter = null;
+            this.tableAdapterManager.HS_LOPTableAdapter = null;
+            this.tableAdapterManager.KHOITableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.NAMHOCTableAdapter = null;
+            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // hOCKYTableAdapter
+            // 
+            this.hOCKYTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_NAMHOC_DESCTableAdapter
+            // 
+            this.sP_NAMHOC_DESCTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_LOP_PC_NHTableAdapter
+            // 
+            this.sP_LOP_PC_NHTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_MONHOC_GV_TDTableAdapter
+            // 
+            this.sP_MONHOC_GV_TDTableAdapter.ClearBeforeFill = true;
             // 
             // FormNhapDiem
             // 
@@ -683,10 +672,10 @@
             this.SizeChanged += new System.EventHandler(this.FormNhapDiem_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_NAMHOC_DESCBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_LOP_GV_TDBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_MONHOC_GV_TDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPNAMHOCDESCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPLOPPCNHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPMONHOCGVTDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOCKYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.panelA.ResumeLayout(false);
@@ -694,7 +683,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_BANGDIEMLOPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -704,18 +692,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private QLHSTHPTDataSet qLHSTHPTDataSet;
-        private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private QLHSTHPTDataSetTableAdapters.HOCKYTableAdapter hOCKYTableAdapter;
-        private System.Windows.Forms.BindingSource hOCKYBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource sP_MONHOC_GV_TDBindingSource;
-        private QLHSTHPTDataSetTableAdapters.SP_MONHOC_GV_TDTableAdapter sP_MONHOC_GV_TDTableAdapter;
-        private QLHSTHPTDataSetTableAdapters.SP_LOP_GV_TDTableAdapter sP_LOP_GV_TDTableAdapter;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -731,22 +712,24 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Bar bar2;
-        private QLHSTHPTDataSetTableAdapters.SP_NAMHOC_DESCTableAdapter sP_NAMHOC_DESCTableAdapter;
         private System.Windows.Forms.ComboBox comboBoxNH;
-        private System.Windows.Forms.BindingSource sP_NAMHOC_DESCBindingSource1;
         private System.Windows.Forms.Label error;
         private System.Windows.Forms.Label error2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panelA;
         private System.Windows.Forms.Button button2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private QLHSTHPTDataSet1 qLHSTHPTDataSet1;
-        private QLHSTHPTDataSet1TableAdapters.SP_BANGDIEMLOPTableAdapter sP_BANGDIEMLOPTableAdapter;
-        private QLHSTHPTDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.Label labelTim;
-        private System.Windows.Forms.TextBox textBoxTim;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox comboBoxHK;
+        public System.Windows.Forms.ComboBox comboBoxMH;
+        public System.Windows.Forms.ComboBox comboBoxLop;
+        private System.Windows.Forms.BindingSource sP_BANGDIEMLOPBindingSource;
+        private QLHSTHPTDataSet2 qLHSTHPTDataSet2;
+        private QLHSTHPTDataSet2TableAdapters.SP_BANGDIEMLOPTableAdapter sP_BANGDIEMLOPTableAdapter;
+        private QLHSTHPTDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
+        private DevExpress.XtraGrid.GridControl sP_BANGDIEMLOPGridControl;
         private DevExpress.XtraGrid.Columns.GridColumn colMAHS;
         private DevExpress.XtraGrid.Columns.GridColumn colTENHS;
         private DevExpress.XtraGrid.Columns.GridColumn colMIENG_1;
@@ -756,13 +739,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKTTIET_1;
         private DevExpress.XtraGrid.Columns.GridColumn colKTTIET_2;
         private DevExpress.XtraGrid.Columns.GridColumn colKTHK;
-        private System.Windows.Forms.Label label6;
-        public DevExpress.XtraGrid.GridControl sP_BANGDIEMLOPGridControl;
-        public System.Windows.Forms.BindingSource sP_LOP_GV_TDBindingSource;
+        private System.Windows.Forms.BindingSource sPNAMHOCDESCBindingSource;
+        private QLHSTHPTDataSet2TableAdapters.SP_NAMHOC_DESCTableAdapter sP_NAMHOC_DESCTableAdapter;
+        private System.Windows.Forms.BindingSource sPLOPPCNHBindingSource;
+        private System.Windows.Forms.BindingSource sPMONHOCGVTDBindingSource;
+        private QLHSTHPTDataSet2TableAdapters.SP_LOP_PC_NHTableAdapter sP_LOP_PC_NHTableAdapter;
+        private QLHSTHPTDataSet2TableAdapters.SP_MONHOC_GV_TDTableAdapter sP_MONHOC_GV_TDTableAdapter;
+        private System.Windows.Forms.Label labelTim;
+        private System.Windows.Forms.TextBox textBoxTim;
+        private QLHSTHPTDataSet2TableAdapters.HOCKYTableAdapter hOCKYTableAdapter;
+        private System.Windows.Forms.BindingSource hOCKYBindingSource;
+        private System.Windows.Forms.Label labelENH;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        public System.Windows.Forms.ComboBox comboBoxHK;
-        public System.Windows.Forms.ComboBox comboBoxMH;
-        public System.Windows.Forms.ComboBox comboBoxLop;
-        public System.Windows.Forms.BindingSource sP_BANGDIEMLOPBindingSource;
     }
 }

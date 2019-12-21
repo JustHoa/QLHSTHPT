@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label bANLabel;
             System.Windows.Forms.Label mANHLabel;
-            System.Windows.Forms.Label mAHKLabel;
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label mAKHOILabel;
@@ -53,11 +52,10 @@
             this.textBoxTim1 = new System.Windows.Forms.TextBox();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLHSTHPTDataSet1 = new QLHSTHPT.QLHSTHPTDataSet1();
+            this.qLHSTHPTDataSet2 = new QLHSTHPT.QLHSTHPTDataSet2();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMALOP1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAHK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOI = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,23 +75,20 @@
             this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBoxCTLop = new System.Windows.Forms.GroupBox();
+            this.textBoxTenNH = new System.Windows.Forms.TextBox();
             this.textBoxMNH = new System.Windows.Forms.TextBox();
-            this.textBoxMHK = new System.Windows.Forms.TextBox();
             this.buttonTimNH = new System.Windows.Forms.Button();
-            this.buttonTimHK = new System.Windows.Forms.Button();
             this.comboBoxBan = new System.Windows.Forms.ComboBox();
             this.comboBoxMK = new System.Windows.Forms.ComboBox();
             this.kHOIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxTenLop = new System.Windows.Forms.TextBox();
             this.textBoxML = new System.Windows.Forms.TextBox();
             this.labelEMaNH = new System.Windows.Forms.Label();
-            this.labelEMaHK = new System.Windows.Forms.Label();
             this.labelEBM = new System.Windows.Forms.Label();
             this.labelETenLop = new System.Windows.Forms.Label();
             this.labelEMaLop = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelTitHS = new System.Windows.Forms.Label();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
@@ -120,10 +115,11 @@
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
-            this.lOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.LOPTableAdapter();
-            this.kHOITableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.KHOITableAdapter();
+            this.lOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.LOPTableAdapter();
+            this.tableAdapterManager = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.TableAdapterManager();
+            this.kHOITableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.KHOITableAdapter();
             this.sP_HS_LOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_HS_LOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.SP_HS_LOPTableAdapter();
+            this.sP_HS_LOPTableAdapter = new QLHSTHPT.QLHSTHPTDataSet2TableAdapters.SP_HS_LOPTableAdapter();
             this.sP_HS_LOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAHS = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -134,9 +130,7 @@
             this.colDANTOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textBoxTim2 = new System.Windows.Forms.TextBox();
-            this.labelTim2 = new System.Windows.Forms.Label();
+            this.colMALOP1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxCTHS = new System.Windows.Forms.GroupBox();
             this.buttonTimHS = new System.Windows.Forms.Button();
             this.labelEMaHS = new System.Windows.Forms.Label();
@@ -157,10 +151,10 @@
             this.dateEditNS = new DevExpress.XtraEditors.DateEdit();
             this.textBoxTenHS = new System.Windows.Forms.TextBox();
             this.textBoxMHS = new System.Windows.Forms.TextBox();
-            this.tableAdapterManager1 = new QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager();
+            this.textBoxTim2 = new System.Windows.Forms.TextBox();
+            this.labelTim2 = new System.Windows.Forms.Label();
             bANLabel = new System.Windows.Forms.Label();
             mANHLabel = new System.Windows.Forms.Label();
-            mAHKLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             mAKHOILabel = new System.Windows.Forms.Label();
@@ -178,7 +172,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -203,47 +197,33 @@
             bANLabel.Size = new System.Drawing.Size(26, 13);
             bANLabel.TabIndex = 34;
             bANLabel.Text = "Ban";
-            bANLabel.Click += new System.EventHandler(this.bANLabel_Click);
             // 
             // mANHLabel
             // 
             mANHLabel.AutoSize = true;
-            mANHLabel.Location = new System.Drawing.Point(241, 124);
+            mANHLabel.Location = new System.Drawing.Point(24, 126);
             mANHLabel.Name = "mANHLabel";
             mANHLabel.Size = new System.Drawing.Size(66, 13);
             mANHLabel.TabIndex = 32;
             mANHLabel.Text = "Mã năm học";
-            mANHLabel.Click += new System.EventHandler(this.mANHLabel_Click);
-            // 
-            // mAHKLabel
-            // 
-            mAHKLabel.AutoSize = true;
-            mAHKLabel.Location = new System.Drawing.Point(30, 124);
-            mAHKLabel.Name = "mAHKLabel";
-            mAHKLabel.Size = new System.Drawing.Size(57, 13);
-            mAHKLabel.TabIndex = 30;
-            mAHKLabel.Text = "Mã học kỳ";
-            mAHKLabel.Click += new System.EventHandler(this.mAHKLabel_Click);
             // 
             // tENLOPLabel
             // 
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(30, 80);
+            tENLOPLabel.Location = new System.Drawing.Point(44, 80);
             tENLOPLabel.Name = "tENLOPLabel";
             tENLOPLabel.Size = new System.Drawing.Size(43, 13);
             tENLOPLabel.TabIndex = 28;
             tENLOPLabel.Text = "Tên lớp";
-            tENLOPLabel.Click += new System.EventHandler(this.tENLOPLabel_Click);
             // 
             // mALOPLabel
             // 
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(34, 37);
+            mALOPLabel.Location = new System.Drawing.Point(48, 37);
             mALOPLabel.Name = "mALOPLabel";
             mALOPLabel.Size = new System.Drawing.Size(39, 13);
             mALOPLabel.TabIndex = 26;
             mALOPLabel.Text = "Mã lớp";
-            mALOPLabel.Click += new System.EventHandler(this.mALOPLabel_Click);
             // 
             // mAKHOILabel
             // 
@@ -253,7 +233,6 @@
             mAKHOILabel.Size = new System.Drawing.Size(45, 13);
             mAKHOILabel.TabIndex = 42;
             mAKHOILabel.Text = "Mã khối";
-            mAKHOILabel.Click += new System.EventHandler(this.mAKHOILabel_Click);
             // 
             // nGHIHOCLabel
             // 
@@ -390,7 +369,7 @@
             // 
             this.labelTim1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTim1.AutoSize = true;
-            this.labelTim1.Location = new System.Drawing.Point(266, 10);
+            this.labelTim1.Location = new System.Drawing.Point(241, 10);
             this.labelTim1.Name = "labelTim1";
             this.labelTim1.Size = new System.Drawing.Size(49, 13);
             this.labelTim1.TabIndex = 2;
@@ -399,9 +378,9 @@
             // textBoxTim1
             // 
             this.textBoxTim1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim1.Location = new System.Drawing.Point(321, 7);
+            this.textBoxTim1.Location = new System.Drawing.Point(296, 7);
             this.textBoxTim1.Name = "textBoxTim1";
-            this.textBoxTim1.Size = new System.Drawing.Size(124, 20);
+            this.textBoxTim1.Size = new System.Drawing.Size(155, 20);
             this.textBoxTim1.TabIndex = 1;
             this.textBoxTim1.TextChanged += new System.EventHandler(this.textBoxTim1_TextChanged);
             this.textBoxTim1.MouseHover += new System.EventHandler(this.textBoxTim1_MouseHover);
@@ -422,35 +401,33 @@
             // lOPBindingSource
             // 
             this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.qLHSTHPTDataSet1;
+            this.lOPBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
-            // qLHSTHPTDataSet1
+            // qLHSTHPTDataSet2
             // 
-            this.qLHSTHPTDataSet1.DataSetName = "QLHSTHPTDataSet1";
-            this.qLHSTHPTDataSet1.EnforceConstraints = false;
-            this.qLHSTHPTDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.qLHSTHPTDataSet2.DataSetName = "QLHSTHPTDataSet2";
+            this.qLHSTHPTDataSet2.EnforceConstraints = false;
+            this.qLHSTHPTDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMALOP1,
+            this.colMALOP,
             this.colTENLOP,
-            this.colMAHK,
             this.colMANH,
             this.colBAN,
             this.colMAKHOI});
             this.gridView1.GridControl = this.lOPGridControl;
             this.gridView1.Name = "gridView1";
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
-            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
+            this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
             // 
-            // colMALOP1
+            // colMALOP
             // 
-            this.colMALOP1.FieldName = "MALOP";
-            this.colMALOP1.Name = "colMALOP1";
-            this.colMALOP1.OptionsColumn.AllowEdit = false;
-            this.colMALOP1.Visible = true;
-            this.colMALOP1.VisibleIndex = 0;
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.AllowEdit = false;
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 0;
             // 
             // colTENLOP
             // 
@@ -460,21 +437,13 @@
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
             // 
-            // colMAHK
-            // 
-            this.colMAHK.FieldName = "MAHK";
-            this.colMAHK.Name = "colMAHK";
-            this.colMAHK.OptionsColumn.AllowEdit = false;
-            this.colMAHK.Visible = true;
-            this.colMAHK.VisibleIndex = 2;
-            // 
             // colMANH
             // 
             this.colMANH.FieldName = "MANH";
             this.colMANH.Name = "colMANH";
             this.colMANH.OptionsColumn.AllowEdit = false;
             this.colMANH.Visible = true;
-            this.colMANH.VisibleIndex = 3;
+            this.colMANH.VisibleIndex = 2;
             // 
             // colBAN
             // 
@@ -482,7 +451,7 @@
             this.colBAN.Name = "colBAN";
             this.colBAN.OptionsColumn.AllowEdit = false;
             this.colBAN.Visible = true;
-            this.colBAN.VisibleIndex = 4;
+            this.colBAN.VisibleIndex = 3;
             // 
             // colMAKHOI
             // 
@@ -490,7 +459,7 @@
             this.colMAKHOI.Name = "colMAKHOI";
             this.colMAKHOI.OptionsColumn.AllowEdit = false;
             this.colMAKHOI.Visible = true;
-            this.colMAKHOI.VisibleIndex = 5;
+            this.colMAKHOI.VisibleIndex = 4;
             // 
             // barManager1
             // 
@@ -603,7 +572,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 924);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 890);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(920, 0);
             // 
@@ -613,7 +582,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 924);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 890);
             // 
             // barDockControlRight
             // 
@@ -621,7 +590,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(920, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 924);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 890);
             // 
             // standaloneBarDockControl2
             // 
@@ -647,17 +616,15 @@
             // 
             // groupBoxCTLop
             // 
+            this.groupBoxCTLop.Controls.Add(this.textBoxTenNH);
             this.groupBoxCTLop.Controls.Add(this.textBoxMNH);
-            this.groupBoxCTLop.Controls.Add(this.textBoxMHK);
             this.groupBoxCTLop.Controls.Add(this.buttonTimNH);
-            this.groupBoxCTLop.Controls.Add(this.buttonTimHK);
             this.groupBoxCTLop.Controls.Add(this.comboBoxBan);
             this.groupBoxCTLop.Controls.Add(this.comboBoxMK);
             this.groupBoxCTLop.Controls.Add(this.textBoxTenLop);
             this.groupBoxCTLop.Controls.Add(this.textBoxML);
             this.groupBoxCTLop.Controls.Add(mAKHOILabel);
             this.groupBoxCTLop.Controls.Add(this.labelEMaNH);
-            this.groupBoxCTLop.Controls.Add(this.labelEMaHK);
             this.groupBoxCTLop.Controls.Add(this.labelEBM);
             this.groupBoxCTLop.Controls.Add(this.labelETenLop);
             this.groupBoxCTLop.Controls.Add(this.labelEMaLop);
@@ -665,7 +632,6 @@
             this.groupBoxCTLop.Controls.Add(this.button1);
             this.groupBoxCTLop.Controls.Add(bANLabel);
             this.groupBoxCTLop.Controls.Add(mANHLabel);
-            this.groupBoxCTLop.Controls.Add(mAHKLabel);
             this.groupBoxCTLop.Controls.Add(tENLOPLabel);
             this.groupBoxCTLop.Controls.Add(mALOPLabel);
             this.groupBoxCTLop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -677,45 +643,33 @@
             this.groupBoxCTLop.Text = "Thông tin lớp";
             this.groupBoxCTLop.Enter += new System.EventHandler(this.groupBoxCTLop_Enter);
             // 
+            // textBoxTenNH
+            // 
+            this.textBoxTenNH.Location = new System.Drawing.Point(199, 124);
+            this.textBoxTenNH.Name = "textBoxTenNH";
+            this.textBoxTenNH.ReadOnly = true;
+            this.textBoxTenNH.Size = new System.Drawing.Size(112, 20);
+            this.textBoxTenNH.TabIndex = 54;
+            // 
             // textBoxMNH
             // 
             this.textBoxMNH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MANH", true));
-            this.textBoxMNH.Location = new System.Drawing.Point(308, 121);
+            this.textBoxMNH.Location = new System.Drawing.Point(93, 123);
             this.textBoxMNH.Name = "textBoxMNH";
-            this.textBoxMNH.Size = new System.Drawing.Size(103, 20);
+            this.textBoxMNH.Size = new System.Drawing.Size(70, 20);
             this.textBoxMNH.TabIndex = 53;
             this.textBoxMNH.TextChanged += new System.EventHandler(this.textBoxMNH_TextChanged);
             this.textBoxMNH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMNH_KeyPress);
             // 
-            // textBoxMHK
-            // 
-            this.textBoxMHK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPBindingSource, "MAHK", true));
-            this.textBoxMHK.Location = new System.Drawing.Point(93, 122);
-            this.textBoxMHK.Name = "textBoxMHK";
-            this.textBoxMHK.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMHK.TabIndex = 52;
-            this.textBoxMHK.TextChanged += new System.EventHandler(this.textBoxMHK_TextChanged);
-            this.textBoxMHK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMHK_KeyPress);
-            // 
             // buttonTimNH
             // 
-            this.buttonTimNH.Location = new System.Drawing.Point(417, 121);
+            this.buttonTimNH.Location = new System.Drawing.Point(169, 123);
             this.buttonTimNH.Name = "buttonTimNH";
             this.buttonTimNH.Size = new System.Drawing.Size(24, 20);
             this.buttonTimNH.TabIndex = 51;
             this.buttonTimNH.Text = "...";
             this.buttonTimNH.UseVisualStyleBackColor = true;
             this.buttonTimNH.Click += new System.EventHandler(this.buttonTimNH_Click);
-            // 
-            // buttonTimHK
-            // 
-            this.buttonTimHK.Location = new System.Drawing.Point(199, 121);
-            this.buttonTimHK.Name = "buttonTimHK";
-            this.buttonTimHK.Size = new System.Drawing.Size(24, 20);
-            this.buttonTimHK.TabIndex = 50;
-            this.buttonTimHK.Text = "...";
-            this.buttonTimHK.UseVisualStyleBackColor = true;
-            this.buttonTimHK.Click += new System.EventHandler(this.buttonTimHK_Click);
             // 
             // comboBoxBan
             // 
@@ -729,7 +683,6 @@
             this.comboBoxBan.Name = "comboBoxBan";
             this.comboBoxBan.Size = new System.Drawing.Size(105, 21);
             this.comboBoxBan.TabIndex = 49;
-            this.comboBoxBan.SelectedIndexChanged += new System.EventHandler(this.comboBoxBan_SelectedIndexChanged);
             // 
             // comboBoxMK
             // 
@@ -743,12 +696,11 @@
             this.comboBoxMK.Size = new System.Drawing.Size(104, 21);
             this.comboBoxMK.TabIndex = 46;
             this.comboBoxMK.ValueMember = "MAKHOI";
-            this.comboBoxMK.SelectedIndexChanged += new System.EventHandler(this.comboBoxMK_SelectedIndexChanged);
             // 
             // kHOIBindingSource
             // 
             this.kHOIBindingSource.DataMember = "KHOI";
-            this.kHOIBindingSource.DataSource = this.qLHSTHPTDataSet1;
+            this.kHOIBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
             // textBoxTenLop
             // 
@@ -757,7 +709,6 @@
             this.textBoxTenLop.Name = "textBoxTenLop";
             this.textBoxTenLop.Size = new System.Drawing.Size(100, 20);
             this.textBoxTenLop.TabIndex = 44;
-            this.textBoxTenLop.TextChanged += new System.EventHandler(this.textBoxTenLop_TextChanged);
             this.textBoxTenLop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTenLop_KeyPress);
             // 
             // textBoxML
@@ -767,28 +718,16 @@
             this.textBoxML.Name = "textBoxML";
             this.textBoxML.Size = new System.Drawing.Size(100, 20);
             this.textBoxML.TabIndex = 43;
-            this.textBoxML.TextChanged += new System.EventHandler(this.textBoxML_TextChanged);
             this.textBoxML.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxML_KeyPress);
             // 
             // labelEMaNH
             // 
             this.labelEMaNH.AutoSize = true;
             this.labelEMaNH.ForeColor = System.Drawing.Color.Red;
-            this.labelEMaNH.Location = new System.Drawing.Point(305, 144);
+            this.labelEMaNH.Location = new System.Drawing.Point(90, 146);
             this.labelEMaNH.Name = "labelEMaNH";
             this.labelEMaNH.Size = new System.Drawing.Size(0, 13);
             this.labelEMaNH.TabIndex = 42;
-            this.labelEMaNH.Click += new System.EventHandler(this.labelEMaNH_Click);
-            // 
-            // labelEMaHK
-            // 
-            this.labelEMaHK.AutoSize = true;
-            this.labelEMaHK.ForeColor = System.Drawing.Color.Red;
-            this.labelEMaHK.Location = new System.Drawing.Point(90, 144);
-            this.labelEMaHK.Name = "labelEMaHK";
-            this.labelEMaHK.Size = new System.Drawing.Size(0, 13);
-            this.labelEMaHK.TabIndex = 41;
-            this.labelEMaHK.Click += new System.EventHandler(this.labelEMaHK_Click);
             // 
             // labelEBM
             // 
@@ -798,7 +737,6 @@
             this.labelEBM.Name = "labelEBM";
             this.labelEBM.Size = new System.Drawing.Size(0, 13);
             this.labelEBM.TabIndex = 40;
-            this.labelEBM.Click += new System.EventHandler(this.labelEBM_Click);
             // 
             // labelETenLop
             // 
@@ -808,7 +746,6 @@
             this.labelETenLop.Name = "labelETenLop";
             this.labelETenLop.Size = new System.Drawing.Size(0, 13);
             this.labelETenLop.TabIndex = 39;
-            this.labelETenLop.Click += new System.EventHandler(this.labelETenLop_Click);
             // 
             // labelEMaLop
             // 
@@ -818,7 +755,6 @@
             this.labelEMaLop.Name = "labelEMaLop";
             this.labelEMaLop.Size = new System.Drawing.Size(0, 13);
             this.labelEMaLop.TabIndex = 38;
-            this.labelEMaLop.Click += new System.EventHandler(this.labelEMaLop_Click);
             // 
             // button2
             // 
@@ -839,20 +775,6 @@
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.DIEMTableAdapter = null;
-            this.tableAdapterManager.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager.HOCKYTableAdapter = null;
-            this.tableAdapterManager.HOCSINHTableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = null;
-            this.tableAdapterManager.NAMHOCTableAdapter = null;
-            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // panel4
             // 
@@ -905,7 +827,7 @@
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 924);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 890);
             this.barDockControl2.Manager = this.barManager2;
             this.barDockControl2.Size = new System.Drawing.Size(920, 0);
             // 
@@ -915,7 +837,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 924);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 890);
             // 
             // barDockControl4
             // 
@@ -923,7 +845,7 @@
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl4.Location = new System.Drawing.Point(920, 0);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 924);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 890);
             // 
             // barButtonItem7
             // 
@@ -1066,7 +988,7 @@
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 924);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 890);
             this.barDockControl6.Manager = this.barManager3;
             this.barDockControl6.Size = new System.Drawing.Size(920, 0);
             // 
@@ -1076,7 +998,7 @@
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl7.Location = new System.Drawing.Point(0, 0);
             this.barDockControl7.Manager = this.barManager3;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 924);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 890);
             // 
             // barDockControl8
             // 
@@ -1084,7 +1006,7 @@
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl8.Location = new System.Drawing.Point(920, 0);
             this.barDockControl8.Manager = this.barManager3;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 924);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 890);
             // 
             // barButtonItem18
             // 
@@ -1097,6 +1019,23 @@
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
             // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BOMONTableAdapter = null;
+            this.tableAdapterManager.DIEMTableAdapter = null;
+            this.tableAdapterManager.DIEMTBM_HKTableAdapter = null;
+            this.tableAdapterManager.GIAOVIENTableAdapter = null;
+            this.tableAdapterManager.HOCKYTableAdapter = null;
+            this.tableAdapterManager.HOCSINHTableAdapter = null;
+            this.tableAdapterManager.HS_LOPTableAdapter = null;
+            this.tableAdapterManager.KHOITableAdapter = this.kHOITableAdapter;
+            this.tableAdapterManager.LOPTableAdapter = this.lOPTableAdapter;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.NAMHOCTableAdapter = null;
+            this.tableAdapterManager.PHANCONGGVTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // kHOITableAdapter
             // 
             this.kHOITableAdapter.ClearBeforeFill = true;
@@ -1104,7 +1043,7 @@
             // sP_HS_LOPBindingSource
             // 
             this.sP_HS_LOPBindingSource.DataMember = "SP_HS_LOP";
-            this.sP_HS_LOPBindingSource.DataSource = this.qLHSTHPTDataSet1;
+            this.sP_HS_LOPBindingSource.DataSource = this.qLHSTHPTDataSet2;
             // 
             // sP_HS_LOPTableAdapter
             // 
@@ -1118,8 +1057,8 @@
             this.sP_HS_LOPGridControl.MainView = this.gridView2;
             this.sP_HS_LOPGridControl.MenuManager = this.barManager1;
             this.sP_HS_LOPGridControl.Name = "sP_HS_LOPGridControl";
-            this.sP_HS_LOPGridControl.Size = new System.Drawing.Size(920, 254);
-            this.sP_HS_LOPGridControl.TabIndex = 19;
+            this.sP_HS_LOPGridControl.Size = new System.Drawing.Size(920, 220);
+            this.sP_HS_LOPGridControl.TabIndex = 78;
             this.sP_HS_LOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
@@ -1134,7 +1073,7 @@
             this.colDANTOC,
             this.colDIENTHOAI,
             this.colNGHIHOC,
-            this.colMALOP});
+            this.colMALOP1});
             this.gridView2.GridControl = this.sP_HS_LOPGridControl;
             this.gridView2.Name = "gridView2";
             // 
@@ -1202,33 +1141,13 @@
             this.colNGHIHOC.Visible = true;
             this.colNGHIHOC.VisibleIndex = 7;
             // 
-            // colMALOP
+            // colMALOP1
             // 
-            this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.Name = "colMALOP";
-            this.colMALOP.OptionsColumn.AllowEdit = false;
-            this.colMALOP.Visible = true;
-            this.colMALOP.VisibleIndex = 8;
-            // 
-            // textBoxTim2
-            // 
-            this.textBoxTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTim2.Location = new System.Drawing.Point(674, 440);
-            this.textBoxTim2.Name = "textBoxTim2";
-            this.textBoxTim2.Size = new System.Drawing.Size(168, 20);
-            this.textBoxTim2.TabIndex = 48;
-            this.textBoxTim2.TextChanged += new System.EventHandler(this.textBoxTim2_TextChanged);
-            this.textBoxTim2.MouseHover += new System.EventHandler(this.textBoxTim2_MouseHover);
-            // 
-            // labelTim2
-            // 
-            this.labelTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTim2.AutoSize = true;
-            this.labelTim2.Location = new System.Drawing.Point(619, 443);
-            this.labelTim2.Name = "labelTim2";
-            this.labelTim2.Size = new System.Drawing.Size(49, 13);
-            this.labelTim2.TabIndex = 49;
-            this.labelTim2.Text = "Tìm kiếm";
+            this.colMALOP1.FieldName = "MALOP";
+            this.colMALOP1.Name = "colMALOP1";
+            this.colMALOP1.OptionsColumn.AllowEdit = false;
+            this.colMALOP1.Visible = true;
+            this.colMALOP1.VisibleIndex = 8;
             // 
             // groupBoxCTHS
             // 
@@ -1261,11 +1180,12 @@
             this.groupBoxCTHS.Controls.Add(mAHSLabel);
             this.groupBoxCTHS.Controls.Add(this.textBoxMHS);
             this.groupBoxCTHS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxCTHS.Location = new System.Drawing.Point(0, 687);
+            this.groupBoxCTHS.Location = new System.Drawing.Point(0, 653);
             this.groupBoxCTHS.Name = "groupBoxCTHS";
             this.groupBoxCTHS.Size = new System.Drawing.Size(920, 237);
-            this.groupBoxCTHS.TabIndex = 64;
+            this.groupBoxCTHS.TabIndex = 79;
             this.groupBoxCTHS.TabStop = false;
+            this.groupBoxCTHS.Enter += new System.EventHandler(this.groupBoxCTHS_Enter);
             // 
             // buttonTimHS
             // 
@@ -1394,7 +1314,6 @@
             this.textBoxDToc.Name = "textBoxDToc";
             this.textBoxDToc.Size = new System.Drawing.Size(100, 20);
             this.textBoxDToc.TabIndex = 11;
-            this.textBoxDToc.TextChanged += new System.EventHandler(this.textBoxDToc_TextChanged);
             // 
             // textBoxDC
             // 
@@ -1407,6 +1326,7 @@
             // comboBoxGT
             // 
             this.comboBoxGT.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_HS_LOPBindingSource, "GIOITINH", true));
+            this.comboBoxGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGT.FormattingEnabled = true;
             this.comboBoxGT.Items.AddRange(new object[] {
             "Nam",
@@ -1442,28 +1362,33 @@
             // textBoxMHS
             // 
             this.textBoxMHS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sP_HS_LOPBindingSource, "MAHS", true));
+            this.textBoxMHS.Enabled = false;
             this.textBoxMHS.Location = new System.Drawing.Point(106, 34);
             this.textBoxMHS.Name = "textBoxMHS";
             this.textBoxMHS.Size = new System.Drawing.Size(100, 20);
             this.textBoxMHS.TabIndex = 1;
+            this.textBoxMHS.TextChanged += new System.EventHandler(this.textBoxMHS_TextChanged);
             this.textBoxMHS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMHS_KeyPress);
             // 
-            // tableAdapterManager1
+            // textBoxTim2
             // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.BOMONTableAdapter = null;
-            this.tableAdapterManager1.DIEMTableAdapter = null;
-            this.tableAdapterManager1.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager1.HOCKYTableAdapter = null;
-            this.tableAdapterManager1.HOCSINHTableAdapter = null;
-            this.tableAdapterManager1.HS_LOPTableAdapter = null;
-            this.tableAdapterManager1.KHOITableAdapter = this.kHOITableAdapter;
-            this.tableAdapterManager1.LOPTableAdapter = this.lOPTableAdapter;
-            this.tableAdapterManager1.MONHOCTableAdapter = null;
-            this.tableAdapterManager1.NAMHOCTableAdapter = null;
-            this.tableAdapterManager1.PHANCONGGVTableAdapter = null;
-            this.tableAdapterManager1.TOTRUONGBMTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = QLHSTHPT.QLHSTHPTDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.textBoxTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTim2.Location = new System.Drawing.Point(640, 440);
+            this.textBoxTim2.Name = "textBoxTim2";
+            this.textBoxTim2.Size = new System.Drawing.Size(166, 20);
+            this.textBoxTim2.TabIndex = 80;
+            this.textBoxTim2.TextChanged += new System.EventHandler(this.textBoxTim2_TextChanged);
+            this.textBoxTim2.MouseHover += new System.EventHandler(this.textBoxTim2_MouseHover);
+            // 
+            // labelTim2
+            // 
+            this.labelTim2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTim2.AutoSize = true;
+            this.labelTim2.Location = new System.Drawing.Point(585, 443);
+            this.labelTim2.Name = "labelTim2";
+            this.labelTim2.Size = new System.Drawing.Size(49, 13);
+            this.labelTim2.TabIndex = 81;
+            this.labelTim2.Text = "Tìm kiếm";
             // 
             // FormLop_HS
             // 
@@ -1472,9 +1397,9 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(937, 749);
-            this.Controls.Add(this.groupBoxCTHS);
             this.Controls.Add(this.labelTim2);
             this.Controls.Add(this.textBoxTim2);
+            this.Controls.Add(this.groupBoxCTHS);
             this.Controls.Add(this.sP_HS_LOPGridControl);
             this.Controls.Add(this.standaloneBarDockControl2);
             this.Controls.Add(this.panel4);
@@ -1501,7 +1426,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLHSTHPTDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -1530,7 +1455,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private QLHSTHPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar barLop;
@@ -1578,23 +1502,52 @@
         private DevExpress.XtraBars.BarDockControl barDockControl5;
         private DevExpress.XtraBars.BarDockControl barDockControl6;
         private DevExpress.XtraBars.BarDockControl barDockControl8;
-        private QLHSTHPTDataSet1 qLHSTHPTDataSet1;
+        private System.Windows.Forms.ComboBox comboBoxMK;
+        private System.Windows.Forms.TextBox textBoxTenLop;
+        private System.Windows.Forms.TextBox textBoxML;
+        private System.Windows.Forms.ComboBox comboBoxBan;
+        private System.Windows.Forms.Button buttonTimNH;
+        public System.Windows.Forms.Label labelEMaNH;
+        public System.Windows.Forms.TextBox textBoxMNH;
         private System.Windows.Forms.BindingSource lOPBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.LOPTableAdapter lOPTableAdapter;
+        private QLHSTHPTDataSet2 qLHSTHPTDataSet2;
+        private QLHSTHPTDataSet2TableAdapters.LOPTableAdapter lOPTableAdapter;
+        private QLHSTHPTDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label labelTim1;
+        private System.Windows.Forms.TextBox textBoxTim1;
         private DevExpress.XtraGrid.GridControl lOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
         private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAHK;
         private DevExpress.XtraGrid.Columns.GridColumn colMANH;
         private DevExpress.XtraGrid.Columns.GridColumn colBAN;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHOI;
-        private System.Windows.Forms.Label labelTim1;
-        private System.Windows.Forms.TextBox textBoxTim1;
+        private QLHSTHPTDataSet2TableAdapters.KHOITableAdapter kHOITableAdapter;
         private System.Windows.Forms.BindingSource kHOIBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.KHOITableAdapter kHOITableAdapter;
         private System.Windows.Forms.BindingSource sP_HS_LOPBindingSource;
-        private QLHSTHPTDataSet1TableAdapters.SP_HS_LOPTableAdapter sP_HS_LOPTableAdapter;
+        private QLHSTHPTDataSet2TableAdapters.SP_HS_LOPTableAdapter sP_HS_LOPTableAdapter;
+        private System.Windows.Forms.Label labelTim2;
+        private System.Windows.Forms.TextBox textBoxTim2;
+        private System.Windows.Forms.GroupBox groupBoxCTHS;
+        private System.Windows.Forms.Button buttonTimHS;
+        public System.Windows.Forms.Label labelEMaHS;
+        public System.Windows.Forms.Label labelEDTo;
+        public System.Windows.Forms.Label labelEML;
+        public System.Windows.Forms.Label labelEDT;
+        public System.Windows.Forms.Label labelENS;
+        public System.Windows.Forms.Label labelEDC;
+        public System.Windows.Forms.Label labelEHT;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.CheckBox checkBoxNghi;
+        private System.Windows.Forms.TextBox textBoxMLHS;
+        public System.Windows.Forms.TextBox textBoxDT;
+        public System.Windows.Forms.TextBox textBoxDToc;
+        public System.Windows.Forms.TextBox textBoxDC;
+        public System.Windows.Forms.ComboBox comboBoxGT;
+        public DevExpress.XtraEditors.DateEdit dateEditNS;
+        public System.Windows.Forms.TextBox textBoxTenHS;
+        public System.Windows.Forms.TextBox textBoxMHS;
         private DevExpress.XtraGrid.GridControl sP_HS_LOPGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMAHS;
@@ -1605,39 +1558,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDANTOC;
         private DevExpress.XtraGrid.Columns.GridColumn colDIENTHOAI;
         private DevExpress.XtraGrid.Columns.GridColumn colNGHIHOC;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
-        private System.Windows.Forms.Label labelTim2;
-        private System.Windows.Forms.TextBox textBoxTim2;
-        private System.Windows.Forms.GroupBox groupBoxCTHS;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBoxMLHS;
-        private System.Windows.Forms.ComboBox comboBoxMK;
-        private System.Windows.Forms.TextBox textBoxTenLop;
-        private System.Windows.Forms.TextBox textBoxML;
-        private System.Windows.Forms.ComboBox comboBoxBan;
-        private QLHSTHPTDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.Button buttonTimHS;
-        public System.Windows.Forms.CheckBox checkBoxNghi;
-        public System.Windows.Forms.TextBox textBoxDT;
-        public System.Windows.Forms.TextBox textBoxDToc;
-        public System.Windows.Forms.TextBox textBoxDC;
-        public System.Windows.Forms.ComboBox comboBoxGT;
-        public DevExpress.XtraEditors.DateEdit dateEditNS;
-        public System.Windows.Forms.TextBox textBoxTenHS;
-        public System.Windows.Forms.TextBox textBoxMHS;
-        public System.Windows.Forms.Label labelEMaHS;
-        public System.Windows.Forms.Label labelEDTo;
-        public System.Windows.Forms.Label labelEML;
-        public System.Windows.Forms.Label labelENS;
-        public System.Windows.Forms.Label labelEDC;
-        public System.Windows.Forms.Label labelEHT;
-        public System.Windows.Forms.Label labelEDT;
-        private System.Windows.Forms.Button buttonTimNH;
-        private System.Windows.Forms.Button buttonTimHK;
-        public System.Windows.Forms.Label labelEMaNH;
-        public System.Windows.Forms.Label labelEMaHK;
-        public System.Windows.Forms.TextBox textBoxMNH;
-        public System.Windows.Forms.TextBox textBoxMHK;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP1;
+        public System.Windows.Forms.TextBox textBoxTenNH;
     }
 }

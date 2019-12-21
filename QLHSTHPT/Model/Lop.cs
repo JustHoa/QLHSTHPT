@@ -10,7 +10,6 @@ namespace QLHSTHPT.Model
     {
         public string maLop { get; set; }
         public string tenLop { get; set; }
-        public int maHK { get; set; }
         public int maNH { get; set; }
         public string ban { get; set; }
         public int maKhoi { get; set; }
@@ -20,11 +19,10 @@ namespace QLHSTHPT.Model
         {
         }
 
-        public Lop(string maLop, string tenLop, int maHK, int maNH, string ban, int maKhoi)
+        public Lop(string maLop, string tenLop, int maNH, string ban, int maKhoi)
         {
             this.maLop = maLop;
             this.tenLop = tenLop;
-            this.maHK = maHK;
             this.maNH = maNH;
             this.ban = ban;
             this.maKhoi = maKhoi;
