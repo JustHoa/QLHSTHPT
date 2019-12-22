@@ -566,8 +566,7 @@ namespace QLHSTHPT
             {
                 formChinh.Enabled = false;
                 FormDiemTBM_HK f = new FormDiemTBM_HK(formChinh, this);
-                f.Activate();
-                f.Show();
+                f.ShowDialog();
             }
         }
 

@@ -14,11 +14,13 @@ namespace QLHSTHPT
 {
     public partial class FormTienTrinhLL : Form
     {
+        public int _maxSS;
+        public int _minSS;
         Form form;
         ComboBox comboBox;
-        BindingSource bindingSource;
+        public BindingSource bindingSource;
         List<Lop> arrLop;
-        int[] soHS_Lop = new int [8];
+        public int[] soHS_Lop;
 
         FormLL10 formLL10;
         FormLL11 formLL11;
@@ -32,12 +34,13 @@ namespace QLHSTHPT
             InitializeComponent();
         }
 
-        public FormTienTrinhLL(Form form, ComboBox comboBox, BindingSource bindingSource)
+        public FormTienTrinhLL(Form form, ComboBox comboBox, BindingSource bindingSource, int[] soHS_Lop)
         {
             InitializeComponent();
             this.form = form;
             this.comboBox = comboBox;
             this.bindingSource = bindingSource;
+            this.soHS_Lop = soHS_Lop;
         }
 
         public FormTienTrinhLL(FormLL10 formLL10)
@@ -111,10 +114,10 @@ namespace QLHSTHPT
             int maNH = Helper.layMaNHMoiNhat();
 
             //kt lop vs maNH
-
+            int maKhoi = int.Parse(comboBox.Items[0].ToString().Substring(0, 2));
             foreach (var item in comboBox.Items)
             {
-                arrLop.Add(new Lop(maLop, item.ToString(), maNH, "Ban cơ bản", 10));
+                arrLop.Add(new Lop(maLop, item.ToString(), maNH, "Ban cơ bản", maKhoi));
                 int _part3 = int.Parse(maLop.Substring(4, 6)) + 1;
                 string part3 = _part3.ToString().PadLeft(6, '0');
                 maLop = maLop.Substring(0, 4) + part3;
@@ -304,17 +307,21 @@ namespace QLHSTHPT
             panelAddHS.Dock = DockStyle.Fill;
             panelAddNH.Visible = panelAddLop.Visible = false;
 
+            int maKhoi = int.Parse(comboBox.Items[0].ToString().Substring(0, 2));
             try
             {
-                this.sP_LOP_NAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LOP_NAMHOC, Helper.layMaNHMoiNhat());
+                this.sP_LOP_NAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LOP_NAMHOC, Helper.layMaNHMoiNhat(), maKhoi);
                 textBoxSLLop.Text = comboBoxLopNH.Items.Count.ToString();
                 comboBoxLopNH.SelectedIndex = 0;
+                
+                //soHS_Lop = new int[8];
+                //soHS_Lop = Helper.xepLop(bindingSource.Count);
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show("Lớp chưa được tạo!", "Lên lớp", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            soHS_Lop = Helper.xepLop(bindingSource.Count);
+            
         }
         
         private void textBoxTL_TextChanged(object sender, EventArgs e)
@@ -422,17 +429,20 @@ namespace QLHSTHPT
             panelAddHS.Dock = DockStyle.Fill;
             panelAddNH.Visible = panelAddLop.Visible = false;
 
+            int _maKhoi = int.Parse(comboBox.Items[0].ToString().Substring(0, 2));
             try
             {
-                this.sP_LOP_NAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LOP_NAMHOC, Helper.layMaNHMoiNhat());
+                this.sP_LOP_NAMHOCTableAdapter.Fill(this.qLHSTHPTDataSet1.SP_LOP_NAMHOC, Helper.layMaNHMoiNhat(), _maKhoi);
                 textBoxSLLop.Text = comboBoxLopNH.Items.Count.ToString();
                 comboBoxLopNH.SelectedIndex = 0;
+                //soHS_Lop = new int[8];
+                //soHS_Lop = Helper.xepLop(bindingSource.Count);
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show("Lớp chưa được tạo!", "Lên lớp", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            soHS_Lop = Helper.xepLop(bindingSource.Count);
+            
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -487,6 +497,7 @@ namespace QLHSTHPT
                     }
                 }
             }
+            progressBar.Value = 100;
             MessageBox.Show("Tiến trình lên lớp đã hoàn tất!", "Lên lớp", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -495,7 +506,16 @@ namespace QLHSTHPT
             BindingList<HS> ds = new BindingList<HS>();
             int numLeft = 0;
             int index = this.comboBoxLopNH.SelectedIndex;
-            this.textBoxSiSo.Text = soHS_Lop[index].ToString() + " học sinh";
+            try
+            {
+                this.textBoxSiSo.Text = soHS_Lop[index].ToString() + " học sinh";
+            }
+            catch(Exception ex)
+            {
+                labelECBL.Text = "Không đủ học sinh. Chú ý!";
+                comboBoxLopNH.Focus();
+                return;
+            }
             this.labelTitleHS.Text = "DANH SÁCH HỌC SINH LỚP " + comboBoxLopNH.Text;
             for (int i = 0; i < index; i++)
             {
@@ -531,14 +551,111 @@ namespace QLHSTHPT
             int maNH = Helper.layMaNHMoiNhat();
 
             //kt lop vs maNH
+            int _maKhoi = int.Parse(comboBox.Items[0].ToString().Substring(0, 2));
 
             foreach (var item in comboBox.Items)
             {
-                arrLop.Add(new Lop(maLop, item.ToString(), maNH, "Ban cơ bản", 10));
+                arrLop.Add(new Lop(maLop, item.ToString(), maNH, "Ban cơ bản", _maKhoi));
                 int _part3 = int.Parse(maLop.Substring(4, 6)) + 1;
                 string part3 = _part3.ToString().PadLeft(6, '0');
                 maLop = maLop.Substring(0, 4) + part3;
             }
+        }
+
+        private void textBoxTNH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)32) && (e.KeyChar < (char)45)) // ki tu dac biet
+            {
+                this.labelETNH.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)45) && (e.KeyChar < (char)48))
+            {
+                this.labelETNH.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)57) && (e.KeyChar < (char)65))
+            {
+                this.labelETNH.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)90) && (e.KeyChar < (char)97))
+            {
+                this.labelETNH.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                e.Handled = true;
+            }
+            else if ((e.KeyChar > (char)122) && (e.KeyChar < (char)126))
+            {
+                this.labelETNH.Text = "Tên năm học không chứa kí tự đặc biệt, trừ kí tự '-'!";
+                e.Handled = true;
+            }
+            else
+            {
+                this.labelETNH.Text = "";
+                e.Handled = false;
+            }
+        }
+
+        private void textBoxNBD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
+            {
+                this.labelENBD.Text = "";
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == (char)13) || (e.KeyChar == (char)8)) //enter, backspace
+            {
+                this.labelENBD.Text = "";
+                e.Handled = false;
+            }
+            else
+            {
+                this.labelENBD.Text = "Năm bắt đầu chỉ bao gồm số!";
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxNKT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar > (char)47) && (e.KeyChar < (char)58)) //so
+            {
+                this.labelENKT.Text = "";
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == (char)13) || (e.KeyChar == (char)8)) //enter, backspace
+            {
+                this.labelENKT.Text = "";
+                e.Handled = false;
+            }
+            else
+            {
+                this.labelENKT.Text = "Năm kết thúc chỉ bao gồm số!";
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxNBD_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int namBD = int.Parse(this.textBoxNBD.Text);
+                this.textBoxNKT.Text = (namBD + 1).ToString();
+            }
+            catch (Exception ex) { }
+        }
+
+        private void textBoxNKT_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int namKT = int.Parse(this.textBoxNKT.Text);
+                this.textBoxNBD.Text = (namKT - 1).ToString();
+            }
+            catch (Exception ex) { }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
         }
     }
 }

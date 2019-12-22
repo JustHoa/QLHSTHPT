@@ -200,7 +200,7 @@ namespace QLHSTHPT
             //if (MessageBox.Show("Chưa lưu dữ liệu. Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK) Close();
             for (int i = 0; i < gridView1.RowCount; i++)
             {
-                maHS = Helper.createMaHS(maHS);
+                string maHS = gridView1.GetRowCellValue(i, "MAHS").ToString();
                 string tenHS = gridView1.GetRowCellValue(i, "TENHS").ToString();
                 DateTime ngaySinh = DateTime.Parse(gridView1.GetRowCellValue(i, "NGAYSINH").ToString());
                 string gioiTinh = gridView1.GetRowCellValue(i, "GIOITINH").ToString();
@@ -287,7 +287,7 @@ namespace QLHSTHPT
                     formChinh.processBar.Visible = false;
                     break;
                 }
-                if (i == gridView1.RowCount) 
+                if (i == gridView1.RowCount - 1) 
                 {
                     MessageBox.Show("Lưu thành công!");
                     formChinh.processBar.Visible = false;

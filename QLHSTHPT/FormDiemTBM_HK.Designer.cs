@@ -383,7 +383,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FormDiemTBM_HK";
-            this.Text = "FormDiemTBM_HK";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Điểm trung bình môn học kỳ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDiemTBM_HK_FormClosing);
             this.Load += new System.EventHandler(this.FormDiemTBM_HK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

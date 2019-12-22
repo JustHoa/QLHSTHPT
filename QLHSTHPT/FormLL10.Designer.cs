@@ -59,6 +59,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.labelTitleHS = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxSiSo = new System.Windows.Forms.TextBox();
@@ -360,6 +361,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.textBoxSiSo);
@@ -370,6 +372,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(452, 100);
             this.panel5.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(420, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 19);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -472,14 +485,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource v_XL10BindingSource;
         private QLHSTHPTDataSet1 qLHSTHPTDataSet1;
-        private QLHSTHPTDataSet1TableAdapters.V_XL10TableAdapter v_XL10TableAdapter;
         private QLHSTHPTDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.BarManager barManager2;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
@@ -504,9 +514,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSiSo;
-        private System.Windows.Forms.TextBox textBoxSoLop;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox comboBoxTenLop;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox textBoxSoLop;
+        public System.Windows.Forms.BindingSource v_XL10BindingSource;
+        public QLHSTHPTDataSet1TableAdapters.V_XL10TableAdapter v_XL10TableAdapter;
+        public DevExpress.XtraBars.BarButtonItem barButtonItem5;
     }
 }

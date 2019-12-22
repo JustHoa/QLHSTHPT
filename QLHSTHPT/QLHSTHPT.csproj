@@ -222,6 +222,24 @@
     <Compile Include="FormQLTaiKhoan.Designer.cs">
       <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSLHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSLHS.Designer.cs">
+      <DependentUpon>FormSLHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSLHS11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSLHS11.Designer.cs">
+      <DependentUpon>FormSLHS11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSLHS12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSLHS12.Designer.cs">
+      <DependentUpon>FormSLHS12.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThemHK_LL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,6 +458,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLTaiKhoan.resx">
       <DependentUpon>FormQLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSLHS.resx">
+      <DependentUpon>FormSLHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSLHS11.resx">
+      <DependentUpon>FormSLHS11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSLHS12.resx">
+      <DependentUpon>FormSLHS12.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemHK_LL.resx">
       <DependentUpon>FormThemHK_LL.cs</DependentUpon>

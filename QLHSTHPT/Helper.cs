@@ -293,6 +293,37 @@ namespace QLHSTHPT
             return arrSV_Lop;
         }
 
+        public static int[] xepLop(int soLuongSV, int maxLop, int min, int max)
+        {
+            int[] arrSV_Lop = new int[maxLop];
+            for (int i = 1; i <= maxLop; i++)
+            {
+                int svLop = soLuongSV / i;
+                if (svLop >= min && svLop <= max)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        arrSV_Lop[j] = svLop;
+                    }
+                    int svLe = soLuongSV % i;
+                    int index = 0;
+                    for (int k = i; k >= 1; k--)
+                    {
+                        for (int loop = 0; loop < k; loop++)
+                        {
+                            arrSV_Lop[index++] += svLe / k;
+                            if (index == i) index = 0;
+                        }
+                        //svLop += svLe / k;
+                        svLe = svLe % k;
+                    }
+
+                }
+                else continue;
+            }
+            return arrSV_Lop;
+        }
+
         public static string hocLuc(float dTB, float dHoa, float dSinh, float dAnh, float dGDCD, float dToan, float dLy, float dVan, float dSu, float dDia)
         {
             if (dTB >= 8 && dToan >= 8 && dVan >= 8)

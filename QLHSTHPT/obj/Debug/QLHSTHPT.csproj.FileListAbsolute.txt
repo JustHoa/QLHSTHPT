@@ -563,3 +563,6 @@ D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormThemNH_LL.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTongKetLop.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTimNH_XLL.resources
 D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormTK_1.resources
+D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormSLHS.resources
+D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormSLHS11.resources
+D:\KhoaLuan\Project\QLHSTHPT\QLHSTHPT\obj\Debug\QLHSTHPT.FormSLHS12.resources

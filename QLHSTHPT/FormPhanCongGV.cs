@@ -41,16 +41,16 @@ namespace QLHSTHPT
         {
             formChinh.Enabled = false;
             FormTimGV f = new FormTimGV(formChinh, this);
-            f.Activate();
-            f.Show();
+            //f.Activate();
+            //f.Show();
+            f.ShowDialog();
         }
 
         private void buttonTimLop_Click(object sender, EventArgs e)
         {
             formChinh.Enabled = false;
             FormTimLop f = new FormTimLop(formChinh, this);
-            f.Activate();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

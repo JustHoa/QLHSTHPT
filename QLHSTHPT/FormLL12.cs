@@ -14,7 +14,7 @@ namespace QLHSTHPT
     public partial class FormLL12 : Form
     {
         FormLenLop formLenLop;
-        int[] soHS_Lop;
+        public int[] soHS_Lop;
 
         public FormLL12()
         {
@@ -105,12 +105,61 @@ namespace QLHSTHPT
             if (formLenLop._ll12 == 0)
             {
                 formLenLop._ll12 = 1;
-                FormTienTrinhLL f = new FormTienTrinhLL(this, comboBoxTenLop, v_XL12BindingSource);
+                FormTienTrinhLL f = new FormTienTrinhLL(this, comboBoxTenLop, v_XL12BindingSource, soHS_Lop);
                 f.Text = "Tiến trình lên lớp 12";
                 f.MdiParent = formLenLop;
                 f.Show();
             }
             else formLenLop.toolStripStatusLabelNote.Text = "Tiến trình lên lớp 12 đang mở!";
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.v_XL12TableAdapter.Fill(this.qLHSTHPTDataSet1.V_XL12);
+
+            int soLop = 0;
+            List<string> arrTenLop = new List<string>();
+            if (v_XL12BindingSource.Count != 0)
+            {
+                soHS_Lop = Helper.xepLop(v_XL12BindingSource.Count);
+                if (soHS_Lop[0] == 0)
+                {
+                    MessageBox.Show("Số lượng học sinh lên lớp nằm ngoài khoảng xếp lớp khả dụng!\n\nKhoảng khả dụng tối ưu: từ " +
+                        Program.MIN + " đến " + Program.MAX * Program.MAX_LOP + "\n\nHiện tại: " + v_XL12BindingSource.Count, "Lớp 12", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    barButtonItem1.Enabled = false;
+                }
+                else
+                {
+                    barButtonItem1.Enabled = true;
+                    for (int i = 0; i < Program.MAX_LOP; i++) 
+                    {
+                        if (soHS_Lop[i] != 0)
+                        {
+                            soLop += 1;
+                        }
+                    }
+
+                    this.textBoxSoLop.Text = soLop.ToString();
+
+                    for (int i = 0; i < soLop; i++)
+                    {
+                        arrTenLop.Add("12A" + (i + 1));
+                    }
+                    this.comboBoxTenLop.DataSource = arrTenLop;
+                    this.comboBoxTenLop.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                barButtonItem1.Enabled = false;
+                MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel:\n\nQuản trị -> Excel-Học sinh", "Lớp 12", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormSLHS12 formSLHS12 = new FormSLHS12(this);
+            formSLHS12.ShowDialog();
         }
     }
 }

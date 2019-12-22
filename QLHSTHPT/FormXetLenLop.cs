@@ -141,8 +141,7 @@ namespace QLHSTHPT
         {
             formChinh.Enabled = false;
             FormLenLop f = new FormLenLop(formChinh);
-            f.Activate();
-            f.Show();
+            f.ShowDialog();
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

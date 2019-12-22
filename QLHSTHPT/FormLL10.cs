@@ -14,7 +14,7 @@ namespace QLHSTHPT
     public partial class FormLL10 : Form
     {
         FormLenLop formLenLop;
-        int[] soHS_Lop;
+        public int[] soHS_Lop;
 
         public FormLL10()
         {
@@ -105,7 +105,7 @@ namespace QLHSTHPT
             if (formLenLop._ll10 == 0)
             {
                 formLenLop._ll10 = 1;
-                FormTienTrinhLL f = new FormTienTrinhLL(this, comboBoxTenLop, v_XL10BindingSource);
+                FormTienTrinhLL f = new FormTienTrinhLL(this, comboBoxTenLop, v_XL10BindingSource, soHS_Lop);
                 f.Text = "Tiến trình lên lớp 10";
                 f.MdiParent = formLenLop;
                 f.Show();
@@ -154,6 +154,12 @@ namespace QLHSTHPT
                 barButtonItem5.Enabled = false;
                 MessageBox.Show("Thiếu dữ liệu học sinh!\n\nGợi ý: Thêm dữ liệu học sinh từ Excel:\n\nQuản trị -> Excel-Học sinh", "Lớp 10", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormSLHS formSLHS = new FormSLHS(this);
+            formSLHS.ShowDialog();
         }
     }
 }
